@@ -18,6 +18,8 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
   padding: 32px 48px;
   position: relative;
   z-index: 10;
+  max-width: 1200px; 
+  margin: 0 auto;    
 }
 
 .nav-left {
@@ -30,16 +32,15 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
   text-decoration: none; 
 }
 
-/* Updated to act as an image wrapper */
 .nav-logo-box {
   width: 32px; 
   height: 32px;
-  background: #1a1916; /* Fallback color */
+  background: #1a1916;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Ensures image respects the rounded corners */
+  overflow: hidden; 
 }
 
 .nav-logo-box img {
@@ -101,7 +102,8 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
 /* --- Hero Section --- */
 .hero {
   padding: 80px 48px 120px;
-  max-width: 1100px;
+  max-width: 1200px; 
+  margin: 0 auto;    
   position: relative;
 }
 
@@ -154,7 +156,11 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
 }
 
 /* --- Work Section --- */
-.work-section { padding: 0 48px 64px; }
+.work-section { 
+  padding: 0 48px 64px; 
+  max-width: 1200px; 
+  margin: 0 auto;    
+}
 
 .projects {
   display: grid;
@@ -226,13 +232,18 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
 .thumb-3 { background: linear-gradient(135deg, #dce8dc 0%, #c5d8c5 100%); }
 .thumb-4 { background: linear-gradient(135deg, #e8dce8 0%, #d5c5d8 100%); }
 
-/* --- Modern Footer Section --- */
+/* --- Modern Footer Section (Full Width) --- */
 .footer-section {
   background: #1a1916;
   color: #f7f5f0;
   padding: 100px 48px 48px;
   margin-top: 64px;
   border-radius: 40px 40px 0 0; 
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .footer-cta-wrap { margin-bottom: 100px; }
@@ -329,7 +340,7 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
     <div class="profile-pic"></div>
 
     <h1 class="hero-headline">
-      <span class="gray">Interaction Designer </span> creating practical interfaces for AI tools and complex systems
+      <span class="gray">Interaction Designer </span> creating Practical Interfaces for AI tools and Complex Systems
     </h1>
     
     <p class="hero-sub">Currently, Product Design Intern for Sprinklr's CFM product</p>
@@ -413,16 +424,18 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
   </div>
 
   <div class="footer-section" id="contact">
-    <div class="footer-cta-wrap">
-      <h2 class="footer-heading">Have a complex problem?<br><span>Let's collaborate.</span></h2>
-      <p class="footer-sub">Open to full-time roles and interesting conversations.</p>
-      <a href="mailto:ishaanuxd@gmail.com" class="footer-email-btn">ishaanuxd@gmail.com ↗</a>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-copyright">© 2026 Ishaan Jain. All rights reserved.</div>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/in/ishaan-jain-72a2b2248/" target="_blank">LinkedIn</a>
-        <a href="Ishaan_Jain_RESUME.pdf" target="_blank">Resume</a>
+    <div class="footer-inner">
+      <div class="footer-cta-wrap">
+        <h2 class="footer-heading">Have a complex problem?<br><span>Let's collaborate.</span></h2>
+        <p class="footer-sub">Open to full-time roles and interesting conversations.</p>
+        <a href="mailto:ishaanuxd@gmail.com" class="footer-email-btn">ishaanuxd@gmail.com ↗</a>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">© 2026 Ishaan Jain. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/ishaan-jain-72a2b2248/" target="_blank">LinkedIn</a>
+          <a href="Ishaan_Jain_RESUME.pdf" target="_blank">Resume</a>
+        </div>
       </div>
     </div>
   </div>

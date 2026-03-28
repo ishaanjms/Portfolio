@@ -18,6 +18,8 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
   padding: 32px 48px;
   position: relative;
   z-index: 10;
+  max-width: 1200px; 
+  margin: 0 auto;    
 }
 
 .nav-left {
@@ -30,7 +32,6 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
   text-decoration: none;
 }
 
-/* Updated to act as an image wrapper */
 .nav-logo-box {
   width: 32px; 
   height: 32px;
@@ -142,7 +143,7 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
   display: block;
 }
 
-/* --- Skills Section --- */
+/* --- ELEVATED SKILLS SECTION --- */
 .skills-section {
   margin-bottom: 120px;
 }
@@ -153,20 +154,24 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
   gap: 24px;
 }
 
+/* Elevated white card floating above the cream background */
 .skill-card {
-  background: #ebe8e2;
-  border-radius: 20px;
-  padding: 32px;
-  transition: transform 0.3s ease;
+  background: #ffffff;
+  border: 1px solid #e0ddd8;
+  border-radius: 24px;
+  padding: 36px;
+  box-shadow: 0 4px 12px rgba(26, 25, 22, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(26, 25, 22, 0.06);
 }
 
 .skill-title {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 24px;
   color: #1a1916;
 }
@@ -177,18 +182,25 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
   gap: 10px;
 }
 
+/* Replaced monospace with DM Sans for a polished, modern feel */
 .skill-tag {
-  font-family: 'DM Mono', monospace;
-  font-size: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
   color: #1a1916;
   background: #f7f5f0;
-  padding: 8px 14px;
+  padding: 8px 16px;
   border-radius: 100px;
   border: 1px solid #e0ddd8;
-  letter-spacing: 0.02em;
+  transition: background 0.2s, border-color 0.2s;
 }
 
-/* --- Experience Timeline Section --- */
+.skill-tag:hover {
+  background: #ebe8e2;
+  border-color: #d1cdc5;
+}
+
+/* --- ELEVATED EXPERIENCE SECTION --- */
 .experience-section {
   max-width: 900px;
 }
@@ -203,13 +215,14 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
 
 .timeline-item {
   position: relative;
-  margin-bottom: 48px;
+  margin-bottom: 56px;
 }
 
 .timeline-item:last-child {
   margin-bottom: 0;
 }
 
+/* Double-ring effect using your warm palette */
 .timeline-date {
   position: absolute;
   left: -85px;
@@ -217,56 +230,67 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: #f7f5f0;
-  border: 2px solid #e0ddd8;
+  background: #ffffff;
+  border: 4px solid #f7f5f0;
+  box-shadow: 0 0 0 2px #e0ddd8;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'DM Mono', monospace;
-  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
   color: #1a1916;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .timeline-card {
-  background: #ebe8e2;
-  border-radius: 20px;
-  padding: 32px;
-  transition: box-shadow 0.3s ease;
+  background: #ffffff;
+  border: 1px solid #e0ddd8;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 8px 24px rgba(26, 25, 22, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .timeline-card:hover {
-  box-shadow: 0 12px 24px rgba(0,0,0,0.04);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(26, 25, 22, 0.06);
 }
 
 .timeline-role {
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 22px;
+  font-weight: 600;
   color: #1a1916;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
+/* Replaced monospace and added the golden accent from your hero section */
 .timeline-company {
-  font-family: 'DM Mono', monospace;
-  font-size: 13px;
-  color: #888;
-  margin-bottom: 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #b0875a; 
+  margin-bottom: 20px;
 }
 
 .timeline-desc {
-  font-size: 15px;
-  color: #666;
-  line-height: 1.6;
-  font-weight: 300;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  font-weight: 400;
 }
 
-/* --- Modern Footer Section --- */
+/* --- Modern Footer Section (Full Width) --- */
 .footer-section {
   background: #1a1916;
   color: #f7f5f0;
   padding: 100px 48px 48px;
   margin-top: 64px;
   border-radius: 40px 40px 0 0;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .footer-cta-wrap { margin-bottom: 100px; }
@@ -433,7 +457,7 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
           <div class="timeline-card">
             <h3 class="timeline-role">Product Design Intern</h3>
             <div class="timeline-company">Sprinklr · Gurugram</div>
-            <p class="timeline-desc">Leading design within the Customer Feedback Management (CFM) product, tackling enterprise-scale data visualization and integrating sophisticated AI workflows into usable interfaces for B2B clients.</p>
+            <p class="timeline-desc">Designing within the Customer Feedback Management (CFM) product, tackling enterprise-scale data and integrating AI workflows into usable interfaces for B2B clients</p>
           </div>
         </div>
 
@@ -442,7 +466,7 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
           <div class="timeline-card">
             <h3 class="timeline-role">UX Design Intern</h3>
             <div class="timeline-company">Sixty Four Squares Pvt. Ltd. · Remote</div>
-            <p class="timeline-desc">Designed the 'DocQnA Assistant' feature from scratch, defining AI workflows to automate tasks for qualitative researchers. Executed prototyping cycles to stress-test the UI against complex edge cases.</p>
+            <p class="timeline-desc">Designed the 'DocQnA Assistant' feature from scratch, defining AI workflows to automate tasks for qualitative researchers. Executed prototyping cycles to test the UI against complex edge cases</p>
           </div>
         </div>
 
@@ -470,19 +494,20 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
   </div>
 
   <div class="footer-section" id="contact">
-    <div class="footer-cta-wrap">
-      <h2 class="footer-heading">Have a complex problem?<br><span>Let's collaborate.</span></h2>
-      <p class="footer-sub">Open to full-time roles and interesting conversations.</p>
-      <a href="mailto:ishaanuxd@gmail.com" class="footer-email-btn">ishaanuxd@gmail.com ↗</a>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-copyright">© 2026 Ishaan Jain. All rights reserved.</div>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/in/ishaan-jain-72a2b2248/" target="_blank">LinkedIn</a>
-        <a href="Ishaan_Jain_RESUME.pdf" target="_blank">Resume</a>
+    <div class="footer-inner">
+      <div class="footer-cta-wrap">
+        <h2 class="footer-heading">Have a complex problem?<br><span>Let's collaborate.</span></h2>
+        <p class="footer-sub">Open to full-time roles and interesting conversations.</p>
+        <a href="mailto:ishaanuxd@gmail.com" class="footer-email-btn">ishaanuxd@gmail.com ↗</a>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">© 2026 Ishaan Jain. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/ishaan-jain-72a2b2248/" target="_blank">LinkedIn</a>
+          <a href="Ishaan_Jain_RESUME.pdf" target="_blank">Resume</a>
+        </div>
       </div>
     </div>
   </div>
-
 </body>
 </html>
