@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Ishaan Jain</title>
+<title>About - Ishaan Jain</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@300;400&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-body { background: #ffffff; color: #111111; font-family: 'DM Sans', sans-serif; min-height: 100vh; overflow-x: hidden; }
+body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; min-height: 100vh; overflow-x: hidden; }
 
 /* --- Navigation --- */
 .nav {
@@ -26,15 +26,15 @@ body { background: #ffffff; color: #111111; font-family: 'DM Sans', sans-serif; 
   gap: 12px;
   font-weight: 500;
   font-size: 16px;
-  color: #111;
+  color: #1a1916;
   text-decoration: none;
 }
 
 .nav-logo-box {
   width: 24px;
   height: 24px;
-  background: #111;
-  color: #fff;
+  background: #1a1916;
+  color: #f7f5f0;
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -56,14 +56,14 @@ body { background: #ffffff; color: #111111; font-family: 'DM Sans', sans-serif; 
 
 .nav-links a {
   font-size: 15px;
-  color: #111;
+  color: #1a1916;
   text-decoration: none;
   font-weight: 400;
   transition: opacity 0.2s;
 }
 
 .nav-links a:hover { opacity: 0.6; }
-.nav-links a.active { font-weight: 600; border-bottom: 2px solid #111; padding-bottom: 2px; }
+.nav-links a.active { font-weight: 600; border-bottom: 2px solid #1a1916; padding-bottom: 2px; }
 
 .nav-social {
   display: flex;
@@ -74,18 +74,18 @@ body { background: #ffffff; color: #111111; font-family: 'DM Sans', sans-serif; 
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid #eaeaea;
+  border: 1px solid #e0ddd8;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #111;
+  color: #1a1916;
   text-decoration: none;
   font-size: 12px;
   font-weight: 500;
   transition: background 0.2s;
 }
 
-.icon-btn:hover { background: #f5f5f5; }
+.icon-btn:hover { background: #ebe8e2; }
 
 /* --- About Container --- */
 .about-container {
@@ -99,21 +99,21 @@ body { background: #ffffff; color: #111111; font-family: 'DM Sans', sans-serif; 
   font-weight: 500;
   letter-spacing: -0.02em;
   margin-bottom: 40px;
-  color: #111;
+  color: #1a1916;
 }
 
-/* --- Intro Section (2 Columns) --- */
+/* --- Intro Section --- */
 .intro-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px; 
   margin-bottom: 120px;
   align-items: center;
 }
 
 .intro-text p {
   font-size: 18px;
-  color: #555;
+  color: #666;
   line-height: 1.7;
   margin-bottom: 24px;
   font-weight: 300;
@@ -121,13 +121,14 @@ body { background: #ffffff; color: #111111; font-family: 'DM Sans', sans-serif; 
 
 .intro-visual {
   width: 100%;
-  aspect-ratio: 1;
-  background: #f4f5f7; /* Fallback background color */
-  border-radius: 20px;
-  overflow: hidden; /* Ensures the image respects the border radius */
+  aspect-ratio: 3/4; 
+  max-width: 420px; 
+  background: radial-gradient(circle at 70% 30%, rgba(176,135,90,0.18) 0%, rgba(247,245,240,0) 60%); 
+  border-radius: 60px 20px 60px 20px; 
+  overflow: hidden; 
+  justify-self: end; 
 }
 
-/* New rule to make your photo fit perfectly */
 .intro-visual img {
   width: 100%;
   height: 100%;
@@ -135,7 +136,7 @@ body { background: #ffffff; color: #111111; font-family: 'DM Sans', sans-serif; 
   display: block;
 }
 
-/* --- Skills Section (3 Columns) --- */
+/* --- Skills Section --- */
 .skills-section {
   margin-bottom: 120px;
 }
@@ -147,7 +148,7 @@ body { background: #ffffff; color: #111111; font-family: 'DM Sans', sans-serif; 
 }
 
 .skill-card {
-  background: #f4f5f7;
+  background: #ebe8e2;
   border-radius: 20px;
   padding: 32px;
   transition: transform 0.3s ease;
@@ -161,7 +162,7 @@ body { background: #ffffff; color: #111111; font-family: 'DM Sans', sans-serif; 
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 24px;
-  color: #111;
+  color: #1a1916;
 }
 
 .skill-tags {
@@ -173,11 +174,11 @@ body { background: #ffffff; color: #111111; font-family: 'DM Sans', sans-serif; 
 .skill-tag {
   font-family: 'DM Mono', monospace;
   font-size: 12px;
-  color: #444;
-  background: #ffffff;
+  color: #1a1916;
+  background: #f7f5f0;
   padding: 8px 14px;
   border-radius: 100px;
-  border: 1px solid #eaeaea;
+  border: 1px solid #e0ddd8;
   letter-spacing: 0.02em;
 }
 
@@ -187,7 +188,7 @@ body { background: #ffffff; color: #111111; font-family: 'DM Sans', sans-serif; 
 }
 
 .timeline {
-  border-left: 2px solid #eaeaea;
+  border-left: 2px solid #e0ddd8;
   margin-left: 28px;
   padding-left: 56px;
   position: relative;
@@ -210,19 +211,19 @@ body { background: #ffffff; color: #111111; font-family: 'DM Sans', sans-serif; 
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: #ffffff;
-  border: 2px solid #eaeaea;
+  background: #f7f5f0;
+  border: 2px solid #e0ddd8;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'DM Mono', monospace;
   font-size: 13px;
-  color: #111;
+  color: #1a1916;
   font-weight: 500;
 }
 
 .timeline-card {
-  background: #f4f5f7;
+  background: #ebe8e2;
   border-radius: 20px;
   padding: 32px;
   transition: box-shadow 0.3s ease;
@@ -235,43 +236,100 @@ body { background: #ffffff; color: #111111; font-family: 'DM Sans', sans-serif; 
 .timeline-role {
   font-size: 20px;
   font-weight: 500;
-  color: #111;
+  color: #1a1916;
   margin-bottom: 4px;
 }
 
 .timeline-company {
   font-family: 'DM Mono', monospace;
   font-size: 13px;
-  color: #777;
+  color: #888;
   margin-bottom: 16px;
 }
 
 .timeline-desc {
   font-size: 15px;
-  color: #555;
+  color: #666;
   line-height: 1.6;
   font-weight: 300;
 }
 
-/* --- Footer --- */
+/* --- Modern Footer Section --- */
 .footer-section {
-  background: #111;
-  color: #fff;
+  background: #1a1916;
+  color: #f7f5f0;
   padding: 100px 48px 48px;
   margin-top: 64px;
+  border-radius: 40px 40px 0 0;
 }
 
 .footer-cta-wrap { margin-bottom: 100px; }
-.footer-heading { font-family: 'Playfair Display', serif; font-size: 64px; font-weight: 400; line-height: 1.1; margin-bottom: 24px; letter-spacing: -0.02em; }
-.footer-heading em { font-style: italic; color: #a3a3a3; }
-.footer-sub { font-size: 18px; color: #888; margin-bottom: 48px; font-weight: 300; }
-.footer-email { font-family: 'DM Mono', monospace; font-size: 28px; color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, 0.3); padding-bottom: 4px; transition: all 0.3s ease; }
-.footer-email:hover { border-color: #fff; }
-.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); }
+
+.footer-heading { 
+  font-family: 'DM Sans', sans-serif; 
+  font-size: 64px; 
+  font-weight: 500; 
+  line-height: 1.1; 
+  margin-bottom: 24px; 
+  letter-spacing: -0.03em; 
+}
+
+.footer-heading span { color: #888; }
+
+.footer-sub { 
+  font-family: 'DM Sans', sans-serif;
+  font-size: 20px; 
+  color: rgba(247,245,240,0.6); 
+  margin-bottom: 56px; 
+  font-weight: 400; 
+}
+
+.footer-email-btn { 
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'DM Sans', sans-serif; 
+  font-size: 20px; 
+  font-weight: 500;
+  color: #1a1916; 
+  background: #f7f5f0;
+  padding: 16px 36px;
+  border-radius: 100px;
+  text-decoration: none; 
+  transition: transform 0.3s ease, background 0.3s ease; 
+}
+
+.footer-email-btn:hover { 
+  transform: translateY(-4px);
+  background: #fff; 
+}
+
+.footer-bottom { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding-top: 40px; 
+  border-top: 1px solid rgba(247,245,240,0.1); 
+}
+
 .footer-links { display: flex; gap: 32px; }
-.footer-links a { font-family: 'DM Mono', monospace; font-size: 13px; color: #888; text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
-.footer-links a:hover { color: #fff; }
-.footer-copyright { font-family: 'DM Mono', monospace; font-size: 12px; color: #666; }
+
+.footer-links a { 
+  font-family: 'DM Sans', sans-serif; 
+  font-size: 15px; 
+  color: rgba(247,245,240,0.6); 
+  text-decoration: none; 
+  letter-spacing: 0.02em; 
+  transition: color 0.2s; 
+}
+
+.footer-links a:hover { color: #f7f5f0; }
+
+.footer-copyright { 
+  font-family: 'DM Sans', sans-serif; 
+  font-size: 14px; 
+  color: rgba(247,245,240,0.4); 
+}
 
 /* Responsive adjustments */
 @media (max-width: 900px) {
@@ -405,9 +463,9 @@ body { background: #ffffff; color: #111111; font-family: 'DM Sans', sans-serif; 
 
   <div class="footer-section" id="contact">
     <div class="footer-cta-wrap">
-      <h2 class="footer-heading">Have a complex problem?<br><em>Let's collaborate.</em></h2>
+      <h2 class="footer-heading">Have a complex problem?<br><span>Let's collaborate.</span></h2>
       <p class="footer-sub">Open to full-time roles and interesting conversations.</p>
-      <a href="mailto:ishaanuxd@gmail.com" class="footer-email">ishaanuxd@gmail.com ↗</a>
+      <a href="mailto:ishaanuxd@gmail.com" class="footer-email-btn">ishaanuxd@gmail.com ↗</a>
     </div>
     <div class="footer-bottom">
       <div class="footer-copyright">© 2026 Ishaan Jain. All rights reserved.</div>
