@@ -1,332 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Ishaan Jain</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@300;400&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; min-height: 100vh; overflow-x: hidden; }
-
-/* --- Navigation --- */
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 32px 48px;
-  position: relative;
-  z-index: 10;
-  max-width: 1200px; 
-  margin: 0 auto;    
-}
-
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 500;
-  font-size: 16px;
-  color: #1a1916;
-  text-decoration: none; 
-}
-
-.nav-logo-box {
-  width: 32px; 
-  height: 32px;
-  background: #1a1916;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden; 
-}
-
-.nav-logo-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 32px;
-}
-
-.nav-links a {
-  font-size: 15px;
-  color: #1a1916;
-  text-decoration: none;
-  font-weight: 400;
-  transition: opacity 0.2s;
-}
-
-.nav-links a:hover { opacity: 0.6; }
-
-.nav-links a.active { 
-  font-weight: 600; 
-  border-bottom: 2px solid #1a1916; 
-  padding-bottom: 2px; 
-}
-
-.nav-social {
-  display: flex;
-  gap: 12px;
-}
-
-.icon-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid #e0ddd8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #1a1916;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 500;
-  transition: background 0.2s;
-}
-
-.icon-btn:hover { background: #ebe8e2; }
-
-/* --- Hero Section --- */
-.hero {
-  padding: 80px 48px 120px;
-  max-width: 1200px; 
-  margin: 0 auto;    
-  position: relative;
-}
-
-.hero-bg-blur {
-  position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(176,135,90,0.12) 0%, rgba(247,245,240,0) 70%);
-  z-index: -1;
-  pointer-events: none;
-}
-
-.profile-pic {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: #e0ddd8; 
-  margin-bottom: 40px;
-  overflow: hidden;
-}
-
-.profile-pic img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-headline {
-  font-size: 64px;
-  line-height: 1.1;
-  color: #1a1916;
-  font-weight: 400; 
-  letter-spacing: -0.01em; 
-  margin-bottom: 40px;
-  max-width: 950px;
-}
-
-.hero-headline .gray {
-  color: #888;
-  font-weight: 300; 
-}
-
-.hero-sub {
-  font-size: 20px;
-  color: #1a1916;
-  font-weight: 400;
-  margin-bottom: 24px;
-}
-
-/* --- Work Section --- */
-.work-section { 
-  padding: 0 48px 64px; 
-  max-width: 1200px; 
-  margin: 0 auto;    
-}
-
-.projects {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px 40px; 
-}
-
-.proj {
-  cursor: pointer;
-  text-decoration: none;
-  display: block;
-}
-
-.proj:hover .proj-thumb-wrap { 
-  transform: translateY(-4px); 
-  box-shadow: 0 12px 24px rgba(0,0,0,0.06); 
-}
-
-.proj-thumb-wrap {
-  width: 100%;
-  aspect-ratio: 1.4; 
-  border-radius: 20px;
-  overflow: hidden;
-  margin-bottom: 24px;
-  transition: all 0.3s ease;
-  background: #ebe8e2;
-}
-
-.proj-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.proj-thumb {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.proj-thumb-illo {
-  font-size: 32px;
-  font-weight: 500;
-  color: #1a1916;
-  opacity: 0.6;
-}
-
-.proj-meta { padding: 0 4px; }
-
-.proj-client {
-  font-size: 15px;
-  color: #888;
-  margin-bottom: 8px;
-}
-
-.proj-title {
-  font-size: 22px;
-  color: #1a1916;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
-
-.thumb-1 { background: linear-gradient(135deg, #dce8f0 0%, #c5d8e8 100%); }
-.thumb-2 { background: linear-gradient(135deg, #f0e8dc 0%, #e8d5c0 100%); }
-.thumb-3 { background: linear-gradient(135deg, #dce8dc 0%, #c5d8c5 100%); }
-.thumb-4 { background: linear-gradient(135deg, #e8dce8 0%, #d5c5d8 100%); }
-
-/* --- Modern Footer Section (Full Width) --- */
-.footer-section {
-  background: #1a1916;
-  color: #f7f5f0;
-  padding: 100px 48px 48px;
-  margin-top: 64px;
-  border-radius: 40px 40px 0 0; 
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-cta-wrap { margin-bottom: 100px; }
-
-.footer-heading { 
-  font-family: 'DM Sans', sans-serif; 
-  font-size: 64px; 
-  font-weight: 500; 
-  line-height: 1.1; 
-  margin-bottom: 24px; 
-  letter-spacing: -0.03em; 
-}
-
-.footer-heading span { color: #888; } 
-
-.footer-sub { 
-  font-family: 'DM Sans', sans-serif;
-  font-size: 20px; 
-  color: rgba(247,245,240,0.6); 
-  margin-bottom: 56px; 
-  font-weight: 400; 
-}
-
-.footer-email-btn { 
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-family: 'DM Sans', sans-serif; 
-  font-size: 20px; 
-  font-weight: 500;
-  color: #1a1916; 
-  background: #f7f5f0;
-  padding: 16px 36px;
-  border-radius: 100px;
-  text-decoration: none; 
-  transition: transform 0.3s ease, background 0.3s ease; 
-}
-
-.footer-email-btn:hover { 
-  transform: translateY(-4px);
-  background: #fff; 
-}
-
-.footer-bottom { 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-  padding-top: 40px; 
-  border-top: 1px solid rgba(247,245,240,0.1); 
-}
-
-.footer-links { display: flex; gap: 32px; }
-
-.footer-links a { 
-  font-family: 'DM Sans', sans-serif; 
-  font-size: 15px; 
-  color: rgba(247,245,240,0.6); 
-  text-decoration: none; 
-  letter-spacing: 0.02em; 
-  transition: color 0.2s; 
-}
-
-.footer-links a:hover { color: #f7f5f0; }
-
-.footer-copyright { 
-  font-family: 'DM Sans', sans-serif; 
-  font-size: 14px; 
-  color: rgba(247,245,240,0.4); 
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Ishaan Jain</title>
+  <link rel="icon" type="image/webp" href="assets/logo/logo.webp">
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
+
   <nav class="nav">
     <a href="index.html" class="nav-left">
       <div class="nav-logo-box">
-        <img src="pp.png" alt="Ishaan Jain Logo">
+        <img src="assets/profile/pp.png" alt="Ishaan Jain Logo">
       </div>
       Ishaan Jain
     </a>
     <div class="nav-right">
       <div class="nav-links">
         <a href="index.html" class="active">Work</a>
-        <a href="about.html">About</a>
+        <a href="about/">About</a>
         <a href="https://drive.google.com/file/d/1O5Kp6qlSXrkXVOnDSg89pSQX_AsUYIuP/view?usp=sharing" target="_blank">Resume</a>
       </div>
       <div class="nav-social">
@@ -342,9 +35,8 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
     <h1 class="hero-headline">
       <span class="gray">Interaction Designer </span> creating Practical Interfaces for AI tools and Complex Systems
     </h1>
-    
-    <p class="hero-sub">Currently, Product Design Intern for Sprinklr's CFM product</p>
 
+    <p class="hero-sub">Currently, Product Design Intern for Sprinklr's CFM product</p>
   </div>
 
   <div class="work-section">
@@ -352,7 +44,7 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
 
       <a href="#" class="proj">
         <div class="proj-thumb-wrap">
-          <img src="NPL.png" alt="CSIR-NPL Atomic Clock Dashboard" class="proj-img">
+          <img src="assets/thumbnails/NPL.png" alt="CSIR-NPL Atomic Clock Dashboard" class="proj-img">
         </div>
         <div class="proj-meta">
           <div class="proj-client">CSIR-NPL</div>
@@ -362,9 +54,7 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
 
       <a href="https://www.behance.net/gallery/223412309/Lagrange" target="_blank" class="proj">
         <div class="proj-thumb-wrap">
-          <div class="proj-thumb-wrap">
-          <img src="lagrange.png" alt="Lagrange Branding & UI" class="proj-img">
-          </div>
+          <img src="assets/thumbnails/lagrange.png" alt="Lagrange Branding & UI" class="proj-img">
         </div>
         <div class="proj-meta">
           <div class="proj-client">Branding & Interface</div>
@@ -374,7 +64,7 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
 
       <a href="https://www.behance.net/gallery/231249881/IISc-Internship" target="_blank" class="proj">
         <div class="proj-thumb-wrap">
-          <img src="Slide 16_9 - 46.png" alt="IISc Project Visuals and UI" class="proj-img">
+          <img src="assets/thumbnails/Slide 16_9 - 46.png" alt="IISc Project Visuals and UI" class="proj-img">
         </div>
         <div class="proj-meta">
           <div class="proj-client">DCOE, IISc Bengaluru</div>
@@ -384,9 +74,7 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
 
       <a href="https://www.behance.net/gallery/199376075/Adagrad-Gamified-Learning-Experience" target="_blank" class="proj">
         <div class="proj-thumb-wrap">
-          <div class="proj-thumb-wrap">
-          <img src="adagrad.png" alt="Adagrad app" class="proj-img">
-          </div>
+          <img src="assets/thumbnails/adagrad.png" alt="Adagrad app" class="proj-img">
         </div>
         <div class="proj-meta">
           <div class="proj-client">Design Project</div>
@@ -413,5 +101,6 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
       </div>
     </div>
   </div>
+
 </body>
 </html>
