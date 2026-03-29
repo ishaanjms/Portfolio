@@ -35,18 +35,16 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
 .nav-logo-box {
   width: 32px; 
   height: 32px;
-  background: #1a1916;
-  border-radius: 8px;
+  /* Removed background and border-radius */
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; 
+  /* overflow: hidden is optional now, but fine to keep */
 }
 
 .nav-logo-box img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 
