@@ -108,11 +108,13 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
 
 /* --- Footer --- */
 .footer-section {
+  width: 100%;
   background: #1a1916;
   color: #f7f5f0;
   padding: 100px 32px 48px;
   margin-top: 64px;
   border-radius: 40px 40px 0 0;
+  box-sizing: border-box;
 }
 
 .footer-inner {
