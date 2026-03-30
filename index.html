@@ -1,350 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Ishaan Jain</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@300;400&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
+  <meta charset="UTF-8">
+  <title>Ishaan Jain</title>
+  <link rel="icon" type="image/png" href="assets/logo/logo.png">
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; min-height: 100vh; overflow-x: hidden; }
-
-/* --- Navigation --- */
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 32px 48px;
-  position: relative;
-  z-index: 10;
-  max-width: 1200px; 
-  margin: 0 auto;    
-}
-
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 500;
-  font-size: 16px;
-  color: #1a1916;
-  text-decoration: none; 
-}
-
-.nav-logo-box {
-  width: 32px; 
-  height: 32px;
-  /*Remove background: #1a1916; */
-  /* Remove border-radius: 8px; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden; 
-}
-
-.nav-logo-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 32px;
-}
-
-.nav-links a {
-  font-size: 15px;
-  color: #1a1916;
-  text-decoration: none;
-  font-weight: 400;
-  transition: opacity 0.2s;
-}
-
-.nav-links a:hover { opacity: 0.6; }
-
-.nav-links a.active { 
-  font-weight: 600; 
-  border-bottom: 2px solid #1a1916; 
-  padding-bottom: 2px; 
-}
-
-.nav-social {
-  display: flex;
-  gap: 12px;
-}
-
-.icon-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid #e0ddd8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #1a1916;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 500;
-  transition: background 0.2s;
-}
-
-.icon-btn:hover { background: #ebe8e2; }
-
-/* --- Hero Section --- */
-.hero {
-  padding: 80px 48px 120px;
-  max-width: 1200px; 
-  margin: 0 auto;    
-  position: relative;
-}
-
-.hero-bg-blur {
-  position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(176,135,90,0.12) 0%, rgba(247,245,240,0) 70%);
-  z-index: -1;
-  pointer-events: none;
-}
-
-.profile-pic {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: #e0ddd8; 
-  margin-bottom: 40px;
-  overflow: hidden;
-}
-
-.profile-pic img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-headline {
-  font-size: 64px;
-  line-height: 1.1;
-  color: #1a1916;
-  font-weight: 400; 
-  letter-spacing: -0.01em; 
-  margin-bottom: 40px;
-  max-width: 950px;
-}
-
-.hero-headline .gray {
-  color: #888;
-  font-weight: 300; 
-}
-
-.hero-sub {
-  font-size: 20px;
-  color: #1a1916;
-  font-weight: 400;
-  margin-bottom: 24px;
-}
-
-/* --- Work Section --- */
-.work-section { 
-  padding: 0 48px 64px; 
-  max-width: 1200px; 
-  margin: 0 auto;    
-}
-
-.projects {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px 40px; 
-}
-
-.proj {
-  cursor: pointer;
-  text-decoration: none;
-  display: block;
-}
-
-.proj:hover .proj-thumb-wrap { 
-  transform: translateY(-4px); 
-  box-shadow: 0 12px 24px rgba(0,0,0,0.06); 
-}
-
-.proj-thumb-wrap {
-  width: 100%;
-  aspect-ratio: 1.4; 
-  border-radius: 20px;
-  overflow: hidden;
-  margin-bottom: 24px;
-  transition: all 0.3s ease;
-  background: #ebe8e2;
-}
-
-.proj-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.proj-thumb {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.proj-thumb-illo {
-  font-size: 32px;
-  font-weight: 500;
-  color: #1a1916;
-  opacity: 0.6;
-}
-
-.proj-meta { padding: 0 4px; }
-
-.proj-client {
-  font-size: 15px;
-  color: #888;
-  margin-bottom: 8px;
-}
-
-.proj-title {
-  font-size: 22px;
-  color: #1a1916;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
-
-.thumb-1 { background: linear-gradient(135deg, #dce8f0 0%, #c5d8e8 100%); }
-.thumb-2 { background: linear-gradient(135deg, #f0e8dc 0%, #e8d5c0 100%); }
-.thumb-3 { background: linear-gradient(135deg, #dce8dc 0%, #c5d8c5 100%); }
-.thumb-4 { background: linear-gradient(135deg, #e8dce8 0%, #d5c5d8 100%); }
-
-/* --- Modern Footer Section (Full Width) --- */
-.footer-section {
-  background: #1a1916;
-  color: #f7f5f0;
-  padding: 100px 48px 48px;
-  margin-top: 64px;
-  border-radius: 40px 40px 0 0; 
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-cta-wrap { margin-bottom: 100px; }
-
-.footer-heading { 
-  font-family: 'DM Sans', sans-serif; 
-  font-size: 64px; 
-  font-weight: 500; 
-  line-height: 1.1; 
-  margin-bottom: 24px; 
-  letter-spacing: -0.03em; 
-}
-
-.footer-heading span { color: #888; } 
-
-.footer-sub { 
-  font-family: 'DM Sans', sans-serif;
-  font-size: 20px; 
-  color: rgba(247,245,240,0.6); 
-  margin-bottom: 56px; 
-  font-weight: 400; 
-}
-
-.footer-email-btn { 
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-family: 'DM Sans', sans-serif; 
-  font-size: 20px; 
-  font-weight: 500;
-  color: #1a1916; 
-  background: #f7f5f0;
-  padding: 16px 36px;
-  border-radius: 100px;
-  text-decoration: none; 
-  transition: transform 0.3s ease, background 0.3s ease; 
-}
-
-.footer-email-btn:hover { 
-  transform: translateY(-4px);
-  background: #fff; 
-}
-
-.footer-bottom { 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-  padding-top: 40px; 
-  border-top: 1px solid rgba(247,245,240,0.1); 
-}
-
-.footer-links { display: flex; gap: 32px; }
-
-.footer-links a { 
-  font-family: 'DM Sans', sans-serif; 
-  font-size: 15px; 
-  color: rgba(247,245,240,0.6); 
-  text-decoration: none; 
-  letter-spacing: 0.02em; 
-  transition: color 0.2s; 
-}
-
-.footer-links a:hover { color: #f7f5f0; }
-
-.footer-copyright { 
-  font-family: 'DM Sans', sans-serif; 
-  font-size: 14px; 
-  color: rgba(247,245,240,0.4); 
-}
-</style>
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
+
   <nav class="nav">
     <a href="index.html" class="nav-left">
       <div class="nav-logo-box">
-        <img src="pp.png" alt="Ishaan Jain Logo">
+        <img src="assets/profile/avatar.png" alt="Ishaan Jain">
       </div>
       Ishaan Jain
     </a>
     <div class="nav-right">
       <div class="nav-links">
-        <a href="index.html" class="active">Work</a>
-        <a href="about.html">About</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="about/">About</a>
+        <a href="garage/">Garage</a>
         <a href="https://drive.google.com/file/d/1O5Kp6qlSXrkXVOnDSg89pSQX_AsUYIuP/view?usp=sharing" target="_blank">Resume</a>
       </div>
       <div class="nav-social">
-        <a href="https://www.linkedin.com/in/ishaan-jain-72a2b2248/" target="_blank" class="icon-btn">in</a>
+        <a href="https://www.linkedin.com/in/ishaan-jain-72a2b2248/" target="_blank" class="social-icon" title="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        </a>
+        <a href="https://github.com/ishaanjms" target="_blank" class="social-icon" title="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="https://www.behance.net/ishaanjain" target="_blank" class="social-icon" title="Behance">
+          <svg viewBox="0 0 24 24"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029H23.726zm-7.726-3h3.543c-.054-1.174-.237-2.294-1.73-2.294-1.48 0-1.754 1.135-1.813 2.294zM8 12.219c1.021-.355 1.603-1.09 1.603-2.215C9.603 8.264 8.389 7 5.604 7H0v13h5.955c2.871 0 4.536-1.556 4.536-3.919 0-1.436-.688-2.507-2.491-2.862zM2.26 9.095h2.974c1.154 0 1.96.355 1.96 1.43 0 .99-.71 1.483-1.96 1.483H2.26V9.095zm3.402 8.806H2.26v-3.08h3.396c1.44 0 2.179.59 2.179 1.562 0 .984-.715 1.518-2.173 1.518z"/></svg>
+        </a>
       </div>
     </div>
   </nav>
 
   <div class="hero">
     <div class="hero-bg-blur"></div>
-    <div class="profile-pic"></div>
 
-    <h1 class="hero-headline">
-      <span class="gray">Interaction Designer </span> creating Practical Interfaces for AI tools and Complex Systems
+    <h1 class="hero-headline anim-fade-up">
+      <span class="purple">Interaction Designer </span><span id="typed-text"></span><span class="cursor">|</span>
     </h1>
-    
-    <p class="hero-sub">Currently, Product Design Intern for Sprinklr's CFM product</p>
 
+    <p class="hero-sub anim-fade-up" style="animation-delay:0.2s">Currently, Product Design Intern for Sprinklr's CFM product</p>
   </div>
 
   <div class="work-section">
@@ -352,7 +54,8 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
 
       <a href="#" class="proj">
         <div class="proj-thumb-wrap">
-          <img src="NPL.png" alt="CSIR-NPL Atomic Clock Dashboard" class="proj-img">
+          <img src="assets/thumbnails/npl-atomic-clock.png" alt="CSIR-NPL Atomic Clock Dashboard" class="proj-img">
+          <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></div>
         </div>
         <div class="proj-meta">
           <div class="proj-client">CSIR-NPL</div>
@@ -362,9 +65,8 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
 
       <a href="https://www.behance.net/gallery/223412309/Lagrange" target="_blank" class="proj">
         <div class="proj-thumb-wrap">
-          <div class="proj-thumb-wrap">
-          <img src="lagrange.png" alt="Lagrange Branding & UI" class="proj-img">
-          </div>
+          <img src="assets/thumbnails/lagrange-branding.png" alt="Lagrange Branding & UI" class="proj-img">
+          <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></div>
         </div>
         <div class="proj-meta">
           <div class="proj-client">Branding & Interface</div>
@@ -374,7 +76,8 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
 
       <a href="https://www.behance.net/gallery/231249881/IISc-Internship" target="_blank" class="proj">
         <div class="proj-thumb-wrap">
-          <img src="Slide 16_9 - 46.png" alt="IISc Project Visuals and UI" class="proj-img">
+          <img src="assets/thumbnails/iisc-internship.png" alt="IISc Project Visuals and UI" class="proj-img">
+          <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></div>
         </div>
         <div class="proj-meta">
           <div class="proj-client">DCOE, IISc Bengaluru</div>
@@ -384,9 +87,8 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
 
       <a href="https://www.behance.net/gallery/199376075/Adagrad-Gamified-Learning-Experience" target="_blank" class="proj">
         <div class="proj-thumb-wrap">
-          <div class="proj-thumb-wrap">
-          <img src="adagrad.png" alt="Adagrad app" class="proj-img">
-          </div>
+          <img src="assets/thumbnails/adagrad-gamified.png" alt="Adagrad app" class="proj-img">
+          <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></div>
         </div>
         <div class="proj-meta">
           <div class="proj-client">Design Project</div>
@@ -406,12 +108,40 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
       </div>
       <div class="footer-bottom">
         <div class="footer-copyright">© 2026 Ishaan Jain. All rights reserved.</div>
+        <div class="footer-credit">
+          <a href="https://github.com/aryankaushik" target="_blank" class="footer-credit-link">
+            <span class="footer-heart">♥</span> Coded by Aryan Kaushik
+          </a>
+        </div>
         <div class="footer-links">
           <a href="https://www.linkedin.com/in/ishaan-jain-72a2b2248/" target="_blank">LinkedIn</a>
+          <a href="https://github.com/ishaanjms" target="_blank">GitHub</a>
           <a href="https://drive.google.com/file/d/1O5Kp6qlSXrkXVOnDSg89pSQX_AsUYIuP/view?usp=sharing" target="_blank">Resume</a>
         </div>
       </div>
     </div>
   </div>
+
+
+<script>
+  // Typing animation
+  const words = ["creating Practical Interfaces for AI tools and Complex Systems"];
+  let text = words[0], i = 0;
+  const el = document.getElementById('typed-text');
+  function type() {
+    if (i <= text.length) {
+      el.textContent = text.slice(0, i++);
+      setTimeout(type, i === 1 ? 600 : 28);
+    }
+  }
+  type();
+
+  // Footer + scroll reveal via IntersectionObserver
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.footer-section, .anim-fade-up').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
