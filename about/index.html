@@ -18,6 +18,9 @@
       </div>
       Ishaan Jain
     </a>
+    <button class="nav-hamburger" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
     <div class="nav-right">
       <div class="nav-links">
         <a href="../index.html">Home</a>
@@ -157,12 +160,12 @@
       <div class="footer-cta-wrap">
         <h2 class="footer-heading">Have a complex problem?<br><span>Let's collaborate.</span></h2>
         <p class="footer-sub">Open to full-time roles and interesting conversations.</p>
-        <a href="mailto:ishaanuxd@gmail.com" class="footer-email-btn">ishaanuxd@gmail.com ↗</a>
+        <a href="mailto:ishaanuxd@gmail.com" class="footer-email-btn">ishaanuxd@gmail.com <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;flex-shrink:0"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></a>
       </div>
       <div class="footer-bottom">
         <div class="footer-copyright">© 2026 Ishaan Jain. All rights reserved.</div>
         <div class="footer-credit">
-          <a href="https://github.com/aryankaushik" target="_blank" rel="noopener noreferrer" class="footer-credit-link">
+          <a href="https://github.com/itsaryankaushik" target="_blank" rel="noopener noreferrer" class="footer-credit-link">
             <span class="footer-heart">♥</span> Coded by Aryan Kaushik
           </a>
         </div>
@@ -177,6 +180,12 @@
 
 
 <script>
+  // Hamburger nav toggle
+  document.getElementById('nav-toggle').addEventListener('click', function() {
+    this.classList.toggle('open');
+    document.querySelector('.nav-right').classList.toggle('open');
+  });
+
   // Duplicate marquee chips for seamless infinite scroll
   document.querySelectorAll('.tools-inner').forEach(el => {
     el.innerHTML += el.innerHTML;

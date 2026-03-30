@@ -332,10 +332,11 @@
 
 @media (max-width: 640px) {
   .about-container   { padding: 28px 16px 64px; }
-  .about-watermark   { display: none; }
+  .about-watermark   { font-size: 60px; }
   .about-main-title  { font-size: 28px; }
   .about-page-header { margin-bottom: 48px; }
   .intro-text p      { font-size: 15px; }
+  .intro-visual      { justify-self: center; max-width: 260px; }
   .intro-visual::before { display: none; }
   .timeline-role     { font-size: 16px; }
   .timeline-card     { padding: 18px 20px; }

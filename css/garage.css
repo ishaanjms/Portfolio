@@ -224,7 +224,7 @@
   .bento-pos-8  { grid-column: 1 / 3; grid-row: 6; }
   .bento-pos-9  { grid-column: 1 / 2; grid-row: 7; }
   .bento-pos-10 { grid-column: 2 / 3; grid-row: 7; }
-  .garage-watermark { display: none; }
+  .garage-watermark { font-size: 60px; }
   .bento-name  { font-size: 13px; }
   .bento-label { font-size: 10px; }
 }
