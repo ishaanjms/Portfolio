@@ -53,41 +53,48 @@
       </div>
     </div>
 
-    <div class="skills-section">
+    <div class="tools-section">
       <h2 class="section-title">Skills & Technologies</h2>
-      <div class="skills-grid">
 
-        <div class="skill-card">
-          <h3 class="skill-title">UX & Visual Design</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Figma</span>
-            <span class="skill-tag">Journey Mapping</span>
-            <span class="skill-tag">Thematic Analysis</span>
-            <span class="skill-tag">User Research</span>
-            <span class="skill-tag">Illustrator</span>
+      <div class="tools-track-outer">
+
+        <!-- Row 1: Design tools → -->
+        <div class="tools-row tools-fwd">
+          <div class="tools-inner">
+            <div class="tool-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" onerror="this.style.display='none'"><span>Figma</span></div>
+            <div class="tool-chip"><span class="tool-letter">UR</span><span>User Research</span></div>
+            <div class="tool-chip"><span class="tool-letter">JM</span><span>Journey Mapping</span></div>
+            <div class="tool-chip"><span class="tool-letter">TA</span><span>Thematic Analysis</span></div>
+            <div class="tool-chip"><span class="tool-letter">Ai</span><span>Illustrator</span></div>
+            <div class="tool-chip"><span class="tool-letter">Fx</span><span>Prototyping</span></div>
           </div>
         </div>
 
-        <div class="skill-card">
-          <h3 class="skill-title">Data Science & AI</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">TensorFlow</span>
-            <span class="skill-tag">Scikit Learn</span>
-            <span class="skill-tag">Langchain</span>
-            <span class="skill-tag">Machine Learning</span>
-            <span class="skill-tag">Tableau</span>
+        <!-- Row 2: AI / Data tools ← -->
+        <div class="tools-row tools-rev">
+          <div class="tools-inner">
+            <div class="tool-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" onerror="this.style.display='none'"><span>Python</span></div>
+            <div class="tool-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" onerror="this.style.display='none'"><span>TensorFlow</span></div>
+            <div class="tool-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn" onerror="this.style.display='none'"><span>Scikit-learn</span></div>
+            <div class="tool-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter" onerror="this.style.display='none'"><span>Jupyter</span></div>
+            <div class="tool-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" onerror="this.style.display='none'"><span>Pandas</span></div>
+            <div class="tool-chip"><span class="tool-letter">LC</span><span>Langchain</span></div>
+            <div class="tool-chip"><span class="tool-letter">Tb</span><span>Tableau</span></div>
+            <div class="tool-chip"><span class="tool-letter">ML</span><span>Machine Learning</span></div>
           </div>
         </div>
 
-        <div class="skill-card">
-          <h3 class="skill-title">Prototyping & Engineering</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Streamlit</span>
-            <span class="skill-tag">Gradio</span>
-            <span class="skill-tag">HTML / CSS</span>
-            <span class="skill-tag">Firebase</span>
-            <span class="skill-tag">Cursor</span>
+        <!-- Row 3: Engineering tools → -->
+        <div class="tools-row tools-fwd">
+          <div class="tools-inner">
+            <div class="tool-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" onerror="this.style.display='none'"><span>HTML</span></div>
+            <div class="tool-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" onerror="this.style.display='none'"><span>CSS</span></div>
+            <div class="tool-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg" alt="Firebase" onerror="this.style.display='none'"><span>Firebase</span></div>
+            <div class="tool-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" onerror="this.style.display='none'"><span>Git</span></div>
+            <div class="tool-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" onerror="this.style.display='none'"><span>VS Code</span></div>
+            <div class="tool-chip"><span class="tool-letter">St</span><span>Streamlit</span></div>
+            <div class="tool-chip"><span class="tool-letter">Gr</span><span>Gradio</span></div>
+            <div class="tool-chip"><span class="tool-letter">Cu</span><span>Cursor</span></div>
           </div>
         </div>
 
@@ -166,6 +173,11 @@
 
 
 <script>
+  // Duplicate marquee chips for seamless infinite scroll
+  document.querySelectorAll('.tools-inner').forEach(el => {
+    el.innerHTML += el.innerHTML;
+  });
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.1 });
