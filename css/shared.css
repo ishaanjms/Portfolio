@@ -201,10 +201,17 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
 }
 
 /* --- Responsive --- */
-@media (max-width: 768px) {
-  .nav { padding: 20px 16px; }
-  .nav-links { gap: 20px; }
-  .footer-section { padding: 64px 16px 40px; }
-  .footer-heading { font-size: 36px; }
+@media (max-width: 900px) {
+  .nav { padding: 20px 20px; }
+}
+
+@media (max-width: 640px) {
+  .nav { padding: 16px 16px; }
+  .nav-links { gap: 16px; }
+  .nav-links a { font-size: 14px; }
+  .footer-section { padding: 56px 16px 36px; }
+  .footer-heading { font-size: 32px; }
+  .footer-sub { font-size: 15px; }
   .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+  .footer-email-btn { font-size: 15px; padding: 12px 24px; }
 }

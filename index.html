@@ -40,13 +40,12 @@
 
   <div class="hero">
     <div class="hero-bg-blur"></div>
-    <div class="profile-pic"></div>
 
-    <h1 class="hero-headline">
-      <span class="gray">Interaction Designer </span> creating Practical Interfaces for AI tools and Complex Systems
+    <h1 class="hero-headline anim-fade-up">
+      <span class="purple">Interaction Designer </span><span id="typed-text"></span><span class="cursor">|</span>
     </h1>
 
-    <p class="hero-sub">Currently, Product Design Intern for Sprinklr's CFM product</p>
+    <p class="hero-sub anim-fade-up" style="animation-delay:0.2s">Currently, Product Design Intern for Sprinklr's CFM product</p>
   </div>
 
   <div class="work-section">
@@ -112,5 +111,26 @@
     </div>
   </div>
 
+
+<script>
+  // Typing animation
+  const words = ["creating Practical Interfaces for AI tools and Complex Systems"];
+  let text = words[0], i = 0;
+  const el = document.getElementById('typed-text');
+  function type() {
+    if (i <= text.length) {
+      el.textContent = text.slice(0, i++);
+      setTimeout(type, i === 1 ? 600 : 28);
+    }
+  }
+  type();
+
+  // Footer + scroll reveal via IntersectionObserver
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.footer-section, .anim-fade-up').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
