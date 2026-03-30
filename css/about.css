@@ -1,41 +1,50 @@
 /* --- About Container --- */
 .about-container {
-  padding: 64px 48px 120px;
+  padding: 48px 32px 100px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .section-title {
-  font-size: 36px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  margin-bottom: 40px;
-  color: #1a1916;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 32px;
 }
 
 /* --- Intro Section --- */
 .intro-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 80px;
-  margin-bottom: 120px;
+  gap: 60px;
+  margin-bottom: 100px;
   align-items: center;
 }
 
-.intro-text p {
-  font-size: 18px;
-  color: #666;
-  line-height: 1.7;
+.intro-text h1.section-title {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  color: #1a1916;
   margin-bottom: 24px;
+}
+
+.intro-text p {
+  font-size: 17px;
+  color: #666;
+  line-height: 1.75;
+  margin-bottom: 20px;
   font-weight: 300;
 }
 
 .intro-visual {
   width: 100%;
   aspect-ratio: 3/4;
-  max-width: 420px;
-  background: radial-gradient(circle at 70% 30%, rgba(176,135,90,0.18) 0%, rgba(247,245,240,0) 60%);
-  border-radius: 60px 20px 60px 20px;
+  max-width: 380px;
+  border-radius: 40px 16px 40px 16px;
   overflow: hidden;
   justify-self: end;
 }
@@ -49,140 +58,170 @@
 
 /* --- Skills Section --- */
 .skills-section {
-  margin-bottom: 120px;
+  margin-bottom: 100px;
 }
 
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 20px;
 }
 
 .skill-card {
   background: #ffffff;
   border: 1px solid #e0ddd8;
-  border-radius: 24px;
-  padding: 36px;
-  box-shadow: 0 4px 12px rgba(26, 25, 22, 0.03);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 2px 8px rgba(26, 25, 22, 0.03);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(26, 25, 22, 0.06);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(26, 25, 22, 0.06);
 }
 
 .skill-title {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   color: #1a1916;
 }
 
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 .skill-tag {
   font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
   color: #1a1916;
   background: #f7f5f0;
-  padding: 8px 16px;
+  padding: 6px 14px;
   border-radius: 100px;
   border: 1px solid #e0ddd8;
-  transition: background 0.2s, border-color 0.2s;
+  transition: background 0.2s;
 }
 
 .skill-tag:hover {
   background: #ebe8e2;
-  border-color: #d1cdc5;
 }
 
-/* --- Experience Section --- */
+/* --- Experience / Timeline --- */
 .experience-section {
-  max-width: 900px;
+  max-width: 760px;
 }
 
 .timeline {
   border-left: 2px solid #e0ddd8;
-  margin-left: 28px;
-  padding-left: 56px;
+  margin-left: 24px;
+  padding-left: 40px;
   position: relative;
-  margin-top: 24px;
+  margin-top: 20px;
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 56px;
+  margin-bottom: 20px;
 }
 
-.timeline-item:last-child {
-  margin-bottom: 0;
-}
-
+/* Year bubble */
 .timeline-date {
   position: absolute;
-  left: -85px;
-  top: 0;
-  width: 56px;
-  height: 56px;
+  left: -66px;
+  top: 18px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: #ffffff;
-  border: 4px solid #f7f5f0;
+  border: 3px solid #f7f5f0;
   box-shadow: 0 0 0 2px #e0ddd8;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   color: #1a1916;
   font-weight: 600;
 }
 
+/* Card: always shows role + company, expands for description */
 .timeline-card {
   background: #ffffff;
   border: 1px solid #e0ddd8;
-  border-radius: 24px;
-  padding: 40px;
-  box-shadow: 0 8px 24px rgba(26, 25, 22, 0.03);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 16px;
+  padding: 24px 28px;
+  cursor: default;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .timeline-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(26, 25, 22, 0.06);
+  box-shadow: 0 8px 24px rgba(26, 25, 22, 0.07);
+  border-color: #ccc9c2;
 }
 
 .timeline-role {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   color: #1a1916;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .timeline-company {
   font-family: 'DM Sans', sans-serif;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
   color: #b0875a;
-  margin-bottom: 20px;
+}
+
+/* Description hidden by default, expands on hover */
+.timeline-desc-wrap {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.35s ease, margin-top 0.3s ease;
+  opacity: 0;
+}
+
+.timeline-card:hover .timeline-desc-wrap {
+  max-height: 120px;
+  opacity: 1;
+  margin-top: 14px;
+  transition: max-height 0.4s ease, opacity 0.35s ease 0.05s, margin-top 0.3s ease;
+}
+
+/* Delay collapse on hover-out */
+.timeline-card .timeline-desc-wrap {
+  transition: max-height 0.4s ease 0.25s, opacity 0.3s ease, margin-top 0.3s ease 0.25s;
 }
 
 .timeline-desc {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.7;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.65;
   font-weight: 400;
 }
 
+/* Footer scroll reveal for about page too */
+.footer-section { transition: opacity 0.7s ease, transform 0.7s ease; }
+
 /* --- Responsive --- */
 @media (max-width: 900px) {
-  .intro-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-container { padding: 36px 20px 80px; }
+  .intro-grid { grid-template-columns: 1fr; gap: 40px; margin-bottom: 72px; }
+  .intro-visual { max-width: 300px; justify-self: start; }
+  .skills-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .timeline { margin-left: 16px; padding-left: 32px; }
+  .timeline-date { width: 40px; height: 40px; left: -56px; font-size: 11px; }
+}
+
+@media (max-width: 640px) {
+  .about-container { padding: 28px 16px 64px; }
   .skills-grid { grid-template-columns: 1fr; }
-  .timeline { margin-left: 16px; padding-left: 40px; }
-  .timeline-date { width: 48px; height: 48px; left: -66px; font-size: 11px; }
+  .intro-text h1.section-title { font-size: 28px; }
+  .intro-text p { font-size: 15px; }
+  .timeline-role { font-size: 16px; }
+  .timeline-card { padding: 18px 20px; }
 }
