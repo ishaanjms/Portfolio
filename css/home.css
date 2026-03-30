@@ -84,23 +84,23 @@
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   background: #ebe8e2;
   position: relative;
+  will-change: transform;
 }
 
 /* Shimmer sweep */
 .proj-thumb-wrap::after {
   content: '';
   position: absolute;
-  top: 0; left: -80%;
+  top: 0; left: 0;
   width: 50%;
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
-  transform: skewX(-15deg);
+  transform: translateX(-100%) skewX(-15deg);
   pointer-events: none;
 }
 
 .proj:hover .proj-thumb-wrap::after {
-  left: 150%;
-  transition: left 0.55s ease;
+  animation: shimmer 0.55s ease forwards;
 }
 
 .proj-img {

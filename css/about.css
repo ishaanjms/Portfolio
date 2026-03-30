@@ -260,6 +260,7 @@
   padding: 24px 28px;
   cursor: default;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
+  will-change: transform;
 }
 
 .timeline-card:hover {
@@ -294,17 +295,21 @@
 
 /* Description hidden by default, expands on hover */
 .timeline-desc-wrap {
-  max-height: 0;
-  overflow: hidden;
+  display: grid;
+  grid-template-rows: 0fr;
   opacity: 0;
-  transition: max-height 0.2s ease, opacity 0.15s ease, margin-top 0.2s ease;
+  transition: grid-template-rows 0.3s ease, opacity 0.2s ease, margin-top 0.25s ease;
+}
+
+.timeline-desc-wrap .timeline-desc {
+  overflow: hidden;
+  min-height: 0;
 }
 
 .timeline-card:hover .timeline-desc-wrap {
-  max-height: 150px;
+  grid-template-rows: 1fr;
   opacity: 1;
   margin-top: 14px;
-  transition: max-height 0.35s ease, opacity 0.25s ease 0.05s, margin-top 0.25s ease;
 }
 
 .timeline-desc {
