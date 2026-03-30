@@ -1,0 +1,51 @@
+/* =============================================
+   SHARED ANIMATIONS
+   ============================================= */
+
+/* --- Page load fade-up --- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Typewriter cursor blink --- */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* --- Shimmer sweep (project cards) --- */
+@keyframes shimmer {
+  from { transform: translateX(-100%) skewX(-15deg); }
+  to   { transform: translateX(200%) skewX(-15deg); }
+}
+
+/* --- Footer glide up on scroll --- */
+@keyframes footerGlide {
+  from { opacity: 0; transform: translateY(48px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Utility: fade-up class triggered by JS --- */
+.anim-fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.anim-fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Footer reveal --- */
+.footer-section {
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.footer-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

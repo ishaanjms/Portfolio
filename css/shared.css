@@ -9,7 +9,7 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 32px 48px;
+  padding: 28px 32px;
   position: relative;
   z-index: 10;
   max-width: 1200px;
@@ -48,52 +48,69 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
 
 .nav-links {
   display: flex;
-  gap: 32px;
+  gap: 28px;
 }
 
 .nav-links a {
+  position: relative;
   font-size: 15px;
   color: #1a1916;
   text-decoration: none;
   font-weight: 400;
-  transition: opacity 0.2s;
+  padding-bottom: 3px;
 }
 
-.nav-links a:hover { opacity: 0.6; }
-
-.nav-links a.active {
-  font-weight: 600;
-  border-bottom: 2px solid #1a1916;
-  padding-bottom: 2px;
+/* Animated underline slide-in from left */
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #1a1916;
+  transition: width 0.25s ease;
 }
 
+.nav-links a:hover::before,
+.nav-links a.active::before { width: 100%; }
+
+.nav-links a.active { font-weight: 600; }
+
+/* --- Social Icons --- */
 .nav-social {
   display: flex;
-  gap: 12px;
+  align-items: center;
+  gap: 16px;
 }
 
-.icon-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid #e0ddd8;
+.social-icon {
   display: flex;
   align-items: center;
   justify-content: center;
   color: #1a1916;
   text-decoration: none;
-  font-size: 12px;
-  font-weight: 500;
-  transition: background 0.2s;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.icon-btn:hover { background: #ebe8e2; }
+.social-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  display: block;
+}
+
+.social-icon:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
 
 /* --- Footer --- */
 .footer-section {
   background: #1a1916;
   color: #f7f5f0;
-  padding: 100px 48px 48px;
+  padding: 100px 32px 48px;
   margin-top: 64px;
   border-radius: 40px 40px 0 0;
 }
@@ -107,7 +124,7 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
 
 .footer-heading {
   font-family: 'DM Sans', sans-serif;
-  font-size: 64px;
+  font-size: 56px;
   font-weight: 500;
   line-height: 1.1;
   margin-bottom: 24px;
@@ -118,9 +135,9 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
 
 .footer-sub {
   font-family: 'DM Sans', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   color: rgba(247,245,240,0.6);
-  margin-bottom: 56px;
+  margin-bottom: 48px;
   font-weight: 400;
 }
 
@@ -129,20 +146,32 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
   align-items: center;
   gap: 12px;
   font-family: 'DM Sans', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   color: #1a1916;
   background: #f7f5f0;
-  padding: 16px 36px;
+  padding: 14px 32px;
   border-radius: 100px;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
   transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.footer-email-btn:hover {
-  transform: translateY(-4px);
-  background: #fff;
+/* Footer button ::before sweep */
+.footer-email-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: skewX(-15deg);
+  transition: left 0.5s ease;
 }
+
+.footer-email-btn:hover { transform: translateY(-4px); background: #fff; }
+.footer-email-btn:hover::before { left: 150%; }
 
 .footer-bottom {
   display: flex;
@@ -169,4 +198,13 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
   color: rgba(247,245,240,0.4);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .nav { padding: 20px 16px; }
+  .nav-links { gap: 20px; }
+  .footer-section { padding: 64px 16px 40px; }
+  .footer-heading { font-size: 36px; }
+  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
 }
