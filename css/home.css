@@ -25,7 +25,7 @@
   letter-spacing: -0.01em;
   margin-bottom: 32px;
   max-width: 900px;
-  min-height: 260px; /* Prevents layout shift during typing */
+  min-height: 200px; /* Prevents layout shift during typing */
 }
 
 .hero-headline .purple {
@@ -127,6 +127,7 @@
   align-items: center;
   justify-content: center;
   color: rgba(255, 255, 255, 0.55);
+  transform: rotate(90deg); /* default: ↘ (SE) — idle/resting state */
   transition: transform 0.35s ease, background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
   z-index: 2;
 }
@@ -139,7 +140,7 @@
 }
 
 .proj:hover .proj-arrow {
-  transform: rotate(90deg);
+  transform: rotate(0deg); /* hover: ↗ (NE) — pointing toward project */
   background: rgba(255, 255, 255, 0.95);
   color: #1a1916;
   border-color: transparent;
