@@ -2,7 +2,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { overflow-x: hidden; }
+html { overflow-x: hidden; scroll-behavior: smooth; }
 body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; min-height: 100vh; overflow-x: hidden; }
 
 /* --- Navigation --- */
@@ -202,6 +202,27 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
   font-size: 14px;
   color: rgba(247,245,240,0.4);
 }
+
+.footer-credit {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(247,245,240,0.07);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: rgba(247,245,240,0.25);
+  letter-spacing: 0.01em;
+}
+
+.footer-credit a {
+  color: rgba(247,245,240,0.45);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-credit a:hover { color: #f7f5f0; }
+
+.footer-heart { color: #ef4444; }
 
 /* --- Responsive --- */
 @media (max-width: 900px) {
