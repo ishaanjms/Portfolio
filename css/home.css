@@ -173,7 +173,7 @@
 
 @media (max-width: 640px) {
   .hero          { padding: 28px 16px 56px; }
-  .hero-headline { font-size: 30px; max-width: 100%; }
+  .hero-headline { font-size: 30px; max-width: 100%; min-height: 0; }
   .hero-sub      { font-size: 15px; }
   .work-section  { padding: 0 16px 40px; }
   .projects      { grid-template-columns: 1fr; gap: 28px; }
