@@ -297,14 +297,14 @@
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.4s ease 0.25s, opacity 0.3s ease, margin-top 0.3s ease 0.25s;
+  transition: max-height 0.2s ease, opacity 0.15s ease, margin-top 0.2s ease;
 }
 
 .timeline-card:hover .timeline-desc-wrap {
   max-height: 150px;
   opacity: 1;
   margin-top: 14px;
-  transition: max-height 0.4s ease, opacity 0.35s ease 0.05s, margin-top 0.3s ease;
+  transition: max-height 0.35s ease, opacity 0.25s ease 0.05s, margin-top 0.25s ease;
 }
 
 .timeline-desc {

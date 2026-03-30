@@ -203,44 +203,45 @@ body { background: #f7f5f0; color: #1a1916; font-family: 'DM Sans', sans-serif; 
   color: rgba(247,245,240,0.4);
 }
 
+/* Credit pill — sits as middle item in .footer-bottom flex row */
 .footer-credit {
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-top: 28px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(247,245,240,0.07);
 }
 
 .footer-credit-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 9px 24px;
+  gap: 7px;
+  padding: 6px 16px;
   border-radius: 100px;
-  border: 1px solid rgba(247,245,240,0.15);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
-  color: rgba(247,245,240,0.4);
+  color: rgba(247, 245, 240, 0.42);
   text-decoration: none;
-  letter-spacing: 0.02em;
-  transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+  letter-spacing: 0.03em;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 
 .footer-credit-link:hover {
-  border-color: rgba(247,245,240,0.5);
-  color: #f7f5f0;
-  background: rgba(247,245,240,0.06);
+  background: rgba(255, 255, 255, 0.11);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(247, 245, 240, 0.85);
 }
 
 .footer-heart {
   color: #ef4444;
   display: inline-block;
-  transition: transform 0.3s ease;
+  font-style: normal;
+  transition: transform 0.25s ease;
 }
 
 .footer-credit-link:hover .footer-heart {
-  transform: scale(1.4);
+  transform: scale(1.35);
 }
 
 /* --- Responsive --- */
