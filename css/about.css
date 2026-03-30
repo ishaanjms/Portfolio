@@ -5,10 +5,10 @@
   margin: 0 auto;
 }
 
-/* --- Page Header (mirrors garage header style) --- */
+/* --- Page Header — lives inside .intro-text left column --- */
 .about-page-header {
   position: relative;
-  margin-bottom: 72px;
+  margin-bottom: 28px;
 }
 
 .about-watermark {
@@ -57,7 +57,7 @@
   grid-template-columns: 1.2fr 1fr;
   gap: 60px;
   margin-bottom: 100px;
-  align-items: center;
+  align-items: start;
 }
 
 .intro-text h1.section-title {
@@ -292,10 +292,19 @@
 .timeline-item:nth-child(3) .timeline-company { color: #10B981; }
 .timeline-item:nth-child(4) .timeline-company { color: #F59E0B; }
 
-/* Descriptions always visible */
+/* Description hidden by default, expands on hover */
 .timeline-desc-wrap {
-  margin-top: 12px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease 0.25s, opacity 0.3s ease, margin-top 0.3s ease 0.25s;
+}
+
+.timeline-card:hover .timeline-desc-wrap {
+  max-height: 150px;
   opacity: 1;
+  margin-top: 14px;
+  transition: max-height 0.4s ease, opacity 0.35s ease 0.05s, margin-top 0.3s ease;
 }
 
 .timeline-desc {
