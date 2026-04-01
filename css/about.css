@@ -242,13 +242,6 @@
   border-radius: 16px;
   padding: 24px 28px;
   cursor: default;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  will-change: transform;
-}
-
-.timeline-card:hover {
-  box-shadow: 0 8px 24px rgba(26, 25, 22, 0.08);
-  transform: translateX(4px);
 }
 
 /* Company accent: left border + pastel background tint */
@@ -276,22 +269,8 @@
 .timeline-item:nth-child(3) .timeline-company { color: #10B981; }
 .timeline-item:nth-child(4) .timeline-company { color: #F59E0B; }
 
-/* Description hidden by default, expands on hover */
+/* Description always visible */
 .timeline-desc-wrap {
-  display: grid;
-  grid-template-rows: 0fr;
-  opacity: 0;
-  transition: grid-template-rows 0.3s ease, opacity 0.2s ease, margin-top 0.25s ease;
-}
-
-.timeline-desc-wrap .timeline-desc {
-  overflow: hidden;
-  min-height: 0;
-}
-
-.timeline-card:hover .timeline-desc-wrap {
-  grid-template-rows: 1fr;
-  opacity: 1;
   margin-top: 14px;
 }
 
