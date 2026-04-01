@@ -75,8 +75,18 @@
 }
 
 .bento-card:hover {
-  transform: translateY(-4px);
   box-shadow: 0 16px 32px rgba(0,0,0,0.1);
+}
+
+/* 3D tilt glare overlay */
+.bento-glare {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: inherit;
 }
 
 /* Placeholder image area */
