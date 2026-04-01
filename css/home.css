@@ -4,6 +4,8 @@
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
+  overflow: hidden;
+  isolation: isolate; /* creates stacking context so z-index:-1 children stay visible */
 }
 
 /* Parallax watermark — scrolls up faster than page content */
@@ -15,7 +17,7 @@
   font-size: clamp(96px, 17vw, 230px);
   font-weight: 700;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(26,25,22,0.07);
+  -webkit-text-stroke: 1px rgba(26,25,22,0.1);
   letter-spacing: -0.04em;
   pointer-events: none;
   z-index: -1;

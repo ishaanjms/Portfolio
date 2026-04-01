@@ -31,7 +31,9 @@
     requestAnimationFrame(lerp);
   })();
 
-  document.querySelectorAll('a, button, .proj, .bento-card, [role="button"]').forEach(el => {
+  document.querySelectorAll(
+    'a, button, [role="button"], .proj, .bento-card, .tools-section'
+  ).forEach(el => {
     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
     el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
   });
