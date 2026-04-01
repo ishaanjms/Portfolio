@@ -15,7 +15,7 @@ const COLORS = {
 
 const TIMING = {
   typeSpeed:       28,   // ms per character forward
-  eraseSpeed:      14,   // ms per character backward
+  eraseSpeed:      20,   // ms per character backward
   pauseAfterType:  2200, // ms to hold finished phrase
   pauseBeforeType: 350,  // ms gap before next phrase starts
   initialDelay:    600,  // ms before very first character
