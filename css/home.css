@@ -39,6 +39,7 @@
   font-weight: 300;
   animation: blink 1s step-end infinite;
   margin-left: 1px;
+  transition: color 0.35s ease;
 }
 
 .hero-sub {

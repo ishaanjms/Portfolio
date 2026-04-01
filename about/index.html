@@ -179,22 +179,8 @@
   </div>
 
 
-<script>
-  // Hamburger nav toggle
-  document.getElementById('nav-toggle').addEventListener('click', function() {
-    this.classList.toggle('open');
-    document.querySelector('.nav-right').classList.toggle('open');
-  });
-
-  // Duplicate marquee chips for seamless infinite scroll
-  document.querySelectorAll('.tools-inner').forEach(el => {
-    el.innerHTML += el.innerHTML;
-  });
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.footer-section, .anim-fade-up').forEach(el => observer.observe(el));
-</script>
+<script src="../js/constants.js"></script>
+<script src="../js/shared.js"></script>
+<script src="../js/about.js"></script>
 </body>
 </html>
