@@ -89,3 +89,11 @@ function loop() {
 
 // Kick off with a random phrase, then loop
 typePhrase(HERO_PHRASES[currentIdx], () => erasePhrase(loop));
+
+// ─── Hero watermark parallax ──────────────────────────────────────────────────
+const watermark = document.querySelector('.hero-watermark');
+if (watermark) {
+  window.addEventListener('scroll', () => {
+    watermark.style.transform = `translateY(calc(-50% + ${window.scrollY * -0.3}px))`;
+  }, { passive: true });
+}
