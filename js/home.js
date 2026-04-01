@@ -94,6 +94,6 @@ typePhrase(HERO_PHRASES[currentIdx], () => erasePhrase(loop));
 const watermark = document.querySelector('.hero-watermark');
 if (watermark) {
   window.addEventListener('scroll', () => {
-    watermark.style.transform = `translateY(calc(-50% + ${window.scrollY * -0.3}px))`;
+    watermark.style.transform = `translateY(calc(-50% + ${window.scrollY * -0.5}px))`;
   }, { passive: true });
 }

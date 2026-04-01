@@ -4,8 +4,9 @@
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
-  overflow: hidden;
   isolation: isolate; /* creates stacking context so z-index:-1 children stay visible */
+  /* no overflow:hidden here — html/body overflow-x:clip handles horizontal containment
+     and we need vertical overflow free so the parallax watermark can travel */
 }
 
 /* Parallax watermark — scrolls up faster than page content */

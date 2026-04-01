@@ -38,6 +38,10 @@
       card.style.transform  = '';
       card.style.boxShadow  = '';
       glare.style.opacity   = '0';
+      // Clear inline transition after animation so CSS rule takes back control
+      card.addEventListener('transitionend', () => {
+        card.style.transition = '';
+      }, { once: true });
     });
   });
 })();
