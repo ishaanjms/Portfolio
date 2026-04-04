@@ -217,3 +217,51 @@
   .projects      { grid-template-columns: 1fr; gap: 28px; }
   .proj-title    { font-size: 17px; }
 }
+
+/* --- Social Proof Strip --- */
+.social-proof-section {
+  padding: 40px 32px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.social-proof-eyebrow {
+  font-size: 16px;
+  font-weight: 200;
+  color: #0d0404;
+  margin-bottom: 40px;
+}
+
+.company-logo-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allows logos to drop to the next line on small screens */
+  row-gap: 48px 80px; /* Vertical gap, Horizontal gap */
+}
+
+.company-logo-strip img {
+  height: 32px; /* Forces all logos to have a consistent baseline height */
+  width: auto;
+  opacity: 0.7; /* Dims them so they sit quietly in the background */
+  filter: grayscale(100%); /* Ensures they are completely grey */
+  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Optional: Slight pop-out and color return on hover */
+.company-logo-strip img:hover {
+  opacity: 0.9;
+  filter: grayscale(0%);
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustment for mobile */
+@media (max-width: 640px) {
+  .company-logo-strip {
+    gap: 32px 40px;
+  }
+  .company-logo-strip img {
+    height: 24px; /* Shrinks them slightly for phones */
+  }
+}
