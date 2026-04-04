@@ -9,7 +9,7 @@
      and we need vertical overflow free so the parallax watermark can travel */
 }
 
-/* Parallax watermark — scrolls up faster than page content */
+/* Parallax watermark — scrolls up faster than page content
 .hero-watermark {
   position: absolute;
   top: 50%;
@@ -26,6 +26,7 @@
   will-change: transform;
   user-select: none;
 }
+*/
 
 .hero-bg-blur {
   position: absolute;
@@ -40,9 +41,9 @@
 
 /* Update your existing headline to be purple and have less bottom margin */
 .hero-headline {
-  font-size: clamp(48px, 6vw, 68px); /* Keeps it responsive */
+  font-size: clamp(48px, 7vw, 90px); /* Keeps it responsive */
   color: #6B46C1; /* Your brand purple */
-  font-weight: 150;
+  font-weight: 200;
   margin-bottom: 24px; /* Reduced gap to pull the paragraph closer */
   letter-spacing: -0.02em;
 }
