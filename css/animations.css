@@ -39,14 +39,22 @@
 }
 
 /* --- Footer reveal --- */
-.footer-section {
+/* The outer section triggers the observer but doesn't move, preventing ghost scroll space */
+/* --- Footer reveal --- */
+/* Target the inner content for the slide up, keeping the black background anchored */
+.footer-section .footer-inner {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.7s ease, transform 0.7s ease;
   will-change: opacity, transform;
 }
 
-.footer-section.visible {
+.footer-section.visible .footer-inner {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Ensure the outer container has NO transform logic left to cause ghost scrolling */
+.footer-section {
+  /* No opacity or transform rules here! */
 }
