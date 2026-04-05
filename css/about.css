@@ -242,9 +242,8 @@
 }
 
 .resume-date {
-  font-family: 'DM Mono', monospace;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 100;
   color: #6B46C1; /* Using your brand purple for dates to make them prominent */
   margin-bottom: 6px;
   letter-spacing: 0.02em;
@@ -252,21 +251,22 @@
 
 .resume-role {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
   color: #1a1916;
   margin-bottom: 4px;
 }
 
 .resume-org {
   font-size: 14px;
-  font-weight: 500;
-  color: #888;
+  font-weight: 200;
+  color: #484848;
   margin-bottom: 12px;
 }
 
 .resume-desc {
   font-size: 14px;
-  color: #666;
+  font-weight: 10;
+  color: #8b8b8b;
   line-height: 1.6;
 }
 
