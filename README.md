@@ -30,8 +30,3 @@ Vanilla HTML, CSS, JavaScript — no frameworks or build tools.
     ├── profile/        # Portrait & avatar
     └── logo/           # Favicon & brand logos
 ```
-
-## Credits
-
-Designed by **Ishaan Jain**
-Coded by **Aryan Kaushik**
