@@ -147,6 +147,25 @@
       </div>
     </section>
 
+
+    <section class="cs-split-section">
+      <div class="cs-sidebar">
+        <h2>System<br>Architecture</h2>
+      </div>
+      <div class="cs-content">
+        <p>The solution required a ground-up rebuild of the data acquisition pipeline, ensuring isolated hardware could communicate with a single Python backend.</p>
+        
+        <div class="cs-image-wrapper padded-wrapper mt-32 mb-32">
+           <div class="cs-image-wrapper">
+            <img src="../npl/archi.png" alt="Monitoring Dashboard for CsF1 Atomic Clock">
+           </div>
+        </div>
+
+        <h3>Data Acquisition & Logging</h3>
+        <p>A FLUKE 1620A Thermo-Hygrometer tracks temp/humidity via serial ports, while an ESP8266 microcontroller digitizes 13 channels of laser and photodiode signals, transmitting them wirelessly to a Flask API. Every reading is tagged with localized IST, UTC, and Modified Julian Date (MJD) timestamps to ensure scientific consistency.</p>
+      </div>
+    </section>
+
     <section class="cs-split-section">
       <div class="cs-sidebar">
         <h2>Information<br>Architecture</h2>
@@ -176,19 +195,46 @@
 
     <section class="cs-split-section">
       <div class="cs-sidebar">
-        <h2>System<br>Architecture</h2>
+        <h2>Visuals &<br>Typography</h2>
       </div>
       <div class="cs-content">
-        <p>The solution required a ground-up rebuild of the data acquisition pipeline, ensuring isolated hardware could communicate with a single Python backend.</p>
+        <p class="cs-lead-text">A cohesive "Neon-Dark" design language was engineered to meet the strict lighting constraints of the atomic clock laboratory without sacrificing visual clarity.</p>
         
         <div class="cs-image-wrapper padded-wrapper mt-32 mb-32">
            <div class="cs-image-wrapper">
-            <img src="../npl/archi.png" alt="Monitoring Dashboard for CsF1 Atomic Clock">
+            <img src="../npl/col.png" alt="Monitoring Dashboard for CsF1 Atomic Clock">
            </div>
         </div>
 
-        <h3>Data Acquisition & Logging</h3>
-        <p>A FLUKE 1620A Thermo-Hygrometer tracks temp/humidity via serial ports, while an ESP8266 microcontroller digitizes 13 channels of laser and photodiode signals, transmitting them wirelessly to a Flask API. Every reading is tagged with localized IST, UTC, and Modified Julian Date (MJD) timestamps to ensure scientific consistency.</p>
+        <div class="cs-image-wrapper padded-wrapper mt-32 mb-32">
+           <div class="cs-image-wrapper">
+            <img src="../npl/font.png" alt="Monitoring Dashboard for CsF1 Atomic Clock">
+           </div>
+        </div>
+
+        <div class="mt-32">
+          <h3>Neon-Dark Theme</h3>
+          <p>This minimalist and high-contrast theme prioritizes readability for researchers who spend hours analyzing data in a dark environment. The clean interface uses vibrant colors to establish hierarchy against deep-gray background gradients, reducing eye strain.</p>
+        </div>
+
+        <div class="mt-48">
+          <h3>Color Palette</h3>
+          <ul class="cs-list">
+            <li><strong>Primary (Background):</strong> A dark gradient from `#111111` to `#1A1916` establishes the physical dark-mode requirement while adding subtle depth.</li>
+            <li><strong>Accent (Data Streams):</strong> Neon Green (`#21FFAB`), Cyan (`#21DEFF`), and Orange (`#FF5B21`) differentiate complex multi-line graph traces.</li>
+            <li><strong>Highlight (Focus):</strong> Coral (`#E26D61`) is used for primary buttons and critical status indicators to draw immediate attention.</li>
+          </ul>
+        </div>
+
+        <div class="mt-48">
+          <h3>Typography</h3>
+          <p>The typeface selection supports quick data consumption, mixing clean sans-serif geometry with technical monospace precision.</p>
+          <ul class="cs-list">
+            <li><strong>Roboto:</strong> Chosen for all headings and body text for its modern, clean design and high legibility.</li>
+            <li><strong>Fira Code (or equivalent monospace):</strong> Used for code snippets and live data readouts, offering excellent numeric character definition and technical clarity.</li>
+          </ul>
+        </div>
+
       </div>
     </section>
 
@@ -197,19 +243,56 @@
         <h2>Interface<br>Breakdown</h2>
       </div>
       <div class="cs-content">
-        <h3>Live Sensor Cards & Navigation</h3>
-        <p>Built using Plotly Dash, the interface translates raw CSV logs into an interactive dashboard. A collapsible sidebar provides dedicated views, while vital parameters display numerical values and color-coded status indicators that refresh every 10 seconds.</p>
-        
-        <div class="cs-image-wrapper padded-wrapper mt-32">
-           <div class="placeholder-box tall">Overview & Navigation Screens Placeholder</div>
+        <p class="cs-lead-text">The dashboard translates raw CSV logs into an interactive experience using Plotly Dash. Every design decision was rooted in the physical realities of the lab and the specific workflows of the scientists.</p>
+
+        <div class="mt-48">
+          <h3>Navigation & Macro Overview</h3>
+          <p>To reduce cognitive load, the "Active Tab" is enclosed in a distinct teal background block that registers easily in peripheral vision, so users know where they are in the architecture without reading. Horizontal separators break up the homogeneous icon list, visually dividing passive "Monitoring Tools" (top) from active "Action Tools" (bottom). The Overview screen serves as the starting point, providing a macro-level snapshot of all hardware subsystems and the last server update time.</p>
+          
+          <div class="cs-image-wrapper padded-wrapper mt-32">
+             <img src="../npl/nav.png" alt="Navigation Panel Breakdown">
+          </div>
+          <div class="cs-image-wrapper padded-wrapper mt-32 mb-32">
+             <img src="../npl/overview.png" alt="Overview Section">
+          </div>
         </div>
 
-        <h3 class="mt-48">Historical Data Retrieval</h3>
-        <p>Researchers can toggle specific sensor traces, filter date ranges, and extract customized datasets for downstream processing in MATLAB or Python directly from the interface.</p>
-
-        <div class="cs-image-wrapper padded-wrapper mt-32">
-           <div class="placeholder-box">Data Retrieval Screen Placeholder</div>
+        <div class="mt-48">
+          <h3>Temperature & Humidity: Visualizing Thermal Lag</h3>
+          <p>The dashboard breaks the environment into two distinct zones: the "Ambient" room air and the insulated "Optical Bench" where the experiment actually sits. Plotting both temperatures on the same graph allows scientists to visualize "thermal lag." Because the table is insulated, there is a delay before room heat transfers to the equipment. Seeing this correlation lets scientists predict if a temperature shift is about to ruin the laser alignment, giving them time to intervene before the experiment fails.</p>
+          
+          <div class="cs-image-wrapper padded-wrapper mt-32 mb-32">
+             <img src="../npl/tnh.png" alt="Temperature and Humidity Section visualizing thermal lag">
+          </div>
         </div>
+
+        <div class="mt-48">
+          <h3>Lasers: Grouping Opposing Forces</h3>
+          <p>Instead of listing all 8 lasers in a long, random list, the data is grouped into pairs inside dedicated cards (X1 & X2, Y1 & Y2). Because lasers like X1 and X2 are opposing forces that must physically balance each other out, placing them in the same container allows the scientist to instantly compare them. The user can immediately spot an imbalance without having to scan across the whole screen to find the matching partner.</p>
+          
+          <div class="cs-image-wrapper padded-wrapper mt-32 mb-32">
+             <img src="../npl/laser.png" alt="Laser Section showing paired coordinates">
+          </div>
+        </div>
+
+        <div class="mt-48">
+          <h3>Photodiodes: Troubleshooting the Light Chain</h3>
+          <p>Photodiodes measure light intensity at different stages in a chain: light goes through switches (AOMs), into fibers, and finally to detection. If the final signal dies, the scientist needs to quickly answer: "Is the laser broken, or did just one switch fail?" To make reading the graph effortless, the top row of cards acts as a "living legend." The colored outline and text of the card (e.g., Orange for AOM 5) matches its corresponding trace line exactly on the graph below.</p>
+          
+          <div class="cs-image-wrapper padded-wrapper mt-32 mb-32">
+             <img src="../npl/photo.png" alt="Photodiode Section with living legend UI">
+          </div>
+        </div>
+
+        <div class="mt-48">
+          <h3>Retrieve Data: Supporting Post-Hoc Analysis</h3>
+          <p>This section was designed strictly to support retrospective analysis. By creating a clear separation between "Quick Plotting" for rapid visual checks and "CSV Export" for deep algorithmic analysis, the interface respects the researcher's workflow. It ensures that the valuable data collected by the system isn't locked inside the dashboard, but remains easily accessible for publication and peer review.</p>
+          
+          <div class="cs-image-wrapper padded-wrapper mt-32 mb-32">
+             <img src="../npl/retr.png" alt="Retrieve Data Section for historical analysis">
+          </div>
+        </div>
+
       </div>
     </section>
 
