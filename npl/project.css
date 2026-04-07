@@ -1,0 +1,264 @@
+/* =============================================
+   CASE STUDY STYLES (project.css) - Asymmetrical Layout
+   ============================================= */
+
+/* --- Container --- */
+.case-study-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 32px 100px;
+  color: #1a1916;
+}
+
+/* --- Utilities --- */
+.mt-32 { margin-top: 32px; }
+.mt-48 { margin-top: 48px; }
+.mb-32 { margin-bottom: 32px; }
+
+/* --- Top Hero Image --- */
+.cs-top-hero-image {
+  margin-bottom: 64px;
+}
+
+.cs-image-wrapper {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cs-image-wrapper.placeholder-dark {
+  background: #111;
+  aspect-ratio: 16/9;
+  color: #fff;
+  font-family: monospace;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.08);
+}
+
+/* Soft padded containers for images inside content (like the screenshot) */
+.cs-image-wrapper.padded-wrapper {
+  background: #f4f5f7; /* Soft gray background */
+  padding: 48px;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.placeholder-box {
+  background: #e2e4e9;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #888;
+  font-weight: 500;
+  border: 2px dashed #ccc;
+}
+.placeholder-box.tall { aspect-ratio: 4/3; }
+
+/* --- Header Block (Title & Overview) --- */
+.cs-header-block {
+  margin-bottom: 80px;
+}
+
+.cs-eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 16px;
+}
+
+.cs-title {
+  font-size: 45px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  max-width: 900px;
+}
+
+.cs-subtitle {
+  font-size: 24px;
+  color: #666;
+  line-height: 1.4;
+  font-weight: 300;
+  max-width: 800px;
+  margin-bottom: 64px;
+}
+
+/* Overview Split layout */
+.cs-overview-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 64px;
+}
+
+.cs-overview-left h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.cs-overview-left p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.cs-callout {
+  background: rgba(226, 109, 97, 0.08); /* Coral accent with low opacity */
+  padding: 20px 24px;
+  border-left: 4px solid #E26D61;
+  border-radius: 4px 12px 12px 4px;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.cs-meta-block {
+  margin-bottom: 24px;
+}
+
+.cs-meta-block h4 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.cs-meta-block p {
+  font-size: 15px;
+  color: #1a1916;
+  font-weight: 500;
+}
+
+.cs-divider {
+  height: 1px;
+  background: rgba(0,0,0,0.06);
+  width: 100%;
+  margin: 80px 0;
+}
+
+/* --- Split Section Framework (The Screenshot Layout) --- */
+.cs-split-section {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 64px;
+  margin-bottom: 120px;
+}
+
+.cs-sidebar h2 {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  position: sticky;
+  top: 100px; /* Sticks to top as user scrolls past content */
+}
+
+.cs-content h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.cs-content p {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.cs-lead-text {
+  font-size: 20px !important;
+  color: #333 !important;
+  font-weight: 400;
+}
+
+.cs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cs-list li {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.cs-list li::before {
+  content: "•";
+  color: #E26D61;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* --- Cards inside Content --- */
+.cs-cards-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.cs-cards-row.two-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cs-problem-card {
+  background: #ffffff;
+  padding: 32px 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.cs-problem-card h3 {
+  font-size: 18px;
+  color: #1a1916;
+  margin-bottom: 12px;
+}
+
+.cs-problem-card p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 900px) {
+  .cs-overview-grid { grid-template-columns: 1fr; gap: 40px; }
+  .cs-split-section { grid-template-columns: 1fr; gap: 32px; margin-bottom: 80px; }
+  .cs-sidebar h2 { position: static; font-size: 24px; color: #E26D61; } /* Highlight sidebar titles on mobile */
+  .cs-cards-row { grid-template-columns: repeat(2, 1fr); }
+  .cs-title { font-size: 40px; }
+}
+
+@media (max-width: 640px) {
+  .case-study-container { padding: 24px 20px 80px; }
+  .cs-title { font-size: 32px; }
+  .cs-subtitle { font-size: 20px; }
+  .cs-cards-row, .cs-cards-row.two-col { grid-template-columns: 1fr; }
+  .cs-image-wrapper.padded-wrapper { padding: 20px; }
+}
+
+.cs-image-wrapper img {
+  width: 100%;
+  height: auto;
+  max-height: 600px; /* Caps the height so it doesn't dominate large screens */
+  object-fit: cover; /* Ensures the image fills the space cleanly without distortion */
+  display: block;
+}

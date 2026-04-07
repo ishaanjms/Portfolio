@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ishaan Jain — NPL Monitoring Dashboard</title>
+  <link rel="icon" type="image/png" href="../assets/logo/logo.png">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="./project.css"> </head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav-left">
+      <div class="nav-logo-box">
+        <img src="../assets/profile/avatar.png" alt="Ishaan Jain">
+      </div>
+      Ishaan Jain
+    </a>
+    <button class="nav-hamburger" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="../about/">About</a>
+        <a href="../garage/">Garage</a>
+        <a href="https://drive.google.com/file/d/1O5Kp6qlSXrkXVOnDSg89pSQX_AsUYIuP/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="nav-resume-btn">
+          View Resume
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="case-study-container">
+    
+    <div class="cs-top-hero-image">
+        <div class="cs-image-wrapper">
+            <img src="../npl/Frame 175.png" alt="Monitoring Dashboard for CsF1 Atomic Clock">
+        </div>
+    </div>
+
+    <header class="cs-header-block">
+      <div class="cs-eyebrow">National Physical Laboratory (CSIR-NPL)</div>
+      <h1 class="cs-title">Monitoring Dashboard for Cesium Fountain Atomic Clock (CsF1)</h1>
+      <p class="cs-subtitle">A unified digital tool for precise timekeeping and environmental monitoring.</p>
+      
+      <div class="cs-overview-grid">
+        <div class="cs-overview-left">
+          <h3>Overview</h3>
+          <p>Developed during a research internship at the CSIR-National Physical Laboratory, this project replaces a fragmented legacy system with a centralized, real-time monitoring platform. The dashboard tracks critical environmental and instrumental parameters for the CsF1, the system responsible for maintaining Indian Standard Time (IST).</p>
+          <div class="cs-callout">
+            <strong>The Stakes:</strong> The CsF1 defines the SI second. Microscopic fluctuations in ambient conditions or laser alignment can introduce measurement errors.
+          </div>
+        </div>
+        <div class="cs-overview-right">
+          <div class="cs-meta-block">
+            <h4>Role</h4>
+            <p>UI/UX Designer & Developer</p>
+          </div>
+          <div class="cs-meta-block">
+            <h4>Timeline</h4>
+            <p>2 Months (June – August 2025)</p>
+          </div>
+          <div class="cs-meta-block">
+            <h4>Tools</h4>
+            <p>Figma, Python, Flask, Plotly Dash</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="cs-divider"></div>
+
+    <section class="cs-split-section">
+      <div class="cs-sidebar">
+        <h2>Context &<br>Challenges</h2>
+      </div>
+      <div class="cs-content">
+        <p class="cs-lead-text">Operating the CsF1 previously required managing isolated and fragile monitoring tools. Data was scattered, and manual oversight risked the stability of national time standards.</p>
+        
+        <div class="cs-cards-row">
+          <div class="cs-problem-card">
+            <h3>Dispersed Data</h3>
+            <p>Essential metrics (Lasers, photodiodes, temp & humidity) were scattered across different hardware controllers.</p>
+          </div>
+          <div class="cs-problem-card">
+            <h3>Manual Monitoring</h3>
+            <p>Scientists had to physically check instruments or log data manually, prone to human error.</p>
+          </div>
+          <div class="cs-problem-card">
+            <h3>Latency</h3>
+            <p>Critical fluctuations in laser alignment needed to be spotted instantly, which legacy systems couldn't do.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-split-section">
+      <div class="cs-sidebar">
+        <h2>Constraints &<br>Users</h2>
+      </div>
+      <div class="cs-content">
+        <h3>The "Dark Room" Constraint</h3>
+        <p>The CsF1 operates in strict laboratory conditions. A primary design constraint was the lighting: the interface could not emit high-luminance white light, as stray photons could interfere with the atomic transition experiment. A custom neon-dark theme was engineered to prevent light pollution.</p>
+        
+        <div class="cs-image-wrapper padded-wrapper mt-32">
+           <div class="placeholder-box">Dark Mode Color Visibility Tests Placeholder</div>
+        </div>
+
+        <h3 class="mt-48">Designing for Domain Experts</h3>
+        <ul class="cs-list">
+          <li><strong>Head Scientists:</strong> Require immediate oversight of system uptime, operational health, and connection status.</li>
+          <li><strong>Senior Scientists:</strong> Rely on live, auto-refreshing graphs to observe the immediate effects of physical interventions (e.g., tweaking laser alignment).</li>
+          <li><strong>PhD Students:</strong> Need robust historical analysis tools to download CSV logs for root-cause analysis after overnight failures.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cs-split-section">
+      <div class="cs-sidebar">
+        <h2>System<br>Architecture</h2>
+      </div>
+      <div class="cs-content">
+        <p>The solution required a ground-up rebuild of the data acquisition pipeline, ensuring isolated hardware could communicate with a single Python backend.</p>
+        
+        <div class="cs-image-wrapper padded-wrapper mt-32 mb-32">
+           <div class="cs-image-wrapper">
+            <img src="../npl/archi.png" alt="Monitoring Dashboard for CsF1 Atomic Clock">
+           </div>
+        </div>
+
+        <h3>Data Acquisition & Logging</h3>
+        <p>A FLUKE 1620A Thermo-Hygrometer tracks temp/humidity via serial ports, while an ESP8266 microcontroller digitizes 13 channels of laser and photodiode signals, transmitting them wirelessly to a Flask API. Every reading is tagged with localized IST, UTC, and Modified Julian Date (MJD) timestamps to ensure scientific consistency.</p>
+      </div>
+    </section>
+
+    <section class="cs-split-section">
+      <div class="cs-sidebar">
+        <h2>Interface<br>Breakdown</h2>
+      </div>
+      <div class="cs-content">
+        <h3>Live Sensor Cards & Navigation</h3>
+        <p>Built using Plotly Dash, the interface translates raw CSV logs into an interactive dashboard. A collapsible sidebar provides dedicated views, while vital parameters display numerical values and color-coded status indicators that refresh every 10 seconds.</p>
+        
+        <div class="cs-image-wrapper padded-wrapper mt-32">
+           <div class="placeholder-box tall">Overview & Navigation Screens Placeholder</div>
+        </div>
+
+        <h3 class="mt-48">Historical Data Retrieval</h3>
+        <p>Researchers can toggle specific sensor traces, filter date ranges, and extract customized datasets for downstream processing in MATLAB or Python directly from the interface.</p>
+
+        <div class="cs-image-wrapper padded-wrapper mt-32">
+           <div class="placeholder-box">Data Retrieval Screen Placeholder</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-split-section">
+      <div class="cs-sidebar">
+        <h2>Outcomes</h2>
+      </div>
+      <div class="cs-content">
+        <div class="cs-cards-row two-col">
+          <div class="cs-problem-card">
+            <h3>Unified Ecosystem</h3>
+            <p>Consolidated 4 disparate hardware sources into a single, accessible digital twin.</p>
+          </div>
+          <div class="cs-problem-card">
+            <h3>Automated Workflows</h3>
+            <p>Eliminated manual data logging, allowing scientists to focus on experiment tuning rather than data entry.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="footer-section" id="contact">
+    <div class="footer-inner">
+      <div class="footer-cta-wrap">
+        <h2 class="footer-heading">Have a complex problem?<br><span>Let's collaborate.</span></h2>
+        <p class="footer-sub">Open to full-time roles and interesting conversations.</p>
+        <a href="mailto:ishaanuxd@gmail.com" class="footer-email-btn">ishaanuxd@gmail.com <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;flex-shrink:0"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></a>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">© 2026 Ishaan Jain. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/ishaan-jain-72a2b2248/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/ishaanjms" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.behance.net/ishaanjain7" target="_blank" rel="noopener noreferrer">Behance</a>
+          <a href="https://drive.google.com/file/d/1O5Kp6qlSXrkXVOnDSg89pSQX_AsUYIuP/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 4px;">
+            View Resume 
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px;"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/constants.js"></script>
+  <script src="../js/shared.js"></script>
+</body>
+</html>
