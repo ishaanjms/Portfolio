@@ -33,6 +33,8 @@
   </nav>
 
   <main class="case-study-container">
+
+    <div class="cs-eyebrow">National Physical Laboratory (CSIR-NPL)</div>
     
     <div class="cs-top-hero-image">
         <div class="cs-image-wrapper">
@@ -41,14 +43,13 @@
     </div>
 
     <header class="cs-header-block">
-      <div class="cs-eyebrow">National Physical Laboratory (CSIR-NPL)</div>
-      <h1 class="cs-title">Monitoring Dashboard for Cesium Fountain Atomic Clock (CsF1)</h1>
-      <p class="cs-subtitle">A unified digital tool for precise timekeeping and critical parameters monitoring</p>
+      <!--<h1 class="cs-title">Monitoring Dashboard for Cesium Fountain Atomic Clock (CsF1)</h1> -->
+      <p class="cs-subtitle">A unified digital tool for precise timekeeping and critical<br> parameters monitoring</p>
       
       <div class="cs-overview-grid">
         <div class="cs-overview-left">
           <h3>Overview</h3>
-          <p>Developed during a research internship at the CSIR-National Physical Laboratory, this project replaces a fragmented legacy system with a centralized, real-time monitoring platform. The dashboard tracks critical environmental and instrumental parameters for the CsF1 (Cesium Fountain - 1), the system responsible for maintaining Indian Standard Time (IST).</p>
+          <p>Developed during the research & development internship at the <b>CSIR - National Physical Laboratory</b> under the guidance of <b>Dr. Poonam Arora</b> (Head - Time & Frequency Metrology) , this project replaces a fragmented legacy system with a centralized, real-time monitoring platform. The dashboard tracks critical environmental and instrumental parameters for the CsF1 (Cesium Fountain - 1), the system responsible for maintaining Indian Standard Time (IST).</p>
           <div class="cs-callout">
             <strong>The Stakes:</strong> The CsF1 defines the SI second. Microscopic fluctuations in ambient conditions or laser alignment can introduce measurement errors.
           </div>
@@ -114,6 +115,62 @@
           <li><strong>Senior Scientists:</strong> Rely on live, auto-refreshing graphs to observe the immediate effects of physical interventions (e.g., tweaking laser alignment).</li>
           <li><strong>PhD Students:</strong> Need robust historical analysis tools to download CSV logs for root-cause analysis after overnight failures.</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="cs-split-section">
+      <div class="cs-sidebar">
+        <h2>Functional<br>Requirements</h2>
+      </div>
+      <div class="cs-content">
+        <p class="cs-lead-text">To bridge the gap between the strict lab environment and the scientists' workflow, the digital twin had to fulfill several specific functional criteria.</p>
+        
+        <div class="mt-32">
+          <h3>Live Monitoring & Visualization</h3>
+          <ul class="cs-list">
+            <li><strong>Real-Time Anomaly Detection:</strong> Fetch live data streams to instantly detect anomalies during observations.</li>
+            <li><strong>Parameter Isolation:</strong> Provide options to observe a single parameter on a graph, including a rolling feed of the last 30 minutes of behavior.</li>
+            <li><strong>Granular Tracking:</strong> Distinct tracking modules separating the "Ambient Lab" (room air) from the "Optical Bench" (table surface).</li>
+            <li><strong>Complex Overlays:</strong> Multi-line charts capable of overlaying "Fiber Output," "Grand Detection," and individual "AOM" voltages simultaneously.</li>
+          </ul>
+        </div>
+
+        <div class="mt-48">
+          <h3>Data Management & Accessibility</h3>
+          <ul class="cs-list">
+            <li><strong>Historical Querying:</strong> A dedicated module to query past data by date range and source, with options to plot on-screen or download raw CSVs.</li>
+            <li><strong>Scientific Timestamping:</strong> Precise, synchronized time-stamping across multiple formats including IST, MJD, and UTC.</li>
+            <li><strong>Seamless Extraction:</strong> Ability to extract the database efficiently without causing system interruptions or latency.</li>
+            <li><strong>Remote Access:</strong> Secure remote access to the dashboard via a web link for off-site observation.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-split-section">
+      <div class="cs-sidebar">
+        <h2>Information<br>Architecture</h2>
+      </div>
+      <div class="cs-content">
+        <p class="cs-lead-text">The system's information architecture is task-oriented, prioritizing immediate real-time oversight while maintaining deep historical accessibility.</p>
+        
+        <div class="cs-image-wrapper padded-wrapper mt-32 mb-32">
+           <div class="cs-image-wrapper">
+            <img src="../npl/info.png" alt="Monitoring Dashboard for CsF1 Atomic Clock">
+           </div>
+        </div>
+
+        <p>The dashboard relies on a persistent sidebar to organize content into logical modules that directly reflect the physical subsystems of the CsF1 atomic clock:</p>
+
+        <div class="mt-32">
+          <ul class="cs-list">
+            <li><strong>Overview:</strong> High-level system status aggregating ambient conditions, laser coordinates, and photodiode outputs in a single glance.</li>
+            <li><strong>Temperature & Humidity:</strong> Dedicated views comparing the Ambient Lab vs. the Optical Bench, featuring live values and short-term trend lines.</li>
+            <li><strong>Lasers:</strong> Grouped X, Y, Z, and D-axis parameters combining live numerical readouts with synchronized time-series plots.</li>
+            <li><strong>Photodiodes:</strong> A unified graph overlaying Fiber Output, Grand Detection, and AOM voltages to simplify visual comparisons.</li>
+            <li><strong>Retrieve Data:</strong> An isolated module specifically for post-analysis tasks, keeping complex date-pickers and download features away from the live monitoring view.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
