@@ -130,9 +130,46 @@
   transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1), filter 0.28s ease;
 }
 
+.project-media.logo-media {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 24% 24%, rgba(26, 25, 22, 0.08), transparent 30%),
+    #ffffff;
+}
+
+.project-media.logo-media img {
+  width: min(56%, 320px);
+  height: auto;
+  object-fit: contain;
+  filter: none;
+}
+
+.project-media.locked-media::after {
+  content: 'NDA';
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  inset: auto 16px auto auto;
+  width: auto;
+  height: auto;
+  border: 1px solid rgba(26, 25, 22, 0.14);
+  border-radius: 999px;
+  padding: 7px 11px;
+  background: rgba(247, 245, 240, 0.82);
+  color: rgba(26, 25, 22, 0.64);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  opacity: 1;
+}
+
 .project-card:hover .project-media img {
   transform: scale(1.035);
   filter: saturate(0.98) contrast(1);
+}
+
+.project-card:hover .project-media.logo-media img {
+  filter: none;
 }
 
 .project-copy {

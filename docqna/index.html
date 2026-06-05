@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ishaan Jain — DocQnA AI Assistant</title>
+  <link rel="icon" type="image/png" href="../assets/logo/logo.png">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="docqna.css">
+</head>
+<body class="locked-case">
+
+  <nav class="nav">
+    <a href="/" class="nav-left">
+      <div class="nav-logo-box">
+        <img src="../assets/profile/avatar.png" alt="Ishaan Jain">
+      </div>
+      Ishaan Jain
+    </a>
+    <button class="nav-hamburger" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="../about/">About</a>
+        <a href="../garage/">Garage</a>
+        <a href="https://drive.google.com/file/d/1O5Kp6qlSXrkXVOnDSg89pSQX_AsUYIuP/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="nav-resume-btn">
+          View Resume
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg>
+        </a>
+      </div>
+      <div class="nav-social">
+        <a href="https://www.linkedin.com/in/ishaan-jain-72a2b2248/" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
+          <img src="../assets/logo/linkedin-112.svg" alt="LinkedIn" style="width: 14px; height: 14px; display: block; opacity: 0.8;">
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="dq-page">
+    <section class="dq-hero">
+      <div class="dq-hero-copy">
+        <p class="dq-eyebrow">64 Squares · NDA Case Study</p>
+        <h1>DocQnA AI Assistant</h1>
+        <p class="dq-hero-sub">A protected case study about designing an AI assistant that turns large interview transcript sets into quantitative research outputs from a single prompt.</p>
+        <div class="dq-status-row">
+          <span>NDA signed</span>
+          <span>Protected details</span>
+          <span>UX + AI workflow</span>
+        </div>
+      </div>
+
+      <div class="dq-hero-visual" aria-label="DocQnA assistant preview">
+        <div class="dq-product-shell">
+          <div class="dq-topbar">
+            <img src="../assets/logo/logo-64squares.webp" alt="64 Squares">
+            <strong>DocQnA Assistant</strong>
+            <em>Private preview</em>
+          </div>
+          <div class="dq-prompt-card">
+            <span>Single prompt</span>
+            <p>Generate quantitative evidence from these interview transcripts and show patterns before the final report.</p>
+          </div>
+          <div class="dq-flow-preview">
+            <div>Transcripts</div>
+            <i></i>
+            <div>AI extraction</div>
+            <i></i>
+            <div>Quant data</div>
+          </div>
+          <div class="dq-mini-dashboard">
+            <div><strong>42</strong><span>coded mentions</span></div>
+            <div><strong>8</strong><span>themes</span></div>
+            <div><strong>73%</strong><span>confidence</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dq-unlock-card" aria-labelledby="unlock-title">
+      <div>
+        <p class="dq-eyebrow">Access Required</p>
+        <h2 id="unlock-title">This case study is intentionally gated.</h2>
+        <p>The public view gives a high-level glimpse. Enter the password to view the fuller anonymized UX breakdown, interaction model, and design rationale.</p>
+      </div>
+      <form class="dq-password-form">
+        <label for="case-password">Password</label>
+        <div class="password-row">
+          <input id="case-password" type="password" autocomplete="current-password" placeholder="Enter password">
+          <button type="submit">Unlock</button>
+        </div>
+        <p class="password-hint">For review access, contact me directly.</p>
+        <p class="password-error" role="alert"></p>
+      </form>
+    </section>
+
+    <section class="dq-public-glimpse">
+      <div class="dq-section-heading">
+        <p>Public Glimpse</p>
+        <h2>What can be shared without exposing client-sensitive details.</h2>
+      </div>
+      <div class="glimpse-grid">
+        <article>
+          <span>Problem</span>
+          <h3>Insight generation was hidden too late in the pipeline.</h3>
+          <p>Users needed visibility into emerging quantitative data before the final output stage, especially while working through many interview transcripts.</p>
+        </article>
+        <article>
+          <span>Feature</span>
+          <h3>An assistant for prompt-led quant extraction.</h3>
+          <p>The AI assistant lets users ask for structured counts, comparisons, and patterns from qualitative source material.</p>
+        </article>
+        <article>
+          <span>Role</span>
+          <h3>UX design for AI workflow clarity.</h3>
+          <p>My work focused on feature definition, interaction states, pipeline visibility, and how generated data should appear mid-flow.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="dq-locked-preview" aria-hidden="true">
+      <div class="blur-card"></div>
+      <div class="blur-card wide"></div>
+      <div class="blur-card"></div>
+      <div class="lock-overlay">
+        <strong>Full case study locked</strong>
+        <span>Enter password above to continue.</span>
+      </div>
+    </section>
+
+    <section class="dq-protected-content" hidden>
+      <section class="dq-overview">
+        <div>
+          <h2>Designing an assistant that makes AI research analysis inspectable midway.</h2>
+          <p>DocQnA already worked with large transcript collections. The new assistant feature explored a more direct interaction: a user enters one natural-language prompt and receives quantitative evidence generated from many interviews. The core UX challenge was not only generation, but how to reveal generated data at the right point in the pipeline.</p>
+        </div>
+        <div class="dq-meta-grid">
+          <article><span>Company</span><strong>Sixty Four Squares Pvt. Ltd.</strong></article>
+          <article><span>Product</span><strong>DocQnA</strong></article>
+          <article><span>Role</span><strong>UX Design Intern</strong></article>
+          <article><span>Access</span><strong>NDA-protected, anonymized case study</strong></article>
+        </div>
+      </section>
+
+      <section class="dq-split">
+        <aside>
+          <p>01</p>
+          <h2>UX Problem</h2>
+        </aside>
+        <div class="dq-content">
+          <p class="dq-lead">In research tools, waiting until the end of an AI pipeline to show data creates distrust. Users need enough visibility to understand what the system is extracting, where it is uncertain, and how the output is forming.</p>
+          <div class="dq-problem-grid">
+            <article>
+              <span>Visibility gap</span>
+              <h3>Generated data appeared too late.</h3>
+              <p>Users could not easily inspect intermediate quantitative patterns before committing to the final synthesis.</p>
+            </article>
+            <article>
+              <span>Control gap</span>
+              <h3>One prompt still needed steering.</h3>
+              <p>The assistant had to support broad prompts while making scope, source coverage, and generated measures understandable.</p>
+            </article>
+            <article>
+              <span>Trust gap</span>
+              <h3>Numbers needed traceability.</h3>
+              <p>Quantitative outputs from qualitative transcripts need confidence signals, source references, and clear states.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="dq-workflow">
+        <div class="dq-section-heading">
+          <p>Interaction Model</p>
+          <h2>Prompt, extract, inspect, refine.</h2>
+        </div>
+        <div class="workflow-board">
+          <div class="workflow-step active">
+            <span>01</span>
+            <h3>Prompt</h3>
+            <p>User asks for quant patterns across many interviews.</p>
+          </div>
+          <div class="workflow-step">
+            <span>02</span>
+            <h3>Extract</h3>
+            <p>Assistant identifies entities, themes, counts, and conditions.</p>
+          </div>
+          <div class="workflow-step">
+            <span>03</span>
+            <h3>Inspect</h3>
+            <p>Mid-pipeline table/chart preview shows generated data quality.</p>
+          </div>
+          <div class="workflow-step">
+            <span>04</span>
+            <h3>Refine</h3>
+            <p>User narrows scope, adjusts variables, or regenerates outputs.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="dq-split">
+        <aside>
+          <p>02</p>
+          <h2>Interface Logic</h2>
+        </aside>
+        <div class="dq-content">
+          <div class="dq-interface">
+            <div class="assistant-panel">
+              <span>Assistant prompt</span>
+              <p>Compare reasons for churn across all interviews and quantify recurring themes by participant segment.</p>
+              <button>Generate data</button>
+            </div>
+            <div class="pipeline-panel">
+              <span>Pipeline visibility</span>
+              <div class="pipeline-row"><strong>Reading transcripts</strong><i style="width: 100%"></i></div>
+              <div class="pipeline-row"><strong>Extracting themes</strong><i style="width: 84%"></i></div>
+              <div class="pipeline-row"><strong>Building table</strong><i style="width: 62%"></i></div>
+              <div class="pipeline-row muted"><strong>Final synthesis</strong><i style="width: 28%"></i></div>
+            </div>
+            <div class="data-panel">
+              <span>Midway preview</span>
+              <div class="data-table">
+                <div><b>Theme</b><b>Mentions</b><b>Confidence</b></div>
+                <div><span>Pricing</span><span>18</span><span>0.81</span></div>
+                <div><span>Onboarding</span><span>13</span><span>0.74</span></div>
+                <div><span>Missing integrations</span><span>9</span><span>0.68</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dq-split">
+        <aside>
+          <p>03</p>
+          <h2>Design Decisions</h2>
+        </aside>
+        <div class="dq-content">
+          <div class="decision-list">
+            <article>
+              <h3>Show generated data before final synthesis.</h3>
+              <p>The preview stage gives users a chance to inspect counts, themes, and confidence before the assistant turns them into a polished answer.</p>
+            </article>
+            <article>
+              <h3>Treat AI output as editable research material.</h3>
+              <p>The UX avoids presenting AI-generated numbers as final truth. Instead, it frames them as working evidence that can be refined.</p>
+            </article>
+            <article>
+              <h3>Keep source scale visible.</h3>
+              <p>Users need to know whether an output came from all transcripts, a filtered subset, or a partial extraction state.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="dq-outcomes">
+        <div>
+          <span>Outcome</span>
+          <h2>A clearer AI workflow for transforming qualitative interviews into quantitative evidence.</h2>
+        </div>
+        <div class="dq-outcome-grid">
+          <article><h3>Better pipeline trust</h3><p>Users could see how generated data was forming instead of waiting for an opaque final answer.</p></article>
+          <article><h3>More usable quant output</h3><p>The assistant framed generated tables and counts as inspectable, refinable research artifacts.</p></article>
+          <article><h3>NDA-safe presentation</h3><p>The portfolio version communicates the UX problem and design logic without exposing proprietary screens or data.</p></article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div class="footer-section" id="contact">
+    <div class="footer-inner">
+      <div class="footer-cta-wrap">
+        <h2 class="footer-heading">Have a complex problem?<br><span>Let's collaborate.</span></h2>
+        <p class="footer-sub">Open to full-time roles and interesting conversations.</p>
+        <a href="mailto:ishaanuxd@gmail.com" class="footer-email-btn">ishaanuxd@gmail.com <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;flex-shrink:0"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></a>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">© 2026 Ishaan Jain. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/ishaan-jain-72a2b2248/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/ishaanjms" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.behance.net/ishaanjain7" target="_blank" rel="noopener noreferrer">Behance</a>
+          <a href="https://drive.google.com/file/d/1O5Kp6qlSXrkXVOnDSg89pSQX_AsUYIuP/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 4px;">
+            View Resume
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px;"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/constants.js"></script>
+  <script src="../js/shared.js"></script>
+  <script src="docqna.js"></script>
+</body>
+</html>
