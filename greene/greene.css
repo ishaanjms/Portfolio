@@ -268,12 +268,50 @@ body {
   border-bottom: 1px solid rgba(26, 25, 22, 0.08);
 }
 
+.gc-meta-grid .gc-stack-meta {
+  border-bottom: 0;
+}
+
 .gc-meta-grid strong {
   display: block;
   margin-top: 8px;
   color: rgba(26, 25, 22, 0.84);
   font-size: 15px;
   line-height: 1.35;
+}
+
+.gc-stack-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.gc-stack-icons div {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  border: 1px solid rgba(26, 25, 22, 0.1);
+  border-radius: 999px;
+  padding: 6px 12px 6px 7px;
+  background: rgba(255, 255, 255, 0.42);
+  color: rgba(26, 25, 22, 0.78);
+  box-shadow: 0 8px 18px rgba(26, 25, 22, 0.03);
+}
+
+.gc-stack-icons img {
+  width: 25px;
+  height: 25px;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.gc-stack-icons em {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
 }
 
 .gc-split {
@@ -284,8 +322,6 @@ body {
 }
 
 .gc-split aside {
-  position: sticky;
-  top: 100px;
   align-self: start;
 }
 

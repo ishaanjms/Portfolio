@@ -87,13 +87,39 @@ function loop() {
   typePhrase(phrase, () => erasePhrase(loop));
 }
 
-// Kick off with a random phrase, then loop
-typePhrase(HERO_PHRASES[currentIdx], () => erasePhrase(loop));
+// Kick off with a random phrase, then loop when the older typewriter markup exists.
+if (typedEl && cursorEl) {
+  typePhrase(HERO_PHRASES[currentIdx], () => erasePhrase(loop));
+}
 
 // ─── Hero watermark parallax ──────────────────────────────────────────────────
 const watermark = document.querySelector('.hero-watermark');
 if (watermark) {
   window.addEventListener('scroll', () => {
     watermark.style.transform = `translateY(calc(-50% + ${window.scrollY * -0.5}px))`;
+  }, { passive: true });
+}
+
+// Cursor-revealed signal texture in the hero. CSS does the drawing; JS only moves the reveal point.
+const hero = document.querySelector('.hero');
+const signalField = document.querySelector('.hero-signal-field');
+const canAnimateSignal = hero && signalField && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (canAnimateSignal) {
+  let signalFrame = 0;
+  let signalX = 0;
+  let signalY = 0;
+
+  hero.addEventListener('pointermove', event => {
+    const rect = hero.getBoundingClientRect();
+    signalX = event.clientX - rect.left;
+    signalY = event.clientY - rect.top;
+
+    if (signalFrame) return;
+    signalFrame = window.requestAnimationFrame(() => {
+      signalField.style.setProperty('--signal-x', `${signalX}px`);
+      signalField.style.setProperty('--signal-y', `${signalY}px`);
+      signalFrame = 0;
+    });
   }, { passive: true });
 }
