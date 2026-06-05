@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ishaan Jain — Greene's Counsel</title>
+  <link rel="icon" type="image/png" href="../assets/logo/logo.png">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="greene.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav-left">
+      <div class="nav-logo-box">
+        <img src="../assets/profile/avatar.png" alt="Ishaan Jain">
+      </div>
+      Ishaan Jain
+    </a>
+    <button class="nav-hamburger" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="../about/">About</a>
+        <a href="../garage/">Garage</a>
+        <a href="https://drive.google.com/file/d/1O5Kp6qlSXrkXVOnDSg89pSQX_AsUYIuP/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="nav-resume-btn">
+          View Resume
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg>
+        </a>
+      </div>
+      <div class="nav-social">
+        <a href="https://www.linkedin.com/in/ishaan-jain-72a2b2248/" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
+          <img src="../assets/logo/linkedin-112.svg" alt="LinkedIn" style="width: 14px; height: 14px; display: block; opacity: 0.8;">
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="gc-page">
+    <section class="gc-hero">
+      <div class="gc-hero-copy">
+        <p class="gc-eyebrow">Bachelor Thesis · AI Decision Support</p>
+        <h1>Greene's Counsel</h1>
+        <p class="gc-hero-sub">A framework-driven AI system that turns ambiguous personal situations into strategic, philosophical, and tactical guidance.</p>
+        <div class="gc-hero-actions">
+          <a href="https://robert-greene-app.vercel.app/" target="_blank" rel="noopener noreferrer" class="gc-primary-link">
+            Launch prototype
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg>
+          </a>
+          <a href="#framework" class="gc-secondary-link">Explore framework</a>
+        </div>
+      </div>
+
+      <div class="gc-hero-visual" aria-label="Greene's Counsel product preview">
+        <div class="gc-orbit-label label-one">Foundation</div>
+        <div class="gc-orbit-label label-two">Behaviour</div>
+        <div class="gc-orbit-label label-three">Purpose</div>
+        <div class="gc-chat-shell">
+          <div class="gc-chat-topbar">
+            <span></span><span></span><span></span>
+            <strong>Strategic counsel session</strong>
+          </div>
+          <div class="gc-chat-body">
+            <div class="gc-message user">I feel uncertain about my career path. Stability feels safe, but exploration feels alive.</div>
+            <div class="gc-message ai">
+              <p>Do not ask which path removes uncertainty. Ask which path produces better information.</p>
+              <div class="gc-message-tools">
+                <span>Modern tone</span>
+                <span>Tactical depth</span>
+              </div>
+            </div>
+            <div class="gc-response-stack">
+              <div>Map interests</div>
+              <div>Run small tests</div>
+              <div>Review signals</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gc-overview">
+      <div class="gc-overview-main">
+        <h2>Designing intelligence, not just a chatbot.</h2>
+        <p>My thesis investigated how designers can work with AI systems that do not behave like traditional deterministic products. Greene's Counsel became the working prototype for that research: an AI-assisted decision-support system built around controlled non-determinism, contextual continuity, and a clear interpretive lens.</p>
+      </div>
+      <div class="gc-meta-grid">
+        <div>
+          <span>Role</span>
+          <strong>Researcher, Product Designer, Developer</strong>
+        </div>
+        <div>
+          <span>Stack</span>
+          <strong>Next.js, Genkit, Gemini, Tailwind CSS</strong>
+        </div>
+        <div>
+          <span>Framework</span>
+          <strong>The Anatomy of AI Design</strong>
+        </div>
+        <div>
+          <span>Focus</span>
+          <strong>Non-deterministic AI systems</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="gc-split">
+      <aside>
+        <p>01</p>
+        <h2>The Gap</h2>
+      </aside>
+      <div class="gc-content">
+        <p class="gc-lead">Traditional product design methods assume predictable flows. AI systems introduce probabilistic outputs, evolving behavior, opaque reasoning, and ethical ambiguity.</p>
+        <div class="gc-problem-grid">
+          <article>
+            <span>Behavioural gap</span>
+            <h3>Outputs vary.</h3>
+            <p>The same input can lead to different responses, making consistency and user trust harder to design.</p>
+          </article>
+          <article>
+            <span>Relational gap</span>
+            <h3>Trust is fragile.</h3>
+            <p>Users need clarity about how the system interprets their context and why it responds in a specific way.</p>
+          </article>
+          <article>
+            <span>Temporal gap</span>
+            <h3>Systems evolve.</h3>
+            <p>AI products change through model updates, user history, and new data, so design must account for time.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gc-framework" id="framework">
+      <div class="gc-section-heading">
+        <p>02 · Framework</p>
+        <h2>The Anatomy of AI Design</h2>
+      </div>
+      <div class="gc-pillar-map">
+        <article class="active" data-pillar="foundation">
+          <span>01</span>
+          <h3>Foundation</h3>
+          <p>Infrastructure, schemas, model integration, and the technical ecology that makes an AI system reliable.</p>
+        </article>
+        <article data-pillar="behaviour">
+          <span>02</span>
+          <h3>Behaviour</h3>
+          <p>Designed variability through tone, depth, response modes, and controlled non-determinism.</p>
+        </article>
+        <article data-pillar="connection">
+          <span>03</span>
+          <h3>Connection</h3>
+          <p>Conversational UI, contextual memory, user agency, and signals that create interpretability.</p>
+        </article>
+        <article data-pillar="purpose">
+          <span>04</span>
+          <h3>Purpose</h3>
+          <p>Ethical boundaries, philosophical alignment, governance, and constraints on what the AI should optimize for.</p>
+        </article>
+        <article data-pillar="evolution">
+          <span>05</span>
+          <h3>Evolution</h3>
+          <p>Session adaptation, future learning loops, monitoring, and the system's behavior over time.</p>
+        </article>
+      </div>
+      <div class="gc-pillar-stage">
+        <div class="gc-pillar-node">Input</div>
+        <div class="gc-pillar-node">Interpret</div>
+        <div class="gc-pillar-node">Respond</div>
+        <div class="gc-pillar-node">Remember</div>
+      </div>
+    </section>
+
+    <section class="gc-split">
+      <aside>
+        <p>03</p>
+        <h2>System Design</h2>
+      </aside>
+      <div class="gc-content">
+        <p class="gc-lead">Greene's Counsel is structured as three connected layers: context acquisition, framework-driven interpretation, and structured response generation.</p>
+        <div class="gc-architecture">
+          <div>
+            <span>Input Layer</span>
+            <h3>Structured context</h3>
+            <p>Situation, tone, depth mode, and conversation history prevent the system from treating complex problems as isolated prompts.</p>
+          </div>
+          <div>
+            <span>Processing Layer</span>
+            <h3>Persona reasoning</h3>
+            <p>Prompt engineering and a consistent philosophical persona create coherence across changing outputs.</p>
+          </div>
+          <div>
+            <span>Output Layer</span>
+            <h3>Layered counsel</h3>
+            <p>Responses combine strategic advice, knowledge summaries, and contextual relevance mapping.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gc-demo">
+      <div class="gc-section-heading">
+        <p>04 · Interaction Demo</p>
+        <h2>One input, three designed behaviours.</h2>
+      </div>
+      <div class="gc-demo-layout">
+        <div class="gc-demo-input">
+          <span>Input scenario</span>
+          <p>I feel uncertain about my career path. I have multiple interests but no clear direction. I am unsure whether to pursue stability or explore different options.</p>
+          <div class="gc-mode-controls" aria-label="Response depth modes">
+            <button type="button" class="active" data-mode="surface">Surface</button>
+            <button type="button" data-mode="philosophical">Philosophical</button>
+            <button type="button" data-mode="tactical">Tactical</button>
+          </div>
+        </div>
+        <div class="gc-demo-output" aria-live="polite">
+          <p class="gc-output-label">Surface response</p>
+          <h3>Clarify the immediate decision.</h3>
+          <p class="gc-output-copy">Identify your priorities, test interests through small experiments, and avoid overcommitting before you have evidence.</p>
+          <ol>
+            <li>List what stability gives you.</li>
+            <li>List what exploration gives you.</li>
+            <li>Choose one low-risk experiment this month.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="gc-split">
+      <aside>
+        <p>05</p>
+        <h2>Interface Logic</h2>
+      </aside>
+      <div class="gc-content">
+        <p class="gc-lead">The interface was designed to make the AI's behavior configurable and legible. Users can shape tone, depth, source framing, and output structure before the system answers.</p>
+
+        <div class="gc-logic-tabs" aria-label="Interface logic views">
+          <button type="button" class="active" data-logic="compose">Compose</button>
+          <button type="button" data-logic="reason">Reasoning</button>
+          <button type="button" data-logic="memory">Memory</button>
+          <button type="button" data-logic="safety">Safety</button>
+        </div>
+
+        <div class="gc-interface-board">
+          <div class="gc-panel sidebar-panel">
+            <span>Control rail</span>
+            <div class="logic-group">
+              <p>Tone</p>
+              <button>Classic</button>
+              <button class="selected">Modern</button>
+            </div>
+            <div class="logic-group">
+              <p>Depth</p>
+              <button>Surface</button>
+              <button>Philosophical</button>
+              <button class="selected">Tactical</button>
+            </div>
+            <div class="logic-slider">
+              <div>
+                <p>Non-determinism</p>
+                <strong>Controlled</strong>
+              </div>
+              <div class="slider-track"><i style="width: 58%"></i></div>
+            </div>
+          </div>
+
+          <div class="gc-panel transcript-panel">
+            <span>Conversation composer</span>
+            <div class="context-card">
+              <p>Situation</p>
+              <strong>Career uncertainty with multiple interests and unclear direction.</strong>
+            </div>
+            <div class="mini-message user">What should I do when every option feels unfinished?</div>
+            <div class="mini-message ai">Use uncertainty as reconnaissance. A decision does not need to be final to be useful.</div>
+            <div class="mini-message ai compact">Suggested next move: run a two-week test and review what gave energy, leverage, learning, and signal.</div>
+            <div class="composer-bar">
+              <span>Ask a follow-up...</span>
+              <button type="button">Generate counsel</button>
+            </div>
+          </div>
+
+          <div class="gc-panel insight-panel">
+            <span>System state</span>
+            <div class="state-chip">Schema valid</div>
+            <div class="state-chip amber">Persona aligned</div>
+            <div class="meter"><i style="width: 84%"></i></div>
+            <p>High need for tactical clarity</p>
+            <div class="meter amber"><i style="width: 62%"></i></div>
+            <p>Moderate need for reflection</p>
+            <div class="logic-score">
+              <strong>0.82</strong>
+              <span>Context confidence</span>
+            </div>
+          </div>
+
+          <div class="gc-panel source-panel">
+            <span>Knowledge framing</span>
+            <div class="source-grid">
+              <div class="source-card selected">48 Laws of Power</div>
+              <div class="source-card">Mastery</div>
+              <div class="source-card">Laws of Human Nature</div>
+              <div class="source-card">Art of Seduction</div>
+            </div>
+          </div>
+
+          <div class="gc-panel framework-panel">
+            <span>Framework trace</span>
+            <div class="trace-row"><strong>Foundation</strong><i></i><em>Input schema + Gemini pipeline</em></div>
+            <div class="trace-row"><strong>Behaviour</strong><i></i><em>Modern tone + tactical depth</em></div>
+            <div class="trace-row"><strong>Connection</strong><i></i><em>Session memory + follow-up</em></div>
+            <div class="trace-row"><strong>Purpose</strong><i></i><em>Strategic lens with guardrails</em></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gc-outcomes">
+      <div>
+        <span>Result</span>
+        <h2>A proof-of-concept for designing controlled AI variability.</h2>
+      </div>
+      <div class="gc-outcome-grid">
+        <article>
+          <h3>Structured uncertainty</h3>
+          <p>The system can produce varied outputs while staying inside clear response modes and schema boundaries.</p>
+        </article>
+        <article>
+          <h3>Interpretable behavior</h3>
+          <p>Tone, depth, persona, and history make the system's behavior legible instead of arbitrary.</p>
+        </article>
+        <article>
+          <h3>Future direction</h3>
+          <p>The next iteration would add long-term personalization, feedback loops, and quantitative evaluation.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="footer-section" id="contact">
+    <div class="footer-inner">
+      <div class="footer-cta-wrap">
+        <h2 class="footer-heading">Have a complex problem?<br><span>Let's collaborate.</span></h2>
+        <p class="footer-sub">Open to full-time roles and interesting conversations.</p>
+        <a href="mailto:ishaanuxd@gmail.com" class="footer-email-btn">ishaanuxd@gmail.com <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;flex-shrink:0"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></a>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">© 2026 Ishaan Jain. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/ishaan-jain-72a2b2248/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/ishaanjms" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.behance.net/ishaanjain7" target="_blank" rel="noopener noreferrer">Behance</a>
+          <a href="https://drive.google.com/file/d/1O5Kp6qlSXrkXVOnDSg89pSQX_AsUYIuP/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 4px;">
+            View Resume
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px;"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/constants.js"></script>
+  <script src="../js/shared.js"></script>
+  <script src="greene.js"></script>
+</body>
+</html>

@@ -40,7 +40,7 @@
   rafId = requestAnimationFrame(lerp);
 
   document.querySelectorAll(
-    'a, button, [role="button"], .proj, .bento-card, .tools-section'
+    'a, button, [role="button"], .proj, .project-card, .bento-card, .tools-section'
   ).forEach(el => {
     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
     el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));

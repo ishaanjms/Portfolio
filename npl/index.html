@@ -6,7 +6,8 @@
   <title>Ishaan Jain — NPL Monitoring Dashboard</title>
   <link rel="icon" type="image/png" href="../assets/logo/logo.png">
   <link rel="stylesheet" href="../css/shared.css">
-  <link rel="stylesheet" href="./project.css"> </head>
+  <link rel="stylesheet" href="./project.css">
+</head>
 <body>
 
   <nav class="nav">
@@ -29,295 +30,250 @@
           <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg>
         </a>
       </div>
+      <div class="nav-social">
+        <a href="https://www.linkedin.com/in/ishaan-jain-72a2b2248/" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
+          <img src="../assets/logo/linkedin-112.svg" alt="LinkedIn" style="width: 14px; height: 14px; display: block; opacity: 0.8;">
+        </a>
+      </div>
     </div>
   </nav>
 
-  <main class="case-study-container">
-
-    <div class="cs-eyebrow">National Physical Laboratory (CSIR-NPL)</div>
-    
-    <div class="cs-top-hero-image">
-        <div class="cs-image-wrapper">
-            <img src="../npl/Frame 175.png" alt="Monitoring Dashboard for CsF1 Atomic Clock">
-        </div>
-    </div>
-
-    <header class="cs-header-block">
-      <!--<h1 class="cs-title">Monitoring Dashboard for Cesium Fountain Atomic Clock (CsF1)</h1> -->
-      <p class="cs-subtitle">A unified digital tool for precise timekeeping and critical<br> parameters monitoring</p>
-      
-      <div class="cs-overview-grid">
-        <div class="cs-overview-left">
-          <h3>Overview</h3>
-          <p>Developed during the research & development internship at the <b>CSIR - National Physical Laboratory</b> under the guidance of <b>Dr. Poonam Arora</b> (Head - Time & Frequency Metrology) , this project replaces a fragmented legacy system with a centralized, real-time monitoring platform. The dashboard tracks critical environmental and instrumental parameters for the CsF1 (Cesium Fountain - 1), the system responsible for maintaining Indian Standard Time (IST).</p>
-          <div class="cs-callout">
-            <strong>The Stakes:</strong> The CsF1 defines the SI second. Microscopic fluctuations in ambient conditions or laser alignment can introduce measurement errors.
-          </div>
-        </div>
-        <div class="cs-overview-right">
-          <div class="cs-meta-block">
-            <h4>Role</h4>
-            <p>UI/UX Designer & Developer</p>
-          </div>
-          <div class="cs-meta-block">
-            <h4>Team</h4>
-            <p>Hardware Engineer, Senior Scientist, PhD Scholar, Head of Dept.</p>
-          </div>
-          <div class="cs-meta-block">
-            <h4>Timeline</h4>
-            <p>2 Months (June – August 2025)</p>
-          </div>
-          <div class="cs-meta-block">
-            <h4>Tools</h4>
-            <p>Figma, Python, Flask, Plotly Dash, HTML, CSS, Cursor, Gemini</p>
-          </div>
-        </div>
+  <main class="npl-page">
+    <section class="npl-hero">
+      <div class="npl-hero-copy">
+        <p class="npl-eyebrow">CSIR-NPL · Time & Frequency Metrology</p>
+        <h1>Cesium Fountain Atomic Clock Monitor</h1>
+        <p class="npl-hero-sub">A real-time command surface for tracking the environmental and instrumental health of CsF1, the system responsible for maintaining Indian Standard Time.</p>
       </div>
-    </header>
 
-    <div class="cs-divider"></div>
-
-    <section class="cs-split-section">
-      <div class="cs-sidebar">
-        <h2>Context &<br>Challenges</h2>
-      </div>
-      <div class="cs-content">
-        <p class="cs-lead-text">Operating the CsF1 previously required managing isolated and fragile monitoring tools. Data was scattered, and manual oversight risked the stability of national time standards.</p>
-        
-        <div class="cs-cards-row">
-          <div class="cs-problem-card">
-            <h3>Dispersed Data</h3>
-            <p>Essential metrics (Lasers, photodiodes, temp & humidity) were scattered across different hardware controllers.</p>
+      <div class="npl-hero-console" aria-label="CsF1 dashboard preview">
+        <div class="console-topbar">
+          <span></span><span></span><span></span>
+          <strong>CsF1 Live Monitor</strong>
+          <em>IST · UTC · MJD synced</em>
+        </div>
+        <div class="console-grid">
+          <div class="console-card status-card">
+            <small>System status</small>
+            <strong>Stable</strong>
+            <div class="pulse-line"></div>
           </div>
-          <div class="cs-problem-card">
-            <h3>Manual Monitoring</h3>
-            <p>Scientists had to physically check instruments or log data manually, prone to human error.</p>
+          <div class="console-card">
+            <small>Ambient temp</small>
+            <strong>22.84°C</strong>
+            <span class="delta good">+0.02</span>
           </div>
-          <div class="cs-problem-card">
-            <h3>Latency</h3>
-            <p>Critical fluctuations in laser alignment needed to be spotted instantly, which legacy systems couldn't do.</p>
+          <div class="console-card">
+            <small>Optical bench</small>
+            <strong>22.11°C</strong>
+            <span class="delta">lag 0.73</span>
           </div>
+          <div class="console-card">
+            <small>Fiber output</small>
+            <strong>4.82V</strong>
+            <span class="delta good">locked</span>
+          </div>
+        </div>
+        <div class="signal-visual">
+          <span style="height: 34%"></span>
+          <span style="height: 58%"></span>
+          <span style="height: 46%"></span>
+          <span style="height: 72%"></span>
+          <span style="height: 63%"></span>
+          <span style="height: 86%"></span>
+          <span style="height: 52%"></span>
+          <span style="height: 69%"></span>
+          <span style="height: 47%"></span>
+          <span style="height: 77%"></span>
+          <span style="height: 61%"></span>
+          <span style="height: 91%"></span>
         </div>
       </div>
     </section>
 
-    <section class="cs-split-section">
-      <div class="cs-sidebar">
-        <h2>Constraints &<br>Users</h2>
-      </div>
-      <div class="cs-content">
-        <h3>The "Dark Room" Constraint</h3>
-        <p>The CsF1 operates in strict laboratory conditions. A primary design constraint was the lighting: the interface could not emit high-luminance white light, as stray photons could interfere with the atomic transition experiment. A custom neon-dark theme was engineered to prevent light pollution.</p>
-        
-        <div class="cs-image-wrapper padded-wrapper mt-32">
-           <div class="placeholder-box">Dark Mode Color Visibility Tests Placeholder</div>
-        </div>
+    <section class="npl-showcase">
+      <img src="../npl/Frame 175.png" alt="Monitoring dashboard for CsF1 atomic clock">
+    </section>
 
-        <h3 class="mt-48">Designing for Domain Experts</h3>
-        <ul class="cs-list">
-          <li><strong>Head Scientists:</strong> Require immediate oversight of system uptime, operational health, and connection status.</li>
-          <li><strong>Senior Scientists:</strong> Rely on live, auto-refreshing graphs to observe the immediate effects of physical interventions (e.g., tweaking laser alignment).</li>
-          <li><strong>PhD Students:</strong> Need robust historical analysis tools to download CSV logs for root-cause analysis after overnight failures.</li>
-        </ul>
+    <section class="npl-overview">
+      <div>
+        <h2>From fragmented instruments to one real-time digital twin.</h2>
+        <p>Developed during my R&D internship at CSIR-NPL under Dr. Poonam Arora, this dashboard consolidated isolated monitoring tools into a centralized platform for scientists operating the Cesium Fountain Atomic Clock.</p>
+      </div>
+      <div class="npl-meta-grid">
+        <article>
+          <span>Role</span>
+          <strong>UI/UX Designer & Developer</strong>
+        </article>
+        <article>
+          <span>Timeline</span>
+          <strong>June - August 2025</strong>
+        </article>
+        <article>
+          <span>Tools</span>
+          <strong>Figma, Python, Flask, Plotly Dash, HTML, CSS</strong>
+        </article>
+        <article>
+          <span>Team</span>
+          <strong>Scientists, hardware engineer, PhD scholar</strong>
+        </article>
       </div>
     </section>
 
-    <section class="cs-split-section">
-      <div class="cs-sidebar">
-        <h2>Functional<br>Requirements</h2>
-      </div>
-      <div class="cs-content">
-        <p class="cs-lead-text">To bridge the gap between the strict lab environment and the scientists' workflow, the digital twin had to fulfill several specific functional criteria.</p>
-        
-        <div class="mt-32">
-          <h3>Live Monitoring & Visualization</h3>
-          <ul class="cs-list">
-            <li><strong>Real-Time Anomaly Detection:</strong> Fetch live data streams to instantly detect anomalies during observations.</li>
-            <li><strong>Parameter Isolation:</strong> Provide options to observe a single parameter on a graph, including a rolling feed of the last 30 minutes of behavior.</li>
-            <li><strong>Granular Tracking:</strong> Distinct tracking modules separating the "Ambient Lab" (room air) from the "Optical Bench" (table surface).</li>
-            <li><strong>Complex Overlays:</strong> Multi-line charts capable of overlaying "Fiber Output," "Grand Detection," and individual "AOM" voltages simultaneously.</li>
-          </ul>
-        </div>
-
-        <div class="mt-48">
-          <h3>Data Management & Accessibility</h3>
-          <ul class="cs-list">
-            <li><strong>Historical Querying:</strong> A dedicated module to query past data by date range and source, with options to plot on-screen or download raw CSVs.</li>
-            <li><strong>Scientific Timestamping:</strong> Precise, synchronized time-stamping across multiple formats including IST, MJD, and UTC.</li>
-            <li><strong>Seamless Extraction:</strong> Ability to extract the database efficiently without causing system interruptions or latency.</li>
-            <li><strong>Remote Access:</strong> Secure remote access to the dashboard via a web link for off-site observation.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="cs-split-section">
-      <div class="cs-sidebar">
-        <h2>System<br>Architecture</h2>
-      </div>
-      <div class="cs-content">
-        <p>The solution required a ground-up rebuild of the data acquisition pipeline, ensuring isolated hardware could communicate with a single Python backend.</p>
-        
-        <div class="cs-image-wrapper padded-wrapper mt-32 mb-32">
-           <div class="cs-image-wrapper">
-            <img src="../npl/archi.png" alt="Monitoring Dashboard for CsF1 Atomic Clock">
-           </div>
-        </div>
-
-        <h3>Data Acquisition & Logging</h3>
-        <p>A FLUKE 1620A Thermo-Hygrometer tracks temp/humidity via serial ports, while an ESP8266 microcontroller digitizes 13 channels of laser and photodiode signals, transmitting them wirelessly to a Flask API. Every reading is tagged with localized IST, UTC, and Modified Julian Date (MJD) timestamps to ensure scientific consistency.</p>
-      </div>
-    </section>
-
-    <section class="cs-split-section">
-      <div class="cs-sidebar">
-        <h2>Information<br>Architecture</h2>
-      </div>
-      <div class="cs-content">
-        <p class="cs-lead-text">The system's information architecture is task-oriented, prioritizing immediate real-time oversight while maintaining deep historical accessibility.</p>
-        
-        <div class="cs-image-wrapper padded-wrapper mt-32 mb-32">
-           <div class="cs-image-wrapper">
-            <img src="../npl/info.png" alt="Monitoring Dashboard for CsF1 Atomic Clock">
-           </div>
-        </div>
-
-        <p>The dashboard relies on a persistent sidebar to organize content into logical modules that directly reflect the physical subsystems of the CsF1 atomic clock:</p>
-
-        <div class="mt-32">
-          <ul class="cs-list">
-            <li><strong>Overview:</strong> High-level system status aggregating ambient conditions, laser coordinates, and photodiode outputs in a single glance.</li>
-            <li><strong>Temperature & Humidity:</strong> Dedicated views comparing the Ambient Lab vs. the Optical Bench, featuring live values and short-term trend lines.</li>
-            <li><strong>Lasers:</strong> Grouped X, Y, Z, and D-axis parameters combining live numerical readouts with synchronized time-series plots.</li>
-            <li><strong>Photodiodes:</strong> A unified graph overlaying Fiber Output, Grand Detection, and AOM voltages to simplify visual comparisons.</li>
-            <li><strong>Retrieve Data:</strong> An isolated module specifically for post-analysis tasks, keeping complex date-pickers and download features away from the live monitoring view.</li>
-          </ul>
+    <section class="npl-split">
+      <aside>
+        <p>01</p>
+        <h2>Why It Mattered</h2>
+      </aside>
+      <div class="npl-content">
+        <p class="npl-lead">The CsF1 defines the SI second. Microscopic shifts in temperature, humidity, laser alignment, or photodiode voltage can corrupt observations, so the interface had to make instability visible immediately.</p>
+        <div class="npl-problem-grid">
+          <article>
+            <span>Dispersed Data</span>
+            <h3>Signals lived in separate tools.</h3>
+            <p>Temperature, humidity, laser, and photodiode values were scattered across controllers and scripts.</p>
+          </article>
+          <article>
+            <span>Manual Oversight</span>
+            <h3>Scientists had to check hardware physically.</h3>
+            <p>Manual logging increased cognitive load and created risk during long observation windows.</p>
+          </article>
+          <article>
+            <span>Latency</span>
+            <h3>Small fluctuations needed instant attention.</h3>
+            <p>Laser alignment and light-chain failures had to be noticed before they affected clock stability.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="cs-split-section">
-      <div class="cs-sidebar">
-        <h2>Visuals &<br>Typography</h2>
+    <section class="npl-lab">
+      <div class="npl-section-heading">
+        <p>02 · Lab Constraint</p>
+        <h2>Designed for a dark room where light is a contaminant.</h2>
       </div>
-      <div class="cs-content">
-        <p class="cs-lead-text">A cohesive "Neon-Dark" design language was engineered to meet the strict lighting constraints of the atomic clock laboratory without sacrificing visual clarity.</p>
-        
-        <div class="cs-image-wrapper padded-wrapper mt-32 mb-32">
-           <div class="cs-image-wrapper">
-            <img src="../npl/col.png" alt="Monitoring Dashboard for CsF1 Atomic Clock">
-           </div>
+      <div class="npl-lab-grid">
+        <div class="lab-card dark-card">
+          <span>Constraint</span>
+          <h3>No high-luminance UI.</h3>
+          <p>The CsF1 lab operates under strict optical conditions. The dashboard had to avoid bright surfaces that could interfere with the atomic transition experiment.</p>
         </div>
-
-        <div class="cs-image-wrapper padded-wrapper mt-32 mb-32">
-           <div class="cs-image-wrapper">
-            <img src="../npl/font.png" alt="Monitoring Dashboard for CsF1 Atomic Clock">
-           </div>
+        <div class="lab-card">
+          <span>Visual response</span>
+          <h3>Neon-dark hierarchy.</h3>
+          <p>Deep backgrounds reduced light pollution, while cyan, green, orange, and coral accents separated dense data streams.</p>
         </div>
-
-        <div class="mt-32">
-          <h3>Neon-Dark Theme</h3>
-          <p>This minimalist and high-contrast theme prioritizes readability for researchers who spend hours analyzing data in a dark environment. The clean interface uses vibrant colors to establish hierarchy against deep-gray background gradients, reducing eye strain.</p>
-        </div>
-
-        <div class="mt-48">
-          <h3>Color Palette</h3>
-          <ul class="cs-list">
-            <li><strong>Primary (Background):</strong> A dark gradient from `#111111` to `#1A1916` establishes the physical dark-mode requirement while adding subtle depth.</li>
-            <li><strong>Accent (Data Streams):</strong> Neon Green (`#21FFAB`), Cyan (`#21DEFF`), and Orange (`#FF5B21`) differentiate complex multi-line graph traces.</li>
-            <li><strong>Highlight (Focus):</strong> Coral (`#E26D61`) is used for primary buttons and critical status indicators to draw immediate attention.</li>
-          </ul>
-        </div>
-
-        <div class="mt-48">
-          <h3>Typography</h3>
-          <p>The typeface selection supports quick data consumption, mixing clean sans-serif geometry with technical monospace precision.</p>
-          <ul class="cs-list">
-            <li><strong>Roboto:</strong> Chosen for all headings and body text for its modern, clean design and high legibility.</li>
-            <li><strong>Fira Code (or equivalent monospace):</strong> Used for code snippets and live data readouts, offering excellent numeric character definition and technical clarity.</li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="cs-split-section">
-      <div class="cs-sidebar">
-        <h2>Interface<br>Breakdown</h2>
-      </div>
-      <div class="cs-content">
-        <p class="cs-lead-text">The dashboard translates raw CSV logs into an interactive experience using Plotly Dash. Every design decision was rooted in the physical realities of the lab and the specific workflows of the scientists.</p>
-
-        <div class="mt-48">
-          <h3>Navigation & Macro Overview</h3>
-          <p>To reduce cognitive load, the "Active Tab" is enclosed in a distinct teal background block that registers easily in peripheral vision, so users know where they are in the architecture without reading. Horizontal separators break up the homogeneous icon list, visually dividing passive "Monitoring Tools" (top) from active "Action Tools" (bottom). The Overview screen serves as the starting point, providing a macro-level snapshot of all hardware subsystems and the last server update time.</p>
-          
-          <div class="cs-image-wrapper padded-wrapper mt-32">
-             <img src="../npl/nav.png" alt="Navigation Panel Breakdown">
-          </div>
-          <div class="cs-image-wrapper padded-wrapper mt-32 mb-32">
-             <img src="../npl/overview.png" alt="Overview Section">
-          </div>
-        </div>
-
-        <div class="mt-48">
-          <h3>Temperature & Humidity: Visualizing Thermal Lag</h3>
-          <p>The dashboard breaks the environment into two distinct zones: the "Ambient" room air and the insulated "Optical Bench" where the experiment actually sits. Plotting both temperatures on the same graph allows scientists to visualize "thermal lag." Because the table is insulated, there is a delay before room heat transfers to the equipment. Seeing this correlation lets scientists predict if a temperature shift is about to ruin the laser alignment, giving them time to intervene before the experiment fails.</p>
-          
-          <div class="cs-image-wrapper padded-wrapper mt-32 mb-32">
-             <img src="../npl/tnh.png" alt="Temperature and Humidity Section visualizing thermal lag">
-          </div>
-        </div>
-
-        <div class="mt-48">
-          <h3>Lasers: Grouping Opposing Forces</h3>
-          <p>Instead of listing all 8 lasers in a long, random list, the data is grouped into pairs inside dedicated cards (X1 & X2, Y1 & Y2). Because lasers like X1 and X2 are opposing forces that must physically balance each other out, placing them in the same container allows the scientist to instantly compare them. The user can immediately spot an imbalance without having to scan across the whole screen to find the matching partner.</p>
-          
-          <div class="cs-image-wrapper padded-wrapper mt-32 mb-32">
-             <img src="../npl/laser.png" alt="Laser Section showing paired coordinates">
-          </div>
-        </div>
-
-        <div class="mt-48">
-          <h3>Photodiodes: Troubleshooting the Light Chain</h3>
-          <p>Photodiodes measure light intensity at different stages in a chain: light goes through switches (AOMs), into fibers, and finally to detection. If the final signal dies, the scientist needs to quickly answer: "Is the laser broken, or did just one switch fail?" To make reading the graph effortless, the top row of cards acts as a "living legend." The colored outline and text of the card (e.g., Orange for AOM 5) matches its corresponding trace line exactly on the graph below.</p>
-          
-          <div class="cs-image-wrapper padded-wrapper mt-32 mb-32">
-             <img src="../npl/photo.png" alt="Photodiode Section with living legend UI">
-          </div>
-        </div>
-
-        <div class="mt-48">
-          <h3>Retrieve Data: Supporting Post-Hoc Analysis</h3>
-          <p>This section was designed strictly to support retrospective analysis. By creating a clear separation between "Quick Plotting" for rapid visual checks and "CSV Export" for deep algorithmic analysis, the interface respects the researcher's workflow. It ensures that the valuable data collected by the system isn't locked inside the dashboard, but remains easily accessible for publication and peer review.</p>
-          
-          <div class="cs-image-wrapper padded-wrapper mt-32 mb-32">
-             <img src="../npl/retr.png" alt="Retrieve Data Section for historical analysis">
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="cs-split-section">
-      <div class="cs-sidebar">
-        <h2>Outcomes</h2>
-      </div>
-      <div class="cs-content">
-        <div class="cs-cards-row two-col">
-          <div class="cs-problem-card">
-            <h3>Unified Ecosystem</h3>
-            <p>Consolidated 4 disparate hardware sources into a single, accessible digital twin.</p>
-          </div>
-          <div class="cs-problem-card">
-            <h3>Automated Workflows</h3>
-            <p>Eliminated manual data logging, allowing scientists to focus on experiment tuning rather than data entry.</p>
-          </div>
+        <div class="lab-card">
+          <span>Reading pattern</span>
+          <h3>Peripheral status cues.</h3>
+          <p>Scientists could detect active modules, connection status, and anomalies without reading every label.</p>
         </div>
       </div>
     </section>
 
+    <section class="npl-split">
+      <aside>
+        <p>03</p>
+        <h2>System Architecture</h2>
+      </aside>
+      <div class="npl-content">
+        <p class="npl-lead">The solution rebuilt the acquisition pipeline so isolated instruments could feed a single Python backend and a responsive Plotly Dash interface.</p>
+        <div class="npl-architecture">
+          <button type="button" class="active" data-arch="fluke">FLUKE 1620A</button>
+          <button type="button" data-arch="esp">ESP8266</button>
+          <button type="button" data-arch="api">Flask API</button>
+          <button type="button" data-arch="dash">Plotly Dash</button>
+        </div>
+        <div class="npl-arch-detail">
+          <div>
+            <span>Selected layer</span>
+            <h3>FLUKE 1620A Thermo-Hygrometer</h3>
+            <p>Serial data from the thermo-hygrometer tracks ambient and optical-bench temperature/humidity so scientists can see environmental drift before it destabilizes the experiment.</p>
+          </div>
+          <img src="../npl/archi.png" alt="CsF1 monitoring system architecture">
+        </div>
+      </div>
+    </section>
+
+    <section class="npl-modules">
+      <div class="npl-section-heading">
+        <p>04 · Interface Modules</p>
+        <h2>Switch through the dashboard logic.</h2>
+      </div>
+      <div class="module-tabs" aria-label="Dashboard module selector">
+        <button type="button" class="active" data-module="overview">Overview</button>
+        <button type="button" data-module="thermal">Thermal Lag</button>
+        <button type="button" data-module="lasers">Lasers</button>
+        <button type="button" data-module="photo">Photodiodes</button>
+        <button type="button" data-module="retrieve">Retrieve Data</button>
+      </div>
+      <div class="module-stage">
+        <div class="module-copy">
+          <span>Overview</span>
+          <h3>Macro health at a glance.</h3>
+          <p>The overview screen aggregates ambient conditions, laser coordinates, photodiode values, connection health, and last server update time into one fast scanning surface.</p>
+        </div>
+        <figure>
+          <img src="../npl/overview.png" alt="Overview dashboard module">
+        </figure>
+      </div>
+    </section>
+
+    <section class="npl-split">
+      <aside>
+        <p>05</p>
+        <h2>Design System</h2>
+      </aside>
+      <div class="npl-content">
+        <div class="npl-design-grid">
+          <figure>
+            <img src="../npl/col.png" alt="NPL dashboard color palette">
+          </figure>
+          <figure>
+            <img src="../npl/font.png" alt="NPL dashboard typography">
+          </figure>
+        </div>
+        <div class="npl-token-row">
+          <article>
+            <span>Cyan</span>
+            <strong>#21DEFF</strong>
+          </article>
+          <article>
+            <span>Green</span>
+            <strong>#21FFAB</strong>
+          </article>
+          <article>
+            <span>Orange</span>
+            <strong>#FF5B21</strong>
+          </article>
+          <article>
+            <span>Coral</span>
+            <strong>#E26D61</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="npl-outcomes">
+      <div>
+        <span>Outcome</span>
+        <h2>A unified monitoring ecosystem for high-stakes scientific observation.</h2>
+      </div>
+      <div class="npl-outcome-grid">
+        <article>
+          <h3>Unified ecosystem</h3>
+          <p>Consolidated environmental, laser, photodiode, and retrieval workflows into a single monitoring surface.</p>
+        </article>
+        <article>
+          <h3>Faster diagnosis</h3>
+          <p>Grouped paired lasers and photodiode traces so scientists could identify imbalance and light-chain failures quickly.</p>
+        </article>
+        <article>
+          <h3>Research-ready data</h3>
+          <p>Historical querying and CSV export supported post-hoc analysis without interrupting live observation.</p>
+        </article>
+      </div>
+    </section>
   </main>
 
   <div class="footer-section" id="contact">
@@ -334,7 +290,7 @@
           <a href="https://github.com/ishaanjms" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://www.behance.net/ishaanjain7" target="_blank" rel="noopener noreferrer">Behance</a>
           <a href="https://drive.google.com/file/d/1O5Kp6qlSXrkXVOnDSg89pSQX_AsUYIuP/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 4px;">
-            View Resume 
+            View Resume
             <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px;"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg>
           </a>
         </div>
@@ -344,5 +300,6 @@
 
   <script src="../js/constants.js"></script>
   <script src="../js/shared.js"></script>
+  <script src="./project.js"></script>
 </body>
 </html>

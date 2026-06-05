@@ -52,130 +52,139 @@
     </div>
   </nav>
 
-  <div class="garage-container">
+  <main class="garage-container">
 
-    <div class="garage-header">
-      <div class="garage-watermark">Garage</div>
-      <h1 class="garage-title">Everything I've built,<br>tinkered, or explored.</h1>
-      <p class="garage-sub">Side Work & Experiments</p>
-    </div>
+    <section class="garage-header" aria-labelledby="garage-title">
+      <div>
+        <!-- <p class="garage-kicker">Side Work & Experiments</p> -->
+        <h1 class="garage-title" id="garage-title">Garage</h1>
+        <p class="garage-sub">Everything I've built, tinkered with, explored, or shipped while following an interesting thread.</p>
+      </div>
+      <br>
 
-    <div class="bento-grid">
+      <div class="garage-filter" aria-label="Filter garage projects">
+        <span>Filter by:</span>
+        <button class="filter-chip active" type="button" data-filter="all">All</button>
+        <button class="filter-chip" type="button" data-filter="design">Design</button>
+        <button class="filter-chip" type="button" data-filter="code">Code</button>
+        <button class="filter-chip" type="button" data-filter="research">Research</button>
+      </div>
+    </section>
 
-      <!-- Card 1 — Wide featured -->
-      <a href="javascript:void(0)" class="bento-card bento-pos-1 card-blue card-light">
-        <div class="bento-placeholder" style="background: linear-gradient(135deg, #b8d4f8 0%, #ddeeff 100%);"></div>
-        <div class="bento-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></div>
-        <div class="bento-meta">
-          <div class="bento-label">ML / Dashboard</div>
-          <div class="bento-name">Atomic Clock<br>Live Monitor</div>
+    <section class="project-grid" aria-label="Garage projects">
+      <a href="https://www.behance.net/gallery/240381509/Boat-Brand-Campaign" target="_blank" rel="noopener noreferrer" class="project-card project-card-wide" data-category="design">
+        <figure class="project-media">
+          <img src="../assets/thumbnails/boatt.png" alt="boAt brand campaign">
+        </figure>
+        <div class="project-copy">
+          <p class="project-type">Brand Campaign</p>
+          <h2>boAt Brand Campaign</h2>
+          <p>A visual campaign direction exploring stronger product mood, sharper art direction, and youth-focused energy.</p>
+          <div class="project-tags">
+            <span>Branding</span>
+            <span>Visual Design</span>
+            <span>Campaign</span>
+          </div>
         </div>
       </a>
 
-      <!-- Card 2 — Narrow tall -->
-      <a href="javascript:void(0)" class="bento-card bento-pos-2 card-lavender card-light">
-        <div class="bento-placeholder" style="background: linear-gradient(160deg, #c8aaf4 0%, #e8ddf8 100%);"></div>
-        <div class="bento-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></div>
-        <div class="bento-meta">
-          <div class="bento-label">Branding</div>
-          <div class="bento-name">Lagrange<br>Identity</div>
+      <a href="../lagrange/lagrange.html" class="project-card" data-category="design">
+        <figure class="project-media">
+          <img src="../assets/thumbnails/Frame 1000001149.png" alt="Lagrange branding system">
+        </figure>
+        <div class="project-copy">
+          <p class="project-type">Branding and Interface</p>
+          <h2>Lagrange</h2>
+          <p>A composed identity system for an AI tool, balancing technical clarity with a warmer product presence.</p>
+          <div class="project-tags">
+            <span>Branding</span>
+            <span>Interface</span>
+            <span>Identity</span>
+          </div>
         </div>
       </a>
 
-      <!-- Card 3 — Medium -->
-      <a href="https://www.behance.net/gallery/240381509/Boat-Brand-Campaign" target="_blank" rel="noopener noreferrer" class="bento-card bento-pos-3 card-sage card-dark">
-        <img src="../assets/thumbnails/boatt.png" alt="boAt Brand Campaign" class="bento-img">
-        
-        <div class="bento-overlay"></div>
-        
-        <div class="bento-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></div>
-        <div class="bento-meta">
-          <div class="bento-label"></div>
-          <div class="bento-name"></div>
+      <a href="https://www.behance.net/gallery/199376075/Adagrad-Gamified-Learning-Experience" target="_blank" rel="noopener noreferrer" class="project-card" data-category="design">
+        <figure class="project-media">
+          <img src="../assets/thumbnails/adagrad-gamified.png" alt="Adagrad gamified learning experience">
+        </figure>
+        <div class="project-copy">
+          <p class="project-type">Gamified Learning</p>
+          <h2>Adagrad Learning</h2>
+          <p>An education experience shaped around playful progress, clearer feedback, and more motivating practice loops.</p>
+          <div class="project-tags">
+            <span>UX</span>
+            <span>Gamification</span>
+            <span>Product</span>
+          </div>
         </div>
       </a>
 
-      <!-- Card 4 — Medium -->
-      <a href="https://www.behance.net/gallery/199376075/Adagrad-Gamified-Learning-Experience" target="_blank" rel="noopener noreferrer" class="bento-card bento-pos-4 card-peach card-dark">
-        <img src="../assets/thumbnails/adagrad-gamified.png" alt="Adagrad Gamification" class="bento-img">
-        <div class="bento-overlay"></div>
-        
-        <div class="bento-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></div>
-        <div class="bento-meta">
-          <div class="bento-label">Gamification</div>
-          <div class="bento-name">Adagrad Learning</div>
+      <a href="../cloud/" class="project-card" data-category="code">
+        <figure class="project-media">
+          <img src="../assets/thumbnails/cloud.png" alt="Cloud Profiler application">
+        </figure>
+        <div class="project-copy">
+          <p class="project-type">Streamlit Application</p>
+          <h2>Cloud Profiler</h2>
+          <p>A small analytical tool for profiling cloud usage patterns and making infrastructure decisions easier to scan.</p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Data App</span>
+            <span>Tools</span>
+          </div>
         </div>
       </a>
 
-      <!-- Card 5 — Narrow -->
-      <a href="../lagrange/lagrange.html" rel="noopener noreferrer" class="bento-card bento-pos-5 card-yellow card-dark">
-        <img src="../assets/thumbnails/lagrange-branding.png" alt="Lagrange Branding" class="bento-img">
-        
-        <div class="bento-overlay"></div>
-        
-        <div class="bento-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></div>
-        <div class="bento-meta">
-          <div class="bento-label">Branding and Interface</div>
-          <div class="bento-name">Lagrange</div>
+      <a href="../npl/index.html" class="project-card project-card-wide" data-category="research code">
+        <figure class="project-media">
+          <img src="../assets/thumbnails/npl-atomic-clock.png" alt="NPL atomic clock dashboard">
+        </figure>
+        <div class="project-copy">
+          <p class="project-type">Research Dashboard</p>
+          <h2>Atomic Clock Live Monitor</h2>
+          <p>A monitoring concept for timekeeping data, designed to make technical signals readable at a glance.</p>
+          <div class="project-tags">
+            <span>Research</span>
+            <span>Dashboard</span>
+            <span>Data Viz</span>
+          </div>
         </div>
       </a>
 
-      <!-- Card 6 — Medium -->
-      <a href="javascript:void(0)" class="bento-card bento-pos-6 card-rose card-light">
-        <div class="bento-placeholder" style="background: linear-gradient(135deg, #f4a8c0 0%, #fdd8e5 100%);"></div>
-        <div class="bento-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></div>
-        <div class="bento-meta">
-          <div class="bento-label">Design System</div>
-          <div class="bento-name">IISc Portal<br>Component Kit</div>
+      <a href="../IISc/iisc.html" class="project-card" data-category="design">
+        <figure class="project-media">
+          <img src="../assets/thumbnails/iisc-internship.png" alt="IISc project visuals and UI">
+        </figure>
+        <div class="project-copy">
+          <p class="project-type">DCOE, IISc Bengaluru</p>
+          <h2>Visuals and UI</h2>
+          <p>A design internship project exploring visual systems and interface improvements for an academic product experience.</p>
+          <div class="project-tags">
+            <span>Visual Design</span>
+            <span>UI</span>
+            <span>Internship</span>
+          </div>
         </div>
       </a>
 
-      <!-- Card 7 — Narrow tall -->
-      <a href="https://cloudprofiler.streamlit.app/" target="_blank" rel="noopener noreferrer" class="bento-card bento-pos-7 card-cyan card-dark">
-        <img src="../assets/thumbnails/cloud.png" alt="Cloud Profiler" class="bento-img">
-        <div class="bento-overlay"></div>
-
-        <div class="bento-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></div>
-        <div class="bento-meta">
-          <div class="bento-label">Streamlit Application</div>
-          <div class="bento-name">Cloud Profiler</div>
+      <a href="../greene/" class="project-card" data-category="code">
+        <figure class="project-media">
+          <img src="../assets/thumbnails/greene.png" alt="Greene's Counsel AI web app">
+        </figure>
+        <div class="project-copy">
+          <p class="project-type">AI Web App</p>
+          <h2>Greene's Counsel</h2>
+          <p>A focused AI reading companion that turns dense strategic writing into conversational, usable guidance.</p>
+          <div class="project-tags">
+            <span>AI</span>
+            <span>Web App</span>
+            <span>Prototype</span>
+          </div>
         </div>
       </a>
-
-      <!-- Card 8 — Wide -->
-      <a href="javascript:void(0)" class="bento-card bento-pos-8 card-mint card-light">
-        <div class="bento-placeholder" style="background: linear-gradient(135deg, #80e8b8 0%, #d4f5e8 100%);"></div>
-        <div class="bento-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></div>
-        <div class="bento-meta">
-          <div class="bento-label">Research</div>
-          <div class="bento-name">Leap Second Prediction with ML</div>
-        </div>
-      </a>
-
-      <!-- Card 9 — Medium -->
-      <a href="https://robert-greene-app.vercel.app/" target="_blank" rel="noopener noreferrer" class="bento-card bento-pos-9 card-warm card-dark">
-        <img src="../assets/thumbnails/greene.png" alt="Greene's Counsel" class="bento-img">
-        <div class="bento-overlay"></div>
-
-        <div class="bento-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></div>
-        <div class="bento-meta">
-          <div class="bento-label">AI Web App</div>
-          <div class="bento-name">Greene's Counsel</div>
-        </div>
-      </a>
-
-      <!-- Card 10 — Medium -->
-      <a href="javascript:void(0)" class="bento-card bento-pos-10 card-coral card-light">
-        <div class="bento-placeholder" style="background: linear-gradient(135deg, #f4a888 0%, #fde0d4 100%);"></div>
-        <div class="bento-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></div>
-        <div class="bento-meta">
-          <div class="bento-label">Motion</div>
-          <div class="bento-name">Micro-interaction<br>Library</div>
-        </div>
-      </a>
-
-    </div>
-  </div>
+    </section>
+  </main>
 
   <div class="footer-section" id="contact">
     <div class="footer-inner">

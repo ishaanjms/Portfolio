@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ishaan Jain — Cloud Profiler</title>
+  <link rel="icon" type="image/png" href="../assets/logo/logo.png">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="cloud.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav-left">
+      <div class="nav-logo-box">
+        <img src="../assets/profile/avatar.png" alt="Ishaan Jain">
+      </div>
+      Ishaan Jain
+    </a>
+    <button class="nav-hamburger" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="../about/">About</a>
+        <a href="../garage/">Garage</a>
+        <a href="https://drive.google.com/file/d/1O5Kp6qlSXrkXVOnDSg89pSQX_AsUYIuP/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="nav-resume-btn">
+          View Resume
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg>
+        </a>
+      </div>
+      <div class="nav-social">
+        <a href="https://www.linkedin.com/in/ishaan-jain-72a2b2248/" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
+          <img src="../assets/logo/linkedin-112.svg" alt="LinkedIn" style="width: 14px; height: 14px; display: block; opacity: 0.8;">
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="cloud-page">
+    <section class="cloud-hero">
+      <div class="cloud-hero-copy">
+        <p class="cloud-eyebrow">Scientific Image Analysis · Streamlit Tool</p>
+        <h1>Cloud Density Profiler</h1>
+        <p class="cloud-hero-sub">A lightweight analysis interface that helps researchers crop atomic cloud images, tune visibility, and translate density patterns into measurable profiles.</p>
+        <div class="cloud-actions">
+          <a href="https://cloudprofiler.streamlit.app/" target="_blank" rel="noopener noreferrer" class="cloud-primary-link">
+            Launch app
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg>
+          </a>
+          <a href="#workflow" class="cloud-secondary-link">See workflow</a>
+        </div>
+      </div>
+
+      <div class="cloud-hero-visual" aria-label="Cloud Profiler product preview">
+        <div class="cloud-window">
+          <div class="cloud-window-bar">
+            <span></span><span></span><span></span>
+            <strong>Image Editor & Profiler</strong>
+          </div>
+          <div class="cloud-app-layout">
+            <aside>
+              <p>1. Crop & Adjust</p>
+              <div class="control-block">
+                <span>Square crop</span>
+                <div class="crop-box"></div>
+              </div>
+              <div class="control-block">
+                <span>Gamma correction</span>
+                <div class="slider"><i style="width: 48%"></i></div>
+              </div>
+              <button>Analyze Edited Image</button>
+            </aside>
+            <section>
+              <div class="density-map">
+                <div class="center-marker"></div>
+              </div>
+              <div class="metric-row">
+                <div><span>COM X</span><strong>103.42 px</strong></div>
+                <div><span>COM Y</span><strong>98.77 px</strong></div>
+              </div>
+              <div class="profile-lines">
+                <svg viewBox="0 0 280 86" preserveAspectRatio="none">
+                  <path d="M0,62 C25,60 34,38 58,41 C82,45 86,18 118,20 C151,22 150,60 180,57 C210,54 218,26 242,30 C262,33 268,48 280,44" />
+                  <path d="M0,70 C30,68 40,52 62,54 C88,56 94,35 122,34 C150,33 160,46 184,48 C210,50 220,38 244,39 C263,40 270,56 280,52" />
+                </svg>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cloud-overview">
+      <div>
+        <h2>Turning a research script into a guided analysis experience.</h2>
+        <p>The app is built in Streamlit with NumPy, SciPy, scikit-image, Matplotlib, Plotly, Pillow, and streamlit-cropper. From a UX perspective, the project is about reducing the friction between image preparation and scientific interpretation.</p>
+      </div>
+      <div class="cloud-meta-grid">
+        <article>
+          <span>Role</span>
+          <strong>Designer & Python Developer</strong>
+        </article>
+        <article>
+          <span>Platform</span>
+          <strong>Streamlit web app</strong>
+        </article>
+        <article>
+          <span>Core task</span>
+          <strong>Crop, adjust, profile, interpret</strong>
+        </article>
+        <article>
+          <span>Outputs</span>
+          <strong>COM metrics, heatmap, 1D profiles, 3D surface</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="cloud-split">
+      <aside>
+        <p>01</p>
+        <h2>UX Problem</h2>
+      </aside>
+      <div class="cloud-content">
+        <p class="cloud-lead">Scientific image analysis often starts with a deceptively small task: isolate the relevant cloud region, normalize it, then decide whether the resulting profile is meaningful. The interface had to make each step visible and reversible.</p>
+        <div class="cloud-problem-grid">
+          <article>
+            <span>Preparation gap</span>
+            <h3>Raw images are noisy.</h3>
+            <p>Researchers need to crop and normalize the relevant region before quantitative analysis is useful.</p>
+          </article>
+          <article>
+            <span>Interpretation gap</span>
+            <h3>Visual density needs numbers.</h3>
+            <p>A bright center is not enough; users need center-of-mass values and directional profiles.</p>
+          </article>
+          <article>
+            <span>Confidence gap</span>
+            <h3>Analysis needs inspection.</h3>
+            <p>Heatmaps, line profiles, and 3D surfaces help users cross-check the same result from multiple views.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cloud-workflow" id="workflow">
+      <div class="cloud-section-heading">
+        <p>02 · Workflow</p>
+        <h2>A four-step journey from image to evidence.</h2>
+      </div>
+      <div class="workflow-tabs" aria-label="Cloud Profiler workflow">
+        <button type="button" class="active" data-step="upload">Upload</button>
+        <button type="button" data-step="crop">Crop</button>
+        <button type="button" data-step="adjust">Adjust</button>
+        <button type="button" data-step="analyze">Analyze</button>
+      </div>
+      <div class="workflow-stage">
+        <div class="workflow-copy">
+          <span>Step 1</span>
+          <h3>Start with a familiar upload pattern.</h3>
+          <p>The app opens in a low-pressure waiting state. Users are not shown analysis controls until an image exists, preventing premature decisions.</p>
+        </div>
+        <div class="workflow-preview upload-preview">
+          <div class="drop-zone">
+            <strong>Choose an image...</strong>
+            <span>JPG · JPEG · PNG</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cloud-split">
+      <aside>
+        <p>03</p>
+        <h2>Interface Decisions</h2>
+      </aside>
+      <div class="cloud-content">
+        <div class="decision-list">
+          <article>
+            <span>Sidebar as setup rail</span>
+            <h3>Preparation controls stay separate from interpretation.</h3>
+            <p>Crop and gamma correction live in the sidebar, while the main canvas is reserved for image comparison and analysis outputs. This supports a clean mental model: prepare on the side, inspect in the center.</p>
+          </article>
+          <article>
+            <span>Square crop constraint</span>
+            <h3>Consistency beats flexibility for this task.</h3>
+            <p>The cropper enforces a 1:1 region and resizes it to 200x200 px. That constraint makes heatmaps, profiles, and center-of-mass calculations easier to compare across images.</p>
+          </article>
+          <article>
+            <span>Manual analysis trigger</span>
+            <h3>Users decide when the image is ready.</h3>
+            <p>Instead of auto-running analysis after every slider movement, the app waits for an explicit "Analyze Edited Image" action. That gives users a sense of control and keeps the workflow intentional.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cloud-analysis">
+      <div class="cloud-section-heading">
+        <p>04 · Analysis Surface</p>
+        <h2>Multiple views of the same phenomenon.</h2>
+      </div>
+      <div class="analysis-grid">
+        <article>
+          <div class="mini-heatmap"><i></i></div>
+          <h3>2D heatmap</h3>
+          <p>Maps normalized grayscale density with an optional center-of-mass marker for spatial validation.</p>
+        </article>
+        <article>
+          <div class="mini-chart"></div>
+          <h3>1D profiles</h3>
+          <p>Separates horizontal and vertical density sums so asymmetry becomes easier to inspect.</p>
+        </article>
+        <article>
+          <div class="mini-surface">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <h3>3D surface</h3>
+          <p>Uses Plotly to help users rotate and inspect the density surface interactively.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cloud-split">
+      <aside>
+        <p>05</p>
+        <h2>System Logic</h2>
+      </aside>
+      <div class="cloud-content">
+        <div class="logic-flow">
+          <div>
+            <span>Input</span>
+            <strong>PIL image upload</strong>
+          </div>
+          <i></i>
+          <div>
+            <span>Preprocess</span>
+            <strong>Crop, resize, gamma</strong>
+          </div>
+          <i></i>
+          <div>
+            <span>Analyze</span>
+            <strong>Grayscale + center of mass</strong>
+          </div>
+          <i></i>
+          <div>
+            <span>Output</span>
+            <strong>Metrics + plots</strong>
+          </div>
+        </div>
+        <p class="logic-note">The core helper function calculates center of mass and 1D profiles from the normalized 2D image. The rest of the interface is designed to help the user trust that calculation.</p>
+      </div>
+    </section>
+
+    <section class="cloud-outcomes">
+      <div>
+        <span>Outcome</span>
+        <h2>A compact scientific tool with a clear preparation-to-analysis rhythm.</h2>
+      </div>
+      <div class="cloud-outcome-grid">
+        <article>
+          <h3>Reduced cognitive load</h3>
+          <p>The app gates advanced analysis until the user has uploaded, cropped, and adjusted the image.</p>
+        </article>
+        <article>
+          <h3>Better interpretability</h3>
+          <p>Center-of-mass metrics are supported by heatmap, directional profiles, and 3D surface views.</p>
+        </article>
+        <article>
+          <h3>Future improvement</h3>
+          <p>The next version could add session history, comparison between multiple clouds, and exportable reports.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="footer-section" id="contact">
+    <div class="footer-inner">
+      <div class="footer-cta-wrap">
+        <h2 class="footer-heading">Have a complex problem?<br><span>Let's collaborate.</span></h2>
+        <p class="footer-sub">Open to full-time roles and interesting conversations.</p>
+        <a href="mailto:ishaanuxd@gmail.com" class="footer-email-btn">ishaanuxd@gmail.com <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;flex-shrink:0"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></a>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">© 2026 Ishaan Jain. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/ishaan-jain-72a2b2248/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/ishaanjms" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.behance.net/ishaanjain7" target="_blank" rel="noopener noreferrer">Behance</a>
+          <a href="https://drive.google.com/file/d/1O5Kp6qlSXrkXVOnDSg89pSQX_AsUYIuP/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 4px;">
+            View Resume
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px;"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/constants.js"></script>
+  <script src="../js/shared.js"></script>
+  <script src="cloud.js"></script>
+</body>
+</html>

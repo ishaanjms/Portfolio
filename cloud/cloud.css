@@ -1,0 +1,780 @@
+body {
+  background: #f7f5f0;
+}
+
+.cloud-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 32px 100px;
+  color: #1a1916;
+}
+
+.cloud-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(430px, 1fr);
+  gap: 46px;
+  align-items: center;
+  min-height: 680px;
+  padding: 40px 0 86px;
+}
+
+.cloud-eyebrow,
+.cloud-overview span,
+.cloud-split aside p,
+.cloud-problem-grid span,
+.cloud-section-heading p,
+.workflow-copy span,
+.decision-list span,
+.logic-flow span,
+.cloud-outcomes span {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: rgba(26, 25, 22, 0.48);
+}
+
+.cloud-hero h1 {
+  margin: 18px 0 24px;
+  color: #1a1916;
+  font-size: clamp(56px, 7.5vw, 110px);
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.cloud-hero-sub {
+  max-width: 650px;
+  color: rgba(26, 25, 22, 0.62);
+  font-size: clamp(20px, 2.5vw, 28px);
+  line-height: 1.3;
+  font-weight: 300;
+}
+
+.cloud-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 38px;
+}
+
+.cloud-primary-link,
+.cloud-secondary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  border-radius: 999px;
+  padding: 12px 22px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: transform 0.24s ease, background 0.24s ease;
+}
+
+.cloud-primary-link {
+  background: #1a1916;
+  color: #f7f5f0;
+}
+
+.cloud-secondary-link {
+  border: 1px solid rgba(26, 25, 22, 0.18);
+  color: rgba(26, 25, 22, 0.72);
+}
+
+.cloud-primary-link:hover,
+.cloud-secondary-link:hover {
+  transform: translateY(-2px);
+}
+
+.cloud-hero-visual {
+  min-height: 560px;
+  border-radius: 32px;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 24% 20%, rgba(39, 169, 201, 0.28), transparent 28%),
+    radial-gradient(circle at 86% 76%, rgba(238, 108, 77, 0.22), transparent 30%),
+    #172022;
+  box-shadow: 0 34px 80px rgba(26, 25, 22, 0.18);
+}
+
+.cloud-window {
+  height: 100%;
+  min-height: 512px;
+  overflow: hidden;
+  border: 1px solid rgba(247, 245, 240, 0.12);
+  border-radius: 24px;
+  background: rgba(247, 245, 240, 0.07);
+  backdrop-filter: blur(18px);
+}
+
+.cloud-window-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(247, 245, 240, 0.1);
+}
+
+.cloud-window-bar span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(247, 245, 240, 0.36);
+}
+
+.cloud-window-bar strong {
+  margin-left: 8px;
+  color: rgba(247, 245, 240, 0.78);
+  font-size: 13px;
+}
+
+.cloud-app-layout {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 16px;
+  padding: 18px;
+}
+
+.cloud-app-layout aside,
+.cloud-app-layout section {
+  border: 1px solid rgba(247, 245, 240, 0.1);
+  border-radius: 18px;
+  background: rgba(247, 245, 240, 0.06);
+  padding: 16px;
+}
+
+.cloud-app-layout aside p,
+.control-block span,
+.metric-row span {
+  color: rgba(247, 245, 240, 0.54);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+}
+
+.control-block {
+  margin-top: 18px;
+}
+
+.crop-box {
+  position: relative;
+  aspect-ratio: 1;
+  margin-top: 10px;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 52% 46%, rgba(238, 108, 77, 0.95), transparent 18%),
+    radial-gradient(circle at 52% 46%, rgba(39, 169, 201, 0.9), transparent 34%),
+    #101415;
+}
+
+.crop-box::after {
+  content: '';
+  position: absolute;
+  inset: 18%;
+  border: 2px solid #ee6c4d;
+  border-radius: 8px;
+}
+
+.slider {
+  height: 8px;
+  margin-top: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(247, 245, 240, 0.12);
+}
+
+.slider i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #27a9c9, #ee6c4d);
+}
+
+.cloud-app-layout aside button {
+  width: 100%;
+  margin-top: 22px;
+  border: 0;
+  border-radius: 999px;
+  background: #f7f5f0;
+  color: #1a1916;
+  padding: 11px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.density-map {
+  position: relative;
+  min-height: 220px;
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 52% 46%, #fff2b8 0 7%, #ee6c4d 8% 17%, #27a9c9 28%, #25373c 52%, #101415 76%);
+  overflow: hidden;
+}
+
+.density-map::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(247, 245, 240, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247, 245, 240, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.center-marker {
+  position: absolute;
+  left: 52%;
+  top: 46%;
+  width: 22px;
+  height: 22px;
+  transform: translate(-50%, -50%);
+}
+
+.center-marker::before,
+.center-marker::after {
+  content: '';
+  position: absolute;
+  background: #ff304f;
+}
+
+.center-marker::before {
+  left: 10px;
+  top: 0;
+  width: 2px;
+  height: 22px;
+}
+
+.center-marker::after {
+  left: 0;
+  top: 10px;
+  width: 22px;
+  height: 2px;
+}
+
+.metric-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.metric-row div {
+  border-radius: 14px;
+  padding: 13px;
+  background: rgba(247, 245, 240, 0.08);
+}
+
+.metric-row strong {
+  display: block;
+  margin-top: 7px;
+  color: #f7f5f0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.profile-lines {
+  height: 96px;
+  margin-top: 12px;
+  border-radius: 14px;
+  background: rgba(247, 245, 240, 0.08);
+  padding: 12px;
+}
+
+.profile-lines svg {
+  width: 100%;
+  height: 100%;
+}
+
+.profile-lines path {
+  fill: none;
+  stroke: #27a9c9;
+  stroke-width: 3;
+}
+
+.profile-lines path + path {
+  stroke: #ee6c4d;
+  opacity: 0.8;
+}
+
+.cloud-overview,
+.cloud-outcomes {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  gap: 64px;
+  padding: 72px 0;
+  border-bottom: 1px solid rgba(26, 25, 22, 0.08);
+}
+
+.cloud-overview h2,
+.cloud-section-heading h2,
+.cloud-outcomes h2 {
+  color: #1a1916;
+  font-size: clamp(34px, 4vw, 56px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.cloud-overview p {
+  max-width: 720px;
+  margin-top: 24px;
+  color: rgba(26, 25, 22, 0.6);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.cloud-meta-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.cloud-meta-grid article {
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(26, 25, 22, 0.08);
+}
+
+.cloud-meta-grid strong {
+  display: block;
+  margin-top: 8px;
+  color: rgba(26, 25, 22, 0.84);
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.cloud-split {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 72px;
+  padding: 104px 0 0;
+}
+
+.cloud-split aside {
+  position: sticky;
+  top: 100px;
+  align-self: start;
+}
+
+.cloud-split aside h2 {
+  margin-top: 12px;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.cloud-lead {
+  max-width: 860px;
+  color: rgba(26, 25, 22, 0.76);
+  font-size: 24px;
+  line-height: 1.35;
+}
+
+.cloud-problem-grid,
+.analysis-grid,
+.cloud-outcome-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 36px;
+}
+
+.cloud-problem-grid article,
+.analysis-grid article,
+.cloud-outcome-grid article,
+.decision-list article {
+  border: 1px solid rgba(26, 25, 22, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.46);
+  padding: 26px;
+  box-shadow: 0 14px 34px rgba(26, 25, 22, 0.04);
+}
+
+.cloud-problem-grid h3,
+.analysis-grid h3,
+.cloud-outcome-grid h3,
+.decision-list h3,
+.workflow-copy h3 {
+  margin: 12px 0 10px;
+  color: #1a1916;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.cloud-problem-grid p,
+.analysis-grid p,
+.cloud-outcome-grid p,
+.decision-list p,
+.workflow-copy p,
+.logic-note {
+  color: rgba(26, 25, 22, 0.58);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.cloud-workflow,
+.cloud-analysis {
+  padding: 112px 0 0;
+}
+
+.cloud-section-heading {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+
+.workflow-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.workflow-tabs button {
+  border: 1px solid rgba(26, 25, 22, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.36);
+  color: rgba(26, 25, 22, 0.68);
+  padding: 10px 15px;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.workflow-tabs button.active,
+.workflow-tabs button:hover {
+  background: #1a1916;
+  border-color: #1a1916;
+  color: #f7f5f0;
+}
+
+.workflow-stage {
+  display: grid;
+  grid-template-columns: 0.42fr 0.58fr;
+  gap: 20px;
+  border-radius: 28px;
+  padding: 22px;
+  background: #1a1916;
+}
+
+.workflow-copy {
+  align-self: center;
+  padding: 22px;
+}
+
+.workflow-copy span,
+.workflow-copy h3,
+.workflow-copy p {
+  color: #f7f5f0;
+}
+
+.workflow-preview {
+  min-height: 360px;
+  border: 1px solid rgba(247, 245, 240, 0.12);
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(39, 169, 201, 0.32), transparent 24%),
+    rgba(247, 245, 240, 0.06);
+}
+
+.drop-zone {
+  width: min(360px, 80%);
+  min-height: 190px;
+  border: 1px dashed rgba(247, 245, 240, 0.34);
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 10px;
+  color: #f7f5f0;
+  text-align: center;
+}
+
+.drop-zone span {
+  color: rgba(247, 245, 240, 0.5);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+}
+
+.crop-demo,
+.gamma-demo,
+.analysis-demo {
+  width: min(420px, 86%);
+  min-height: 250px;
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  background: rgba(247, 245, 240, 0.06);
+}
+
+.crop-demo div {
+  width: 170px;
+  aspect-ratio: 1;
+  border: 2px solid #ee6c4d;
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 52% 46%, rgba(255, 241, 168, 0.94), transparent 12%),
+    radial-gradient(circle at 52% 46%, rgba(238, 108, 77, 0.9), transparent 28%),
+    radial-gradient(circle at 52% 46%, rgba(39, 169, 201, 0.72), transparent 46%),
+    #111;
+}
+
+.gamma-demo {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 22px;
+}
+
+.gamma-demo span {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 52% 46%, #fff1a8, #ee6c4d 28%, #27a9c9 52%, #172022 78%);
+}
+
+.gamma-demo span:nth-child(1) { filter: brightness(0.72); }
+.gamma-demo span:nth-child(3) { filter: brightness(1.28); }
+.gamma-demo .slider {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.analysis-demo {
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 22px;
+}
+
+.analysis-demo strong {
+  width: 100%;
+  border-radius: 14px;
+  padding: 14px;
+  background: rgba(247, 245, 240, 0.1);
+  color: #f7f5f0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.analysis-demo .mini-heatmap {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.decision-list {
+  display: grid;
+  gap: 16px;
+}
+
+.mini-heatmap,
+.mini-chart,
+.mini-surface {
+  height: 170px;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  background: #172022;
+}
+
+.mini-heatmap {
+  position: relative;
+  background:
+    radial-gradient(circle at 52% 44%, #fff1a8 0 8%, #ee6c4d 9% 20%, #27a9c9 34%, #172022 64%);
+}
+
+.mini-heatmap i {
+  position: absolute;
+  left: 52%;
+  top: 44%;
+  width: 24px;
+  height: 2px;
+  transform: translate(-50%, -50%);
+  background: #ff304f;
+}
+
+.mini-heatmap i::after {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: -11px;
+  width: 2px;
+  height: 24px;
+  background: #ff304f;
+}
+
+.mini-chart {
+  background:
+    linear-gradient(rgba(247, 245, 240, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247, 245, 240, 0.08) 1px, transparent 1px),
+    #172022;
+  background-size: 24px 24px;
+  position: relative;
+}
+
+.mini-chart::before,
+.mini-chart::after {
+  content: '';
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  height: 3px;
+  border-radius: 999px;
+  background: #27a9c9;
+}
+
+.mini-chart::before {
+  top: 56%;
+  transform: rotate(-8deg);
+}
+
+.mini-chart::after {
+  top: 42%;
+  background: #ee6c4d;
+  transform: rotate(10deg);
+}
+
+.mini-surface {
+  display: flex;
+  align-items: end;
+  gap: 10px;
+  padding: 22px;
+}
+
+.mini-surface span {
+  flex: 1;
+  border-radius: 999px 999px 4px 4px;
+  background: linear-gradient(to top, #27a9c9, #ee6c4d, #fff1a8);
+}
+
+.mini-surface span:nth-child(1) { height: 34%; }
+.mini-surface span:nth-child(2) { height: 62%; }
+.mini-surface span:nth-child(3) { height: 90%; }
+.mini-surface span:nth-child(4) { height: 68%; }
+.mini-surface span:nth-child(5) { height: 42%; }
+
+.logic-flow {
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr 40px 1fr 40px 1fr;
+  gap: 12px;
+  align-items: center;
+  border-radius: 24px;
+  padding: 18px;
+  background: #1a1916;
+}
+
+.logic-flow div {
+  min-height: 110px;
+  border: 1px solid rgba(247, 245, 240, 0.1);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.logic-flow strong {
+  display: block;
+  margin-top: 12px;
+  color: #f7f5f0;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.logic-flow i {
+  height: 1px;
+  background: linear-gradient(90deg, #27a9c9, #ee6c4d);
+}
+
+.logic-note {
+  max-width: 780px;
+  margin-top: 24px;
+}
+
+.cloud-outcomes {
+  border-bottom: 0;
+}
+
+.cloud-outcomes h2 {
+  margin-top: 14px;
+}
+
+.cloud-outcome-grid {
+  grid-template-columns: 1fr;
+  margin-top: 0;
+}
+
+@media (max-width: 980px) {
+  .cloud-hero,
+  .cloud-overview,
+  .workflow-stage,
+  .cloud-outcomes {
+    grid-template-columns: 1fr;
+  }
+
+  .cloud-hero {
+    min-height: 0;
+  }
+
+  .cloud-split {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .cloud-split aside {
+    position: static;
+  }
+
+  .cloud-problem-grid,
+  .analysis-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .logic-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .logic-flow i {
+    height: 28px;
+    width: 1px;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .cloud-page {
+    padding: 28px 16px 72px;
+  }
+
+  .cloud-hero {
+    padding: 24px 0 64px;
+  }
+
+  .cloud-hero h1 {
+    font-size: 50px;
+  }
+
+  .cloud-hero-sub {
+    font-size: 19px;
+  }
+
+  .cloud-hero-visual {
+    min-height: 660px;
+    padding: 12px;
+    border-radius: 22px;
+  }
+
+  .cloud-app-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cloud-overview,
+  .cloud-workflow,
+  .cloud-analysis,
+  .cloud-outcomes,
+  .cloud-split {
+    padding-top: 72px;
+  }
+
+  .workflow-stage {
+    padding: 12px;
+    border-radius: 22px;
+  }
+}
