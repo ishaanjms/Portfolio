@@ -311,7 +311,7 @@ body {
 }
 
 .gc-problem-grid article,
-.gc-pillar-map article,
+.gc-pillar-map button,
 .gc-architecture div,
 .gc-outcome-grid article {
   border: 1px solid rgba(26, 25, 22, 0.08);
@@ -359,17 +359,37 @@ body {
   gap: 12px;
 }
 
-.gc-pillar-map article {
+.gc-pillar-map button {
+  appearance: none;
+  width: 100%;
+  text-align: left;
   min-height: 230px;
   padding: 22px;
   cursor: pointer;
-  transition: transform 0.24s ease, background 0.24s ease, border-color 0.24s ease;
+  font: inherit;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.24s ease, background 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
 }
 
-.gc-pillar-map article:hover,
-.gc-pillar-map article.active {
+.gc-pillar-map button:hover,
+.gc-pillar-map button:focus-visible,
+.gc-pillar-map button.active {
   transform: translateY(-4px);
   border-color: rgba(26, 25, 22, 0.2);
+  background: #1a1916;
+  outline: none;
+  box-shadow: 0 18px 42px rgba(26, 25, 22, 0.1);
+}
+
+.gc-pillar-map button.active::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -30px;
+  width: 2px;
+  height: 30px;
   background: #1a1916;
 }
 
@@ -380,7 +400,7 @@ body {
 }
 
 .gc-pillar-map h3 {
-  margin: 48px 0 12px;
+  margin: 44px 0 12px;
   color: #1a1916;
   font-size: 22px;
   font-weight: 600;
@@ -392,23 +412,69 @@ body {
   line-height: 1.5;
 }
 
-.gc-pillar-map article.active span,
-.gc-pillar-map article.active h3,
-.gc-pillar-map article.active p,
-.gc-pillar-map article:hover span,
-.gc-pillar-map article:hover h3,
-.gc-pillar-map article:hover p {
+.gc-pillar-map em {
+  margin-top: auto;
+  color: rgba(26, 25, 22, 0.46);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-style: normal;
+}
+
+.gc-pillar-map button.active span,
+.gc-pillar-map button.active h3,
+.gc-pillar-map button.active p,
+.gc-pillar-map button.active em,
+.gc-pillar-map button:hover span,
+.gc-pillar-map button:hover h3,
+.gc-pillar-map button:hover p,
+.gc-pillar-map button:hover em,
+.gc-pillar-map button:focus-visible span,
+.gc-pillar-map button:focus-visible h3,
+.gc-pillar-map button:focus-visible p,
+.gc-pillar-map button:focus-visible em {
   color: #f7f5f0;
 }
 
 .gc-pillar-stage {
   display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 18px;
+  margin-top: 28px;
+  border-radius: 22px;
+  padding: 22px;
+  background: linear-gradient(135deg, #1a1916, #31302a);
+}
+
+.gc-pillar-detail {
+  padding: 14px;
+}
+
+.gc-pillar-detail span {
+  color: rgba(247, 245, 240, 0.5);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.gc-pillar-detail h3 {
+  margin: 18px 0 12px;
+  color: #f7f5f0;
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 560;
+  line-height: 1;
+}
+
+.gc-pillar-detail p {
+  color: rgba(247, 245, 240, 0.68);
+  font-size: 16px;
+  line-height: 1.58;
+}
+
+.gc-pillar-nodes {
+  display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
-  margin-top: 16px;
-  border-radius: 22px;
-  padding: 18px;
-  background: linear-gradient(135deg, #1a1916, #31302a);
+  align-self: stretch;
 }
 
 .gc-pillar-node {
@@ -420,6 +486,7 @@ body {
   color: rgba(247, 245, 240, 0.72);
   font-family: 'DM Mono', monospace;
   font-size: 13px;
+  background: rgba(247, 245, 240, 0.04);
 }
 
 .gc-architecture {
@@ -905,6 +972,10 @@ body {
   }
 
   .gc-pillar-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .gc-pillar-nodes {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -953,8 +1024,13 @@ body {
   .gc-problem-grid,
   .gc-pillar-map,
   .gc-pillar-stage,
+  .gc-pillar-nodes,
   .gc-architecture {
     grid-template-columns: 1fr;
+  }
+
+  .gc-pillar-map button.active::after {
+    display: none;
   }
 
   .gc-demo-layout,

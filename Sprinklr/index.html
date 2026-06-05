@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ishaan Jain — Sprinklr Device Switcher</title>
+  <link rel="icon" type="image/png" href="../assets/logo/logo.png">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="./sprinklr.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav-left">
+      <div class="nav-logo-box">
+        <img src="../assets/profile/avatar.png" alt="Ishaan Jain">
+      </div>
+      Ishaan Jain
+    </a>
+    <button class="nav-hamburger" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="../about/">About</a>
+        <a href="../garage/">Garage</a>
+        <a href="https://drive.google.com/file/d/1O5Kp6qlSXrkXVOnDSg89pSQX_AsUYIuP/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="nav-resume-btn">
+          View Resume
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg>
+        </a>
+      </div>
+      <div class="nav-social">
+        <a href="https://www.linkedin.com/in/ishaan-jain-72a2b2248/" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
+          <img src="../assets/logo/linkedin-112.svg" alt="LinkedIn" style="width: 14px; height: 14px; display: block; opacity: 0.8;">
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="spr-page">
+    <section class="spr-hero">
+      <div class="spr-hero-copy">
+        <div class="spr-brand-lockup">
+          <img src="../assets/Ex-logos/sprinklr.svg" alt="Sprinklr">
+        </div>
+        <h1>Device switcher</h1>
+        <p>A builder-level UX improvement for Sprinklr CFM Surveys, helping creators validate web, mobile, tablet, and custom survey layouts without leaving the authoring surface.</p>
+      </div>
+
+      <div class="spr-demo-card" aria-label="Implemented solution demo">
+        <img src="../Sprinklr/Demo.gif" alt="Animated demo of the implemented mobile alignment setting in Sprinklr">
+      </div>
+    </section>
+
+    <section class="spr-overview">
+      <div>
+        <h2>The brief started as an alignment field. The better usability answer was visibility.</h2>
+        <p>The initial product direction was to add mobile alignment controls in the right configuration panel. My recommendation expanded the solution into an in-builder device switcher, because creators did not just need one more setting; they needed to see how surveys rendered across web, mobile, tablet, and custom viewports while building.</p>
+      </div>
+      <div class="spr-meta-grid">
+        <article>
+          <span>Role</span>
+          <strong>Product Designer</strong>
+        </article>
+        <article>
+          <span>Product Area</span>
+          <strong>Sprinklr - Customer Feedback Management, Survey Builder</strong>
+        </article>
+        <article>
+          <span>Problem Type</span>
+          <strong>Responsive preview, builder visibility, media layout control, iteration speed</strong>
+        </article>
+        <article>
+          <span>Output</span>
+          <strong>Device-view switcher proposal plus implemented mobile media alignment behavior</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="spr-split">
+      <aside>
+        <p>01</p>
+        <h2>The UX Issue</h2>
+      </aside>
+      <div class="spr-content">
+        <p class="spr-lead">The builder made desktop layout decisions easy, but mobile and tablet layout decisions were effectively blind.</p>
+        <div class="spr-problem-grid">
+          <article>
+            <span>Misalignment</span>
+            <h3>Desktop-safe layouts broke on smaller screens.</h3>
+            <p>Media that looked balanced on desktop could appear awkward once compressed into a mobile survey format.</p>
+          </article>
+          <article>
+            <span>Control Gap</span>
+            <h3>Creators could not optimize mobile presentation.</h3>
+            <p>Brands using product images, campaign visuals, or storytelling media had no mobile-specific alignment control.</p>
+          </article>
+          <article>
+            <span>Enterprise Fit</span>
+            <h3>Kiosk and tablet cases had no authoring confidence.</h3>
+            <p>Enterprise clients designing for specific device formats needed a reliable way to preview layouts against those surfaces.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="spr-journey">
+      <div class="spr-section-heading">
+        <p>02 · Current Journey</p>
+        <h2>Every responsive layout decision required a detour.</h2>
+      </div>
+      <div class="journey-rail" aria-label="Current user journey">
+        <article>
+          <span>1</span>
+          <h3>Leave builder</h3>
+          <p>The creator stops configuring the question.</p>
+        </article>
+        <article>
+          <span>2</span>
+          <h3>Go to preview</h3>
+          <p>The mobile experience is checked in a separate view.</p>
+        </article>
+        <article>
+          <span>3</span>
+          <h3>Switch device</h3>
+          <p>The creator changes preview mode to mobile.</p>
+        </article>
+        <article>
+          <span>4</span>
+          <h3>Map it back</h3>
+          <p>The fix has to be remembered and translated into builder settings.</p>
+        </article>
+        <article>
+          <span>5</span>
+          <h3>Return and iterate</h3>
+          <p>The same loop repeats until the layout feels acceptable.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="spr-pivot">
+      <div class="spr-section-heading">
+        <p>03 · Design Pivot</p>
+        <h2>From a right-panel field to an authoring mode.</h2>
+      </div>
+      <div class="pivot-grid">
+        <article>
+          <span>Original Product Ask</span>
+          <h3>Add mobile alignment controls.</h3>
+          <p>Rename the current control to Web Alignment and add Mobile Alignment below it in the Question -> Details panel, with top, between title and answer, and bottom placement options.</p>
+        </article>
+        <article class="pivot-card-strong">
+          <span>Suggested UX Direction</span>
+          <h3>Add a device switcher in the builder top menu.</h3>
+          <p>Let creators switch between Web, Mobile, Tablet, and Custom viewports, resizing the canvas in real time without mutating survey configuration.</p>
+        </article>
+        <article>
+          <span>Why It Won</span>
+          <h3>It solved the visibility problem.</h3>
+          <p>The switcher reduced preview friction, supported media-heavy surveys, and created a scalable foundation for future device-specific authoring needs.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="spr-simulator">
+      <div class="spr-section-heading">
+        <p>04 · Interface Logic</p>
+        <h2>Switch the builder across device views</h2>
+      </div>
+      <div class="simulator-shell">
+        <div class="simulator-panel">
+          <span>Builder top menu</span>
+          <h3>Device preview switcher</h3>
+          <p>The stronger solution keeps creators in the builder while the survey canvas dynamically resizes and re-renders against the selected viewport.</p>
+          <div class="device-controls" aria-label="Device preview controls">
+            <button type="button" class="active" data-device="web">Web</button>
+            <button type="button" data-device="mobile">Mobile</button>
+            <button type="button" data-device="tablet">Tablet</button>
+            <button type="button" data-device="custom">Custom</button>
+          </div>
+          <div class="custom-fields" aria-label="Custom viewport fields">
+            <label>Width <input type="text" value="390 px" readonly></label>
+            <label>Height <input type="text" value="844 px" readonly></label>
+          </div>
+          <span class="panel-sublabel">Web alignment</span>
+          <div class="alignment-controls" aria-label="Device alignment controls">
+            <button type="button" class="active" data-align="left-centered">Left Centered</button>
+            <button type="button" data-align="right-centered">Right Centered</button>
+            <button type="button" data-align="left-filled">Left Filled</button>
+            <button type="button" data-align="right-filled">Right Filled</button>
+            <button type="button" data-align="between">Between Title And Answer</button>
+          </div>
+        </div>
+        <div class="phone-preview" data-align="left-centered" data-device="web">
+          <div class="phone-frame">
+            <div class="phone-status"></div>
+            <div class="phone-question">
+              <span class="device-label">Web preview</span>
+              <h3>How does this visual feel in the selected viewport?</h3>
+              <div class="media-row">
+                <div class="media-tile">
+                  <span></span>
+                  <i></i>
+                </div>
+              </div>
+              <div class="choice-list">
+                <button type="button">Clear and readable</button>
+                <button type="button">A little cramped</button>
+                <button type="button">Needs adjustment</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="spr-split">
+      <aside>
+        <p>05</p>
+        <h2>Solution Options</h2>
+      </aside>
+      <div class="spr-content">
+        <p class="spr-lead">The design exploration balanced usability value with rendering feasibility, release timelines, and engineering bandwidth.</p>
+        <div class="solution-tabs" aria-label="Solution option selector">
+          <button type="button" class="active" data-option="required">Required</button>
+          <button type="button" data-option="preferred">Preferred</button>
+          <button type="button" data-option="best">Best Suggested</button>
+        </div>
+        <article class="solution-card">
+          <span>Baseline implementation</span>
+          <h3>Add mobile alignment in the right bar.</h3>
+          <p>A low-risk enhancement that addresses the core control gap within current technical and bandwidth constraints.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="spr-acceptance">
+      <div class="spr-section-heading acceptance-heading">
+        <p>06 · Acceptance Criteria</p>
+        <h2>What the design had to protect.</h2>
+      </div>
+      <div class="acceptance-grid">
+        <article>
+          <span>Visible Control</span>
+          <p>Device toggle is accessible in the builder top menu across live, draft, template, and AI+ Builder surveys.</p>
+        </article>
+        <article>
+          <span>Viewport Accuracy</span>
+          <p>Web, Mobile, Tablet, and Custom modes resize the canvas correctly and re-render survey components responsively.</p>
+        </article>
+        <article>
+          <span>Custom View</span>
+          <p>Width and height inputs support advanced preview scenarios with minimum and maximum validation limits.</p>
+        </article>
+        <article>
+          <span>No Data Mutation</span>
+          <p>Switching views must not change survey configuration, question logic, or saved respondent-facing behavior.</p>
+        </article>
+        <article>
+          <span>Configuration Parity</span>
+          <p>Web Alignment and Mobile Alignment persist through save, clone, duplicate, sandbox, and porting workflows.</p>
+        </article>
+        <article>
+          <span>Permission Model</span>
+          <p>New controls follow the same permissions already applied to the existing alignment switcher.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="spr-outcome">
+      <div>
+        <span>Outcome</span>
+        <h2>A stronger preview model with a practical implementation path.</h2>
+      </div>
+      <div class="outcome-grid">
+        <article>
+          <h3>Better authoring visibility</h3>
+          <p>Creators can reason about web, mobile, tablet, and custom survey layouts without moving between separate surfaces.</p>
+        </article>
+        <article>
+          <h3>More media control</h3>
+          <p>Mobile media alignment can be configured independently while preserving existing desktop alignment behavior.</p>
+        </article>
+        <article>
+          <h3>Enterprise-ready behavior</h3>
+          <p>The concept supports live, draft, template, AI+ Builder, cloning, duplication, sandbox, and porting requirements.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="footer-section" id="contact">
+    <div class="footer-inner">
+      <div class="footer-cta-wrap">
+        <h2 class="footer-heading">Have a complex problem?<br><span>Let's collaborate.</span></h2>
+        <p class="footer-sub">Open to full-time roles and interesting conversations.</p>
+        <a href="mailto:ishaanuxd@gmail.com" class="footer-email-btn">ishaanuxd@gmail.com <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;flex-shrink:0"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></a>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">© 2026 Ishaan Jain. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/ishaan-jain-72a2b2248/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/ishaanjms" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.behance.net/ishaanjain7" target="_blank" rel="noopener noreferrer">Behance</a>
+          <a href="https://drive.google.com/file/d/1O5Kp6qlSXrkXVOnDSg89pSQX_AsUYIuP/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 4px;">
+            View Resume
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px;"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/constants.js"></script>
+  <script src="../js/shared.js"></script>
+  <script src="./sprinklr.js"></script>
+</body>
+</html>

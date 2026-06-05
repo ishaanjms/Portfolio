@@ -1,18 +1,22 @@
 (function () {
   const architecture = {
     fluke: {
+      label: 'Selected layer · 01',
       title: 'FLUKE 1620A Thermo-Hygrometer',
       copy: 'Serial data from the thermo-hygrometer tracks ambient and optical-bench temperature/humidity so scientists can see environmental drift before it destabilizes the experiment.'
     },
     esp: {
+      label: 'Selected layer · 02',
       title: 'ESP8266 Signal Digitizer',
       copy: 'The microcontroller digitizes 13 laser and photodiode channels and transmits them wirelessly to the backend for live observation.'
     },
     api: {
+      label: 'Selected layer · 03',
       title: 'Flask API and Scientific Timestamping',
       copy: 'Every reading is logged with IST, UTC, and Modified Julian Date so live monitoring and post-hoc research analysis stay synchronized.'
     },
     dash: {
+      label: 'Selected layer · 04',
       title: 'Plotly Dash Interface',
       copy: 'The frontend converts raw streams into live cards, synchronized graphs, historical queries, and CSV extraction tools.'
     }
@@ -24,7 +28,12 @@
   archButtons.forEach(button => {
     button.addEventListener('click', () => {
       const detail = architecture[button.dataset.arch] || architecture.fluke;
-      archButtons.forEach(item => item.classList.toggle('active', item === button));
+      archButtons.forEach(item => {
+        const isActive = item === button;
+        item.classList.toggle('active', isActive);
+        item.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+      archDetail.querySelector('span').textContent = detail.label;
       archDetail.querySelector('h3').textContent = detail.title;
       archDetail.querySelector('p').textContent = detail.copy;
     });

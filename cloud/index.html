@@ -41,13 +41,12 @@
   <main class="cloud-page">
     <section class="cloud-hero">
       <div class="cloud-hero-copy">
-        <p class="cloud-eyebrow">Scientific Image Analysis · Streamlit Tool</p>
         <h1>Cloud Density Profiler</h1>
         <p class="cloud-hero-sub">A lightweight analysis interface that helps researchers crop atomic cloud images, tune visibility, and translate density patterns into measurable profiles.</p>
         <div class="cloud-actions">
           <a href="https://cloudprofiler.streamlit.app/" target="_blank" rel="noopener noreferrer" class="cloud-primary-link">
-            Launch app
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg>
+            Launch prototype
+            <svg class="cloud-link-arrow" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg>
           </a>
           <a href="#workflow" class="cloud-secondary-link">See workflow</a>
         </div>
@@ -95,7 +94,7 @@
     <section class="cloud-overview">
       <div>
         <h2>Turning a research script into a guided analysis experience.</h2>
-        <p>The app is built in Streamlit with NumPy, SciPy, scikit-image, Matplotlib, Plotly, Pillow, and streamlit-cropper. From a UX perspective, the project is about reducing the friction between image preparation and scientific interpretation.</p>
+        <p>Developed during my R&D internship at <a href="https://www.nplindia.org/" target="_blank" rel="noopener noreferrer" class="cloud-inline-link">CSIR-NPL</a> under <a href="https://www.linkedin.com/in/drpoonam/" target="_blank" rel="noopener noreferrer" class="cloud-inline-link">Dr. Poonam Arora</a>, this project reframes a scientific image-processing task as a guided decision flow. Instead of exposing every computation at once, the interface moves users through upload, crop, visibility tuning, and evidence review so the analysis feels inspectable rather than opaque.</p>
       </div>
       <div class="cloud-meta-grid">
         <article>
@@ -103,8 +102,8 @@
           <strong>Designer & Python Developer</strong>
         </article>
         <article>
-          <span>Platform</span>
-          <strong>Streamlit web app</strong>
+          <span>Tools</span>
+          <strong class="tool-lockup"><img src="../iconss/streamlit-mark-color.svg" alt="">Streamlit, Python, NumPy, SciPy, Plotly, scikit-image</strong>
         </article>
         <article>
           <span>Core task</span>
@@ -144,29 +143,27 @@
       </div>
     </section>
 
-    <section class="cloud-workflow" id="workflow">
+    <section class="cloud-approach">
       <div class="cloud-section-heading">
-        <p>02 · Workflow</p>
-        <h2>A four-step journey from image to evidence.</h2>
+        <p>02 · Design Approach</p>
+        <h2>How a designer approaches a scientific analysis tool.</h2>
       </div>
-      <div class="workflow-tabs" aria-label="Cloud Profiler workflow">
-        <button type="button" class="active" data-step="upload">Upload</button>
-        <button type="button" data-step="crop">Crop</button>
-        <button type="button" data-step="adjust">Adjust</button>
-        <button type="button" data-step="analyze">Analyze</button>
-      </div>
-      <div class="workflow-stage">
-        <div class="workflow-copy">
-          <span>Step 1</span>
-          <h3>Start with a familiar upload pattern.</h3>
-          <p>The app opens in a low-pressure waiting state. Users are not shown analysis controls until an image exists, preventing premature decisions.</p>
-        </div>
-        <div class="workflow-preview upload-preview">
-          <div class="drop-zone">
-            <strong>Choose an image...</strong>
-            <span>JPG · JPEG · PNG</span>
-          </div>
-        </div>
+      <div class="approach-grid">
+        <article>
+          <span>Frame the human task</span>
+          <h3>Separate preparation from interpretation.</h3>
+          <p>The user is not just running code. They are deciding whether a cloud image is clean enough to trust, so the interface has to support judgement before calculation.</p>
+        </article>
+        <article>
+          <span>Choose useful constraints</span>
+          <h3>Make comparison possible.</h3>
+          <p>A square crop and normalized 200x200 output reduce ambiguity, making heatmaps, profiles, and center-of-mass values comparable across uploads.</p>
+        </article>
+        <article>
+          <span>Use modern tools well</span>
+          <h3>Prototype the analysis surface quickly.</h3>
+          <p>Streamlit makes Python analysis interactive, while Plotly, Matplotlib, SciPy, and scikit-image turn raw image data into explainable visual evidence.</p>
+        </article>
       </div>
     </section>
 
@@ -196,9 +193,53 @@
       </div>
     </section>
 
+    <section class="cloud-workflow" id="workflow">
+      <div class="cloud-section-heading">
+        <p>04 · Interactive Demo</p>
+        <h2>A four-step journey from image to evidence.</h2>
+      </div>
+      <div class="workflow-layout">
+        <div class="workflow-tabs" aria-label="Cloud Profiler workflow">
+          <button type="button" class="active" data-step="upload" aria-pressed="true">
+            <span>01</span>
+            <strong>Upload</strong>
+            <em>Start the analysis with a source image.</em>
+          </button>
+          <button type="button" data-step="crop" aria-pressed="false">
+            <span>02</span>
+            <strong>Crop</strong>
+            <em>Constrain the region for comparison.</em>
+          </button>
+          <button type="button" data-step="adjust" aria-pressed="false">
+            <span>03</span>
+            <strong>Adjust</strong>
+            <em>Tune visibility before computation.</em>
+          </button>
+          <button type="button" data-step="analyze" aria-pressed="false">
+            <span>04</span>
+            <strong>Analyze</strong>
+            <em>Turn the image into evidence.</em>
+          </button>
+        </div>
+        <div class="workflow-stage" aria-live="polite">
+          <div class="workflow-copy">
+            <span>Selected step · 01</span>
+            <h3>Start with a familiar upload pattern.</h3>
+            <p>The app opens in a low-pressure waiting state. Users are not shown analysis controls until an image exists, preventing premature decisions.</p>
+          </div>
+          <div class="workflow-preview upload-preview">
+            <div class="drop-zone">
+              <strong>Choose an image...</strong>
+              <span>JPG · JPEG · PNG</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="cloud-analysis">
       <div class="cloud-section-heading">
-        <p>04 · Analysis Surface</p>
+        <p>05 · Analysis Surface</p>
         <h2>Multiple views of the same phenomenon.</h2>
       </div>
       <div class="analysis-grid">
@@ -224,7 +265,7 @@
 
     <section class="cloud-split">
       <aside>
-        <p>05</p>
+        <p>06</p>
         <h2>System Logic</h2>
       </aside>
       <div class="cloud-content">
@@ -271,6 +312,26 @@
           <h3>Future improvement</h3>
           <p>The next version could add session history, comparison between multiple clouds, and exportable reports.</p>
         </article>
+      </div>
+    </section>
+
+    <section class="cloud-recognition">
+      <div>
+        <span>Recognition</span>
+        <h2>Used in Quantum Vibes Q1 2026.</h2>
+      </div>
+      <div class="recognition-copy">
+        <p>The results obtained using this application were used in <a href="https://quantumindia.net//wp-content/uploads/2026/04/Quantum-Vibes-Q1-2026.pdf" target="_blank" rel="noopener noreferrer">Quantum Vibes Q1 2026</a>, where I was acknowledged for my work on the project.</p>
+        <div class="recognition-evidence" aria-label="Quantum Vibes evidence">
+          <figure>
+            <img src="./img-1.png" alt="Image generated from Cloud Density Profiler results used in Quantum Vibes">
+            <figcaption>Result image used in the magazine</figcaption>
+          </figure>
+          <figure>
+            <img src="./img-2.png" alt="Acknowledgement for Ishaan Jain in Quantum Vibes">
+            <figcaption>Acknowledgement in Quantum Vibes</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
   </main>

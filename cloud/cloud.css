@@ -23,9 +23,11 @@ body {
 .cloud-split aside p,
 .cloud-problem-grid span,
 .cloud-section-heading p,
+.approach-grid span,
 .workflow-copy span,
 .decision-list span,
 .logic-flow span,
+.cloud-recognition span,
 .cloud-outcomes span {
   font-family: 'DM Mono', monospace;
   font-size: 12px;
@@ -69,6 +71,7 @@ body {
   text-decoration: none;
   font-size: 15px;
   font-weight: 600;
+  white-space: nowrap;
   transition: transform 0.24s ease, background 0.24s ease;
 }
 
@@ -85,6 +88,13 @@ body {
 .cloud-primary-link:hover,
 .cloud-secondary-link:hover {
   transform: translateY(-2px);
+}
+
+.cloud-link-arrow {
+  width: 14px;
+  height: 14px;
+  display: block;
+  flex-shrink: 0;
 }
 
 .cloud-hero-visual {
@@ -324,6 +334,18 @@ body {
   line-height: 1.65;
 }
 
+.cloud-inline-link {
+  color: #1a1916;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.cloud-inline-link:hover {
+  color: #1572b6;
+}
+
 .cloud-meta-grid {
   display: grid;
   gap: 18px;
@@ -340,6 +362,20 @@ body {
   color: rgba(26, 25, 22, 0.84);
   font-size: 15px;
   line-height: 1.35;
+}
+
+.tool-lockup {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+}
+
+.tool-lockup img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .cloud-split {
@@ -370,6 +406,7 @@ body {
 }
 
 .cloud-problem-grid,
+.approach-grid,
 .analysis-grid,
 .cloud-outcome-grid {
   display: grid;
@@ -379,6 +416,7 @@ body {
 }
 
 .cloud-problem-grid article,
+.approach-grid article,
 .analysis-grid article,
 .cloud-outcome-grid article,
 .decision-list article {
@@ -390,6 +428,7 @@ body {
 }
 
 .cloud-problem-grid h3,
+.approach-grid h3,
 .analysis-grid h3,
 .cloud-outcome-grid h3,
 .decision-list h3,
@@ -401,6 +440,7 @@ body {
 }
 
 .cloud-problem-grid p,
+.approach-grid p,
 .analysis-grid p,
 .cloud-outcome-grid p,
 .decision-list p,
@@ -411,6 +451,7 @@ body {
   line-height: 1.6;
 }
 
+.cloud-approach,
 .cloud-workflow,
 .cloud-analysis {
   padding: 112px 0 0;
@@ -422,28 +463,81 @@ body {
   margin-bottom: 36px;
 }
 
+.workflow-layout {
+  display: grid;
+  grid-template-columns: 330px minmax(0, 1fr);
+  gap: 18px;
+}
+
 .workflow-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 18px;
+  display: grid;
+  gap: 12px;
 }
 
 .workflow-tabs button {
+  position: relative;
+  display: grid;
+  gap: 8px;
   border: 1px solid rgba(26, 25, 22, 0.16);
-  border-radius: 999px;
+  border-radius: 16px;
   background: rgba(255, 255, 255, 0.36);
   color: rgba(26, 25, 22, 0.68);
-  padding: 10px 15px;
+  padding: 18px;
   font: inherit;
-  font-size: 14px;
+  text-align: left;
   cursor: pointer;
+  box-shadow: 0 10px 24px rgba(26, 25, 22, 0.03);
+  transition: transform 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+}
+
+.workflow-tabs button span {
+  color: rgba(26, 25, 22, 0.42);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+}
+
+.workflow-tabs button strong {
+  color: #1a1916;
+  font-size: 19px;
+  line-height: 1;
+}
+
+.workflow-tabs button em {
+  color: rgba(26, 25, 22, 0.54);
+  font-size: 13px;
+  font-style: normal;
+  line-height: 1.42;
 }
 
 .workflow-tabs button.active,
-.workflow-tabs button:hover {
+.workflow-tabs button:hover,
+.workflow-tabs button:focus-visible {
+  transform: translateX(4px);
   background: #1a1916;
   border-color: #1a1916;
+  color: #f7f5f0;
+  outline: none;
+}
+
+.workflow-tabs button.active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  width: 20px;
+  height: 2px;
+  background: #1a1916;
+}
+
+.workflow-tabs button.active span,
+.workflow-tabs button.active strong,
+.workflow-tabs button.active em,
+.workflow-tabs button:hover span,
+.workflow-tabs button:hover strong,
+.workflow-tabs button:hover em,
+.workflow-tabs button:focus-visible span,
+.workflow-tabs button:focus-visible strong,
+.workflow-tabs button:focus-visible em {
   color: #f7f5f0;
 }
 
@@ -701,10 +795,82 @@ body {
   margin-top: 0;
 }
 
+.cloud-recognition {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+  gap: 44px 56px;
+  align-items: end;
+  margin-top: 40px;
+  border-radius: 24px;
+  padding: 46px;
+  background: #1a1916;
+}
+
+.cloud-recognition h2 {
+  margin-top: 14px;
+  color: #f7f5f0;
+  font-size: clamp(30px, 3.2vw, 44px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.cloud-recognition p {
+  color: rgba(247, 245, 240, 0.68);
+  font-size: 18px;
+  line-height: 1.62;
+}
+
+.cloud-recognition a {
+  color: #f7f5f0;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.recognition-copy {
+  display: contents;
+}
+
+.recognition-evidence {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 18px;
+}
+
+.recognition-evidence figure {
+  overflow: hidden;
+  border: 1px solid rgba(247, 245, 240, 0.12);
+  border-radius: 16px;
+  background: rgba(247, 245, 240, 0.06);
+}
+
+.recognition-evidence img {
+  width: 100%;
+  height: 300px;
+  display: block;
+  object-fit: cover;
+}
+
+.recognition-evidence figure:nth-child(2) img {
+  object-position: 50% 82%;
+}
+
+.recognition-evidence figcaption {
+  padding: 10px 12px 12px;
+  color: rgba(247, 245, 240, 0.58);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+}
+
 @media (max-width: 980px) {
   .cloud-hero,
   .cloud-overview,
+  .workflow-layout,
   .workflow-stage,
+  .cloud-recognition,
   .cloud-outcomes {
     grid-template-columns: 1fr;
   }
@@ -723,8 +889,20 @@ body {
   }
 
   .cloud-problem-grid,
-  .analysis-grid {
+  .approach-grid,
+  .analysis-grid,
+  .recognition-evidence {
     grid-template-columns: 1fr;
+  }
+
+  .workflow-tabs button.active::after {
+    display: none;
+  }
+
+  .workflow-tabs button.active,
+  .workflow-tabs button:hover,
+  .workflow-tabs button:focus-visible {
+    transform: translateY(-2px);
   }
 
   .logic-flow {
@@ -766,6 +944,7 @@ body {
   }
 
   .cloud-overview,
+  .cloud-approach,
   .cloud-workflow,
   .cloud-analysis,
   .cloud-outcomes,

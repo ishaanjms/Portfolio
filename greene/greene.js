@@ -1,19 +1,49 @@
 (function () {
-  const pillarCards = document.querySelectorAll('.gc-pillar-map article');
+  const pillarCards = document.querySelectorAll('.gc-pillar-map button');
   const stageNodes = document.querySelectorAll('.gc-pillar-node');
-  const stageLabels = {
-    foundation: ['Schemas', 'Model', 'Backend', 'Reliability'],
-    behaviour: ['Tone', 'Depth', 'Variation', 'Control'],
-    connection: ['Input', 'Memory', 'Agency', 'Trust'],
-    purpose: ['Ethics', 'Persona', 'Boundaries', 'Alignment'],
-    evolution: ['History', 'Feedback', 'Updates', 'Drift']
+  const pillarDetail = document.querySelector('.gc-pillar-detail');
+  const pillars = {
+    foundation: {
+      title: 'Foundation',
+      copy: 'Foundation defines the dependable technical base of the AI product: structured input, model orchestration, backend reliability, and schema decisions that make the system trustworthy before it becomes expressive.',
+      labels: ['Schemas', 'Model', 'Backend', 'Reliability']
+    },
+    behaviour: {
+      title: 'Behaviour',
+      copy: 'Behaviour controls how the system varies: tone, depth, response mode, and calibrated non-determinism make the AI feel adaptive without becoming unpredictable.',
+      labels: ['Tone', 'Depth', 'Variation', 'Control']
+    },
+    connection: {
+      title: 'Connection',
+      copy: 'Connection makes the interaction legible: conversational UI, context memory, user agency, and trust signals help users understand why a response fits their situation.',
+      labels: ['Input', 'Memory', 'Agency', 'Trust']
+    },
+    purpose: {
+      title: 'Purpose',
+      copy: 'Purpose gives the AI boundaries: ethical constraints, persona alignment, governance, and optimization goals define what the system should and should not pursue.',
+      labels: ['Ethics', 'Persona', 'Boundaries', 'Alignment']
+    },
+    evolution: {
+      title: 'Evolution',
+      copy: 'Evolution accounts for change over time: session history, feedback loops, model updates, and behavior monitoring shape how the product matures responsibly.',
+      labels: ['History', 'Feedback', 'Updates', 'Drift']
+    }
   };
 
   pillarCards.forEach(card => {
     card.addEventListener('click', () => {
       const key = card.dataset.pillar;
-      pillarCards.forEach(item => item.classList.toggle('active', item === card));
-      (stageLabels[key] || stageLabels.foundation).forEach((label, index) => {
+      const pillar = pillars[key] || pillars.foundation;
+      pillarCards.forEach(item => {
+        const isActive = item === card;
+        item.classList.toggle('active', isActive);
+        item.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+      if (pillarDetail) {
+        pillarDetail.querySelector('h3').textContent = pillar.title;
+        pillarDetail.querySelector('p').textContent = pillar.copy;
+      }
+      pillar.labels.forEach((label, index) => {
         if (stageNodes[index]) stageNodes[index].textContent = label;
       });
     });

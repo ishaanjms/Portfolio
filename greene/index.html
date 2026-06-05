@@ -139,37 +139,49 @@
         <h2>The Anatomy of AI Design</h2>
       </div>
       <div class="gc-pillar-map">
-        <article class="active" data-pillar="foundation">
+        <button type="button" class="active" data-pillar="foundation" aria-pressed="true">
           <span>01</span>
           <h3>Foundation</h3>
           <p>Infrastructure, schemas, model integration, and the technical ecology that makes an AI system reliable.</p>
-        </article>
-        <article data-pillar="behaviour">
+          <em>View details</em>
+        </button>
+        <button type="button" data-pillar="behaviour" aria-pressed="false">
           <span>02</span>
           <h3>Behaviour</h3>
           <p>Designed variability through tone, depth, response modes, and controlled non-determinism.</p>
-        </article>
-        <article data-pillar="connection">
+          <em>View details</em>
+        </button>
+        <button type="button" data-pillar="connection" aria-pressed="false">
           <span>03</span>
           <h3>Connection</h3>
           <p>Conversational UI, contextual memory, user agency, and signals that create interpretability.</p>
-        </article>
-        <article data-pillar="purpose">
+          <em>View details</em>
+        </button>
+        <button type="button" data-pillar="purpose" aria-pressed="false">
           <span>04</span>
           <h3>Purpose</h3>
           <p>Ethical boundaries, philosophical alignment, governance, and constraints on what the AI should optimize for.</p>
-        </article>
-        <article data-pillar="evolution">
+          <em>View details</em>
+        </button>
+        <button type="button" data-pillar="evolution" aria-pressed="false">
           <span>05</span>
           <h3>Evolution</h3>
           <p>Session adaptation, future learning loops, monitoring, and the system's behavior over time.</p>
-        </article>
+          <em>View details</em>
+        </button>
       </div>
-      <div class="gc-pillar-stage">
-        <div class="gc-pillar-node">Input</div>
-        <div class="gc-pillar-node">Interpret</div>
-        <div class="gc-pillar-node">Respond</div>
-        <div class="gc-pillar-node">Remember</div>
+      <div class="gc-pillar-stage" aria-live="polite">
+        <div class="gc-pillar-detail">
+          <span>Selected pillar</span>
+          <h3>Foundation</h3>
+          <p>Foundation defines the dependable technical base of the AI product: structured input, model orchestration, backend reliability, and schema decisions that make the system trustworthy before it becomes expressive.</p>
+        </div>
+        <div class="gc-pillar-nodes" aria-label="Selected pillar details">
+          <div class="gc-pillar-node">Schemas</div>
+          <div class="gc-pillar-node">Model</div>
+          <div class="gc-pillar-node">Backend</div>
+          <div class="gc-pillar-node">Reliability</div>
+        </div>
       </div>
     </section>
 

@@ -138,14 +138,30 @@
       <div class="npl-content">
         <p class="npl-lead">The solution rebuilt the acquisition pipeline so isolated instruments could feed a single Python backend and a responsive Plotly Dash interface.</p>
         <div class="npl-architecture">
-          <button type="button" class="active" data-arch="fluke">FLUKE 1620A</button>
-          <button type="button" data-arch="esp">ESP8266</button>
-          <button type="button" data-arch="api">Flask API</button>
-          <button type="button" data-arch="dash">Plotly Dash</button>
+          <button type="button" class="active" data-arch="fluke" aria-pressed="true">
+            <span>01</span>
+            <strong>FLUKE 1620A</strong>
+            <em>Environmental acquisition</em>
+          </button>
+          <button type="button" data-arch="esp" aria-pressed="false">
+            <span>02</span>
+            <strong>ESP8266</strong>
+            <em>Signal digitization</em>
+          </button>
+          <button type="button" data-arch="api" aria-pressed="false">
+            <span>03</span>
+            <strong>Flask API</strong>
+            <em>Timestamped data service</em>
+          </button>
+          <button type="button" data-arch="dash" aria-pressed="false">
+            <span>04</span>
+            <strong>Plotly Dash</strong>
+            <em>Scientist-facing dashboard</em>
+          </button>
         </div>
-        <div class="npl-arch-detail">
+        <div class="npl-arch-detail" aria-live="polite">
           <div>
-            <span>Selected layer</span>
+            <span>Selected layer · 01</span>
             <h3>FLUKE 1620A Thermo-Hygrometer</h3>
             <p>Serial data from the thermo-hygrometer tracks ambient and optical-bench temperature/humidity so scientists can see environmental drift before it destabilizes the experiment.</p>
           </div>
