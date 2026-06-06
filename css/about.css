@@ -192,6 +192,83 @@
   letter-spacing: 0;
 }
 
+/* --- Certifications --- */
+.certifications-section {
+  margin-top: 88px;
+  padding-top: 48px;
+}
+
+.certifications-section .section-title {
+  margin-bottom: 24px;
+}
+
+.certifications-list {
+  display: grid;
+  gap: 18px;
+}
+
+.cert-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 0;
+}
+
+.cert-logo {
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.cert-logo img {
+  object-fit: contain;
+}
+
+.cert-copy {
+  min-width: 0;
+}
+
+.cert-row .resume-role {
+  font-size: 17px;
+  margin-bottom: 7px;
+}
+
+.cert-row .resume-desc {
+  max-width: 760px;
+  margin: 0;
+}
+
+.cert-verify-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid rgba(26, 25, 22, 0.12);
+  border-radius: 999px;
+  padding: 9px 13px;
+  color: rgba(26, 25, 22, 0.72);
+  background: rgba(255, 255, 255, 0.42);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.cert-verify-link svg {
+  width: 12px;
+  height: 12px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.cert-verify-link:hover {
+  background: #1a1916;
+  border-color: #1a1916;
+  color: #f7f5f0;
+  transform: translateY(-1px);
+}
+
 /* --- Experience & Education (Parallel Lists) --- */
 .resume-section {
   width: 100%;
@@ -270,6 +347,61 @@
   line-height: 1.6;
 }
 
+/* --- Achievements --- */
+.achievements-section {
+  margin-top: 88px;
+}
+
+.achievements-section .section-title {
+  margin-bottom: 24px;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 24px;
+}
+
+.achievement-card {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px 18px;
+  border: 1px solid rgba(26, 25, 22, 0.075);
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.34)),
+    rgba(255, 255, 255, 0.36);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(107, 70, 193, 0.18);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.46)),
+    rgba(255, 255, 255, 0.46);
+}
+
+.achievement-card .resume-role {
+  font-size: 17px;
+  line-height: 1.22;
+  margin-bottom: 8px;
+}
+
+.achievement-card .resume-desc {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  margin: 0;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(107, 70, 193, 0.08);
+  color: rgba(26, 25, 22, 0.68);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
 /* Footer scroll reveal */
 
 /* --- Responsive --- */
@@ -281,6 +413,10 @@
   .intro-visual      { max-width: 280px; justify-self: start; }
   .tools-section     { border-radius: 20px; padding: 36px 0 32px; }
   .tools-section .section-title { padding: 0 24px; }
+  .certifications-section { margin-top: 72px; padding-top: 40px; }
+  .cert-row         { grid-template-columns: auto minmax(0, 1fr); }
+  .cert-verify-link { grid-column: 2; justify-self: start; margin-top: -4px; }
+  .achievements-grid { grid-template-columns: 1fr; }
   .resume-grid       { grid-template-columns: 1fr; gap: 48px; }
 }
 
@@ -296,6 +432,11 @@
   .tool-chip img     { width: 16px; height: 16px; }
   .tool-letter       { width: 16px; height: 16px; font-size: 8px; }
   .tools-section     { border-radius: 16px; }
+  .certifications-section { margin-top: 60px; padding-top: 32px; }
+  .cert-row         { gap: 14px; padding: 20px 0; }
+  .cert-row .resume-role { font-size: 16px; }
+  .achievements-section { margin-top: 60px; }
+  .achievement-card { padding: 14px; }
   .resume-card       { gap: 16px; }
   .resume-logo       { width: 40px; height: 40px; border-radius: 10px; padding: 6px; }
 }
