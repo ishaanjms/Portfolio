@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ishaan Jain - UT1-UTC Forecasting</title>
+  <link rel="icon" type="image/png" href="../assets/logo/logo.png">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="./ut1utc.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav-left">
+      <div class="nav-logo-box">
+        <img src="../assets/profile/avatar.png" alt="Ishaan Jain">
+      </div>
+      Ishaan Jain
+    </a>
+    <button class="nav-hamburger" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="../about/">About</a>
+        <a href="../garage/">Garage</a>
+        <a href="https://drive.google.com/file/d/1O5Kp6qlSXrkXVOnDSg89pSQX_AsUYIuP/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="nav-resume-btn">
+          View Resume
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg>
+        </a>
+      </div>
+      <div class="nav-social">
+        <a href="https://www.linkedin.com/in/ishaan-jain-72a2b2248/" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
+          <img src="../assets/logo/linkedin-112.svg" alt="LinkedIn" style="width: 14px; height: 14px; display: block; opacity: 0.8;">
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="ut-page">
+    <section class="ut-hero">
+      <div class="ut-hero-copy">
+        <h1>Predicting UT1-UTC for leap-second decisions.</h1>
+        <p class="ut-hero-sub">A comparative data-science project studying Earth's irregular rotation, leap-second history, and forecasting models across LSTM, TimeGPT, and SARIMA.</p>
+        <div class="ut-hero-tags">
+          <span>IERS EOP data</span>
+          <span>Forecasting</span>
+          <span>Machine Learning</span>
+          <span>Time Standards</span>
+        </div>
+      </div>
+      <div class="ut-hero-visual" aria-label="UT1-UTC trend visual">
+        <div class="ut-visual-top">
+          <span>UT1-UTC signal</span>
+          <strong>1960s - 2020s</strong>
+        </div>
+        <img src="./figures/figure-12.png" alt="UT1-UTC trend showing leap-second sawtooth phases">
+        <div class="ut-hero-metrics">
+          <article>
+            <span>LSTM RMSE</span>
+            <strong>0.5118 s</strong>
+          </article>
+          <article>
+            <span>TimeGPT RMSE</span>
+            <strong>0.0236 s</strong>
+          </article>
+          <article>
+            <span>Validation</span>
+            <strong>36 months</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ut-overview">
+      <div>
+        <h2>Why this matters.</h2>
+        <p>UTC is atomic-clock time. UT1 follows Earth's actual rotation. When their difference approaches the allowed boundary, leap seconds are used to keep civil time aligned with Earth rotation. The challenge is that the UT1-UTC signal is non-linear, sawtooth-like, and affected by complex geophysical dynamics.</p>
+      </div>
+      <div class="ut-meta-grid">
+        <article>
+          <span>Role</span>
+          <strong>Data analysis, modeling, visualization</strong>
+        </article>
+        <article>
+          <span>Dataset</span>
+          <strong>IERS Earth Orientation Parameters</strong>
+        </article>
+        <article>
+          <span>Methods</span>
+          <strong>LSTM, TimeGPT, SARIMA, correlation analysis</strong>
+        </article>
+        <article>
+          <span>Goal</span>
+          <strong>Forecast UT1-UTC for future leap-second planning</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="ut-split">
+      <aside>
+        <p>01</p>
+        <h2>Understanding the signal</h2>
+      </aside>
+      <div class="ut-content">
+        <p class="ut-lead">Before modeling, I mapped the Earth Orientation Parameters to understand which signals were physically meaningful for leap-second forecasting.</p>
+        <div class="ut-parameter-grid">
+          <article>
+            <span>Polar Motion</span>
+            <h3>x_pole, y_pole</h3>
+            <p>Tracks the wobble of Earth's rotation axis relative to the crust, measured in arcseconds.</p>
+          </article>
+          <article class="is-primary">
+            <span>Primary Target</span>
+            <h3>UT1-UTC</h3>
+            <p>Measures the divergence between Earth's rotation time and atomic time, staying within about +/-0.9 seconds.</p>
+          </article>
+          <article>
+            <span>Rotation Rate</span>
+            <h3>LOD</h3>
+            <p>Length of Day captures whether Earth is rotating slower or faster than the 86400-second day.</p>
+          </article>
+          <article>
+            <span>Celestial Corrections</span>
+            <h3>dPsi, dEpsilon, dX, dY</h3>
+            <p>Precession, nutation, and celestial-pole corrections used for precise reference-frame computations.</p>
+          </article>
+        </div>
+        <div class="ut-chart-grid">
+          <figure>
+            <img src="./figures/figure-05.png" alt="Classical decomposition of UT1-UTC into observed, trend, seasonal, and residual components">
+            <figcaption>Decomposing UT1-UTC into trend, seasonal, and residual behavior.</figcaption>
+          </figure>
+          <figure>
+            <img src="./figures/figure-06.png" alt="Length of Day over time">
+            <figcaption>Length of Day reveals the changing rotation-rate context behind UT1-UTC.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="ut-split">
+      <aside>
+        <p>02</p>
+        <h2>Feature reasoning</h2>
+      </aside>
+      <div class="ut-content">
+        <p class="ut-lead">The correlation study helped separate useful forecasting signals from parameters that are scientifically important but weakly related to leap-second scheduling.</p>
+        <div class="ut-correlation">
+          <figure>
+            <img src="./figures/figure-08.png" alt="Correlation matrix of Earth Orientation Parameter columns">
+          </figure>
+          <div class="ut-insight-list">
+            <article>
+              <span>Leap-second relevance</span>
+              <p>UT1-UTC and LOD were the most relevant variables for leap-second prediction. Polar motion and celestial offsets were weaker contributors.</p>
+            </article>
+            <article>
+              <span>Data quality</span>
+              <p>Uncertainty columns formed a highly intercorrelated cluster, suggesting consistent estimation behavior across measurements.</p>
+            </article>
+            <article>
+              <span>Modeling independence</span>
+              <p>Weak relationships among several geophysical parameters supported treating them independently rather than forcing a noisy multivariate model.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ut-trends">
+      <div class="ut-section-heading">
+        <p>03 · Leap-second history</p>
+        <h2>The signal changed behavior across five eras.</h2>
+      </div>
+      <div class="ut-trend-card">
+        <figure>
+          <img src="./figures/figure-12.png" alt="UT1-UTC over time with sawtooth leap-second behavior">
+        </figure>
+        <div class="ut-phase-list">
+          <article>
+            <span>Pre-1972</span>
+            <p>Smoother adjustments before the modern leap-second system.</p>
+          </article>
+          <article>
+            <span>1972 - late 1990s</span>
+            <p>Dense sawtooth corrections as leap seconds were added frequently.</p>
+          </article>
+          <article>
+            <span>Late 1990s - 2000</span>
+            <p>The final stage of consistent rotational slowdown before a major shift.</p>
+          </article>
+          <article>
+            <span>Late 2000 - 2020</span>
+            <p>Leap seconds became sporadic, creating wider gaps between corrections.</p>
+          </article>
+          <article>
+            <span>Post-2020</span>
+            <p>An upward trend appeared as Earth's rotation accelerated, raising discussion of a possible negative leap second.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ut-models">
+      <div class="ut-section-heading">
+        <p>04 · Model comparison</p>
+        <h2>Testing statistical and machine-learning approaches.</h2>
+      </div>
+      <div class="ut-model-tabs" aria-label="Forecast model selector">
+        <button type="button" class="active" data-model="lstm">LSTM</button>
+        <button type="button" data-model="timegpt">TimeGPT</button>
+        <button type="button" data-model="sarima">SARIMA</button>
+      </div>
+      <div class="ut-model-stage" aria-live="polite">
+        <div class="ut-model-copy">
+          <span>Long Short-Term Memory</span>
+          <h3>Strong one-step alignment, weak recursive forecasting.</h3>
+          <p>The LSTM used a chronological 80/20 split, train-only scaling, 30-day sliding windows, two stacked 50-unit LSTM layers, 20% dropout, and dense output layers. It captured short-term dynamics but drifted toward a constant value in longer closed-loop forecasts.</p>
+          <div class="ut-model-metrics">
+            <article>
+              <span>RMSE</span>
+              <strong>0.5118 s</strong>
+            </article>
+            <article>
+              <span>MAE</span>
+              <strong>0.4759 s</strong>
+            </article>
+          </div>
+        </div>
+        <figure>
+          <img src="./figures/figure-14.png" alt="LSTM historical data and forecast">
+        </figure>
+      </div>
+    </section>
+
+    <section class="ut-results">
+      <div>
+        <span>Outcome</span>
+        <h2>TimeGPT produced the strongest validation result.</h2>
+      </div>
+      <div class="ut-result-grid">
+        <article>
+          <h3>Best measured accuracy</h3>
+          <p>On a 36-month out-of-sample validation window, TimeGPT achieved RMSE 0.0236 and MAE 0.0201 after monthly resampling.</p>
+        </article>
+        <article>
+          <h3>LSTM limitation surfaced</h3>
+          <p>The LSTM's error was roughly half the maximum permitted UT1-UTC deviation before correction, making it insufficient for precision-critical use without stronger features.</p>
+        </article>
+        <article>
+          <h3>Next modeling direction</h3>
+          <p>Future work should bring in atmospheric/oceanic angular momentum, hybrid decomposition, direct multi-output forecasting, and ensembles for sub-0.1 second reliability.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="ut-gallery">
+      <div class="ut-section-heading">
+        <p>05 · Supporting visuals</p>
+        <h2>Exploratory plots used during analysis.</h2>
+      </div>
+      <div class="ut-gallery-grid">
+        <figure>
+          <img src="./figures/figure-01.png" alt="x pole over time">
+          <figcaption>x_pole over time</figcaption>
+        </figure>
+        <figure>
+          <img src="./figures/figure-02.png" alt="y pole over time">
+          <figcaption>y_pole over time</figcaption>
+        </figure>
+        <figure>
+          <img src="./figures/figure-03.png" alt="UT1-UTC chart">
+          <figcaption>UT1-UTC baseline view</figcaption>
+        </figure>
+        <figure>
+          <img src="./figures/figure-07.png" alt="Additional EOP exploratory chart">
+          <figcaption>Additional EOP exploration</figcaption>
+        </figure>
+        <figure>
+          <img src="./figures/figure-09.png" alt="Leap-second insertion dates">
+          <figcaption>Leap-second insertion dates</figcaption>
+        </figure>
+        <figure>
+          <img src="./figures/figure-16.png" alt="SARIMA model original data versus 10-year forecast">
+          <figcaption>SARIMA 10-year forecast benchmark</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="ut-conference">
+      <div class="ut-section-heading">
+        <p>06 · Presented Work</p>
+        <h2>Presented at URSI AP-RASC 2025 in Sydney.</h2>
+      </div>
+      <div class="ut-conference-card">
+        <div class="ut-conference-copy">
+          <span>URSI Asia-Pacific Radio Science Conference</span>
+          <p>This work was presented at <a href="https://www.ursi.org/event.php?id=408" target="_blank" rel="noopener noreferrer" class="inline-link">AP-RASC 2025</a>, the URSI Asia-Pacific Radio Science Conference held from 17-22 August 2025 in Sydney, Australia. I was acknowledged for my contribution to the machine-learning analysis and prediction work shown in the poster.</p>
+          <div class="ut-conference-meta">
+            <article>
+              <span>Event</span>
+              <strong>AP-RASC 2025</strong>
+            </article>
+            <article>
+              <span>Location</span>
+              <strong>Sydney, Australia</strong>
+            </article>
+            <article>
+              <span>Recognition</span>
+              <strong>Acknowledged contributor</strong>
+            </article>
+          </div>
+        </div>
+        <div class="ut-poster-grid">
+          <figure>
+            <img src="./img-1.jpeg" alt="Poster presented at URSI AP-RASC 2025 for leap second prediction work">
+            <figcaption>Presented poster at AP-RASC 2025</figcaption>
+          </figure>
+          <figure>
+            <img src="./img-2.jpeg" alt="Poster acknowledgement mentioning Ishaan for contribution">
+            <figcaption>Acknowledgement of contribution</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="footer-section" id="contact">
+    <div class="footer-inner">
+      <div class="footer-cta-wrap">
+        <h2 class="footer-heading">Have a complex problem?<br><span>Let's collaborate.</span></h2>
+        <p class="footer-sub">Open to full-time roles and interesting conversations.</p>
+        <a href="mailto:ishaanuxd@gmail.com" class="footer-email-btn">ishaanuxd@gmail.com <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;flex-shrink:0"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></a>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">© 2026 Ishaan Jain. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/ishaan-jain-72a2b2248/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/ishaanjms" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.behance.net/ishaanjain7" target="_blank" rel="noopener noreferrer">Behance</a>
+          <a href="https://drive.google.com/file/d/1O5Kp6qlSXrkXVOnDSg89pSQX_AsUYIuP/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 4px;">
+            View Resume
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px;"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/constants.js"></script>
+  <script src="../js/shared.js"></script>
+  <script src="./ut1utc.js"></script>
+</body>
+</html>

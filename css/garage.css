@@ -130,6 +130,19 @@
   transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1), filter 0.28s ease;
 }
 
+.project-media.plot-media {
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+}
+
+.project-media.plot-media img {
+  width: calc(100% - 28px);
+  height: calc(100% - 28px);
+  object-fit: contain;
+  filter: saturate(0.9) contrast(0.98);
+}
+
 .project-media.logo-media {
   display: grid;
   place-items: center;
