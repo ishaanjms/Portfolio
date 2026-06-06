@@ -232,6 +232,37 @@ body {
   line-height: 1.65;
 }
 
+.npl-prototype-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+  border: 1px solid rgba(26, 25, 22, 0.12);
+  border-radius: 999px;
+  padding: 12px 18px;
+  background: #1a1916;
+  color: #f7f5f0;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.npl-prototype-btn svg {
+  width: 13px;
+  height: 13px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.npl-prototype-btn:hover {
+  transform: translateY(-2px);
+  background: #24231f;
+  border-color: rgba(26, 25, 22, 0.24);
+}
+
 .inline-link {
   color: #1a1916;
   font-weight: 600;
