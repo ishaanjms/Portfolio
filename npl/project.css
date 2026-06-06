@@ -25,6 +25,7 @@ body {
 .npl-section-heading p,
 .npl-lab-grid span,
 .npl-arch-detail span,
+.npl-reliability-grid span,
 .module-copy span,
 .npl-token-row span,
 .npl-outcomes span {
@@ -322,6 +323,7 @@ body {
 
 .npl-problem-grid,
 .npl-lab-grid,
+.npl-reliability-grid,
 .npl-outcome-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -331,6 +333,7 @@ body {
 
 .npl-problem-grid article,
 .lab-card,
+.npl-reliability-grid article,
 .npl-outcome-grid article {
   border: 1px solid rgba(26, 25, 22, 0.08);
   border-radius: 18px;
@@ -342,6 +345,7 @@ body {
 .npl-problem-grid h3,
 .lab-card h3,
 .npl-arch-detail h3,
+.npl-reliability-grid h3,
 .module-copy h3,
 .npl-outcome-grid h3 {
   margin: 12px 0 10px;
@@ -353,6 +357,7 @@ body {
 .npl-problem-grid p,
 .lab-card p,
 .npl-arch-detail p,
+.npl-reliability-grid p,
 .module-copy p,
 .npl-outcome-grid p {
   color: rgba(26, 25, 22, 0.58);
@@ -362,7 +367,8 @@ body {
 
 .npl-lab,
 .npl-modules,
-.npl-outcomes {
+.npl-outcomes,
+.npl-conference {
   padding: 112px 0 0;
 }
 
@@ -515,6 +521,30 @@ body {
   border-radius: 18px;
 }
 
+.npl-reliability-grid {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.npl-reliability-grid article {
+  padding: 20px;
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.34)),
+    rgba(255, 255, 255, 0.4);
+  box-shadow: none;
+}
+
+.npl-reliability-grid h3 {
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+.npl-reliability-grid p {
+  font-size: 14px;
+}
+
 .module-stage {
   display: grid;
   grid-template-columns: 0.42fr 0.58fr;
@@ -563,6 +593,14 @@ body {
   margin-top: 18px;
 }
 
+.npl-token-label {
+  margin-top: 24px;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: rgba(26, 25, 22, 0.48);
+}
+
 .npl-token-row article {
   border-radius: 16px;
   padding: 18px;
@@ -598,12 +636,97 @@ body {
   margin-top: 0;
 }
 
+.npl-conference-card {
+  display: grid;
+  grid-template-columns: 0.42fr 0.58fr;
+  gap: 24px;
+  align-items: stretch;
+  border-radius: 28px;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 16% 24%, rgba(33, 222, 255, 0.14), transparent 28%),
+    #1a1916;
+}
+
+.npl-conference-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 22px;
+}
+
+.npl-conference-copy > span {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: rgba(247, 245, 240, 0.48);
+}
+
+.npl-conference-copy p {
+  color: rgba(247, 245, 240, 0.78);
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+.npl-conference-copy .inline-link {
+  color: #f7f5f0;
+  text-decoration-color: rgba(247, 245, 240, 0.5);
+}
+
+.npl-conference-copy .inline-link:hover {
+  color: #21deff;
+}
+
+.npl-conference-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.npl-conference-meta article {
+  border: 1px solid rgba(247, 245, 240, 0.1);
+  border-radius: 14px;
+  padding: 14px;
+  background: rgba(247, 245, 240, 0.05);
+}
+
+.npl-conference-meta span {
+  display: block;
+  color: rgba(247, 245, 240, 0.45);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.npl-conference-meta strong {
+  color: #f7f5f0;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.npl-conference figure {
+  overflow: hidden;
+  border-radius: 20px;
+  background: #111;
+}
+
+.npl-conference img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  display: block;
+  object-fit: cover;
+}
+
 @media (max-width: 980px) {
   .npl-hero,
   .npl-overview,
   .npl-arch-detail,
   .module-stage,
-  .npl-outcomes {
+  .npl-outcomes,
+  .npl-conference-card {
     grid-template-columns: 1fr;
   }
 
@@ -623,6 +746,7 @@ body {
   .npl-problem-grid,
   .npl-lab-grid,
   .npl-design-grid,
+  .npl-reliability-grid,
   .npl-architecture {
     grid-template-columns: 1fr;
   }
@@ -637,6 +761,10 @@ body {
 
   .npl-token-row {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .npl-conference img {
+    min-height: 0;
   }
 }
 
@@ -674,6 +802,7 @@ body {
   .npl-lab,
   .npl-modules,
   .npl-outcomes,
+  .npl-conference,
   .npl-split {
     padding-top: 72px;
   }
@@ -683,8 +812,25 @@ body {
   }
 
   .module-stage,
-  .npl-arch-detail {
+  .npl-arch-detail,
+  .npl-conference-card {
     padding: 12px;
     border-radius: 22px;
+  }
+
+  .npl-conference-copy {
+    padding: 16px;
+  }
+
+  .npl-conference-copy p {
+    font-size: 16px;
+  }
+
+  .npl-conference-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .npl-conference img {
+    min-height: 220px;
   }
 }

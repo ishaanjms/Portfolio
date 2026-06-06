@@ -90,17 +90,17 @@
           <article>
             <span>Dispersed Data</span>
             <h3>Signals lived in separate tools.</h3>
-            <p>Temperature, humidity, laser, and photodiode values were scattered across controllers and scripts.</p>
+            <p>Temperature, humidity, and laser readings were split across fragile scripts and hardware-specific interfaces.</p>
           </article>
           <article>
-            <span>Manual Oversight</span>
-            <h3>Scientists had to check hardware physically.</h3>
-            <p>Manual logging increased cognitive load and created risk during long observation windows.</p>
+            <span>Missing Layer</span>
+            <h3>Photodiodes had no dedicated monitor.</h3>
+            <p>A critical feedback system for the light chain had to be brought into the same observation surface.</p>
           </article>
           <article>
-            <span>Latency</span>
-            <h3>Small fluctuations needed instant attention.</h3>
-            <p>Laser alignment and light-chain failures had to be noticed before they affected clock stability.</p>
+            <span>Runtime Fragility</span>
+            <h3>Monitoring needed to survive long sessions.</h3>
+            <p>Frequent errors and manual checks created risk during experiments where small drift can affect clock stability.</p>
           </article>
         </div>
       </div>
@@ -167,6 +167,28 @@
           </div>
           <img src="../npl/archi.png" alt="CsF1 monitoring system architecture">
         </div>
+        <div class="npl-reliability-grid" aria-label="System reliability decisions">
+          <article>
+            <span>Input Validation</span>
+            <h3>Reject incomplete packets.</h3>
+            <p>The Flask endpoint checks required laser and photodiode fields before anything reaches storage.</p>
+          </article>
+          <article>
+            <span>Scientific Time</span>
+            <h3>Log IST, UTC, and MJD.</h3>
+            <p>Each reading carries local readability, universal synchronization, and research-grade plotting time.</p>
+          </article>
+          <article>
+            <span>Storage Model</span>
+            <h3>Rotate daily CSV logs.</h3>
+            <p>Sensor-specific folders keep long-running experiments easy to retrieve, archive, and share.</p>
+          </article>
+          <article>
+            <span>Live Interface</span>
+            <h3>Refresh every 10 seconds.</h3>
+            <p>Cards, graphs, and status indicators update without forcing scientists to manually reload the page.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -197,7 +219,7 @@
     <section class="npl-split">
       <aside>
         <p>05</p>
-        <h2>Design System</h2>
+        <h2>Style Guide</h2>
       </aside>
       <div class="npl-content">
         <div class="npl-design-grid">
@@ -208,7 +230,8 @@
             <img src="../npl/font.png" alt="NPL dashboard typography">
           </figure>
         </div>
-        <div class="npl-token-row">
+        <p class="npl-token-label">4 colour blocks</p>
+        <div class="npl-token-row" aria-label="4 colour blocks">
           <article>
             <span>Cyan</span>
             <strong>#21DEFF</strong>
@@ -241,12 +264,42 @@
         </article>
         <article>
           <h3>Faster diagnosis</h3>
-          <p>Grouped paired lasers and photodiode traces so scientists could identify imbalance and light-chain failures quickly.</p>
+          <p>Grouped paired lasers, photodiode traces, and connection states so scientists could identify imbalance and light-chain failures quickly.</p>
         </article>
         <article>
           <h3>Research-ready data</h3>
-          <p>Historical querying and CSV export supported post-hoc analysis without interrupting live observation.</p>
+          <p>Historical querying, scientific timestamps, and CSV export supported post-hoc analysis without interrupting live observation.</p>
         </article>
+      </div>
+    </section>
+
+    <section class="npl-conference">
+      <div class="npl-section-heading">
+        <p>Presented Work</p>
+        <h2>Shared at AdMet 2025.</h2>
+      </div>
+      <div class="npl-conference-card">
+        <div class="npl-conference-copy">
+          <span>12th International Conference on Advances in Metrology and Standards</span>
+          <p>This work was presented at <a href="https://sites.google.com/view/admet2025/home/" target="_blank" rel="noopener noreferrer" class="inline-link">AdMet 2025</a>, the flagship Advances in Metrology conference organized around research, industrial applications, and emerging measurement technologies.</p>
+          <div class="npl-conference-meta">
+            <article>
+              <span>Event</span>
+              <strong>AdMet 2025</strong>
+            </article>
+            <article>
+              <span>Dates</span>
+              <strong>6-8 Oct 2025</strong>
+            </article>
+            <article>
+              <span>Context</span>
+              <strong>MSI · CSIR-NPL</strong>
+            </article>
+          </div>
+        </div>
+        <figure>
+          <img src="../npl/presentation.jpeg" alt="Presentation slide for the NPL monitoring dashboard work at AdMet 2025">
+        </figure>
       </div>
     </section>
   </main>
