@@ -194,7 +194,6 @@ body {
   border-radius: 30px;
   overflow: hidden;
   background: #1a1916;
-  box-shadow: 0 28px 70px rgba(26, 25, 22, 0.14);
 }
 
 .npl-showcase img,
@@ -211,7 +210,6 @@ body {
   grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
   gap: 64px;
   padding: 72px 0;
-  border-bottom: 1px solid rgba(26, 25, 22, 0.08);
 }
 
 .npl-overview h2,
@@ -282,7 +280,6 @@ body {
 
 .npl-meta-grid article {
   padding-bottom: 18px;
-  border-bottom: 1px solid rgba(26, 25, 22, 0.08);
 }
 
 .npl-meta-grid strong {
