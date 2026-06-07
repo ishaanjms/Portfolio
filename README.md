@@ -4,29 +4,45 @@ Personal portfolio website for Ishaan Jain, Interaction Designer.
 
 ## Pages
 
-- **Home** — Hero with typing animation, project showcase
-- **About** — Bio, scrolling skills marquee, experience timeline
-- **Garage** — Side projects & experiments in a bento grid layout
+- **Home** — Hero interaction and featured project showcase
+- **About** — Bio, skills marquee, experience, education, achievements, certifications
+- **Garage** — Side projects and experiments in a filterable project grid
+- **Project pages** — Individual case studies live in their own folders
 
 ## Stack
 
 Vanilla HTML, CSS, JavaScript — no frameworks or build tools.
 
-## Structure
+## Folder Conventions
 
 ```
 /
-├── index.html          # Home page
-├── about/index.html    # About page
-├── garage/index.html   # Garage page
+├── index.html              # Home page
+├── about/index.html        # About page
+├── garage/index.html       # Garage page
+├── npl/                    # NPL dashboard case study and media
+├── ut1utc/                 # UT1-UTC forecasting case study and figures
+├── greene/                 # Greene's Counsel case study and media
+├── cloud/                  # Cloud density profiler case study and media
+├── docqna/                 # Protected DocQnA case study
+├── Sprinklr/               # Sprinklr device switcher case study
+├── IISc/                   # IISc project page
+├── lagrange/               # Lagrange project page
 ├── css/
-│   ├── shared.css      # Nav, footer, global styles
-│   ├── animations.css  # Keyframes & scroll reveals
-│   ├── home.css        # Hero, project cards
-│   ├── about.css       # Timeline, marquee, intro
-│   └── garage.css      # Bento grid
+│   ├── shared.css          # Nav, footer, global styles
+│   ├── animations.css      # Keyframes and scroll reveals
+│   ├── home.css            # Home hero and project cards
+│   ├── about.css           # About page styles
+│   └── garage.css          # Garage grid styles
+├── js/
+│   ├── shared.js           # Shared navigation/footer behavior
+│   └── home.js             # Home page interaction
 └── assets/
-    ├── thumbnails/     # Project card images
-    ├── profile/        # Portrait & avatar
-    └── logo/           # Favicon & brand logos
+    ├── icons/              # Product, tool, certification, and skill icons
+    ├── thumbnails/         # Project card thumbnails
+    ├── profile/            # Portrait and avatar
+    ├── logo/               # Favicon and site/social logos
+    └── Ex-logos/           # Experience/company logos
 ```
+
+Keep project-specific screenshots, posters, gifs, and figures inside the matching project folder. Keep reusable icons and logos inside `assets/` so they can be referenced consistently across pages.
