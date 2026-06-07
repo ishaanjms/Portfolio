@@ -27,7 +27,6 @@ body {
 .npl-arch-detail span,
 .npl-reliability-grid span,
 .module-copy span,
-.npl-token-row span,
 .npl-outcomes span {
   font-family: 'DM Mono', monospace;
   font-size: 12px;
@@ -614,40 +613,6 @@ body {
   background: #1a1916;
 }
 
-.npl-token-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin-top: 18px;
-}
-
-.npl-token-label {
-  margin-top: 24px;
-  font-family: 'DM Mono', monospace;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  color: rgba(26, 25, 22, 0.48);
-}
-
-.npl-token-row article {
-  border-radius: 16px;
-  padding: 18px;
-  color: #f7f5f0;
-  background: #1a1916;
-}
-
-.npl-token-row article:nth-child(1) { border-top: 4px solid #21deff; }
-.npl-token-row article:nth-child(2) { border-top: 4px solid #21ffab; }
-.npl-token-row article:nth-child(3) { border-top: 4px solid #ff5b21; }
-.npl-token-row article:nth-child(4) { border-top: 4px solid #e26d61; }
-
-.npl-token-row strong {
-  display: block;
-  margin-top: 10px;
-  font-family: 'DM Mono', monospace;
-  font-size: 15px;
-}
-
 .npl-outcomes {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -787,10 +752,6 @@ body {
     display: none;
   }
 
-  .npl-token-row {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .npl-conference img {
     min-height: 0;
   }
@@ -833,10 +794,6 @@ body {
   .npl-conference,
   .npl-split {
     padding-top: 72px;
-  }
-
-  .npl-token-row {
-    grid-template-columns: 1fr;
   }
 
   .module-stage,
