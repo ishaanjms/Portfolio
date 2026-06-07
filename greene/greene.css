@@ -327,9 +327,10 @@ body {
 
 .gc-lead {
   max-width: 820px;
-  color: rgba(26, 25, 22, 0.76);
-  font-size: 24px;
+  color: rgba(58, 56, 53, 0.76);
+  font-size: 20px;
   line-height: 1.35;
+  font-weight : 100;
 }
 
 .gc-problem-grid {
@@ -357,7 +358,7 @@ body {
 .gc-architecture h3,
 .gc-outcome-grid h3 {
   margin: 12px 0 10px;
-  color: #1a1916;
+  color: #155f7a;
   font-size: 21px;
   font-weight: 600;
 }
