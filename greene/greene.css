@@ -236,8 +236,6 @@ body {
   grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
   gap: 64px;
   padding: 64px 0;
-  border-top: 1px solid rgba(26, 25, 22, 0.08);
-  border-bottom: 1px solid rgba(26, 25, 22, 0.08);
 }
 
 .gc-overview h2,
@@ -265,11 +263,6 @@ body {
 
 .gc-meta-grid div {
   padding-bottom: 18px;
-  border-bottom: 1px solid rgba(26, 25, 22, 0.08);
-}
-
-.gc-meta-grid .gc-stack-meta {
-  border-bottom: 0;
 }
 
 .gc-meta-grid strong {
