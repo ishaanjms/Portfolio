@@ -1,16 +1,9 @@
 (function () {
-  const phonePreview = document.querySelector('.phone-preview');
+  const surveyPreview = document.querySelector('.survey-preview');
   const simulatorPanel = document.querySelector('.simulator-panel');
   const deviceButtons = document.querySelectorAll('.device-controls button');
   const alignmentControls = document.querySelector('.alignment-controls');
   const panelSublabel = document.querySelector('.panel-sublabel');
-
-  const devices = {
-    web: 'Web preview',
-    mobile: 'Mobile preview',
-    tablet: 'Tablet preview',
-    custom: 'Custom 390 x 844 preview'
-  };
 
   const alignmentOptions = {
     web: {
@@ -59,16 +52,15 @@
     alignmentControls.innerHTML = config.options.map(([value, label], index) => (
       `<button type="button" ${index === 0 ? 'class="active"' : ''} data-align="${value}">${label}</button>`
     )).join('');
-    phonePreview.dataset.align = config.defaultValue;
+    surveyPreview.dataset.align = config.defaultValue;
   }
 
   deviceButtons.forEach(button => {
     button.addEventListener('click', () => {
       const device = button.dataset.device || 'web';
       deviceButtons.forEach(item => item.classList.toggle('active', item === button));
-      phonePreview.dataset.device = device;
+      surveyPreview.dataset.device = device;
       simulatorPanel.dataset.customActive = device === 'custom' ? 'true' : 'false';
-      phonePreview.querySelector('.device-label').textContent = devices[device] || devices.web;
       renderAlignmentControls(device);
     });
   });
@@ -79,7 +71,7 @@
     alignmentControls.querySelectorAll('button').forEach(item => {
       item.classList.toggle('active', item === button);
     });
-    phonePreview.dataset.align = button.dataset.align || 'top';
+    surveyPreview.dataset.align = button.dataset.align || 'top';
   });
 
   const options = {

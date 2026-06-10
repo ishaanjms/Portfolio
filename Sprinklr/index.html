@@ -175,8 +175,8 @@
           <p>The stronger solution keeps creators in the builder while the survey canvas dynamically resizes and re-renders against the selected viewport.</p>
           <div class="device-controls" aria-label="Device preview controls">
             <button type="button" class="active" data-device="web">Web</button>
-            <button type="button" data-device="mobile">Mobile</button>
             <button type="button" data-device="tablet">Tablet</button>
+            <button type="button" data-device="mobile">Mobile</button>
             <button type="button" data-device="custom">Custom</button>
           </div>
           <div class="custom-fields" aria-label="Custom viewport fields">
@@ -192,22 +192,32 @@
             <button type="button" data-align="between">Between Title And Answer</button>
           </div>
         </div>
-        <div class="phone-preview" data-align="left-centered" data-device="web">
-          <div class="phone-frame">
-            <div class="phone-status"></div>
-            <div class="phone-question">
-              <span class="device-label">Web preview</span>
-              <h3>How does this visual feel in the selected viewport?</h3>
-              <div class="media-row">
-                <div class="media-tile">
-                  <span></span>
-                  <i></i>
+        <div class="survey-preview" data-align="left-centered" data-device="web">
+          <div class="survey-card">
+            <div class="survey-body">
+              <div class="survey-media" aria-label="Question media preview">
+                <div class="media-door"></div>
+                <div class="media-person"></div>
+                <div class="media-box box-small">prime</div>
+                <div class="media-box box-large">prime</div>
+              </div>
+              <div class="survey-content">
+                <h3>How should this product delivery experience be shown to respondents?</h3>
+                <div class="survey-options" aria-label="Multiple choice answer options">
+                  <div><span></span>Very clear</div>
+                  <div><span></span>Somewhat clear</div>
+                  <div><span></span>Needs improvement</div>
                 </div>
               </div>
-              <div class="choice-list">
-                <button type="button">Clear and readable</button>
-                <button type="button">A little cramped</button>
-                <button type="button">Needs adjustment</button>
+            </div>
+            <div class="survey-footer" aria-hidden="true">
+              <div>
+                <span></span><strong>0</strong>
+                <span></span><strong>2</strong>
+              </div>
+              <div>
+                <span></span>
+                <span></span>
               </div>
             </div>
           </div>
