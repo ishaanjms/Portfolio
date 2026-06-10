@@ -158,6 +158,14 @@
   filter: none;
 }
 
+.project-media.squares-media {
+  background: #f7f5f0;
+}
+
+.project-media.squares-media img {
+  filter: none;
+}
+
 .project-media.locked-media::after {
   content: 'NDA';
   position: absolute;
