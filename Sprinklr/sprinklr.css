@@ -151,6 +151,40 @@ body {
   line-height: 1.35;
 }
 
+.tool-icon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.tool-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  border: 1px solid rgba(24, 23, 19, 0.1);
+  border-radius: 999px;
+  padding: 6px 12px 6px 7px;
+  background: rgba(255, 255, 255, 0.42);
+  color: rgba(24, 23, 19, 0.78);
+  box-shadow: 0 8px 18px rgba(24, 23, 19, 0.03);
+}
+
+.tool-icon img {
+  width: 26px;
+  height: 26px;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.tool-icon em {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+}
+
 .spr-split {
   display: grid;
   grid-template-columns: 260px minmax(0, 1fr);
