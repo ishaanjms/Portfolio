@@ -45,7 +45,7 @@
 
     <section class="npl-overview">
       <div>
-        <h2>From fragmented instruments to one real-time digital twin.</h2>
+        <h2>From fragmented instruments to one real-time digital twin</h2>
         <p>Developed during my R&D internship at CSIR-NPL under <a href="https://www.linkedin.com/in/drpoonam/" target="_blank" rel="noopener noreferrer" class="inline-link">Dr. Poonam Arora</a>, this dashboard consolidated isolated monitoring tools into a centralized platform for scientists operating the Cesium Fountain Atomic Clock.</p>
         <a href="https://ieeeshaan-csf1-monitoring-dashboard.hf.space/" target="_blank" rel="noopener noreferrer" class="npl-prototype-btn">
           Launch Prototype
@@ -65,15 +65,20 @@
           <span>Tools</span>
           <div class="tool-icon-grid" aria-label="Tools used">
             <div class="tool-icon"><img src="../assets/icons/figma-icon.svg" alt=""><em>Figma</em></div>
+            <div class="tool-icon"><img src="../assets/icons/vscode.svg" alt=""><em>VS Code</em></div>
+            <div class="tool-icon"><img src="../assets/icons/CUBE_2D_LIGHT.svg" alt=""><em>Cursor</em></div>
+            <div class="tool-icon"><img src="../assets/icons/google-gemini-icon.svg" alt=""><em>Gemini</em></div>
+            <div class="tool-icon"><img src="../assets/icons/perplexity-ai-icon.svg" alt=""><em>Perplexity</em></div>
+          </div>
+        </article>
+        <article>
+          <span>Frameworks</span>
+          <div class="tool-icon-grid" aria-label="Frameworks used">
             <div class="tool-icon"><img src="../assets/icons/Python-logo-notext.svg" alt=""><em>Python</em></div>
             <div class="tool-icon"><img src="../assets/icons/Flask.svg" alt=""><em>Flask</em></div>
             <div class="tool-icon"><img src="../assets/icons/Ploty.svg" alt=""><em>Plotly Dash</em></div>
             <div class="tool-icon"><img src="../assets/icons/html-5.png" alt=""><em>HTML</em></div>
             <div class="tool-icon"><img src="../assets/icons/css-icon.svg" alt=""><em>CSS</em></div>
-            <div class="tool-icon"><img src="../assets/icons/vscode.svg" alt=""><em>VS Code</em></div>
-            <div class="tool-icon"><img src="../assets/icons/CUBE_2D_LIGHT.svg" alt=""><em>Cursor</em></div>
-            <div class="tool-icon"><img src="../assets/icons/google-gemini-icon.svg" alt=""><em>Gemini</em></div>
-            <div class="tool-icon"><img src="../assets/icons/perplexity-ai-icon.svg" alt=""><em>Perplexity</em></div>
           </div>
         </article>
         <article>
@@ -93,17 +98,17 @@
         <div class="npl-problem-grid">
           <article>
             <span>Dispersed Data</span>
-            <h3>Signals lived in separate tools.</h3>
+            <h3>Signals lived in separate tools</h3>
             <p>Temperature, humidity, and laser readings were split across fragile scripts and hardware-specific interfaces.</p>
           </article>
           <article>
             <span>Missing Layer</span>
-            <h3>Photodiodes had no dedicated monitor.</h3>
+            <h3>Photodiodes had no dedicated monitor</h3>
             <p>A critical feedback system for the light chain had to be brought into the same observation surface.</p>
           </article>
           <article>
             <span>Runtime Fragility</span>
-            <h3>Monitoring needed to survive long sessions.</h3>
+            <h3>Monitoring needed to survive long sessions</h3>
             <p>Frequent errors and manual checks created risk during experiments where small drift can affect clock stability.</p>
           </article>
         </div>
@@ -113,22 +118,22 @@
     <section class="npl-lab">
       <div class="npl-section-heading">
         <p>02 · Lab Constraint</p>
-        <h2>Designed for a dark room where light is a contaminant.</h2>
+        <h2>Designed for a dark room where light is a contaminant</h2>
       </div>
       <div class="npl-lab-grid">
         <div class="lab-card dark-card">
           <span>Constraint</span>
-          <h3>No high-luminance UI.</h3>
+          <h3>No high-luminance UI</h3>
           <p>The CsF1 lab operates under strict optical conditions. The dashboard had to avoid bright surfaces that could interfere with the atomic transition experiment.</p>
         </div>
         <div class="lab-card">
           <span>Visual response</span>
-          <h3>Neon-dark hierarchy.</h3>
+          <h3>Neon-dark hierarchy</h3>
           <p>Deep backgrounds reduced light pollution, while cyan, green, orange, and coral accents separated dense data streams.</p>
         </div>
         <div class="lab-card">
           <span>Reading pattern</span>
-          <h3>Peripheral status cues.</h3>
+          <h3>Peripheral status cues</h3>
           <p>Scientists could detect active modules, connection status, and anomalies without reading every label.</p>
         </div>
       </div>
@@ -174,22 +179,22 @@
         <div class="npl-reliability-grid" aria-label="System reliability decisions">
           <article>
             <span>Input Validation</span>
-            <h3>Reject incomplete packets.</h3>
+            <h3>Reject incomplete packets</h3>
             <p>The Flask endpoint checks required laser and photodiode fields before anything reaches storage.</p>
           </article>
           <article>
             <span>Scientific Time</span>
-            <h3>Log IST, UTC, and MJD.</h3>
+            <h3>Log IST, UTC, and MJD</h3>
             <p>Each reading carries local readability, universal synchronization, and research-grade plotting time.</p>
           </article>
           <article>
             <span>Storage Model</span>
-            <h3>Rotate daily CSV logs.</h3>
+            <h3>Rotate daily CSV logs</h3>
             <p>Sensor-specific folders keep long-running experiments easy to retrieve, archive, and share.</p>
           </article>
           <article>
             <span>Live Interface</span>
-            <h3>Refresh every 10 seconds.</h3>
+            <h3>Refresh every 10 seconds</h3>
             <p>Cards, graphs, and status indicators update without forcing scientists to manually reload the page.</p>
           </article>
         </div>
@@ -199,7 +204,7 @@
     <section class="npl-modules">
       <div class="npl-section-heading">
         <p>04 · Interface Modules</p>
-        <h2>Switch through the dashboard logic.</h2>
+        <h2>Switch through the dashboard logic</h2>
       </div>
       <div class="module-tabs" aria-label="Dashboard module selector">
         <button type="button" class="active" data-module="overview">Overview</button>
@@ -211,7 +216,7 @@
       <div class="module-stage">
         <div class="module-copy">
           <span>Overview</span>
-          <h3>Macro health at a glance.</h3>
+          <h3>Macro health at a glance</h3>
           <p>The overview screen aggregates ambient conditions, laser coordinates, photodiode values, connection health, and last server update time into one fast scanning surface.</p>
         </div>
         <figure>
@@ -240,7 +245,7 @@
     <section class="npl-outcomes">
       <div>
         <span>Outcome</span>
-        <h2>A unified monitoring ecosystem for scientific observation.</h2>
+        <h2>A unified monitoring ecosystem for scientific observation</h2>
       </div>
       <div class="npl-outcome-grid">
         <article>
@@ -261,7 +266,7 @@
     <section class="npl-conference">
       <div class="npl-section-heading">
         <p>Presented Work</p>
-        <h2>Shared at AdMet 2025.</h2>
+        <h2>Shared at AdMet 2025</h2>
       </div>
       <div class="npl-conference-card">
         <div class="npl-conference-copy">

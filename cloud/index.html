@@ -93,7 +93,7 @@
 
     <section class="cloud-overview">
       <div>
-        <h2>Turning a research script into a guided analysis experience.</h2>
+        <h2>Turning a research script into a guided analysis experience</h2>
         <p>Developed during my R&D internship at <a href="https://www.nplindia.org/" target="_blank" rel="noopener noreferrer" class="cloud-inline-link">CSIR-NPL</a> under <a href="https://www.linkedin.com/in/drpoonam/" target="_blank" rel="noopener noreferrer" class="cloud-inline-link">Dr. Poonam Arora</a>, this project reframes a scientific image-processing task as a guided decision flow. Instead of exposing every computation at once, the interface moves users through upload, crop, visibility tuning, and evidence review so the analysis feels inspectable rather than opaque.</p>
       </div>
       <div class="cloud-meta-grid">
@@ -103,7 +103,14 @@
         </article>
         <article>
           <span>Tools</span>
-          <strong class="tool-lockup"><img src="../assets/icons/streamlit-mark-color.svg" alt="">Streamlit, Python, NumPy, SciPy, Plotly, scikit-image</strong>
+          <div class="tool-icon-grid" aria-label="Tools used">
+            <div class="tool-icon"><img src="../assets/icons/streamlit-mark-color.svg" alt=""><em>Streamlit</em></div>
+            <div class="tool-icon"><img src="../assets/icons/Python-logo-notext.svg" alt=""><em>Python</em></div>
+            <div class="tool-icon"><img src="../assets/icons/86498208-af4bfe00-bd39-11ea-88fa-c747ae0ddd85.png" alt=""><em>NumPy</em></div>
+            <div class="tool-icon"><img src="../assets/icons/SCIPY_2.svg" alt=""><em>SciPy</em></div>
+            <div class="tool-icon"><img src="../assets/icons/Ploty.svg" alt=""><em>Plotly</em></div>
+            <div class="tool-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt=""><em>scikit-image</em></div>
+          </div>
         </article>
         <article>
           <span>Core task</span>
@@ -126,17 +133,17 @@
         <div class="cloud-problem-grid">
           <article>
             <span>Preparation gap</span>
-            <h3>Raw images are noisy.</h3>
+            <h3>Raw images are noisy</h3>
             <p>Researchers need to crop and normalize the relevant region before quantitative analysis is useful.</p>
           </article>
           <article>
             <span>Interpretation gap</span>
-            <h3>Visual density needs numbers.</h3>
+            <h3>Visual density needs numbers</h3>
             <p>A bright center is not enough; users need center-of-mass values and directional profiles.</p>
           </article>
           <article>
             <span>Confidence gap</span>
-            <h3>Analysis needs inspection.</h3>
+            <h3>Analysis needs inspection</h3>
             <p>Heatmaps, line profiles, and 3D surfaces help users cross-check the same result from multiple views.</p>
           </article>
         </div>
@@ -146,22 +153,22 @@
     <section class="cloud-approach">
       <div class="cloud-section-heading">
         <p>02 · Design Approach</p>
-        <h2>How a designer approaches a scientific analysis tool.</h2>
+        <h2>How a designer approaches a scientific analysis tool</h2>
       </div>
       <div class="approach-grid">
         <article>
           <span>Frame the human task</span>
-          <h3>Separate preparation from interpretation.</h3>
+          <h3>Separate preparation from interpretation</h3>
           <p>The user is not just running code. They are deciding whether a cloud image is clean enough to trust, so the interface has to support judgement before calculation.</p>
         </article>
         <article>
           <span>Choose useful constraints</span>
-          <h3>Make comparison possible.</h3>
+          <h3>Make comparison possible</h3>
           <p>A square crop and normalized 200x200 output reduce ambiguity, making heatmaps, profiles, and center-of-mass values comparable across uploads.</p>
         </article>
         <article>
           <span>Use modern tools well</span>
-          <h3>Prototype the analysis surface quickly.</h3>
+          <h3>Prototype the analysis surface quickly</h3>
           <p>Streamlit makes Python analysis interactive, while Plotly, Matplotlib, SciPy, and scikit-image turn raw image data into explainable visual evidence.</p>
         </article>
       </div>
@@ -176,17 +183,17 @@
         <div class="decision-list">
           <article>
             <span>Sidebar as setup rail</span>
-            <h3>Preparation controls stay separate from interpretation.</h3>
+            <h3>Preparation controls stay separate from interpretation</h3>
             <p>Crop and gamma correction live in the sidebar, while the main canvas is reserved for image comparison and analysis outputs. This supports a clean mental model: prepare on the side, inspect in the center.</p>
           </article>
           <article>
             <span>Square crop constraint</span>
-            <h3>Consistency beats flexibility for this task.</h3>
+            <h3>Consistency beats flexibility for this task</h3>
             <p>The cropper enforces a 1:1 region and resizes it to 200x200 px. That constraint makes heatmaps, profiles, and center-of-mass calculations easier to compare across images.</p>
           </article>
           <article>
             <span>Manual analysis trigger</span>
-            <h3>Users decide when the image is ready.</h3>
+            <h3>Users decide when the image is ready</h3>
             <p>Instead of auto-running analysis after every slider movement, the app waits for an explicit "Analyze Edited Image" action. That gives users a sense of control and keeps the workflow intentional.</p>
           </article>
         </div>
@@ -196,7 +203,7 @@
     <section class="cloud-workflow" id="workflow">
       <div class="cloud-section-heading">
         <p>04 · Interactive Demo</p>
-        <h2>A four-step journey from image to evidence.</h2>
+        <h2>A four-step journey from image to evidence</h2>
       </div>
       <div class="workflow-layout">
         <div class="workflow-tabs" aria-label="Cloud Profiler workflow">
@@ -224,7 +231,7 @@
         <div class="workflow-stage" aria-live="polite">
           <div class="workflow-copy">
             <span>Selected step · 01</span>
-            <h3>Start with a familiar upload pattern.</h3>
+            <h3>Start with a familiar upload pattern</h3>
             <p>The app opens in a low-pressure waiting state. Users are not shown analysis controls until an image exists, preventing premature decisions.</p>
           </div>
           <div class="workflow-preview upload-preview">
@@ -240,7 +247,7 @@
     <section class="cloud-analysis">
       <div class="cloud-section-heading">
         <p>05 · Analysis Surface</p>
-        <h2>Multiple views of the same phenomenon.</h2>
+        <h2>Multiple views of the same phenomenon</h2>
       </div>
       <div class="analysis-grid">
         <article>
@@ -297,7 +304,7 @@
     <section class="cloud-outcomes">
       <div>
         <span>Outcome</span>
-        <h2>A compact scientific tool with a clear preparation-to-analysis rhythm.</h2>
+        <h2>A compact scientific tool with a clear preparation-to-analysis rhythm</h2>
       </div>
       <div class="cloud-outcome-grid">
         <article>
@@ -318,7 +325,7 @@
     <section class="cloud-recognition">
       <div>
         <span>Recognition</span>
-        <h2>Used in Quantum Vibes Q1 2026.</h2>
+        <h2>Used in Quantum Vibes Q1 2026</h2>
       </div>
       <div class="recognition-copy">
         <p>The results obtained using this application were used in <a href="https://quantumindia.net//wp-content/uploads/2026/04/Quantum-Vibes-Q1-2026.pdf" target="_blank" rel="noopener noreferrer">Quantum Vibes Q1 2026</a>, where I was acknowledged for my work on the project.</p>
