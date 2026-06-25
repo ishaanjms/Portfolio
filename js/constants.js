@@ -3,11 +3,11 @@
 const COLORS = {
   primary:    '#1a1916',
   background: '#f7f5f0',
-  accent:     '#6B46C1',   // purple
+  accent:     '#176B6A',
   blue:       '#3B82F6',
   green:      '#10B981',
   amber:      '#F59E0B',
-  teal:       '#0EA5E9',
+  teal:       '#0F766E',
   rose:       '#F43F5E',
   orange:     '#F97316',
   muted:      '#888',

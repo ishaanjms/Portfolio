@@ -45,7 +45,7 @@
 
     <section class="npl-overview">
       <div>
-        <h2>From fragmented instruments to one real-time digital twin</h2>
+        <h2>One dashboard for atomic clock monitoring</h2>
         <p>Developed during my R&D internship at CSIR-NPL under <a href="https://www.linkedin.com/in/drpoonam/" target="_blank" rel="noopener noreferrer" class="inline-link">Dr. Poonam Arora</a>, this dashboard consolidated isolated monitoring tools into a centralized platform for scientists operating the Cesium Fountain Atomic Clock.</p>
         <a href="https://ieeeshaan-csf1-monitoring-dashboard.hf.space/" target="_blank" rel="noopener noreferrer" class="npl-prototype-btn">
           Launch Prototype
@@ -94,7 +94,7 @@
         <h2>Why It Mattered</h2>
       </aside>
       <div class="npl-content">
-        <p class="npl-lead">The CsF1 defines the SI second. Microscopic shifts in temperature, humidity, laser alignment, or photodiode voltage can corrupt observations, so the interface had to make instability visible immediately.</p>
+        <p class="npl-lead">The CsF1 defines the SI second. Small changes in temperature, humidity, laser alignment, or photodiode voltage can affect observations, so the dashboard needed to make issues visible quickly.</p>
         <div class="npl-problem-grid">
           <article>
             <span>Dispersed Data</span>
@@ -104,12 +104,12 @@
           <article>
             <span>Missing Layer</span>
             <h3>Photodiodes had no dedicated monitor</h3>
-            <p>A critical feedback system for the light chain had to be brought into the same observation surface.</p>
+            <p>A critical feedback system for laser and detector health needed its own monitoring view.</p>
           </article>
           <article>
             <span>Runtime Fragility</span>
-            <h3>Monitoring needed to survive long sessions</h3>
-            <p>Frequent errors and manual checks created risk during experiments where small drift can affect clock stability.</p>
+            <h3>Monitoring had to support long sessions</h3>
+            <p>Frequent errors and manual checks created risk during experiments where small changes can affect clock stability.</p>
           </article>
         </div>
       </div>
@@ -117,35 +117,105 @@
 
     <section class="npl-lab">
       <div class="npl-section-heading">
-        <p>02 · Lab Constraint</p>
-        <h2>Designed for a dark room where light is a contaminant</h2>
+        <p>02 · Interface Evolution</p>
+        <h2>How the dashboard structure developed</h2>
+      </div>
+      <div class="npl-evolution-grid" aria-label="Reconstructed interface evolution">
+        <article class="npl-evolution-card">
+          <div class="wireframe-panel fragmented">
+            <div class="wire-window small-window">
+              <span></span>
+              <i></i>
+              <i></i>
+            </div>
+            <div class="wire-window chart-window">
+              <span></span>
+              <b></b>
+              <b></b>
+              <b></b>
+            </div>
+            <div class="wire-window table-window">
+              <span></span>
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+          </div>
+          <span>Early state</span>
+          <h3>Monitoring was split across small windows</h3>
+          <p>The first problem was that environmental, laser, and detector readings were not visible in one place.</p>
+        </article>
+        <article class="npl-evolution-card">
+          <div class="wireframe-panel consolidated">
+            <div class="wire-top"></div>
+            <div class="wire-card-grid">
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+            <div class="wire-graph"></div>
+          </div>
+          <span>First model</span>
+          <h3>Related readings were grouped together</h3>
+          <p>The dashboard grouped the values scientists compare most often: ambient stability, paired lasers, photodiode traces, and connection health.</p>
+        </article>
+        <article class="npl-evolution-card">
+          <div class="wireframe-panel final-model">
+            <div class="wire-sidebar">
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+            <div class="wire-main">
+              <span></span>
+              <div class="wire-status-row">
+                <i></i>
+                <i></i>
+                <i></i>
+              </div>
+              <div class="wire-deep-graph"></div>
+            </div>
+          </div>
+          <span>Final model</span>
+          <h3>The final layout supported live checks and data review</h3>
+          <p>The final structure balanced quick status checks with deeper diagnosis, so live monitoring and historical retrieval could stay in the same tool.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="npl-lab">
+      <div class="npl-section-heading">
+        <p>03 · Lab Constraint</p>
+        <h2>Designed for low-light lab conditions</h2>
       </div>
       <div class="npl-lab-grid">
-        <div class="lab-card dark-card">
+        <div class="lab-card">
           <span>Constraint</span>
           <h3>No high-luminance UI</h3>
-          <p>The CsF1 lab operates under strict optical conditions. The dashboard had to avoid bright surfaces that could interfere with the atomic transition experiment.</p>
+          <p>The CsF1 lab operates under strict optical conditions. The dashboard had to avoid bright surfaces near the experiment setup.</p>
         </div>
         <div class="lab-card">
           <span>Visual response</span>
-          <h3>Neon-dark hierarchy</h3>
-          <p>Deep backgrounds reduced light pollution, while cyan, green, orange, and coral accents separated dense data streams.</p>
+          <h3>Dark interface with clear status colors</h3>
+          <p>Dark backgrounds reduced screen brightness, while cyan, green, orange, and coral helped separate dense data streams.</p>
         </div>
         <div class="lab-card">
           <span>Reading pattern</span>
-          <h3>Peripheral status cues</h3>
-          <p>Scientists could detect active modules, connection status, and anomalies without reading every label.</p>
+          <h3>Fast status checks</h3>
+          <p>Scientists could see active modules, connection status, and anomalies without reading every label.</p>
         </div>
       </div>
     </section>
 
     <section class="npl-split">
       <aside>
-        <p>03</p>
+        <p>04</p>
         <h2>System Architecture</h2>
       </aside>
       <div class="npl-content">
-        <p class="npl-lead">The solution rebuilt the acquisition pipeline so isolated instruments could feed a single Python backend and a responsive Plotly Dash interface.</p>
+        <p class="npl-lead">The solution connected isolated instruments to a Python backend and a responsive Plotly Dash interface.</p>
         <div class="npl-architecture">
           <button type="button" class="active" data-arch="fluke" aria-pressed="true">
             <span>01</span>
@@ -172,9 +242,11 @@
           <div>
             <span>Selected layer · 01</span>
             <h3>FLUKE 1620A Thermo-Hygrometer</h3>
-            <p>Serial data from the thermo-hygrometer tracks ambient and optical-bench temperature/humidity so scientists can see environmental drift before it destabilizes the experiment.</p>
+            <p>Serial data from the thermo-hygrometer tracks ambient and optical-bench temperature/humidity so scientists can catch environmental changes early.</p>
           </div>
-          <img src="../npl/archi.png" alt="CsF1 monitoring system architecture">
+          <figure>
+            <img src="../npl/archi.png" alt="CsF1 monitoring system architecture">
+          </figure>
         </div>
         <div class="npl-reliability-grid" aria-label="System reliability decisions">
           <article>
@@ -201,43 +273,138 @@
       </div>
     </section>
 
-    <section class="npl-modules">
+    <section class="npl-screens">
       <div class="npl-section-heading">
-        <p>04 · Interface Modules</p>
-        <h2>Switch through the dashboard logic</h2>
+        <p>05 · Dashboard Screens</p>
+        <h2>The final interface across core tasks</h2>
       </div>
-      <div class="module-tabs" aria-label="Dashboard module selector">
-        <button type="button" class="active" data-module="overview">Overview</button>
-        <button type="button" data-module="thermal">Thermal Lag</button>
-        <button type="button" data-module="lasers">Lasers</button>
-        <button type="button" data-module="photo">Photodiodes</button>
-        <button type="button" data-module="retrieve">Retrieve Data</button>
-      </div>
-      <div class="module-stage">
-        <div class="module-copy">
+      <div class="screen-feature">
+        <div class="screen-copy">
           <span>Overview</span>
-          <h3>Macro health at a glance</h3>
-          <p>The overview screen aggregates ambient conditions, laser coordinates, photodiode values, connection health, and last server update time into one fast scanning surface.</p>
+          <h3>Overall system status</h3>
+          <p>The overview screen brings ambient conditions, laser coordinates, photodiode values, connection health, and last server update time into one view.</p>
         </div>
         <figure>
-          <img src="../npl/overview.png" alt="Overview dashboard module">
+          <img src="../npl/screen-overview.png" alt="Overview screen showing system status">
+        </figure>
+      </div>
+      <div class="screen-grid">
+        <figure>
+          <img src="../npl/screen-temperature-humidity.png" alt="Temperature and humidity monitoring screen">
+          <figcaption>
+            <span>Temperature & Humidity</span>
+            <strong>Temperature and humidity trends</strong>
+            <p>Ambient room air and optical-bench readings are plotted together so scientists can compare temperature changes over time.</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../npl/screen-lasers.png" alt="Laser monitoring screen">
+          <figcaption>
+            <span>Lasers</span>
+            <strong>Paired laser readings</strong>
+            <p>Laser readings are paired in dedicated cards so X1/X2 and Y1/Y2 can be compared quickly.</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../npl/screen-photodiodes.png" alt="Photodiode monitoring screen">
+          <figcaption>
+            <span>Photodiodes</span>
+            <strong>Photodiode monitoring</strong>
+            <p>Colored cards match graph traces, helping scientists identify whether a laser, switch, fiber, or detector has failed.</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../npl/screen-retrieve-data.png" alt="Retrieve data screen">
+          <figcaption>
+            <span>Retrieve Data</span>
+            <strong>Historical data review</strong>
+            <p>Quick plotting and CSV export are separated from live monitoring so historical analysis does not clutter the main dashboard.</p>
+          </figcaption>
         </figure>
       </div>
     </section>
 
     <section class="npl-split">
       <aside>
-        <p>05</p>
+        <p>06</p>
         <h2>Style Guide</h2>
       </aside>
       <div class="npl-content">
-        <div class="npl-design-grid">
-          <figure>
-            <img src="../npl/col.png" alt="NPL dashboard color palette">
-          </figure>
-          <figure>
-            <img src="../npl/font.png" alt="NPL dashboard typography">
-          </figure>
+        <div class="style-guide-system">
+          <section class="style-row style-row-intro">
+            <span class="style-row-label">System</span>
+            <div>
+              <h3>Dark interface for readable lab monitoring</h3>
+              <p>The visual system keeps the dashboard quiet by default, then uses bright color only for active navigation, live state, alerts, and chart traces.</p>
+            </div>
+          </section>
+
+          <section class="style-row type-row no-divider">
+            <span class="style-row-label">Font</span>
+            <div class="type-specimen">
+              <div class="type-hero" aria-label="Roboto type specimen">Aa</div>
+              <div class="type-copy">
+                <span>Roboto</span>
+                <p>Used for headings, navigation, controls, and card text because it stays readable in dense dashboard views.</p>
+                <div class="type-scale">
+                  <strong>40px</strong>
+                  <strong>28px</strong>
+                  <strong>20px</strong>
+                  <strong>16px</strong>
+                  <strong>12px</strong>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="style-row type-row mono-row">
+            <span class="style-row-label">Data Type</span>
+            <div class="type-specimen">
+              <div class="type-hero mono" aria-label="Monospace type specimen">24.66</div>
+              <div class="type-copy">
+                <span>Monospace</span>
+                <p>Used for timestamps, readings, IDs, and compact technical metadata where alignment and scanning matter.</p>
+                <div class="mono-sample">
+                  <span>Connected · 18:30:45</span>
+                  <span>X1 79.50 · X2 107.44</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="style-row color-row">
+            <span class="style-row-label">Neutral</span>
+            <div class="swatch-strip">
+              <article class="style-swatch light-text" style="--swatch:#000000"><strong>Black</strong><span>#000000</span></article>
+              <article class="style-swatch light-text" style="--swatch:#121212"><strong>Base</strong><span>#121212</span></article>
+              <article class="style-swatch light-text" style="--swatch:#1E1E1E"><strong>Card</strong><span>#1E1E1E</span></article>
+              <article class="style-swatch light-text" style="--swatch:#2C2C2C"><strong>Border</strong><span>#2C2C2C</span></article>
+              <article class="style-swatch light-text" style="--swatch:#666666"><strong>Muted</strong><span>#666666</span></article>
+              <article class="style-swatch" style="--swatch:#E0E0E0"><strong>Text</strong><span>#E0E0E0</span></article>
+              <article class="style-swatch" style="--swatch:#FFFFFF"><strong>White</strong><span>#FFFFFF</span></article>
+            </div>
+          </section>
+
+          <section class="style-row color-row no-divider">
+            <span class="style-row-label">Status</span>
+            <div class="swatch-strip compact">
+              <article class="style-swatch light-text" style="--swatch:#00ADB5"><strong>Active</strong><span>#00ADB5</span></article>
+              <article class="style-swatch light-text" style="--swatch:#00B582"><strong>Healthy</strong><span>#00B582</span></article>
+              <article class="style-swatch" style="--swatch:#00FFFF"><strong>Live</strong><span>#00FFFF</span></article>
+              <article class="style-swatch light-text" style="--swatch:#EF5350"><strong>Alert</strong><span>#EF5350</span></article>
+            </div>
+          </section>
+
+          <section class="style-row">
+            <span class="style-row-label">Graph Traces</span>
+            <div class="swatch-strip compact">
+              <article class="style-swatch" style="--swatch:#4DD0E1"><strong>Optical bench</strong><span>#4DD0E1</span></article>
+              <article class="style-swatch" style="--swatch:#FFB74D"><strong>Ambient</strong><span>#FFB74D</span></article>
+              <article class="style-swatch" style="--swatch:#FF9900"><strong>AOM 5</strong><span>#FF9900</span></article>
+              <article class="style-swatch" style="--swatch:#CE93D8"><strong>AOM 3</strong><span>#CE93D8</span></article>
+              <article class="style-swatch" style="--swatch:#90CAF9"><strong>AOM 2</strong><span>#90CAF9</span></article>
+            </div>
+          </section>
         </div>
       </div>
     </section>
@@ -245,12 +412,12 @@
     <section class="npl-outcomes">
       <div>
         <span>Outcome</span>
-        <h2>A unified monitoring ecosystem for scientific observation</h2>
+        <h2>A single tool for live monitoring and data review</h2>
       </div>
       <div class="npl-outcome-grid">
         <article>
-          <h3>Unified ecosystem</h3>
-          <p>Consolidated environmental, laser, photodiode, and retrieval workflows into a single monitoring surface.</p>
+          <h3>Single monitoring tool</h3>
+          <p>Combined environmental, laser, photodiode, and retrieval workflows into one dashboard.</p>
         </article>
         <article>
           <h3>Faster diagnosis</h3>
@@ -258,7 +425,7 @@
         </article>
         <article>
           <h3>Research-ready data</h3>
-          <p>Historical querying, scientific timestamps, and CSV export supported post-hoc analysis without interrupting live observation.</p>
+          <p>Historical queries, scientific timestamps, and CSV export supported analysis without interrupting live monitoring.</p>
         </article>
       </div>
     </section>

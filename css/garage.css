@@ -7,7 +7,7 @@
 }
 
 .garage-header {
-  margin-bottom: 56px;
+  margin-bottom: 72px;
 }
 
 .garage-kicker {
@@ -72,6 +72,42 @@
   transform: translateY(-1px);
 }
 
+.work-groups {
+  display: grid;
+  gap: 112px;
+}
+
+.project-group {
+  display: grid;
+  gap: 34px;
+}
+
+.project-group.is-hidden {
+  display: none;
+}
+
+.project-group-heading {
+  display: grid;
+  gap: 12px;
+  max-width: 780px;
+}
+
+.project-group-heading p {
+  color: rgba(26, 25, 22, 0.42);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.project-group-heading h2 {
+  color: rgba(26, 25, 22, 0.62);
+  font-size: clamp(24px, 2.6vw, 34px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -85,10 +121,6 @@
   text-decoration: none;
   min-width: 0;
   transition: opacity 0.22s ease, transform 0.28s ease;
-}
-
-.project-card.is-hidden {
-  display: none;
 }
 
 .project-card:hover {
@@ -247,11 +279,15 @@
   }
 
   .garage-header {
-    margin-bottom: 48px;
+    margin-bottom: 60px;
   }
 
   .garage-filter {
     white-space: normal;
+  }
+
+  .work-groups {
+    gap: 86px;
   }
 
   .project-grid {
@@ -273,7 +309,7 @@
   }
 
   .garage-header {
-    margin-bottom: 38px;
+    margin-bottom: 52px;
   }
 
   .garage-title {
@@ -287,6 +323,18 @@
 
   .garage-filter {
     gap: 8px;
+  }
+
+  .work-groups {
+    gap: 72px;
+  }
+
+  .project-group {
+    gap: 24px;
+  }
+
+  .project-group-heading h2 {
+    font-size: 25px;
   }
 
   .garage-filter span {

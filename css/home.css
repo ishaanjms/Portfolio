@@ -9,57 +9,6 @@
      and we need vertical overflow free so the parallax watermark can travel */
 }
 
-.hero > :not(.hero-signal-field) {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-signal-field {
-  position: absolute;
-  inset: -54px 0 16px;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-  border-radius: 28px;
-  opacity: 0.86;
-  --signal-x: 76%;
-  --signal-y: 26%;
-}
-
-.hero-signal-field::before,
-.hero-signal-field::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  transition: opacity 0.35s ease;
-}
-
-.hero-signal-field::before {
-  opacity: 0.76;
-  background-image:
-    radial-gradient(circle, rgba(26, 25, 22, 0.18) 1px, transparent 1.6px),
-    radial-gradient(circle, rgba(107, 70, 193, 0.18) 1px, transparent 1.6px),
-    radial-gradient(circle, rgba(39, 169, 201, 0.15) 1px, transparent 1.6px);
-  background-size: 22px 22px, 52px 52px, 76px 76px;
-  background-position: 0 0, 13px 19px, 37px 9px;
-  mask-image: radial-gradient(circle 340px at var(--signal-x) var(--signal-y), #000 0%, rgba(0, 0, 0, 0.78) 34%, transparent 72%);
-  -webkit-mask-image: radial-gradient(circle 340px at var(--signal-x) var(--signal-y), #000 0%, rgba(0, 0, 0, 0.78) 34%, transparent 72%);
-}
-
-.hero-signal-field::after {
-  opacity: 0.42;
-  background:
-    repeating-linear-gradient(90deg, transparent 0 33px, rgba(26, 25, 22, 0.055) 33px 34px),
-    repeating-linear-gradient(0deg, transparent 0 33px, rgba(26, 25, 22, 0.04) 33px 34px);
-  mask-image: radial-gradient(circle 460px at var(--signal-x) var(--signal-y), #000 0%, transparent 78%);
-  -webkit-mask-image: radial-gradient(circle 460px at var(--signal-x) var(--signal-y), #000 0%, transparent 78%);
-}
-
-.hero:hover .hero-signal-field::before {
-  opacity: 0.98;
-}
-
 /* Parallax watermark — scrolls up faster than page content
 .hero-watermark {
   position: absolute;
@@ -85,15 +34,15 @@
   right: -100px;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(107,70,193,0.08) 0%, rgba(247,245,240,0) 70%);
+  background: radial-gradient(circle, rgba(23, 107, 106, 0.07) 0%, rgba(247,245,240,0) 70%);
   z-index: -1;
   pointer-events: none;
 }
 
-/* Update your existing headline to be purple and have less bottom margin */
+/* Homepage hero heading */
 .hero-headline {
   font-size: clamp(48px, 7vw, 90px); /* Keeps it responsive */
-  color: #6B46C1; /* Your brand purple */
+  color: #176B6A;
   font-weight: 200;
   margin-bottom: 24px; /* Reduced gap to pull the paragraph closer */
   letter-spacing: -0.02em;
@@ -117,13 +66,13 @@
 }
 
 .hero-headline .purple {
-  color: #6B46C1;
+  color: #176B6A;
   font-weight: 500;
 }
 
 .cursor {
   display: inline-block;
-  color: #6B46C1;
+  color: #176B6A;
   font-weight: 300;
   animation: blink 1s step-end infinite;
   margin-left: 1px;

@@ -1,6 +1,6 @@
 // ─── Home page — typewriter ──────────────────────────────────────────────────
 // Each phrase completes the headline: "Interaction Designer [phrase]"
-// Colors run from accent (purple) through mid-tones, ending at primary (dark/black).
+// Colors run from accent through mid-tones, ending at primary (dark/black).
 // Color stops are character-position-based: once cursor passes `from`, color shifts.
 
 const HERO_PHRASES = [
@@ -97,29 +97,5 @@ const watermark = document.querySelector('.hero-watermark');
 if (watermark) {
   window.addEventListener('scroll', () => {
     watermark.style.transform = `translateY(calc(-50% + ${window.scrollY * -0.5}px))`;
-  }, { passive: true });
-}
-
-// Cursor-revealed signal texture in the hero. CSS does the drawing; JS only moves the reveal point.
-const hero = document.querySelector('.hero');
-const signalField = document.querySelector('.hero-signal-field');
-const canAnimateSignal = hero && signalField && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-if (canAnimateSignal) {
-  let signalFrame = 0;
-  let signalX = 0;
-  let signalY = 0;
-
-  hero.addEventListener('pointermove', event => {
-    const rect = hero.getBoundingClientRect();
-    signalX = event.clientX - rect.left;
-    signalY = event.clientY - rect.top;
-
-    if (signalFrame) return;
-    signalFrame = window.requestAnimationFrame(() => {
-      signalField.style.setProperty('--signal-x', `${signalX}px`);
-      signalField.style.setProperty('--signal-y', `${signalY}px`);
-      signalFrame = 0;
-    });
   }, { passive: true });
 }

@@ -1,7 +1,7 @@
 // Garage page interactions
 (function () {
   const chips = document.querySelectorAll('.filter-chip');
-  const cards = document.querySelectorAll('.project-card');
+  const groups = document.querySelectorAll('.project-group');
 
   chips.forEach(chip => {
     chip.addEventListener('click', () => {
@@ -9,10 +9,9 @@
 
       chips.forEach(item => item.classList.toggle('active', item === chip));
 
-      cards.forEach(card => {
-        const categories = (card.dataset.category || '').split(' ');
-        const shouldShow = filter === 'all' || categories.includes(filter);
-        card.classList.toggle('is-hidden', !shouldShow);
+      groups.forEach(group => {
+        const shouldShow = filter === 'all' || group.dataset.group === filter;
+        group.classList.toggle('is-hidden', !shouldShow);
       });
     });
   });
