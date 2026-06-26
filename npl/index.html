@@ -55,11 +55,11 @@
       <div class="npl-meta-grid">
         <article>
           <span>Role</span>
-          <strong>Product Designer & Developer</strong>
+          
         </article>
         <article>
           <span>Timeline</span>
-          <strong>June - August 2025</strong>
+          
         </article>
         <article>
           <span>Tools</span>
@@ -83,7 +83,7 @@
         </article>
         <article>
           <span>Team</span>
-          <strong>Scientists, hardware engineer, PhD scholar</strong>
+          
         </article>
       </div>
     </section>
@@ -149,17 +149,17 @@
         <div class="architecture-flow" aria-label="System architecture flow">
           <article>
             <span>01</span>
-            <strong>Lab instruments</strong>
+            
             <p>Temperature, laser, and photodiode readings start from separate devices.</p>
           </article>
           <article>
             <span>02</span>
-            <strong>Python backend</strong>
+            
             <p>Flask validates readings, timestamps them, and writes daily CSV logs.</p>
           </article>
           <article>
             <span>03</span>
-            <strong>Live dashboard</strong>
+            
             <p>Plotly Dash turns the logs into status cards, charts, and exports.</p>
           </article>
         </div>
@@ -167,71 +167,71 @@
           <img src="./assets/diagrams/system-architecture.png" alt="CsF1 monitoring system architecture">
         </figure>
         <div class="architecture-notes" aria-label="Key system decisions">
-          <p><strong>Reliable input</strong> Required sensor fields are checked before storage.</p>
-          <p><strong>Scientific timing</strong> Readings keep IST, UTC, and MJD for later analysis.</p>
-          <p><strong>Fast monitoring</strong> The interface refreshes automatically every 10 seconds.</p>
+          <p> Required sensor fields are checked before storage.</p>
+          <p> Readings keep IST, UTC, and MJD for later analysis.</p>
+          <p> The interface refreshes automatically every 10 seconds.</p>
         </div>
       </div>
     </section>
 
-    <section class="npl-split">
-      <aside>
-        <p>04</p>
-        <h2>Style Guide</h2>
-      </aside>
-      <div class="npl-content">
-        <div class="style-guide-system">
-          <section class="style-row type-row no-divider">
-            <span class="style-row-label">Typography</span>
-            <div class="type-pair">
-              <article class="type-specimen">
-                <div class="type-hero" aria-label="Roboto type specimen">Aa</div>
-                <div class="type-copy">
-                  <span>Roboto</span>
-                  <p>Used for headings, navigation, controls, and card text.</p>
-                </div>
-              </article>
-              <article class="type-specimen">
-                <div class="type-hero mono" aria-label="Monospace type specimen">24.66</div>
-                <div class="type-copy">
-                  <span>Monospace</span>
-                  <p>Used for timestamps, readings, IDs, and aligned technical values.</p>
-                </div>
-              </article>
-            </div>
-          </section>
+    <section class="npl-style-guide">
+      <div class="npl-section-heading">
+        <p>04 · Style Guide</p>
+        <h2>Typography & Colors</h2>
+      </div>
+      <div class="style-guide-system">
+        <section class="style-row type-row no-divider">
+          <span class="style-row-label"></span>
+          <div class="type-pair">
+            <article class="type-specimen">
+              <div class="type-hero" aria-label="Roboto type specimen">Aa</div>
+              <div class="type-copy">
+                <span>Roboto</span>
+                <p>Used for headings, navigation, controls, and card text.</p>
+              </div>
+            </article>
+            <article class="type-specimen">
+              <div class="type-hero mono" aria-label="Monospace type specimen">26.4</div>
+              <div class="type-copy">
+                <span>Monospace</span>
+                <p>Used for timestamps, readings, IDs, and aligned technical values.</p>
+              </div>
+            </article>
+          </div>
+        </section>
 
+        <div class="style-color-groups">
           <section class="style-row color-row no-divider">
             <span class="style-row-label">Neutral</span>
             <div class="swatch-strip neutral-strip">
-              <article class="style-swatch light-text" style="--swatch:#000000"><strong>Black</strong><span>#000000</span></article>
-              <article class="style-swatch light-text" style="--swatch:#121212"><strong>Base</strong><span>#121212</span></article>
-              <article class="style-swatch light-text" style="--swatch:#1E1E1E"><strong>Card</strong><span>#1E1E1E</span></article>
-              <article class="style-swatch light-text" style="--swatch:#2C2C2C"><strong>Border</strong><span>#2C2C2C</span></article>
-              <article class="style-swatch light-text" style="--swatch:#666666"><strong>Muted</strong><span>#666666</span></article>
-              <article class="style-swatch" style="--swatch:#E0E0E0"><strong>Text</strong><span>#E0E0E0</span></article>
-              <article class="style-swatch" style="--swatch:#FFFFFF"><strong>White</strong><span>#FFFFFF</span></article>
+              <article class="style-swatch light-text" style="--swatch:#000000"><span>#000000</span></article>
+              <article class="style-swatch light-text" style="--swatch:#121212"><span>#121212</span></article>
+              <article class="style-swatch light-text" style="--swatch:#1E1E1E"><span>#1E1E1E</span></article>
+              <article class="style-swatch light-text" style="--swatch:#2C2C2C"><span>#2C2C2C</span></article>
+              <article class="style-swatch light-text" style="--swatch:#666666"><span>#666666</span></article>
+              <article class="style-swatch" style="--swatch:#E0E0E0"><span>#E0E0E0</span></article>
+              <article class="style-swatch" style="--swatch:#FFFFFF"><span>#FFFFFF</span></article>
             </div>
           </section>
 
           <section class="style-row color-row no-divider">
             <span class="style-row-label">Status</span>
             <div class="swatch-strip compact">
-              <article class="style-swatch light-text" style="--swatch:#00ADB5"><strong>Active</strong><span>#00ADB5</span></article>
-              <article class="style-swatch light-text" style="--swatch:#00B582"><strong>Healthy</strong><span>#00B582</span></article>
-              <article class="style-swatch" style="--swatch:#00FFFF"><strong>Live</strong><span>#00FFFF</span></article>
-              <article class="style-swatch light-text" style="--swatch:#EF5350"><strong>Alert</strong><span>#EF5350</span></article>
+              <article class="style-swatch light-text" style="--swatch:#00ADB5"><span>#00ADB5</span></article>
+              <article class="style-swatch light-text" style="--swatch:#00B582"><span>#00B582</span></article>
+              <article class="style-swatch" style="--swatch:#00FFFF"><span>#00FFFF</span></article>
+              <article class="style-swatch light-text" style="--swatch:#EF5350"><span>#EF5350</span></article>
             </div>
           </section>
 
           <section class="style-row">
             <span class="style-row-label">Graph Traces</span>
             <div class="swatch-strip compact">
-              <article class="style-swatch" style="--swatch:#4DD0E1"><strong>Optical bench</strong><span>#4DD0E1</span></article>
-              <article class="style-swatch" style="--swatch:#FFB74D"><strong>Ambient</strong><span>#FFB74D</span></article>
-              <article class="style-swatch" style="--swatch:#FF9900"><strong>AOM 5</strong><span>#FF9900</span></article>
-              <article class="style-swatch" style="--swatch:#CE93D8"><strong>AOM 3</strong><span>#CE93D8</span></article>
-              <article class="style-swatch" style="--swatch:#90CAF9"><strong>AOM 2</strong><span>#90CAF9</span></article>
+              <article class="style-swatch" style="--swatch:#4DD0E1"><span>#4DD0E1</span></article>
+              <article class="style-swatch" style="--swatch:#FFB74D"><span>#FFB74D</span></article>
+              <article class="style-swatch" style="--swatch:#FF9900"><span>#FF9900</span></article>
+              <article class="style-swatch" style="--swatch:#CE93D8"><span>#CE93D8</span></article>
+              <article class="style-swatch" style="--swatch:#90CAF9"><span>#90CAF9</span></article>
             </div>
           </section>
         </div>
@@ -258,7 +258,7 @@
           <img src="./assets/screens/temperature-humidity.png" alt="Temperature and humidity monitoring screen">
           <figcaption>
             <span>Temperature & Humidity</span>
-            <strong>Temperature and humidity trends</strong>
+            
             <p>Ambient room air and optical-bench readings are plotted together so scientists can compare temperature changes over time.</p>
           </figcaption>
         </figure>
@@ -266,7 +266,7 @@
           <img src="./assets/screens/lasers.png" alt="Laser monitoring screen">
           <figcaption>
             <span>Lasers</span>
-            <strong>Paired laser readings</strong>
+            
             <p>Laser readings are paired in dedicated cards so X1/X2 and Y1/Y2 can be compared quickly.</p>
           </figcaption>
         </figure>
@@ -274,7 +274,7 @@
           <img src="./assets/screens/photodiodes.png" alt="Photodiode monitoring screen">
           <figcaption>
             <span>Photodiodes</span>
-            <strong>Photodiode monitoring</strong>
+            
             <p>Colored cards match graph traces, helping scientists identify whether a laser, switch, fiber, or detector has failed.</p>
           </figcaption>
         </figure>
@@ -282,7 +282,7 @@
           <img src="./assets/screens/retrieve-data.png" alt="Retrieve data screen">
           <figcaption>
             <span>Retrieve Data</span>
-            <strong>Historical data review</strong>
+            
             <p>Quick plotting and CSV export are separated from live monitoring so historical analysis does not clutter the main dashboard.</p>
           </figcaption>
         </figure>
@@ -353,11 +353,11 @@
           <div class="npl-conference-meta">
             <article>
               <span>Event</span>
-              <strong>AdMet 2025</strong>
+              
             </article>
             <article>
               <span>Dates</span>
-              <strong>6-8 Oct 2025</strong>
+              
             </article>
           </div>
         </div>
