@@ -238,61 +238,10 @@
       </div>
     </section>
 
-    <section class="npl-screens">
-      <div class="npl-section-heading">
-        <p>05 · Dashboard Screens</p>
-        <h2>The final interface across core tasks</h2>
-      </div>
-      <div class="screen-feature">
-        <div class="screen-copy">
-          <span>Overview</span>
-          <h3>Overall system status</h3>
-          <p>The overview screen brings ambient conditions, laser coordinates, photodiode values, connection health, and last server update time into one view.</p>
-        </div>
-        <figure>
-          <img src="./assets/screens/overview.png" alt="Overview screen showing system status">
-        </figure>
-      </div>
-      <div class="screen-grid">
-        <figure>
-          <img src="./assets/screens/temperature-humidity.png" alt="Temperature and humidity monitoring screen">
-          <figcaption>
-            <span>Temperature & Humidity</span>
-            
-            <p>Ambient room air and optical-bench readings are plotted together so scientists can compare temperature changes over time.</p>
-          </figcaption>
-        </figure>
-        <figure>
-          <img src="./assets/screens/lasers.png" alt="Laser monitoring screen">
-          <figcaption>
-            <span>Lasers</span>
-            
-            <p>Laser readings are paired in dedicated cards so X1/X2 and Y1/Y2 can be compared quickly.</p>
-          </figcaption>
-        </figure>
-        <figure>
-          <img src="./assets/screens/photodiodes.png" alt="Photodiode monitoring screen">
-          <figcaption>
-            <span>Photodiodes</span>
-            
-            <p>Colored cards match graph traces, helping scientists identify whether a laser, switch, fiber, or detector has failed.</p>
-          </figcaption>
-        </figure>
-        <figure>
-          <img src="./assets/screens/retrieve-data.png" alt="Retrieve data screen">
-          <figcaption>
-            <span>Retrieve Data</span>
-            
-            <p>Quick plotting and CSV export are separated from live monitoring so historical analysis does not clutter the main dashboard.</p>
-          </figcaption>
-        </figure>
-      </div>
-    </section>
-
     <section class="npl-interactions">
       <div class="npl-section-heading">
-        <p>06 · Interactions</p>
-        <h2>Interactions for focused monitoring</h2>
+        <p>05 · Dashboard Walkthrough</p>
+        <h2>Key views and interactions in the final dashboard</h2>
       </div>
       <div class="interaction-card">
         <div class="interaction-copy">
@@ -315,6 +264,42 @@
         <figure>
           <video autoplay loop muted playsinline aria-label="Line chart hover showing timestamp and exact value">
             <source src="./assets/videos/chart-hover.mp4" type="video/mp4">
+          </video>
+        </figure>
+      </div>
+      <div class="interaction-card">
+        <div class="interaction-copy">
+          <span>Laser readings</span>
+          <h3>Compare paired axes</h3>
+          <p>The laser view keeps paired readings and their trends together, making changes in X, Y, Z, and D axes easier to scan.</p>
+        </div>
+        <figure>
+          <video autoplay loop muted playsinline aria-label="Laser monitoring interaction showing paired axis readings">
+            <source src="./assets/videos/Lasers.mp4" type="video/mp4">
+          </video>
+        </figure>
+      </div>
+      <div class="interaction-card">
+        <div class="interaction-copy">
+          <span>Photodiode readings</span>
+          <h3>Trace detector changes</h3>
+          <p>The photodiode view links each colored reading card to its chart line, making detector shifts easier to follow.</p>
+        </div>
+        <figure>
+          <video autoplay loop muted playsinline aria-label="Photodiode monitoring interaction showing reading cards and traces">
+            <source src="./assets/videos/photodiodes.mp4" type="video/mp4">
+          </video>
+        </figure>
+      </div>
+      <div class="interaction-card">
+        <div class="interaction-copy">
+          <span>Retrieve data</span>
+          <h3>Plot or export history</h3>
+          <p>Scientists can choose a data source and date range, then plot readings or export CSV files without leaving the dashboard.</p>
+        </div>
+        <figure>
+          <video autoplay loop muted playsinline aria-label="Retrieve data interaction showing source selection, plotting, and export">
+            <source src="./assets/videos/retrieve.mp4" type="video/mp4">
           </video>
         </figure>
       </div>
