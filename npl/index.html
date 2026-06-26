@@ -117,77 +117,7 @@
 
     <section class="npl-lab">
       <div class="npl-section-heading">
-        <p>02 · Interface Evolution</p>
-        <h2>How the dashboard structure developed</h2>
-      </div>
-      <div class="npl-evolution-grid" aria-label="Reconstructed interface evolution">
-        <article class="npl-evolution-card">
-          <div class="wireframe-panel fragmented">
-            <div class="wire-window small-window">
-              <span></span>
-              <i></i>
-              <i></i>
-            </div>
-            <div class="wire-window chart-window">
-              <span></span>
-              <b></b>
-              <b></b>
-              <b></b>
-            </div>
-            <div class="wire-window table-window">
-              <span></span>
-              <i></i>
-              <i></i>
-              <i></i>
-            </div>
-          </div>
-          <span>Early state</span>
-          <h3>Monitoring was split across small windows</h3>
-          <p>The first problem was that environmental, laser, and detector readings were not visible in one place.</p>
-        </article>
-        <article class="npl-evolution-card">
-          <div class="wireframe-panel consolidated">
-            <div class="wire-top"></div>
-            <div class="wire-card-grid">
-              <i></i>
-              <i></i>
-              <i></i>
-              <i></i>
-            </div>
-            <div class="wire-graph"></div>
-          </div>
-          <span>First model</span>
-          <h3>Related readings were grouped together</h3>
-          <p>The dashboard grouped the values scientists compare most often: ambient stability, paired lasers, photodiode traces, and connection health.</p>
-        </article>
-        <article class="npl-evolution-card">
-          <div class="wireframe-panel final-model">
-            <div class="wire-sidebar">
-              <i></i>
-              <i></i>
-              <i></i>
-              <i></i>
-            </div>
-            <div class="wire-main">
-              <span></span>
-              <div class="wire-status-row">
-                <i></i>
-                <i></i>
-                <i></i>
-              </div>
-              <div class="wire-deep-graph"></div>
-            </div>
-          </div>
-          <span>Final model</span>
-          <h3>The final layout supported live checks and data review</h3>
-          <p>The final structure balanced quick status checks with deeper diagnosis, so live monitoring and historical retrieval could stay in the same tool.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="npl-lab">
-      <div class="npl-section-heading">
-        <p>03 · Lab Constraint</p>
+        <p>02 · Lab Constraint</p>
         <h2>Designed for low-light lab conditions</h2>
       </div>
       <div class="npl-lab-grid">
@@ -211,7 +141,7 @@
 
     <section class="npl-split">
       <aside>
-        <p>04</p>
+        <p>03</p>
         <h2>System Architecture</h2>
       </aside>
       <div class="npl-content">
@@ -273,6 +203,79 @@
       </div>
     </section>
 
+    <section class="npl-split">
+      <aside>
+        <p>04</p>
+        <h2>Style Guide</h2>
+      </aside>
+      <div class="npl-content">
+        <div class="style-guide-system">
+          <section class="style-row type-row no-divider">
+            <span class="style-row-label">Font</span>
+            <div class="type-specimen">
+              <div class="type-hero" aria-label="Roboto type specimen">Aa</div>
+              <div class="type-copy">
+                <span>Roboto</span>
+                <p>Used for headings, navigation, controls, and card text because it stays readable in dense dashboard views.</p>
+                <div class="type-scale">
+                  <strong>40px</strong>
+                  <strong>28px</strong>
+                  <strong>20px</strong>
+                  <strong>16px</strong>
+                  <strong>12px</strong>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="style-row type-row mono-row">
+            <span class="style-row-label">Data Type</span>
+            <div class="type-specimen">
+              <div class="type-hero mono" aria-label="Monospace type specimen">24.66</div>
+              <div class="type-copy">
+                <span>Monospace</span>
+                <p>Used for timestamps, readings, IDs, and compact technical metadata where alignment and scanning matter.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="style-row color-row no-divider">
+            <span class="style-row-label">Neutral</span>
+            <div class="swatch-strip neutral-strip">
+              <article class="style-swatch light-text" style="--swatch:#000000"><strong>Black</strong><span>#000000</span></article>
+              <article class="style-swatch light-text" style="--swatch:#121212"><strong>Base</strong><span>#121212</span></article>
+              <article class="style-swatch light-text" style="--swatch:#1E1E1E"><strong>Card</strong><span>#1E1E1E</span></article>
+              <article class="style-swatch light-text" style="--swatch:#2C2C2C"><strong>Border</strong><span>#2C2C2C</span></article>
+              <article class="style-swatch light-text" style="--swatch:#666666"><strong>Muted</strong><span>#666666</span></article>
+              <article class="style-swatch" style="--swatch:#E0E0E0"><strong>Text</strong><span>#E0E0E0</span></article>
+              <article class="style-swatch" style="--swatch:#FFFFFF"><strong>White</strong><span>#FFFFFF</span></article>
+            </div>
+          </section>
+
+          <section class="style-row color-row no-divider">
+            <span class="style-row-label">Status</span>
+            <div class="swatch-strip compact">
+              <article class="style-swatch light-text" style="--swatch:#00ADB5"><strong>Active</strong><span>#00ADB5</span></article>
+              <article class="style-swatch light-text" style="--swatch:#00B582"><strong>Healthy</strong><span>#00B582</span></article>
+              <article class="style-swatch" style="--swatch:#00FFFF"><strong>Live</strong><span>#00FFFF</span></article>
+              <article class="style-swatch light-text" style="--swatch:#EF5350"><strong>Alert</strong><span>#EF5350</span></article>
+            </div>
+          </section>
+
+          <section class="style-row">
+            <span class="style-row-label">Graph Traces</span>
+            <div class="swatch-strip compact">
+              <article class="style-swatch" style="--swatch:#4DD0E1"><strong>Optical bench</strong><span>#4DD0E1</span></article>
+              <article class="style-swatch" style="--swatch:#FFB74D"><strong>Ambient</strong><span>#FFB74D</span></article>
+              <article class="style-swatch" style="--swatch:#FF9900"><strong>AOM 5</strong><span>#FF9900</span></article>
+              <article class="style-swatch" style="--swatch:#CE93D8"><strong>AOM 3</strong><span>#CE93D8</span></article>
+              <article class="style-swatch" style="--swatch:#90CAF9"><strong>AOM 2</strong><span>#90CAF9</span></article>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
     <section class="npl-screens">
       <div class="npl-section-heading">
         <p>05 · Dashboard Screens</p>
@@ -324,80 +327,22 @@
       </div>
     </section>
 
-    <section class="npl-split">
-      <aside>
-        <p>06</p>
-        <h2>Style Guide</h2>
-      </aside>
-      <div class="npl-content">
-        <div class="style-guide-system">
-          <section class="style-row type-row no-divider">
-            <span class="style-row-label">Font</span>
-            <div class="type-specimen">
-              <div class="type-hero" aria-label="Roboto type specimen">Aa</div>
-              <div class="type-copy">
-                <span>Roboto</span>
-                <p>Used for headings, navigation, controls, and card text because it stays readable in dense dashboard views.</p>
-                <div class="type-scale">
-                  <strong>40px</strong>
-                  <strong>28px</strong>
-                  <strong>20px</strong>
-                  <strong>16px</strong>
-                  <strong>12px</strong>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="style-row type-row mono-row">
-            <span class="style-row-label">Data Type</span>
-            <div class="type-specimen">
-              <div class="type-hero mono" aria-label="Monospace type specimen">24.66</div>
-              <div class="type-copy">
-                <span>Monospace</span>
-                <p>Used for timestamps, readings, IDs, and compact technical metadata where alignment and scanning matter.</p>
-                <div class="mono-sample">
-                  <span>Connected · 18:30:45</span>
-                  <span>X1 79.50 · X2 107.44</span>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="style-row color-row">
-            <span class="style-row-label">Neutral</span>
-            <div class="swatch-strip neutral-strip">
-              <article class="style-swatch light-text" style="--swatch:#000000"><strong>Black</strong><span>#000000</span></article>
-              <article class="style-swatch light-text" style="--swatch:#121212"><strong>Base</strong><span>#121212</span></article>
-              <article class="style-swatch light-text" style="--swatch:#1E1E1E"><strong>Card</strong><span>#1E1E1E</span></article>
-              <article class="style-swatch light-text" style="--swatch:#2C2C2C"><strong>Border</strong><span>#2C2C2C</span></article>
-              <article class="style-swatch light-text" style="--swatch:#666666"><strong>Muted</strong><span>#666666</span></article>
-              <article class="style-swatch" style="--swatch:#E0E0E0"><strong>Text</strong><span>#E0E0E0</span></article>
-              <article class="style-swatch" style="--swatch:#FFFFFF"><strong>White</strong><span>#FFFFFF</span></article>
-            </div>
-          </section>
-
-          <section class="style-row color-row no-divider">
-            <span class="style-row-label">Status</span>
-            <div class="swatch-strip compact">
-              <article class="style-swatch light-text" style="--swatch:#00ADB5"><strong>Active</strong><span>#00ADB5</span></article>
-              <article class="style-swatch light-text" style="--swatch:#00B582"><strong>Healthy</strong><span>#00B582</span></article>
-              <article class="style-swatch" style="--swatch:#00FFFF"><strong>Live</strong><span>#00FFFF</span></article>
-              <article class="style-swatch light-text" style="--swatch:#EF5350"><strong>Alert</strong><span>#EF5350</span></article>
-            </div>
-          </section>
-
-          <section class="style-row">
-            <span class="style-row-label">Graph Traces</span>
-            <div class="swatch-strip compact">
-              <article class="style-swatch" style="--swatch:#4DD0E1"><strong>Optical bench</strong><span>#4DD0E1</span></article>
-              <article class="style-swatch" style="--swatch:#FFB74D"><strong>Ambient</strong><span>#FFB74D</span></article>
-              <article class="style-swatch" style="--swatch:#FF9900"><strong>AOM 5</strong><span>#FF9900</span></article>
-              <article class="style-swatch" style="--swatch:#CE93D8"><strong>AOM 3</strong><span>#CE93D8</span></article>
-              <article class="style-swatch" style="--swatch:#90CAF9"><strong>AOM 2</strong><span>#90CAF9</span></article>
-            </div>
-          </section>
+    <section class="npl-interactions">
+      <div class="npl-section-heading">
+        <p>06 · Interactions</p>
+        <h2>Interactions for focused monitoring</h2>
+      </div>
+      <div class="interaction-card">
+        <div class="interaction-copy">
+          <span>Navigation drawer</span>
+          <h3>Collapsible sidebar</h3>
+          <p>The sidebar closes to give charts more room, then opens again when scientists need to switch sections.</p>
         </div>
+        <figure>
+          <video autoplay loop muted playsinline aria-label="Dashboard sidebar collapsing and opening">
+            <source src="../npl/navbar%20ani.mp4" type="video/mp4">
+          </video>
+        </figure>
       </div>
     </section>
 
