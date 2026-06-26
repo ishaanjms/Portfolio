@@ -561,6 +561,11 @@ body {
   gap: 22px;
 }
 
+.npl-interactions {
+  display: grid;
+  gap: 22px;
+}
+
 .screen-feature {
   display: grid;
   grid-template-columns: 0.34fr 0.66fr;
