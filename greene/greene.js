@@ -84,49 +84,4 @@
     });
   });
 
-  const logicViews = {
-    compose: {
-      chips: ['Schema valid', 'Persona aligned'],
-      confidence: '0.82',
-      clarity: 'High need for tactical clarity',
-      reflection: 'Moderate need for reflection'
-    },
-    reason: {
-      chips: ['Trace visible', 'Framework mapped'],
-      confidence: '0.76',
-      clarity: 'Behaviour mode is explainable',
-      reflection: 'Purpose guardrail is active'
-    },
-    memory: {
-      chips: ['Session context', 'History scoped'],
-      confidence: '0.69',
-      clarity: 'Previous uncertainty retained',
-      reflection: 'Long-term memory not enabled'
-    },
-    safety: {
-      chips: ['Advice bounded', 'No certainty claim'],
-      confidence: '0.88',
-      clarity: 'Strategic framing without prescription',
-      reflection: 'Risk language softened'
-    }
-  };
-
-  const logicButtons = document.querySelectorAll('.gc-logic-tabs button');
-  const logicBoard = document.querySelector('.gc-interface-board');
-
-  logicButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const view = logicViews[button.dataset.logic] || logicViews.compose;
-      logicButtons.forEach(item => item.classList.toggle('active', item === button));
-      logicBoard.dataset.view = button.dataset.logic;
-      const chips = logicBoard.querySelectorAll('.state-chip');
-      if (chips[0]) chips[0].textContent = view.chips[0];
-      if (chips[1]) chips[1].textContent = view.chips[1];
-      const notes = logicBoard.querySelectorAll('.insight-panel p');
-      if (notes[0]) notes[0].textContent = view.clarity;
-      if (notes[1]) notes[1].textContent = view.reflection;
-      const score = logicBoard.querySelector('.logic-score strong');
-      if (score) score.textContent = view.confidence;
-    });
-  });
 })();
