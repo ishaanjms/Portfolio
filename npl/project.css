@@ -353,6 +353,10 @@ body {
   line-height: 1.35;
 }
 
+.npl-content {
+  min-width: 0;
+}
+
 .npl-problem-grid,
 .npl-evolution-grid,
 .npl-lab-grid,
@@ -857,19 +861,18 @@ body {
 
 .style-guide-system {
   display: grid;
-  gap: 22px;
+  width: 100%;
+  max-width: 100%;
+  gap: 20px;
+  overflow: hidden;
 }
 
 .style-row {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
-  gap: 40px;
+  grid-template-columns: 122px minmax(0, 1fr);
+  gap: 30px;
   padding: 0 0 40px;
   border-bottom: 1px solid rgba(26, 25, 22, 0.1);
-}
-
-.style-row-intro {
-  padding-bottom: 26px;
 }
 
 .style-row.no-divider,
@@ -881,15 +884,6 @@ body {
   padding-top: 18px;
 }
 
-.style-row-intro h3 {
-  max-width: 760px;
-  color: #1a1916;
-  font-size: clamp(32px, 4vw, 54px);
-  font-weight: 500;
-  line-height: 1;
-}
-
-.style-row-intro p,
 .type-copy p {
   max-width: 620px;
   margin-top: 14px;
@@ -900,9 +894,10 @@ body {
 
 .type-specimen {
   display: grid;
-  grid-template-columns: minmax(220px, 0.62fr) minmax(260px, 0.9fr);
-  gap: 34px;
+  grid-template-columns: minmax(180px, 0.52fr) minmax(0, 1fr);
+  gap: 28px;
   align-items: center;
+  min-width: 0;
 }
 
 .type-hero {
@@ -931,7 +926,13 @@ body {
 }
 
 .type-copy > span {
-  color: rgba(26, 25, 22, 0.48);
+  display: block;
+  color: #1a1916;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
 }
 
 .type-scale {
@@ -965,12 +966,17 @@ body {
 
 .swatch-strip {
   display: grid;
-  grid-template-columns: repeat(7, minmax(92px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
   gap: 12px;
+  min-width: 0;
+}
+
+.neutral-strip {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
 .swatch-strip.compact {
-  grid-template-columns: repeat(5, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
 }
 
 .style-swatch {
@@ -1139,11 +1145,6 @@ body {
     gap: 18px;
   }
 
-  .swatch-strip,
-  .swatch-strip.compact {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .npl-architecture button {
     min-height: 0;
   }
@@ -1233,6 +1234,12 @@ body {
 
   .style-swatch {
     min-height: 112px;
+  }
+
+  .swatch-strip,
+  .neutral-strip,
+  .swatch-strip.compact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .npl-conference-copy {
