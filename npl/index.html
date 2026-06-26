@@ -145,60 +145,31 @@
         <h2>System Architecture</h2>
       </aside>
       <div class="npl-content">
-        <p class="npl-lead">The solution connected isolated instruments to a Python backend and a responsive Plotly Dash interface.</p>
-        <div class="npl-architecture">
-          <button type="button" class="active" data-arch="fluke" aria-pressed="true">
+        <p class="npl-lead">The dashboard brought lab instruments, logged sensor data, and live monitoring into one interface.</p>
+        <div class="architecture-flow" aria-label="System architecture flow">
+          <article>
             <span>01</span>
-            <strong>FLUKE 1620A</strong>
-            <em>Environmental acquisition</em>
-          </button>
-          <button type="button" data-arch="esp" aria-pressed="false">
+            <strong>Lab instruments</strong>
+            <p>Temperature, laser, and photodiode readings start from separate devices.</p>
+          </article>
+          <article>
             <span>02</span>
-            <strong>ESP8266</strong>
-            <em>Signal digitization</em>
-          </button>
-          <button type="button" data-arch="api" aria-pressed="false">
+            <strong>Python backend</strong>
+            <p>Flask validates readings, timestamps them, and writes daily CSV logs.</p>
+          </article>
+          <article>
             <span>03</span>
-            <strong>Flask API</strong>
-            <em>Timestamped data service</em>
-          </button>
-          <button type="button" data-arch="dash" aria-pressed="false">
-            <span>04</span>
-            <strong>Plotly Dash</strong>
-            <em>Scientist-facing dashboard</em>
-          </button>
+            <strong>Live dashboard</strong>
+            <p>Plotly Dash turns the logs into status cards, charts, and exports.</p>
+          </article>
         </div>
-        <div class="npl-arch-detail" aria-live="polite">
-          <div>
-            <span>Selected layer · 01</span>
-            <h3>FLUKE 1620A Thermo-Hygrometer</h3>
-            <p>Serial data from the thermo-hygrometer tracks ambient and optical-bench temperature/humidity so scientists can catch environmental changes early.</p>
-          </div>
-          <figure>
-            <img src="./assets/diagrams/system-architecture.png" alt="CsF1 monitoring system architecture">
-          </figure>
-        </div>
-        <div class="npl-reliability-grid" aria-label="System reliability decisions">
-          <article>
-            <span>Input Validation</span>
-            <h3>Reject incomplete packets</h3>
-            <p>The Flask endpoint checks required laser and photodiode fields before anything reaches storage.</p>
-          </article>
-          <article>
-            <span>Scientific Time</span>
-            <h3>Log IST, UTC, and MJD</h3>
-            <p>Each reading carries local readability, universal synchronization, and research-grade plotting time.</p>
-          </article>
-          <article>
-            <span>Storage Model</span>
-            <h3>Rotate daily CSV logs</h3>
-            <p>Sensor-specific folders keep long-running experiments easy to retrieve, archive, and share.</p>
-          </article>
-          <article>
-            <span>Live Interface</span>
-            <h3>Refresh every 10 seconds</h3>
-            <p>Cards, graphs, and status indicators update without forcing scientists to manually reload the page.</p>
-          </article>
+        <figure class="architecture-visual">
+          <img src="./assets/diagrams/system-architecture.png" alt="CsF1 monitoring system architecture">
+        </figure>
+        <div class="architecture-notes" aria-label="Key system decisions">
+          <p><strong>Reliable input</strong> Required sensor fields are checked before storage.</p>
+          <p><strong>Scientific timing</strong> Readings keep IST, UTC, and MJD for later analysis.</p>
+          <p><strong>Fast monitoring</strong> The interface refreshes automatically every 10 seconds.</p>
         </div>
       </div>
     </section>
@@ -211,31 +182,22 @@
       <div class="npl-content">
         <div class="style-guide-system">
           <section class="style-row type-row no-divider">
-            <span class="style-row-label">Font</span>
-            <div class="type-specimen">
-              <div class="type-hero" aria-label="Roboto type specimen">Aa</div>
-              <div class="type-copy">
-                <span>Roboto</span>
-                <p>Used for headings, navigation, controls, and card text because it stays readable in dense dashboard views.</p>
-                <div class="type-scale">
-                  <strong>40px</strong>
-                  <strong>28px</strong>
-                  <strong>20px</strong>
-                  <strong>16px</strong>
-                  <strong>12px</strong>
+            <span class="style-row-label">Typography</span>
+            <div class="type-pair">
+              <article class="type-specimen">
+                <div class="type-hero" aria-label="Roboto type specimen">Aa</div>
+                <div class="type-copy">
+                  <span>Roboto</span>
+                  <p>Used for headings, navigation, controls, and card text.</p>
                 </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="style-row type-row mono-row">
-            <span class="style-row-label">Data Type</span>
-            <div class="type-specimen">
-              <div class="type-hero mono" aria-label="Monospace type specimen">24.66</div>
-              <div class="type-copy">
-                <span>Monospace</span>
-                <p>Used for timestamps, readings, IDs, and compact technical metadata where alignment and scanning matter.</p>
-              </div>
+              </article>
+              <article class="type-specimen">
+                <div class="type-hero mono" aria-label="Monospace type specimen">24.66</div>
+                <div class="type-copy">
+                  <span>Monospace</span>
+                  <p>Used for timestamps, readings, IDs, and aligned technical values.</p>
+                </div>
+              </article>
             </div>
           </section>
 
@@ -430,6 +392,5 @@
 
   <script src="../js/constants.js"></script>
   <script src="../js/shared.js"></script>
-  <script src="./project.js"></script>
 </body>
 </html>

@@ -28,8 +28,7 @@ body {
 .style-row-label,
 .type-copy > span,
 .npl-lab-grid span,
-.npl-arch-detail span,
-.npl-reliability-grid span,
+.architecture-flow span,
 .npl-outcomes span {
   font-family: 'DM Mono', monospace;
   font-size: 12px;
@@ -201,7 +200,7 @@ body {
 }
 
 .npl-showcase img,
-.npl-arch-detail img {
+.architecture-visual img {
   width: 100%;
   max-width: 100%;
   height: auto;
@@ -358,7 +357,6 @@ body {
 
 .npl-problem-grid,
 .npl-lab-grid,
-.npl-reliability-grid,
 .npl-outcome-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -368,7 +366,6 @@ body {
 
 .npl-problem-grid article,
 .lab-card,
-.npl-reliability-grid article,
 .npl-outcome-grid article {
   border: 1px solid rgba(26, 25, 22, 0.08);
   border-radius: 18px;
@@ -379,8 +376,6 @@ body {
 
 .npl-problem-grid h3,
 .lab-card h3,
-.npl-arch-detail h3,
-.npl-reliability-grid h3,
 .npl-outcome-grid h3 {
   margin: 12px 0 10px;
   color: #1a1916;
@@ -390,8 +385,6 @@ body {
 
 .npl-problem-grid p,
 .lab-card p,
-.npl-arch-detail p,
-.npl-reliability-grid p,
 .npl-outcome-grid p {
   color: rgba(26, 25, 22, 0.58);
   font-size: 15px;
@@ -412,148 +405,84 @@ body {
   margin-bottom: 36px;
 }
 
-.npl-architecture {
+.architecture-flow {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
   margin-top: 34px;
 }
 
-.npl-architecture button {
+.architecture-flow article {
   position: relative;
-  display: grid;
-  gap: 8px;
-  min-height: 136px;
-  border: 1px solid rgba(26, 25, 22, 0.12);
+  min-width: 0;
+  padding: 20px 20px 22px;
+  border: 1px solid rgba(26, 25, 22, 0.08);
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.42);
-  padding: 18px;
-  color: rgba(26, 25, 22, 0.68);
-  font: inherit;
-  text-align: left;
-  cursor: pointer;
-  box-shadow: 0 12px 28px rgba(26, 25, 22, 0.035);
-  transition: transform 0.22s ease, background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  background: rgba(255, 255, 255, 0.44);
 }
 
-.npl-architecture button span {
-  color: rgba(26, 25, 22, 0.42);
-  font-family: 'DM Mono', monospace;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-}
-
-.npl-architecture button strong {
-  display: block;
-  color: #1a1916;
-  font-size: 19px;
-  line-height: 1;
-}
-
-.npl-architecture button em {
-  color: rgba(26, 25, 22, 0.54);
-  font-size: 13px;
-  font-style: normal;
-  line-height: 1.38;
-}
-
-.npl-architecture button.active,
-.npl-architecture button:hover,
-.npl-architecture button:focus-visible {
-  transform: translateY(-4px);
-  background: #1a1916;
-  border-color: #1a1916;
-  box-shadow: 0 18px 42px rgba(26, 25, 22, 0.12);
-  outline: none;
-}
-
-.npl-architecture button.active::after {
+.architecture-flow article:not(:last-child)::after {
   content: '';
   position: absolute;
-  left: 50%;
-  bottom: -34px;
-  width: 2px;
-  height: 34px;
-  background: #1a1916;
+  top: 50%;
+  right: -10px;
+  width: 6px;
+  height: 6px;
+  border-top: 1.5px solid rgba(26, 25, 22, 0.34);
+  border-right: 1.5px solid rgba(26, 25, 22, 0.34);
+  transform: translateY(-50%) rotate(45deg);
 }
 
-.npl-architecture button.active span,
-.npl-architecture button.active strong,
-.npl-architecture button.active em,
-.npl-architecture button:hover span,
-.npl-architecture button:hover strong,
-.npl-architecture button:hover em,
-.npl-architecture button:focus-visible span,
-.npl-architecture button:focus-visible strong,
-.npl-architecture button:focus-visible em {
-  color: #f7f5f0;
+.architecture-flow strong {
+  display: block;
+  margin: 12px 0 8px;
+  color: #1a1916;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.15;
 }
 
-.npl-arch-detail {
-  display: grid;
-  grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.28fr);
-  gap: 24px;
-  align-items: center;
-  margin-top: 32px;
+.architecture-flow p,
+.architecture-notes p {
+  color: rgba(26, 25, 22, 0.58);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.architecture-visual {
+  margin-top: 18px;
   overflow: hidden;
-  border-radius: 26px;
-  padding: 22px;
-  background: #1a1916;
-}
-
-.npl-arch-detail > div,
-.npl-arch-detail figure {
-  min-width: 0;
-}
-
-.npl-arch-detail > div {
+  border: 1px solid rgba(26, 25, 22, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.5);
   padding: 18px;
 }
 
-.npl-arch-detail figure {
-  overflow: hidden;
-  border-radius: 18px;
-  background: #111;
-}
-
-.npl-arch-detail h3,
-.npl-arch-detail p {
-  color: #f7f5f0;
-}
-
-.npl-arch-detail span {
-  color: rgba(247, 245, 240, 0.48);
-}
-
-.npl-arch-detail img {
+.architecture-visual img {
   width: 100%;
   max-width: 100%;
   height: auto;
   display: block;
+  border-radius: 12px;
 }
 
-.npl-reliability-grid {
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+.architecture-notes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
   margin-top: 18px;
 }
 
-.npl-reliability-grid article {
-  padding: 20px;
-  border-radius: 18px;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.34)),
-    rgba(255, 255, 255, 0.4);
-  box-shadow: none;
+.architecture-notes p {
+  margin: 0;
 }
 
-.npl-reliability-grid h3 {
-  font-size: 18px;
-  line-height: 1.1;
-}
-
-.npl-reliability-grid p {
+.architecture-notes strong {
+  display: block;
+  margin-bottom: 4px;
+  color: rgba(26, 25, 22, 0.72);
   font-size: 14px;
+  font-weight: 600;
 }
 
 .npl-screens {
@@ -739,42 +668,52 @@ body {
 }
 
 .type-copy p {
-  max-width: 620px;
-  margin-top: 14px;
+  max-width: 300px;
+  margin-top: 7px;
   color: rgba(26, 25, 22, 0.58);
-  font-size: 16px;
-  line-height: 1.62;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.type-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 36px;
+  min-width: 0;
 }
 
 .type-specimen {
   display: grid;
-  grid-template-columns: minmax(180px, 0.52fr) minmax(0, 1fr);
-  gap: 28px;
+  grid-template-columns: 118px minmax(0, 1fr);
+  gap: 20px;
   align-items: center;
   min-width: 0;
+  padding: 4px 0;
+  background: transparent;
 }
 
 .type-hero {
   display: flex;
-  min-width: 0;
+  width: 118px;
+  min-width: 118px;
+  min-height: 82px;
   align-items: center;
-  justify-content: center;
-  min-height: 210px;
+  justify-content: flex-start;
   overflow: hidden;
-  border-radius: 24px;
-  background: #1a1916;
-  color: #f7f5f0;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(26, 25, 22, 0.76);
   font-family: Roboto, Arial, sans-serif;
-  font-size: clamp(88px, 12vw, 164px);
-  font-weight: 700;
-  line-height: 1;
+  font-size: clamp(54px, 5.4vw, 72px);
+  font-weight: 650;
+  line-height: 0.9;
 }
 
 .type-hero.mono {
-  background: #121212;
-  color: #00ffff;
+  background: transparent;
+  color: rgba(26, 25, 22, 0.76);
   font-family: 'DM Mono', monospace;
-  font-size: clamp(34px, 5.4vw, 66px);
+  font-size: clamp(30px, 3.3vw, 40px);
   letter-spacing: 0;
   white-space: nowrap;
 }
@@ -783,31 +722,11 @@ body {
   display: block;
   color: #1a1916;
   font-family: Roboto, Arial, sans-serif;
-  font-size: clamp(28px, 3.2vw, 44px);
-  font-weight: 700;
-  line-height: 1;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.15;
   letter-spacing: 0;
 }
-
-.type-scale {
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 24px;
-  margin-top: 28px;
-  color: rgba(26, 25, 22, 0.7);
-}
-
-.type-scale strong {
-  font-family: Roboto, Arial, sans-serif;
-  font-weight: 400;
-}
-
-.type-scale strong:nth-child(1) { font-size: 40px; }
-.type-scale strong:nth-child(2) { font-size: 28px; }
-.type-scale strong:nth-child(3) { font-size: 20px; }
-.type-scale strong:nth-child(4) { font-size: 16px; }
-.type-scale strong:nth-child(5) { font-size: 12px; }
 
 .swatch-strip {
   display: grid;
@@ -955,7 +874,6 @@ body {
 @media (max-width: 980px) {
   .npl-hero,
   .npl-overview,
-  .npl-arch-detail,
   .screen-feature,
   .interaction-card,
   .npl-outcomes,
@@ -980,22 +898,22 @@ body {
   .npl-lab-grid,
   .type-specimen,
   .screen-grid,
-  .npl-reliability-grid,
-  .npl-architecture {
+  .architecture-flow,
+  .architecture-notes {
     grid-template-columns: 1fr;
+  }
+
+  .architecture-flow article:not(:last-child)::after {
+    top: auto;
+    right: auto;
+    left: 22px;
+    bottom: -11px;
+    transform: rotate(135deg);
   }
 
   .style-row {
     grid-template-columns: 1fr;
     gap: 18px;
-  }
-
-  .npl-architecture button {
-    min-height: 0;
-  }
-
-  .npl-architecture button.active::after {
-    display: none;
   }
 
   .npl-conference img {
@@ -1045,7 +963,6 @@ body {
 
   .screen-feature,
   .interaction-card,
-  .npl-arch-detail,
   .npl-conference-card {
     padding: 12px;
     border-radius: 22px;
@@ -1073,7 +990,16 @@ body {
   }
 
   .type-hero {
-    min-height: 160px;
+    min-height: auto;
+    font-size: 46px;
+  }
+
+  .type-hero.mono {
+    font-size: 30px;
+  }
+
+  .type-pair {
+    grid-template-columns: 1fr;
   }
 
   .style-swatch {
