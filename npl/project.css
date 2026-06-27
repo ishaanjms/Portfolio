@@ -344,9 +344,10 @@ body {
 
 .npl-lead {
   max-width: 860px;
-  color: rgba(26, 25, 22, 0.76);
-  font-size: 24px;
+  color: rgba(68, 68, 66, 0.76);
+  font-size: 20px;
   line-height: 1.35;
+  font-weight: 100;
 }
 
 .npl-content {
