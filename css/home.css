@@ -41,11 +41,11 @@
 
 /* Homepage hero heading */
 .hero-headline {
-  font-size: clamp(48px, 7vw, 90px); /* Keeps it responsive */
+  font-size: clamp(48px, 7vw, 95px); /* Keeps it responsive */
   color: #176B6A;
-  font-weight: 200;
+  font-weight: 300;
   margin-bottom: 24px; /* Reduced gap to pull the paragraph closer */
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 /* New styles for your refined paragraph */
