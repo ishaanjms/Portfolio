@@ -1,0 +1,441 @@
+:root {
+  --boat-black: #050505;
+  --boat-ink: #f6f7fb;
+  --boat-muted: rgba(246, 247, 251, 0.62);
+  --boat-line: rgba(255, 255, 255, 0.11);
+  --boat-panel: rgba(255, 255, 255, 0.055);
+  --boat-blue: #a7d8ee;
+  --boat-red: #f42a32;
+}
+
+html {
+  background: var(--boat-black);
+}
+
+body {
+  background:
+    radial-gradient(circle at 13% 7%, rgba(167, 216, 238, 0.17), transparent 28rem),
+    radial-gradient(circle at 88% 14%, rgba(244, 42, 50, 0.12), transparent 25rem),
+    linear-gradient(180deg, #070707 0%, #030303 54%, #080808 100%);
+  color: var(--boat-ink);
+}
+
+body::before {
+  opacity: 0.06;
+  mix-blend-mode: screen;
+}
+
+.boat-nav {
+  background: rgba(5, 5, 5, 0.74);
+  border-bottom: 1px solid var(--boat-line);
+  backdrop-filter: blur(22px);
+}
+
+.boat-nav .nav-left,
+.boat-nav .nav-links a {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.boat-nav .nav-links a:hover,
+.boat-nav .nav-left:hover {
+  color: #ffffff;
+}
+
+.boat-nav .nav-logo-box {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.boat-nav .nav-logo-box img {
+  filter: invert(1);
+}
+
+.boat-nav .nav-resume-btn {
+  background: #ffffff;
+  color: #070707;
+}
+
+.boat-nav .social-icon {
+  border-color: var(--boat-line);
+  color: #ffffff;
+}
+
+.boat-page {
+  width: min(100% - 64px, 1200px);
+  margin: 0 auto;
+  padding: 96px 0 100px;
+}
+
+.boat-hero {
+  min-height: 680px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(430px, 1fr);
+  align-items: center;
+  gap: 48px;
+  padding: 40px 0 80px;
+}
+
+.boat-kicker,
+.boat-section-heading p,
+.boat-brief-copy span,
+.boat-note-grid span {
+  margin: 0;
+  color: var(--boat-muted);
+  font-family: var(--font-mono, "SFMono-Regular", Consolas, monospace);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.boat-hero h1 {
+  margin: 18px 0 24px;
+  max-width: 680px;
+  color: #ffffff;
+  font-size: clamp(52px, 7vw, 104px);
+  font-weight: 600;
+  line-height: 0.94;
+  letter-spacing: 0;
+}
+
+.boat-hero-sub {
+  max-width: 610px;
+  margin: 0;
+  color: var(--boat-muted);
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+.boat-hero-art {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 872 / 660;
+  overflow: hidden;
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(167, 216, 238, 0.14), rgba(255, 255, 255, 0.04));
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.52);
+}
+
+.boat-hero-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.boat-hero-art img,
+.stationery-stage img,
+.campaign-grid img,
+.touchpoint-grid img,
+.poster-strip img,
+.merch-grid img,
+.asset-kit-grid img,
+.boat-product-render img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.boat-brief {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1.18fr);
+  align-items: center;
+  gap: 64px;
+  padding: 72px 0;
+  border-top: 1px solid var(--boat-line);
+  border-bottom: 1px solid var(--boat-line);
+}
+
+.boat-product-render {
+  margin: 0;
+  aspect-ratio: 2 / 3;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #000;
+}
+
+.boat-brief-copy h2,
+.boat-section-heading h2 {
+  max-width: 860px;
+  margin: 12px 0 0;
+  color: #ffffff;
+  font-size: clamp(34px, 4vw, 56px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.boat-brief-copy p {
+  max-width: 760px;
+  margin: 28px 0 0;
+  color: var(--boat-muted);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.boat-guidance {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 10px 14px;
+  border: 1px solid var(--boat-line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.boat-guidance span {
+  color: var(--boat-muted);
+  font-family: var(--font-mono, "SFMono-Regular", Consolas, monospace);
+  font-size: 0.82rem;
+}
+
+.boat-guidance a {
+  color: #ffffff;
+  font-size: 0.98rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.boat-guidance a:hover {
+  color: var(--boat-blue);
+}
+
+.boat-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.boat-tools div {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 10px 16px;
+  border: 1px solid var(--boat-line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1rem;
+  font-weight: 650;
+}
+
+.boat-tools img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.boat-section {
+  padding: 72px 0;
+}
+
+.boat-section-heading {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 34px;
+}
+
+.stationery-stage {
+  margin: 0;
+  aspect-ratio: 3465 / 2731;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #d8d8d8;
+}
+
+.boat-note-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.boat-note-grid article {
+  padding: 26px;
+  border: 1px solid var(--boat-line);
+  border-radius: 22px;
+  background: var(--boat-panel);
+}
+
+.boat-note-grid h3 {
+  margin: 14px 0 10px;
+  color: #ffffff;
+  font-size: 1.45rem;
+  line-height: 1.12;
+}
+
+.boat-note-grid p {
+  margin: 0;
+  color: var(--boat-muted);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.campaign-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 18px;
+}
+
+.campaign-grid figure,
+.touchpoint-grid figure,
+.poster-strip figure,
+.merch-grid figure,
+.asset-kit-grid figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.campaign-grid figure {
+  aspect-ratio: 872 / 660;
+}
+
+.campaign-wide {
+  grid-row: span 2;
+}
+
+.touchpoint-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.touchpoint-grid figure {
+  aspect-ratio: 1083 / 633;
+}
+
+.poster-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.poster-strip figure,
+.merch-grid figure {
+  aspect-ratio: 2 / 3;
+}
+
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.asset-kit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.asset-kit-grid figure {
+  aspect-ratio: 1;
+}
+
+.asset-kit-grid img {
+  object-fit: contain;
+  padding: 8px;
+  background: #000;
+}
+
+.boat-footer {
+  background: #050505;
+  border-top: 1px solid var(--boat-line);
+}
+
+.boat-footer .footer-heading,
+.boat-footer .footer-heading span,
+.boat-footer .footer-copyright,
+.boat-footer .footer-links a {
+  color: #ffffff;
+}
+
+.boat-footer .footer-sub {
+  color: var(--boat-muted);
+}
+
+.boat-footer .footer-email-btn {
+  background: #ffffff;
+  color: #050505;
+}
+
+@media (max-width: 980px) {
+  .boat-page {
+    width: min(100% - 32px, 760px);
+    padding-top: 96px;
+  }
+
+  .boat-hero,
+  .boat-brief,
+  .boat-section-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .boat-hero {
+    min-height: auto;
+  }
+
+  .boat-product-render {
+    max-height: 620px;
+  }
+
+  .poster-strip,
+  .merch-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .asset-kit-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .boat-page {
+    width: min(100% - 24px, 520px);
+    padding-bottom: 64px;
+  }
+
+  .boat-hero {
+    padding-bottom: 56px;
+  }
+
+  .boat-hero h1 {
+    font-size: clamp(48px, 16vw, 76px);
+  }
+
+  .boat-hero-art,
+  .boat-product-render,
+  .stationery-stage,
+  .campaign-grid figure,
+  .touchpoint-grid figure,
+  .poster-strip figure,
+  .merch-grid figure,
+  .asset-kit-grid figure {
+    border-radius: 18px;
+  }
+
+  .boat-brief,
+  .boat-section {
+    padding: 58px 0;
+  }
+
+  .boat-note-grid,
+  .campaign-grid,
+  .touchpoint-grid,
+  .poster-strip,
+  .merch-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .asset-kit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
