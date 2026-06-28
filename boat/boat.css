@@ -25,40 +25,6 @@ body::before {
   mix-blend-mode: multiply;
 }
 
-.boat-nav {
-  background: transparent;
-  border-bottom: 0;
-  backdrop-filter: none;
-}
-
-.boat-nav .nav-left,
-.boat-nav .nav-links a {
-  color: var(--boat-ink);
-}
-
-.boat-nav .nav-links a:hover,
-.boat-nav .nav-left:hover {
-  color: #000000;
-}
-
-.boat-nav .nav-logo-box {
-  background: #000000;
-}
-
-.boat-nav .nav-logo-box img {
-  filter: none;
-}
-
-.boat-nav .nav-resume-btn {
-  background: #1a1916;
-  color: #f7f5f0;
-}
-
-.boat-nav .social-icon {
-  border-color: rgba(26, 25, 22, 0.12);
-  color: var(--boat-ink);
-}
-
 .boat-page {
   width: min(100% - 64px, 1200px);
   margin: 0 auto;
@@ -336,6 +302,10 @@ body::before {
   aspect-ratio: 1083 / 633;
 }
 
+.brand-card-grid {
+  margin-top: 18px;
+}
+
 .poster-strip {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -413,27 +383,6 @@ body::before {
   object-fit: contain;
   padding: 8px;
   background: transparent;
-}
-
-.boat-footer {
-  background: #1a1916;
-  border-top: 1px solid rgba(247, 245, 240, 0.08);
-}
-
-.boat-footer .footer-heading,
-.boat-footer .footer-heading span,
-.boat-footer .footer-copyright,
-.boat-footer .footer-links a {
-  color: #ffffff;
-}
-
-.boat-footer .footer-sub {
-  color: var(--boat-muted);
-}
-
-.boat-footer .footer-email-btn {
-  background: #ffffff;
-  color: #050505;
 }
 
 @media (max-width: 980px) {
