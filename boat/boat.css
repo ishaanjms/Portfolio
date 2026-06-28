@@ -60,30 +60,6 @@ body::before {
   letter-spacing: 0;
 }
 
-.boat-brand-lockup {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 24px;
-  padding: 10px 14px;
-  border: 1px solid var(--boat-line);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.48);
-}
-
-.boat-brand-lockup img {
-  width: 82px;
-  height: auto;
-  display: block;
-}
-
-.boat-brand-lockup span {
-  color: var(--boat-muted);
-  font-family: var(--font-mono, "SFMono-Regular", Consolas, monospace);
-  font-size: 12px;
-  letter-spacing: 0.04em;
-}
-
 .boat-hero-sub {
   max-width: 610px;
   margin: 0;
