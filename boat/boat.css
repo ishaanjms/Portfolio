@@ -329,52 +329,6 @@ body::before {
   gap: 16px;
 }
 
-.logo-variant-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  margin: 28px 0 18px;
-}
-
-.logo-variant {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 220px;
-  margin: 0;
-  padding: 28px;
-  border-radius: 22px;
-  overflow: hidden;
-}
-
-.logo-variant img {
-  width: min(220px, 70%);
-  height: auto;
-}
-
-.logo-variant figcaption {
-  color: rgba(255, 255, 255, 0.56);
-  font-family: var(--font-mono, "SFMono-Regular", Consolas, monospace);
-  font-size: 12px;
-  letter-spacing: 0.04em;
-}
-
-.logo-variant-dark {
-  background:
-    radial-gradient(circle at 72% 12%, rgba(244, 42, 50, 0.2), transparent 38%),
-    #1a1916;
-}
-
-.logo-variant-light {
-  background:
-    radial-gradient(circle at 80% 18%, rgba(244, 42, 50, 0.1), transparent 34%),
-    #f2f2ef;
-}
-
-.logo-variant-light figcaption {
-  color: rgba(5, 5, 5, 0.54);
-}
-
 .asset-kit-grid figure {
   aspect-ratio: 1;
 }
@@ -414,7 +368,6 @@ body::before {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .logo-variant-grid,
   .asset-kit-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -462,7 +415,4 @@ body::before {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .logo-variant-grid {
-    grid-template-columns: 1fr;
-  }
 }
