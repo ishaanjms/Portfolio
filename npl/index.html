@@ -174,9 +174,66 @@
       </div>
     </section>
 
+    <section class="npl-ia">
+      <div class="npl-section-heading">
+        <p>04 · Information Architecture</p>
+        <h2>Organized around monitoring tasks</h2>
+      </div>
+      <div class="ia-system" aria-label="Dashboard information architecture">
+        <div class="ia-root">
+          <span>Dashboard</span>
+          <strong>CsF1 Monitoring</strong>
+        </div>
+        <div class="ia-branches">
+          <article>
+            <span>01</span>
+            <h3>Overview</h3>
+            <p>One-page status for environmental readings, laser positions, photodiodes, connection health, and last update time.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Temperature & Humidity</h3>
+            <p>Dedicated trend view for ambient and optical-bench conditions, with exact values available on hover.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Lasers</h3>
+            <p>Axis-based grouping for X, Y, Z, and D readings so paired values can be compared quickly.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Photodiodes</h3>
+            <p>Detector-specific cards and traces for fiber output, grand detection, and AOM channels.</p>
+          </article>
+          <article>
+            <span>05</span>
+            <h3>Retrieve Data</h3>
+            <p>Historical plotting and CSV export kept separate from live monitoring to reduce dashboard clutter.</p>
+          </article>
+        </div>
+      </div>
+      <div class="ia-principles" aria-label="Information architecture principles">
+        <article>
+          <span>Hierarchy</span>
+          <h3>Show live status first</h3>
+          <p>The overview became the default entry point because scientists needed the fastest possible health check.</p>
+        </article>
+        <article>
+          <span>Grouping</span>
+          <h3>Keep instruments separate</h3>
+          <p>Each subsystem received its own view so dense readings did not compete inside one crowded screen.</p>
+        </article>
+        <article>
+          <span>Recovery</span>
+          <h3>Separate live and historical tasks</h3>
+          <p>Data retrieval was kept as its own workflow, available for analysis without interrupting live monitoring.</p>
+        </article>
+      </div>
+    </section>
+
     <section class="npl-style-guide">
       <div class="npl-section-heading">
-        <p>04 · Style Guide</p>
+        <p>05 · Style Guide</p>
         <h2>Typography & Colors</h2>
       </div>
       <div class="style-guide-system">
@@ -240,7 +297,7 @@
 
     <section class="npl-interactions">
       <div class="npl-section-heading">
-        <p>05 · Dashboard Walkthrough</p>
+        <p>06 · Dashboard Walkthrough</p>
         <h2>Key Screens and Interactions</h2>
       </div>
       <div class="interaction-card">
