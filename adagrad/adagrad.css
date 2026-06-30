@@ -1,0 +1,37 @@
+/* =============================================
+   ADAGRAD PROJECT GALLERY STYLES
+   ============================================= */
+
+body {
+  background-color: #f9f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.adagrad-gallery {
+  display: flex;
+  justify-content: center;
+  padding: 100px 20px 80px;
+}
+
+.adagrad-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1400px;
+  width: 100%;
+  gap: 0;
+}
+
+.adagrad-wrapper img {
+  display: block;
+  width: 90%;
+  height: auto;
+  background-color: #111;
+}
+
+@media (max-width: 768px) {
+  .adagrad-gallery {
+    padding: 80px 16px 60px;
+  }
+}
