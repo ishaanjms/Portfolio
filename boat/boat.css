@@ -225,8 +225,11 @@ body::before {
 
 .campaign-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  width: min(calc(100vw - 96px), 1320px);
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 .campaign-grid figure,
@@ -264,8 +267,11 @@ body::before {
 
 .poster-strip {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: min(calc(100vw - 96px), 1240px);
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 .poster-strip figure,
@@ -314,13 +320,17 @@ body::before {
     max-height: 620px;
   }
 
-  .campaign-grid {
-    grid-template-columns: 1fr;
-  }
-
   .poster-strip,
   .merch-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .campaign-grid,
+  .poster-strip {
+    width: 100%;
+    margin-left: 0;
+    transform: none;
+    gap: 18px;
   }
 
   .asset-kit-grid {
