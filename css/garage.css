@@ -21,7 +21,7 @@
   max-width: 860px;
   color: rgba(26, 25, 22, 0.74);
   font-size: clamp(42px, 5.4vw, 68px);
-  font-weight: 700;
+  font-weight: 100;
   line-height: 0.96;
   letter-spacing: 0;
   margin-bottom: 22px;
@@ -31,7 +31,7 @@
   max-width: 800px;
   color: rgba(26, 25, 22, 0.58);
   font-size: clamp(18px, 2vw, 24px);
-  font-weight: 400;
+  font-weight: 100;
   line-height: 1.32;
 }
 

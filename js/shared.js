@@ -47,6 +47,75 @@
   });
 })();
 
+// Footer email buttons copy the address instead of opening a mail client.
+(function () {
+  const emailButtons = document.querySelectorAll('.footer-email-btn');
+  if (!emailButtons.length) return;
+
+  function copyFallback(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'fixed';
+    textarea.style.top = '-999px';
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    textarea.remove();
+  }
+
+  async function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return;
+    }
+    copyFallback(text);
+  }
+
+  emailButtons.forEach(button => {
+    const href = button.getAttribute('href') || '';
+    const email = href.startsWith('mailto:') ? href.replace('mailto:', '').split('?')[0] : button.textContent.trim();
+    const originalLabel = email;
+    const faviconHref = document.querySelector('link[rel="icon"]')?.href || '';
+    const copyIconSrc = faviconHref
+      ? faviconHref.replace(/logo\/logo\.png.*$/, 'icons/copy.svg')
+      : 'assets/icons/copy.svg';
+    const icon = document.createElement('img');
+    const label = document.createElement('span');
+
+    button.setAttribute('href', '#');
+    button.setAttribute('role', 'button');
+    button.setAttribute('aria-label', `Copy ${email}`);
+    button.setAttribute('title', 'Copy email');
+
+    icon.src = copyIconSrc;
+    icon.alt = '';
+    icon.className = 'footer-email-icon';
+    label.className = 'footer-email-label';
+    label.textContent = originalLabel;
+    button.replaceChildren(icon, label);
+
+    button.addEventListener('click', async event => {
+      event.preventDefault();
+
+      try {
+        await copyText(email);
+        button.classList.add('is-copied');
+        label.textContent = 'Copied';
+        window.setTimeout(() => {
+          button.classList.remove('is-copied');
+          label.textContent = originalLabel;
+        }, 1400);
+      } catch {
+        label.textContent = 'Copy failed';
+        window.setTimeout(() => {
+          label.textContent = originalLabel;
+        }, 1400);
+      }
+    });
+  });
+})();
+
 // Soft page transitions for internal navigation.
 (function () {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

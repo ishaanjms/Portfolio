@@ -313,6 +313,20 @@ body.is-transitioning {
   transition: transform 0.3s ease, background 0.3s ease;
 }
 
+.footer-email-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-email-label {
+  position: relative;
+  z-index: 1;
+}
+
 .footer-email-btn::before {
   content: '';
   position: absolute;
@@ -324,7 +338,8 @@ body.is-transitioning {
   transition: transform 0.5s ease;
 }
 
-.footer-email-btn:hover { transform: translateY(-4px); background: #fff; }
+.footer-email-btn:hover,
+.footer-email-btn.is-copied { transform: translateY(-4px); background: #fff; }
 .footer-email-btn:hover::before { transform: translateX(180%) skewX(-15deg); }
 
 .footer-bottom {
