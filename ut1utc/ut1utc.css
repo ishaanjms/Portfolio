@@ -142,8 +142,6 @@ body {
   grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
   gap: 64px;
   padding: 74px 0;
-  border-top: 1px solid rgba(26, 25, 22, 0.08);
-  border-bottom: 1px solid rgba(26, 25, 22, 0.08);
 }
 
 .ut-overview h2,
@@ -171,7 +169,6 @@ body {
 
 .ut-meta-grid article {
   padding-bottom: 18px;
-  border-bottom: 1px solid rgba(26, 25, 22, 0.08);
 }
 
 .ut-meta-grid strong {
@@ -180,6 +177,43 @@ body {
   color: rgba(26, 25, 22, 0.84);
   font-size: 15px;
   line-height: 1.35;
+}
+
+.ut-tools-card {
+  display: grid;
+  gap: 0;
+}
+
+.ut-tool-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.ut-tool-list div {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 6px 12px 6px 7px;
+  border: 1px solid rgba(26, 25, 22, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.42);
+  box-shadow: 0 8px 18px rgba(26, 25, 22, 0.03);
+}
+
+.ut-tool-list img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.ut-tool-list strong {
+  margin-top: 0;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .ut-split {
@@ -284,23 +318,39 @@ body {
 
 .ut-correlation {
   display: grid;
-  grid-template-columns: minmax(0, 0.62fr) minmax(300px, 0.38fr);
-  gap: 20px;
+  gap: 18px;
   margin-top: 34px;
-  align-items: stretch;
 }
 
 .ut-insight-list {
   display: grid;
-  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .ut-insight-list article {
+  display: flex;
+  min-height: 170px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
   box-shadow: none;
 }
 
 .ut-insight-list p {
   margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.ut-correlation figure {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 18px;
+}
+
+.ut-correlation img {
+  border-radius: 12px;
 }
 
 .ut-trends,
@@ -584,6 +634,7 @@ body {
 
   .ut-parameter-grid,
   .ut-chart-grid,
+  .ut-insight-list,
   .ut-gallery-grid,
   .ut-poster-grid {
     grid-template-columns: 1fr 1fr;
@@ -623,6 +674,7 @@ body {
   .ut-hero-metrics,
   .ut-parameter-grid,
   .ut-chart-grid,
+  .ut-insight-list,
   .ut-gallery-grid,
   .ut-model-metrics,
   .ut-poster-grid {
