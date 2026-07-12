@@ -11,11 +11,9 @@ body {
 
 .dq-hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1fr);
-  gap: 48px;
-  align-items: center;
-  min-height: 650px;
-  padding: 40px 0 80px;
+  max-width: 760px;
+  min-height: 0;
+  padding: 40px 0 56px;
 }
 
 .dq-eyebrow,
@@ -37,9 +35,9 @@ body {
 .dq-hero h1 {
   margin: 18px 0 24px;
   color: #1a1916;
-  font-size: clamp(58px, 8vw, 112px);
+  font-size: clamp(44px, 5.8vw, 76px);
   font-weight: 600;
-  line-height: 0.92;
+  line-height: 1;
   letter-spacing: 0;
 }
 
@@ -269,6 +267,14 @@ body {
   padding-top: 96px;
 }
 
+.dq-protected-content > .dq-public-glimpse {
+  padding-top: 0;
+}
+
+.dq-protected-content > .dq-demo {
+  padding-top: 0;
+}
+
 .dq-section-heading {
   display: grid;
   gap: 14px;
@@ -422,6 +428,22 @@ body.case-unlocked .dq-locked-preview {
 
 .dq-workflow {
   padding-top: 96px;
+}
+
+.dq-demo {
+  padding-top: 96px;
+}
+
+.dq-demo-frame {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.dq-demo-frame video {
+  display: block;
+  width: 100%;
+  border-radius: 18px;
 }
 
 .workflow-board {
@@ -601,7 +623,7 @@ body.case-unlocked .dq-locked-preview {
   }
 
   .dq-hero h1 {
-    font-size: 54px;
+    font-size: 42px;
   }
 
   .dq-hero-sub {
