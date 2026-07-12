@@ -224,6 +224,13 @@ body::before {
   aspect-ratio: 2 / 3;
 }
 
+.merch-grid figure,
+.asset-kit-grid figure {
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+}
+
 .merch-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -242,7 +249,7 @@ body::before {
 
 .asset-kit-grid img {
   object-fit: contain;
-  padding: 8px;
+  padding: 0;
   background: transparent;
 }
 
@@ -290,9 +297,7 @@ body::before {
   .stationery-stage,
   .campaign-grid figure,
   .touchpoint-grid figure,
-  .poster-strip figure,
-  .merch-grid figure,
-  .asset-kit-grid figure {
+  .poster-strip figure {
     border-radius: 18px;
   }
 
