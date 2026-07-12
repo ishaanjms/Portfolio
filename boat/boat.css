@@ -33,10 +33,8 @@ body::before {
 
 .boat-hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1fr);
-  align-items: start;
-  gap: 48px;
-  padding: 42px 0 80px;
+  gap: 42px;
+  padding: 34px 0 80px;
 }
 
 .boat-section-heading p,
@@ -48,25 +46,20 @@ body::before {
   letter-spacing: 0.04em;
 }
 
-.boat-hero h1 {
-  margin: 18px 0 24px;
-  max-width: 680px;
-  color: var(--boat-ink);
-  font-size: clamp(52px, 7vw, 104px);
-  font-weight: 600;
-  line-height: 0.94;
-  letter-spacing: 0;
-}
-
-.boat-hero-sub {
-  max-width: 610px;
+.boat-hero-image {
   margin: 0;
-  color: var(--boat-muted);
-  font-size: clamp(20px, 2.5vw, 28px);
-  font-weight: 300;
-  line-height: 1.3;
+  overflow: hidden;
+  border-radius: 28px;
+  background: rgba(26, 25, 22, 0.04);
 }
 
+.boat-hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.boat-hero-image img,
 .stationery-stage img,
 .campaign-grid img,
 .touchpoint-grid img,
@@ -259,10 +252,6 @@ body::before {
     padding-top: 28px;
   }
 
-  .boat-hero {
-    grid-template-columns: 1fr;
-  }
-
   .poster-strip,
   .merch-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -290,11 +279,8 @@ body::before {
     padding-bottom: 56px;
   }
 
-  .boat-hero h1 {
-    font-size: clamp(48px, 16vw, 76px);
-  }
-
   .stationery-stage,
+  .boat-hero-image,
   .campaign-grid figure,
   .touchpoint-grid figure,
   .poster-strip figure {
