@@ -7,7 +7,7 @@
 }
 
 .garage-header {
-  margin-bottom: 72px;
+  margin-bottom: 36px;
 }
 
 .garage-kicker {
@@ -38,9 +38,9 @@
 .garage-filter {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
-  margin-top: 34px;
+  margin-top: 30px;
   color: rgba(26, 25, 22, 0.48);
   font-size: 14px;
   font-weight: 600;
@@ -49,10 +49,10 @@
 
 .filter-chip {
   appearance: none;
-  border: 1px solid rgba(26, 25, 22, 0.22);
+  border: 1px solid rgba(26, 25, 22, 0.12);
   border-radius: 999px;
-  background: rgba(247, 245, 240, 0.34);
-  color: rgba(26, 25, 22, 0.58);
+  background: rgba(255, 255, 255, 0.42);
+  color: rgba(26, 25, 22, 0.54);
   padding: 7px 16px;
   font: inherit;
   font-size: 14px;
@@ -63,9 +63,9 @@
 
 .filter-chip:hover,
 .filter-chip.active {
-  background: rgba(26, 25, 22, 0.08);
-  border-color: rgba(26, 25, 22, 0.46);
-  color: rgba(26, 25, 22, 0.86);
+  background: #1a1916;
+  border-color: #1a1916;
+  color: #f7f5f0;
 }
 
 .filter-chip:hover {
@@ -74,12 +74,12 @@
 
 .work-groups {
   display: grid;
-  gap: 104px;
+  gap: 92px;
 }
 
 .project-group {
   display: grid;
-  gap: 30px;
+  gap: 24px;
 }
 
 .project-group.is-hidden {
@@ -87,9 +87,12 @@
 }
 
 .project-group-heading {
-  display: grid;
-  gap: 10px;
-  max-width: 720px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(26, 25, 22, 0.08);
 }
 
 .project-group-heading p {
@@ -98,25 +101,28 @@
   font-size: 12px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .project-group-heading h2 {
-  color: rgba(26, 25, 22, 0.58);
-  font-size: clamp(22px, 2.3vw, 30px);
-  font-weight: 500;
-  line-height: 1.16;
+  max-width: 620px;
+  color: rgba(26, 25, 22, 0.54);
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 350;
+  line-height: 1.35;
   letter-spacing: 0;
+  text-align: right;
 }
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 64px 48px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 44px 28px;
 }
 
 .project-card {
   display: grid;
-  gap: 18px;
+  gap: 14px;
   color: inherit;
   text-decoration: none;
   min-width: 0;
@@ -130,14 +136,14 @@
 .project-media {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 1.56;
+  aspect-ratio: 1.42;
   border-radius: 8px;
   background: rgba(26, 25, 22, 0.055);
   box-shadow: inset 0 0 0 1px rgba(26, 25, 22, 0.07);
 }
 
 .project-card-wide .project-media {
-  aspect-ratio: 1.56;
+  aspect-ratio: 1.42;
 }
 
 .project-media::after {
@@ -231,17 +237,17 @@
 }
 
 .project-copy h2 {
-  color: rgba(26, 25, 22, 0.68);
-  font-size: clamp(25px, 2.55vw, 34px);
+  color: rgba(26, 25, 22, 0.74);
+  font-size: clamp(20px, 1.85vw, 25px);
   font-weight: 650;
-  line-height: 1.04;
+  line-height: 1.08;
   letter-spacing: 0;
-  margin-bottom: 9px;
+  margin-bottom: 8px;
 }
 
 .project-copy p {
   color: rgba(26, 25, 22, 0.5);
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.42;
   max-width: 520px;
 }
@@ -281,11 +287,20 @@
   }
 
   .garage-header {
-    margin-bottom: 60px;
+    margin-bottom: 34px;
   }
 
   .garage-filter {
     white-space: normal;
+  }
+
+  .project-group-heading {
+    display: grid;
+    gap: 8px;
+  }
+
+  .project-group-heading h2 {
+    text-align: left;
   }
 
   .work-groups {
@@ -293,6 +308,7 @@
   }
 
   .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 50px 28px;
   }
 
@@ -311,7 +327,7 @@
   }
 
   .garage-header {
-    margin-bottom: 52px;
+    margin-bottom: 32px;
   }
 
   .garage-title {
