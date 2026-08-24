@@ -60,11 +60,15 @@
   align-items: start;
 }
 
-.about-intro-kicker.anim-fade-up { transition-delay: 0.05s; }
-.about-title-reveal.anim-fade-up { transition-delay: 0.14s; }
-.intro-text > .about-copy.anim-fade-up:nth-of-type(1) { transition-delay: 0.24s; }
-.intro-text > .about-copy.anim-fade-up:nth-of-type(2) { transition-delay: 0.32s; }
-.intro-text > .about-copy.anim-fade-up:nth-of-type(3) { transition-delay: 0.4s; }
+.intro-text .anim-fade-up {
+  transition-duration: 0.36s;
+}
+
+.about-intro-kicker.anim-fade-up { transition-delay: 0.02s; }
+.about-title-reveal.anim-fade-up { transition-delay: 0.06s; }
+.intro-text > .about-copy.anim-fade-up:nth-of-type(1) { transition-delay: 0.11s; }
+.intro-text > .about-copy.anim-fade-up:nth-of-type(2) { transition-delay: 0.16s; }
+.intro-text > .about-copy.anim-fade-up:nth-of-type(3) { transition-delay: 0.21s; }
 
 .intro-text h1.section-title {
   font-size: 36px;
@@ -275,15 +279,249 @@
   transform: translateY(-1px);
 }
 
-/* --- Experience & Education (Parallel Lists) --- */
+/* --- Experience & Education --- */
 .resume-section {
   width: 100%;
 }
 
 .resume-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px 48px; /* row gap, column gap */
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 72px 112px;
+}
+
+.experience-column {
+  grid-column: 1 / -1;
+}
+
+.experience-list {
+  border-top: 0;
+}
+
+.experience-item {
+  border-bottom: 1px solid rgba(26, 25, 22, 0.12);
+}
+
+.experience-item summary {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) minmax(150px, 0.72fr) 24px;
+  gap: 18px;
+  align-items: center;
+  padding: 23px 0;
+  cursor: pointer;
+  color: #1a1916;
+}
+
+.experience-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.experience-item summary:focus {
+  outline: none;
+}
+
+.experience-item summary:focus-visible {
+  outline: 1px solid rgba(26, 25, 22, 0.18);
+  outline-offset: 6px;
+  border-radius: 10px;
+}
+
+.experience-logo {
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(26, 25, 22, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.62);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  transition: border-color 0.22s ease, background 0.22s ease, transform 0.22s ease;
+}
+
+.experience-logo img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.experience-company {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.experience-company span {
+  color: rgba(26, 25, 22, 0.82);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.experience-company small {
+  color: rgba(26, 25, 22, 0.48);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+.experience-role {
+  justify-self: end;
+  color: rgba(26, 25, 22, 0.46);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: right;
+}
+
+.experience-toggle {
+  width: 22px;
+  height: 22px;
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(26, 25, 22, 0.42);
+  transition: color 0.22s ease, transform 0.22s ease;
+}
+
+.experience-toggle svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.experience-item summary:hover .experience-company span,
+.experience-item[open] .experience-company span {
+  color: #1a1916;
+}
+
+.experience-item summary:hover .experience-logo,
+.experience-item[open] .experience-logo {
+  background: rgba(255, 255, 255, 0.86);
+  border-color: rgba(26, 25, 22, 0.16);
+  transform: translateY(-1px);
+}
+
+.experience-item summary:hover .experience-toggle,
+.experience-item[open] .experience-toggle {
+  color: #1a1916;
+}
+
+.experience-item[open] > summary .experience-toggle {
+  transform: rotate(180deg);
+}
+
+.experience-detail {
+  max-width: 680px;
+  margin-left: 66px;
+  padding: 0 54px 28px 0;
+  animation: experienceReveal 0.28s ease both;
+}
+
+.experience-detail p {
+  color: rgba(26, 25, 22, 0.58);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.58;
+  margin-bottom: 14px;
+}
+
+.experience-role-history {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 18px;
+}
+
+.experience-role-step {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: baseline;
+  max-width: 560px;
+}
+
+.experience-role-step span {
+  color: rgba(26, 25, 22, 0.78);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.experience-role-step small {
+  color: rgba(26, 25, 22, 0.42);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.experience-detail ul {
+  display: grid;
+  gap: 8px;
+  padding-left: 18px;
+  color: rgba(26, 25, 22, 0.52);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.52;
+}
+
+.experience-detail li::marker {
+  color: rgba(26, 25, 22, 0.34);
+}
+
+.experience-role-date {
+  color: rgba(26, 25, 22, 0.42);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.experience-inline-role {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(26, 25, 22, 0.08);
+}
+
+.experience-inline-role summary {
+  list-style: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 22px;
+  gap: 12px;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+  color: rgba(26, 25, 22, 0.68);
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.experience-inline-role summary::-webkit-details-marker {
+  display: none;
+}
+
+.experience-inline-role .experience-toggle {
+  grid-column: auto;
+  grid-row: auto;
+  align-self: center;
+}
+
+.experience-inline-role[open] > summary .experience-toggle {
+  color: #1a1916;
+  transform: rotate(180deg);
+}
+
+.experience-inline-detail {
+  padding-top: 12px;
+  animation: experienceReveal 0.28s ease both;
+}
+
+@keyframes experienceReveal {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Base Card Layout */
@@ -358,14 +596,15 @@
   margin-top: 80px;
 }
 
-.achievements-section .section-title {
+.achievements-section .section-title,
+.achievements-column .section-title {
   margin-bottom: 20px;
 }
 
 .achievements-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0 48px;
+  grid-template-columns: 1fr;
+  gap: 0;
 }
 
 .achievement-card {
@@ -425,6 +664,10 @@
   .cert-verify-link { grid-column: 2; justify-self: start; margin-top: -4px; }
   .achievements-grid { grid-template-columns: 1fr; }
   .resume-grid       { grid-template-columns: 1fr; gap: 48px; }
+  .experience-column { grid-column: auto; }
+  .experience-item summary { grid-template-columns: 48px minmax(0, 1fr) minmax(120px, 0.58fr) 24px; gap: 14px; }
+  .experience-logo { width: 48px; height: 48px; border-radius: 12px; padding: 8px; }
+  .experience-detail { margin-left: 62px; padding-right: 42px; }
 }
 
 @media (max-width: 640px) {
@@ -445,6 +688,23 @@
   .achievements-section { margin-top: 60px; }
   .achievement-card { padding: 6px 0 18px; }
   .achievement-card .resume-role { font-size: 16px; }
+  .experience-item summary { grid-template-columns: 40px minmax(0, 1fr) 22px; gap: 14px; padding: 20px 0; }
+  .experience-logo { width: 40px; height: 40px; border-radius: 10px; padding: 6px; }
+  .experience-role { grid-column: 2; justify-self: start; text-align: left; font-size: 15px; }
+  .experience-toggle { grid-column: 3; grid-row: 1 / span 2; align-self: center; }
+  .experience-company span { font-size: 17px; }
+  .experience-company small { font-size: 13px; }
+  .experience-detail { margin-left: 54px; padding: 0 0 24px; }
+  .experience-inline-role summary { grid-template-columns: minmax(0, 1fr) 22px; gap: 12px; padding: 0; }
+  .experience-inline-role .experience-toggle { grid-column: auto; grid-row: auto; }
+  .experience-role-step { grid-template-columns: 1fr; gap: 2px; }
+  .experience-role-step small { white-space: normal; }
   .resume-card       { gap: 16px; }
   .resume-logo       { width: 40px; height: 40px; border-radius: 10px; padding: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-detail {
+    animation: none;
+  }
 }
