@@ -117,95 +117,86 @@
   z-index: 1;
 }
 
-/* --- Tools / Skills Marquee --- */
+/* --- Tools --- */
 .tools-section {
   margin-bottom: 100px;
-  background: linear-gradient(120deg, #f0edf8 0%, #f7f5f0 50%, #edf5f1 100%);
-  border-radius: 32px;
-  padding: 48px 0 44px;
-  overflow: hidden;
 }
 
-.tools-section .section-title {
-  padding: 0 40px;
-  margin-bottom: 36px;
+.tools-title {
+  color: rgba(26, 25, 22, 0.76);
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 32px;
 }
 
-.tools-track-outer {
+.tools-icon-bar {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.tools-row {
-  overflow: hidden;
+  align-items: center;
+  justify-content: space-between;
+  gap: 34px;
   width: 100%;
-  cursor: default;
+  box-sizing: border-box;
+  padding: 34px 88px;
+  border-radius: 12px;
+  background: rgba(26, 25, 22, 0.025);
 }
 
-.tools-inner {
-  display: flex;
-  gap: 10px;
-  width: max-content;
-  padding: 4px 0;
-  will-change: transform;
-}
-
-.tools-fwd .tools-inner { animation: toolsFwd 32s linear infinite; }
-.tools-rev .tools-inner { animation: toolsRev 26s linear infinite; }
-.tools-row:hover .tools-inner { animation-play-state: paused; }
-
-@keyframes toolsFwd {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-@keyframes toolsRev {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
-}
-
-.tool-chip {
+.tool-icon-item {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 18px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(26, 25, 22, 0.07);
-  border-radius: 100px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #1a1916;
-  white-space: nowrap;
-  user-select: none;
-}
-
-.tool-chip img {
-  width: 20px;
-  height: 20px;
-  display: block;
-}
-
-/* Letter badge for tools without icon */
-.tool-letter {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #e4e1db;
-  color: #666;
-  font-size: 9px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  letter-spacing: 0;
+}
+
+.tool-icon-item::after {
+  content: attr(data-label);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 12px);
+  transform: translate(-50%, 4px);
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(26, 25, 22, 0.9);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.tool-icon-item:hover::after,
+.tool-icon-item:focus-within::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.tools-icon-bar img {
+  width: 38px;
+  height: 38px;
+  display: block;
+  object-fit: contain;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.tools-icon-bar .tool-icon-colab {
+  width: auto;
+  height: 38px;
+}
+
+.tools-icon-bar img:hover {
+  opacity: 0.76;
+  transform: translateY(-2px);
 }
 
 /* --- Certifications --- */
 .certifications-section {
-  margin-top: 88px;
-  padding-top: 48px;
+  margin-top: 96px;
+  padding-top: 0;
 }
 
 .certifications-section .section-title {
@@ -287,7 +278,7 @@
 .resume-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: 72px 112px;
+  gap: 96px 156px;
 }
 
 .experience-column {
@@ -657,13 +648,13 @@
   .about-main-title  { font-size: 36px; }
   .intro-grid        { grid-template-columns: 1fr; gap: 48px; margin-bottom: 72px; }
   .intro-visual      { max-width: 280px; justify-self: start; }
-  .tools-section     { border-radius: 20px; padding: 36px 0 32px; }
-  .tools-section .section-title { padding: 0 24px; }
-  .certifications-section { margin-top: 72px; padding-top: 40px; }
+  .tools-title       { font-size: 28px; margin-bottom: 24px; }
+  .tools-icon-bar    { gap: 28px; padding: 28px 36px; }
+  .certifications-section { margin-top: 64px; padding-top: 0; }
   .cert-row         { grid-template-columns: auto minmax(0, 1fr); }
   .cert-verify-link { grid-column: 2; justify-self: start; margin-top: -4px; }
   .achievements-grid { grid-template-columns: 1fr; }
-  .resume-grid       { grid-template-columns: 1fr; gap: 48px; }
+  .resume-grid       { grid-template-columns: 1fr; gap: 64px; }
   .experience-column { grid-column: auto; }
   .experience-item summary { grid-template-columns: 48px minmax(0, 1fr) minmax(120px, 0.58fr) 24px; gap: 14px; }
   .experience-logo { width: 48px; height: 48px; border-radius: 12px; padding: 8px; }
@@ -678,11 +669,12 @@
   .intro-text p      { font-size: 15px; }
   .intro-visual      { justify-self: center; max-width: 260px; }
   .intro-visual::before { display: none; }
-  .tool-chip         { font-size: 12px; padding: 8px 14px; }
-  .tool-chip img     { width: 16px; height: 16px; }
-  .tool-letter       { width: 16px; height: 16px; font-size: 8px; }
-  .tools-section     { border-radius: 16px; }
-  .certifications-section { margin-top: 60px; padding-top: 32px; }
+  .tools-title       { font-size: 24px; }
+  .tools-icon-bar    { display: grid; grid-template-columns: repeat(5, 1fr); gap: 26px 24px; padding: 26px; }
+  .tools-icon-bar img { width: 32px; height: 32px; justify-self: center; }
+  .tools-icon-bar .tool-icon-colab { width: auto; height: 32px; }
+  .tool-icon-item::after { display: none; }
+  .certifications-section { margin-top: 64px; padding-top: 0; }
   .cert-row         { gap: 14px; padding: 20px 0; }
   .cert-row .resume-role { font-size: 16px; }
   .achievements-section { margin-top: 60px; }

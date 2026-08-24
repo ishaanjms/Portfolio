@@ -3,15 +3,102 @@
    ============================================= */
 
 body {
-  background-color: #f9f9fa; /* Slight off-white to make the slides pop */
+  background-color: #000;
+  color: #f7f5f0;
   margin: 0;
   padding: 0;
+}
+
+body::after {
+  mix-blend-mode: multiply;
+}
+
+.page-transition-overlay {
+  background: radial-gradient(circle at var(--transition-x, 50%) var(--transition-y, 50%), rgba(255, 255, 255, 0.12), rgba(0, 0, 0, 0.96) 42%, #000 74%);
+}
+
+.nav-left,
+.nav-links a,
+.social-icon {
+  color: #f7f5f0;
+}
+
+.nav-logo-box img {
+  filter: invert(1);
+}
+
+.nav-links a::before {
+  background: #f7f5f0;
+}
+
+.nav-links a.nav-resume-btn,
+.social-icon {
+  background: rgba(247, 245, 240, 0.04);
+  border-color: rgba(247, 245, 240, 0.32);
+  color: #f7f5f0;
+}
+
+.nav-links a.nav-resume-btn:hover,
+.social-icon:hover {
+  background: rgba(247, 245, 240, 0.1);
+  border-color: rgba(247, 245, 240, 0.55);
+}
+
+.social-icon img {
+  filter: invert(1);
+}
+
+.nav-hamburger span {
+  background: #f7f5f0;
+}
+
+.footer-section {
+  background: #111;
+  color: #f7f5f0;
+  margin-top: 40px;
+  padding-top: 88px;
+  border-radius: 40px 40px 0 0;
+  border-top: 1px solid rgba(247, 245, 240, 0.08);
+}
+
+.footer-heading {
+  color: #f7f5f0;
+}
+
+.footer-heading span {
+  color: rgba(247, 245, 240, 0.46);
+}
+
+.footer-sub {
+  color: rgba(247, 245, 240, 0.68);
+}
+
+.footer-email-btn {
+  background: #f7f5f0;
+  color: #000;
+}
+
+.footer-bottom {
+  border-top-color: rgba(247, 245, 240, 0.12);
+}
+
+.footer-copyright {
+  color: rgba(247, 245, 240, 0.48);
+}
+
+.footer-links a {
+  color: rgba(247, 245, 240, 0.62);
+}
+
+.footer-links a:hover {
+  color: #f7f5f0;
 }
 
 .lagrange-gallery {
   padding: 100px 20px 80px; /* Top padding clears the fixed nav bar */
   display: flex;
   justify-content: center;
+  background: #000;
 }
 
 /* Update this specific block in your lagrange.css */
@@ -37,6 +124,11 @@ body {
 @media (max-width: 768px) {
   .lagrange-gallery {
     padding: 80px 16px 60px;
+  }
+
+  .nav-right {
+    border-top-color: rgba(247, 245, 240, 0.16);
+    background: #000;
   }
   
   .lagrange-wrapper {
