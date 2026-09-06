@@ -1,5 +1,5 @@
 body {
-  background: #f7f5f0;
+  background: var(--site-bg);
 }
 
 .ut-page {

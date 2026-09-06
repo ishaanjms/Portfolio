@@ -1,5 +1,5 @@
 :root {
-  --boat-bg: #f7f5f0;
+  --boat-bg: var(--site-bg);
   --boat-ink: #1a1916;
   --boat-muted: rgba(26, 25, 22, 0.54);
   --boat-line: rgba(26, 25, 22, 0.1);

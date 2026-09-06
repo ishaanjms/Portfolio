@@ -1,5 +1,5 @@
 body {
-  background: #f7f5f0;
+  background: var(--site-bg);
 }
 
 .spr-page {
@@ -408,8 +408,8 @@ body {
 .device-controls button:hover,
 .alignment-controls button.active,
 .alignment-controls button:hover {
-  background: #f7f5f0;
-  border-color: #f7f5f0;
+  background: var(--site-bg);
+  border-color: var(--site-bg);
   color: #181713;
 }
 

@@ -1,5 +1,5 @@
 body {
-  background: #f7f5f0;
+  background: var(--site-bg);
 }
 
 .gc-page {
@@ -200,7 +200,7 @@ body {
 
 .gc-message.ai {
   margin-right: 32px;
-  background: #f7f5f0;
+  background: var(--site-bg);
   color: #1a1916;
 }
 
@@ -628,12 +628,12 @@ body {
 
 .gc-mode-controls button.active,
 .gc-mode-controls button:hover {
-  background: #f7f5f0;
+  background: var(--site-bg);
   color: #1a1916;
 }
 
 .gc-demo-output {
-  background: #f7f5f0;
+  background: var(--site-bg);
 }
 
 .gc-demo-output h3 {

@@ -3,7 +3,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 48px 32px 100px;
-  background: #f7f5f0;
+  background: transparent;
 }
 
 .garage-header {
@@ -65,7 +65,7 @@
 .filter-chip.active {
   background: #1a1916;
   border-color: #1a1916;
-  color: #f7f5f0;
+  color: var(--site-bg);
 }
 
 .filter-chip:hover {
@@ -198,7 +198,7 @@
 }
 
 .project-media.squares-media {
-  background: #f7f5f0;
+  background: var(--site-bg);
 }
 
 .project-media.squares-media img {
@@ -216,7 +216,7 @@
   border: 1px solid rgba(26, 25, 22, 0.14);
   border-radius: 999px;
   padding: 7px 11px;
-  background: rgba(247, 245, 240, 0.82);
+  background: rgba(254, 254, 253, 0.86);
   color: rgba(26, 25, 22, 0.64);
   font-family: 'DM Mono', monospace;
   font-size: 11px;

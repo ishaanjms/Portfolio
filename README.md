@@ -4,6 +4,8 @@ Personal portfolio website for Ishaan Jain, focused on product design, AI tools,
 
 The site is intentionally lightweight: plain HTML, CSS, and JavaScript with no framework or build step.
 
+For future editing support, see `agent.md`.
+
 ## Pages
 
 - **Home** — Intro, selected work, and portfolio navigation.
@@ -14,7 +16,7 @@ The site is intentionally lightweight: plain HTML, CSS, and JavaScript with no f
 ## Project Pages
 
 - `Sprinklr/` — CFM Device Switcher case study.
-- `npl/` — Atomic Clock Live Monitor case study.
+- `npl/` — Atomic Clock Live Monitor case study, including system brief, lab hardware context, dashboard IA, interaction demos, and conference context.
 - `ut1utc/` — UT1-UTC leap-second prediction case study.
 - `cloud/` — Cloud Profiler data-tool project.
 - `docqna/` — DocQnA AI Assistant project.
@@ -29,6 +31,7 @@ The site is intentionally lightweight: plain HTML, CSS, and JavaScript with no f
 ```text
 /
 ├── index.html
+├── agent.md
 ├── about/
 │   └── index.html
 ├── garage/
@@ -53,6 +56,14 @@ The site is intentionally lightweight: plain HTML, CSS, and JavaScript with no f
 │   └── Ex-logos/
 ├── Sprinklr/
 ├── npl/
+│   ├── assets/
+│   │   ├── hero/
+│   │   ├── lab/
+│   │   ├── diagrams/
+│   │   ├── screens/
+│   │   └── videos/
+│   ├── index.html
+│   └── project.css
 ├── ut1utc/
 ├── cloud/
 ├── docqna/
@@ -67,8 +78,10 @@ The site is intentionally lightweight: plain HTML, CSS, and JavaScript with no f
 
 - Keep shared icons, thumbnails, profile images, and logos inside `assets/`.
 - Keep project-specific screens, figures, videos, posters, GIFs, and mockups inside the matching project folder.
+- NPL hardware/context photos live in `npl/assets/lab/`.
 - Experience/company logos live in `assets/Ex-logos/`.
 - Square logo backups and alternate logo exports live in `assets/logo/square logos/`.
+- `IA NPL.png` is currently referenced by the NPL information architecture section.
 
 ## Local Preview
 
@@ -80,3 +93,4 @@ Because this is a static site, it can be opened directly in a browser from `inde
 - Shared visual language should stay in `css/shared.css`.
 - Page-specific styling should stay in the matching CSS file.
 - Avoid moving user-added media out of project folders unless the asset is reused across multiple pages.
+- Keep `agent.md` updated when conventions, page structure, or major asset locations change.
