@@ -15,29 +15,49 @@
 
   let mx = -200, my = -200, rx = -200, ry = -200;
   let firstMove = true;
+  let rafId = null;
+
+  function place(el, x, y) {
+    el.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
+  }
+
+  function startLerp() {
+    if (rafId === null) rafId = requestAnimationFrame(lerp);
+  }
 
   document.addEventListener('mousemove', e => {
     mx = e.clientX; my = e.clientY;
-    dot.style.left = mx + 'px';
-    dot.style.top  = my + 'px';
-    // Snap ring to cursor on first move — prevents crawl-in from off-screen
-    if (firstMove) { rx = mx; ry = my; firstMove = false; }
+    place(dot, mx, my);
+    if (firstMove) {
+      rx = mx;
+      ry = my;
+      place(ring, rx, ry);
+      firstMove = false;
+    }
+    startLerp();
   });
   document.addEventListener('mouseleave', () => document.body.classList.add('cursor-hidden'));
   document.addEventListener('mouseenter', () => document.body.classList.remove('cursor-hidden'));
 
-  // Pause RAF when tab is hidden to save CPU
-  let rafId;
   function lerp() {
-    if (!document.hidden) {
-      rx += (mx - rx) * 0.1;
-      ry += (my - ry) * 0.1;
-      ring.style.left = rx + 'px';
-      ring.style.top  = ry + 'px';
+    if (document.hidden) {
+      rafId = null;
+      return;
     }
-    rafId = requestAnimationFrame(lerp);
+
+    rx += (mx - rx) * 0.1;
+    ry += (my - ry) * 0.1;
+    place(ring, rx, ry);
+
+    if (Math.abs(mx - rx) > 0.1 || Math.abs(my - ry) > 0.1) {
+      rafId = requestAnimationFrame(lerp);
+    } else {
+      rx = mx;
+      ry = my;
+      place(ring, rx, ry);
+      rafId = null;
+    }
   }
-  rafId = requestAnimationFrame(lerp);
 
   document.querySelectorAll(
     'a, button, [role="button"], .proj, .project-card, .bento-card, .tools-section'
