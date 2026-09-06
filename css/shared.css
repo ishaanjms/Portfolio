@@ -3,9 +3,9 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --site-bg: #fefefd;
-  --site-surface: #f8f8f6;
-  --site-surface-hover: #f1f1ef;
+  --site-bg: #ffffff;
+  --site-surface: #ffffff;
+  --site-surface-hover: #ffffff;
 }
 
 html { overflow-x: clip; scroll-behavior: smooth; }
@@ -355,7 +355,7 @@ body.is-transitioning {
   justify-content: space-between;
   align-items: center;
   padding-top: 40px;
-  border-top: 1px solid rgba(254,254,253,0.1);
+  border-top: 1px solid rgba(247,245,240,0.1);
 }
 
 .footer-links { display: flex; gap: 32px; flex-wrap: wrap; }
@@ -363,7 +363,7 @@ body.is-transitioning {
 .footer-links a {
   font-family: 'DM Sans', sans-serif;
   font-size: 15px;
-  color: rgba(254,254,253,0.6);
+  color: rgba(247,245,240,0.6);
   text-decoration: none;
   letter-spacing: 0.02em;
   transition: color 0.2s;
@@ -374,7 +374,7 @@ body.is-transitioning {
 .footer-copyright {
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
-  color: rgba(254,254,253,0.4);
+  color: rgba(247,245,240,0.4);
 }
 
 /* --- Hamburger button --- */
