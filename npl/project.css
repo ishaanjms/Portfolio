@@ -376,6 +376,104 @@ body {
   box-shadow: 0 14px 34px rgba(26, 25, 22, 0.04);
 }
 
+.npl-system-brief {
+  padding: 40px 0 0;
+}
+
+.system-brief-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+  gap: 72px;
+  align-items: start;
+  padding-top: 6px;
+}
+
+.system-brief-points {
+  display: grid;
+  gap: 0;
+}
+
+.system-brief-points article {
+  display: grid;
+  grid-template-columns: 42px minmax(150px, 0.46fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  padding: 24px 0;
+}
+
+.system-brief-points span {
+  color: rgba(26, 25, 22, 0.42);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.system-brief-points strong {
+  color: #1a1916;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.22;
+}
+
+.system-brief-points p {
+  color: rgba(26, 25, 22, 0.62);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.npl-hardware-context {
+  padding: 104px 0 0;
+}
+
+.hardware-gallery {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.hardware-card {
+  grid-column: span 2;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(26, 25, 22, 0.08);
+  background: rgba(255, 255, 255, 0.46);
+}
+
+.hardware-card-large {
+  grid-column: span 3;
+}
+
+.hardware-card img {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  background: #ebe8e2;
+}
+
+.hardware-card-large img {
+  height: 430px;
+}
+
+.hardware-card figcaption {
+  padding: 22px 24px 24px;
+}
+
+.hardware-card figcaption span {
+  display: block;
+  margin-bottom: 8px;
+  color: #1a1916;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.hardware-card figcaption p {
+  color: rgba(26, 25, 22, 0.62);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
 .npl-problem-grid h3,
 .lab-card h3,
 .npl-outcome-grid h3 {
@@ -405,6 +503,19 @@ body {
   display: grid;
   gap: 14px;
   margin-bottom: 36px;
+}
+
+.ia-image-frame {
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(26, 25, 22, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.ia-image-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .ia-system {
@@ -973,6 +1084,25 @@ body {
     gap: 40px;
   }
 
+  .system-brief-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .hardware-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hardware-card,
+  .hardware-card-large {
+    grid-column: span 1;
+  }
+
+  .hardware-card img,
+  .hardware-card-large img {
+    height: 340px;
+  }
+
   .npl-split aside {
     position: static;
   }
@@ -1046,6 +1176,7 @@ body {
   }
 
   .npl-overview,
+  .npl-hardware-context,
   .npl-lab,
   .npl-interactions,
   .npl-outcomes,
@@ -1067,6 +1198,25 @@ body {
   .npl-conference-card {
     padding: 12px;
     border-radius: 22px;
+  }
+
+  .hardware-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .hardware-card img,
+  .hardware-card-large img {
+    height: auto;
+    max-height: 520px;
+  }
+
+  .system-brief-points article {
+    grid-template-columns: 34px 1fr;
+    gap: 10px 18px;
+  }
+
+  .system-brief-points p {
+    grid-column: 2;
   }
 
   .interaction-copy {

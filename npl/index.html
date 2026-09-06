@@ -88,6 +88,77 @@
       </div>
     </section>
 
+    <section class="npl-system-brief">
+      <div class="npl-section-heading">
+        <p>System Brief</p>
+        <h2>How the cesium fountain works</h2>
+      </div>
+      <div class="system-brief-grid">
+        <p class="npl-lead">CsF1 is a primary frequency standard built around a controlled fountain of cesium atoms. The system cools atoms inside a magneto-optical trap, launches the cold cloud upward through the physics package, and reads the returning fluorescence signal after the atoms fall back down.</p>
+        <div class="system-brief-points" aria-label="Cesium fountain system stages">
+          <article>
+            <span>01</span>
+            <strong>Cool and trap</strong>
+            <p>Lasers and magnetic fields prepare a compact cloud of cesium atoms inside the MOT chamber.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <strong>Launch and interrogate</strong>
+            <p>Moving molasses launches the atoms upward through the drift region, where microwave interrogation can compare atomic states.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <strong>Detect and monitor</strong>
+            <p>Fluorescence from the returning atoms, along with laser, photodiode, temperature, and humidity signals, needs continuous visibility.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="npl-hardware-context">
+      <div class="npl-section-heading">
+        <p>Lab Context</p>
+        <h2>What the dashboard was monitoring</h2>
+      </div>
+      <div class="hardware-gallery">
+        <figure class="hardware-card hardware-card-large">
+          <img src="./assets/lab/physics-package.png" alt="CsF1 physics package where cesium atoms are tossed">
+          <figcaption>
+            <span>Physics Package</span>
+            <p>The atomic clock chamber where cesium atoms are tossed during measurement.</p>
+          </figcaption>
+        </figure>
+        <figure class="hardware-card hardware-card-large">
+          <img src="./assets/lab/optical-bench.png" alt="Optical bench around the CsF1 atomic clock setup">
+          <figcaption>
+            <span>Optical Bench</span>
+            <p>The surrounding optical setup that made stable environmental monitoring important.</p>
+          </figcaption>
+        </figure>
+        <figure class="hardware-card">
+          <img src="./assets/lab/data-logger.png" alt="Custom data logger hardware for laser and photodiode readings">
+          <figcaption>
+            <span>Data Logger</span>
+            <p>Collected readings from 8 lasers and 5 photodiodes before they entered the dashboard pipeline.</p>
+          </figcaption>
+        </figure>
+        <figure class="hardware-card">
+          <img src="./assets/lab/thermo-hygrometer.png" alt="Fluke 1620A thermo-hygrometer measuring temperature and humidity">
+          <figcaption>
+            <span>Thermo-Hygrometer</span>
+            <p>Tracked temperature and relative humidity around the lab and optical bench.</p>
+          </figcaption>
+        </figure>
+        <figure class="hardware-card">
+          <img src="./assets/lab/laser-hardware.png" alt="Laser signal monitoring hardware with labelled axis readings">
+          <figcaption>
+            <span>Laser Hardware</span>
+            <p>Exposed the X, Y, Z, and D signal readings that shaped the laser monitoring view.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section class="npl-split">
       <aside>
         <p>01</p>
@@ -179,39 +250,9 @@
         <p>04 · Information Architecture</p>
         <h2>Organized around monitoring tasks</h2>
       </div>
-      <div class="ia-system" aria-label="Dashboard information architecture">
-        <div class="ia-root">
-          <span>Dashboard</span>
-          <strong>CsF1 Monitoring</strong>
-        </div>
-        <div class="ia-branches">
-          <article>
-            <span>01</span>
-            <h3>Overview</h3>
-            <p>One-page status for environmental readings, laser positions, photodiodes, connection health, and last update time.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Temperature & Humidity</h3>
-            <p>Dedicated trend view for ambient and optical-bench conditions, with exact values available on hover.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Lasers</h3>
-            <p>Axis-based grouping for X, Y, Z, and D readings so paired values can be compared quickly.</p>
-          </article>
-          <article>
-            <span>04</span>
-            <h3>Photodiodes</h3>
-            <p>Detector-specific cards and traces for fiber output, grand detection, and AOM channels.</p>
-          </article>
-          <article>
-            <span>05</span>
-            <h3>Retrieve Data</h3>
-            <p>Historical plotting and CSV export kept separate from live monitoring to reduce dashboard clutter.</p>
-          </article>
-        </div>
-      </div>
+      <figure class="ia-image-frame">
+        <img src="../IA%20NPL.png" alt="Information architecture diagram for the CsF1 monitoring dashboard">
+      </figure>
       <div class="ia-principles" aria-label="Information architecture principles">
         <article>
           <span>Hierarchy</span>
