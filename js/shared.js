@@ -47,6 +47,31 @@
   });
 })();
 
+// Rolling labels for the primary nav links.
+(function () {
+  const navLinks = document.querySelector('.nav-links');
+  if (!navLinks) return;
+
+  const links = [...navLinks.querySelectorAll('a:not(.nav-resume-btn)')];
+  if (!links.length) return;
+
+  links.forEach(link => {
+    const label = link.textContent.trim();
+    const stack = document.createElement('span');
+    const current = document.createElement('span');
+    const next = document.createElement('span');
+
+    stack.className = 'nav-label-stack';
+    current.textContent = label;
+    next.textContent = label;
+    next.setAttribute('aria-hidden', 'true');
+    stack.append(current, next);
+    link.textContent = '';
+    link.appendChild(stack);
+    link.setAttribute('aria-label', label);
+  });
+})();
+
 // Footer email buttons copy the address instead of opening a mail client.
 (function () {
   const emailButtons = document.querySelectorAll('.footer-email-btn');
