@@ -117,82 +117,6 @@
   z-index: 1;
 }
 
-/* --- Tools --- */
-.tools-section {
-  margin-bottom: 100px;
-}
-
-.tools-title {
-  color: rgba(26, 25, 22, 0.76);
-  font-size: 32px;
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  margin-bottom: 32px;
-}
-
-.tools-icon-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 34px;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 34px 88px;
-  border-radius: 12px;
-  background: rgba(26, 25, 22, 0.025);
-}
-
-.tool-icon-item {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.tool-icon-item::after {
-  content: attr(data-label);
-  position: absolute;
-  left: 50%;
-  bottom: calc(100% + 12px);
-  transform: translate(-50%, 4px);
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: rgba(26, 25, 22, 0.9);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.18s ease, transform 0.18s ease;
-}
-
-.tool-icon-item:hover::after,
-.tool-icon-item:focus-within::after {
-  opacity: 1;
-  transform: translate(-50%, 0);
-}
-
-.tools-icon-bar img {
-  width: 38px;
-  height: 38px;
-  display: block;
-  object-fit: contain;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.tools-icon-bar .tool-icon-colab {
-  width: auto;
-  height: 38px;
-}
-
-.tools-icon-bar img:hover {
-  opacity: 0.76;
-  transform: translateY(-2px);
-}
-
 /* --- Certifications --- */
 .certifications-section {
   margin-top: 96px;
@@ -648,8 +572,6 @@
   .about-main-title  { font-size: 36px; }
   .intro-grid        { grid-template-columns: 1fr; gap: 48px; margin-bottom: 72px; }
   .intro-visual      { max-width: 280px; justify-self: start; }
-  .tools-title       { font-size: 28px; margin-bottom: 24px; }
-  .tools-icon-bar    { gap: 28px; padding: 28px 36px; }
   .certifications-section { margin-top: 64px; padding-top: 0; }
   .cert-row         { grid-template-columns: auto minmax(0, 1fr); }
   .cert-verify-link { grid-column: 2; justify-self: start; margin-top: -4px; }
@@ -669,11 +591,6 @@
   .intro-text p      { font-size: 15px; }
   .intro-visual      { justify-self: center; max-width: 260px; }
   .intro-visual::before { display: none; }
-  .tools-title       { font-size: 24px; }
-  .tools-icon-bar    { display: grid; grid-template-columns: repeat(5, 1fr); gap: 26px 24px; padding: 26px; }
-  .tools-icon-bar img { width: 32px; height: 32px; justify-self: center; }
-  .tools-icon-bar .tool-icon-colab { width: auto; height: 32px; }
-  .tool-icon-item::after { display: none; }
   .certifications-section { margin-top: 64px; padding-top: 0; }
   .cert-row         { gap: 14px; padding: 20px 0; }
   .cert-row .resume-role { font-size: 16px; }
