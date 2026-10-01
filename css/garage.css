@@ -197,6 +197,19 @@
   filter: none;
 }
 
+.project-media.graphic-media {
+  display: grid;
+  place-items: center;
+  background: #f7f2ec;
+}
+
+.project-media.graphic-media img {
+  width: calc(100% - 34px);
+  height: calc(100% - 34px);
+  object-fit: contain;
+  filter: saturate(0.96) contrast(0.98);
+}
+
 .project-media.squares-media {
   background: var(--site-bg);
 }
