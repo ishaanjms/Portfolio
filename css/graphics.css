@@ -10,7 +10,7 @@
   grid-template-columns: minmax(0, 0.86fr) minmax(260px, 0.34fr);
   align-items: end;
   gap: 44px;
-  margin-bottom: 42px;
+  margin-bottom: 86px;
 }
 
 .graphics-back {
@@ -38,28 +38,6 @@
   font-weight: 100;
   line-height: 0.92;
   letter-spacing: 0;
-}
-
-.graphics-sub {
-  color: rgba(26, 25, 22, 0.5);
-  font-size: clamp(17px, 1.55vw, 21px);
-  font-weight: 300;
-  line-height: 1.42;
-}
-
-.graphics-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 18px;
-  margin-top: 22px;
-}
-
-.graphics-meta span {
-  color: rgba(26, 25, 22, 0.42);
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  line-height: 1.2;
-  text-transform: uppercase;
 }
 
 .graphics-board {
@@ -138,10 +116,6 @@
 
   .graphics-title {
     font-size: clamp(48px, 16vw, 70px);
-  }
-
-  .graphics-sub {
-    font-size: 17px;
   }
 
   .graphics-board {

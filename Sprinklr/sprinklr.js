@@ -76,19 +76,19 @@
 
   const options = {
     required: {
-      label: 'Baseline implementation',
+      label: 'Least change',
       title: 'Add Web Alignment and Mobile Alignment in the right bar.',
-      copy: 'A low-risk approach that preserves the existing desktop setting while adding mobile placement options such as top, between title and answer, and bottom.'
+      copy: 'This solved the requested control gap, but it did not solve the bigger visibility problem because creators still had to preview elsewhere.'
     },
     preferred: {
-      label: 'Near-term usability lift',
+      label: 'Better direction',
       title: 'Add a device toggle in the builder top menu.',
-      copy: 'The adopted direction lets creators switch between web, mobile, tablet, and custom views, making responsive behavior visible while they author the survey.'
+      copy: 'This brought the preview decision into the builder, letting creators switch between web, mobile, tablet, and custom views while authoring.'
     },
     best: {
-      label: 'Long-term product direction',
+      label: 'Best shipped direction',
       title: 'Make the builder a responsive authoring surface.',
-      copy: 'The long-term direction is accurate real-time rendering across device types, including custom dimensions, validation limits, and parity with respondent experience.'
+      copy: 'This was the strongest version: a device-aware authoring model with responsive canvas behavior, custom dimensions, validation limits, and configuration safety.'
     }
   };
 
