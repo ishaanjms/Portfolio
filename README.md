@@ -12,6 +12,9 @@ For future editing support, see `agent.md`.
 - **Hero computer** — Interactive SVG desk computer beside the homepage intro, with power and typing interactions and a coding sequence that reveals a waving pixel-art cat saying hi; stacks below the intro on mobile.
 - **About** — Bio, skills marquee, expandable experiences, education, achievements, and certifications.
 - **Garage** — Curated project library grouped by Product Design, Scientific Tools, AI Systems, and Visual / Brand.
+- **Design Artifacts** — Collection of AI-generated animations and interactive experiments, linked from Garage's Visual / Brand section. Each artifact has a dedicated page under `design-artifacts/`.
+- **Koi Pond — Side A** — Interactive vinyl-record pond with swimming koi, a draggable tonearm, and ambient audio at `design-artifacts/koi-pond/`.
+- **HTML downloads** — Each artifact page has a Download HTML link to a self-contained, offline-ready file. Refresh these files after editing an artifact with `python3 scripts/build-artifact-downloads.py`.
 - **Project pages** — Individual case studies and visual explorations live in their own folders.
 
 ## Project Pages
@@ -37,11 +40,20 @@ For future editing support, see `agent.md`.
 │   └── index.html
 ├── garage/
 │   └── index.html
+├── design-artifacts/
+│   ├── index.html
+│   ├── desk-computer/
+│   │   └── index.html
+│   └── koi-pond/
+│       ├── index.html
+│       ├── koi-pond.css
+│       └── koi-pond.js
 ├── css/
 │   ├── shared.css
 │   ├── animations.css
 │   ├── home.css
 │   ├── desk-computer.css
+│   ├── design-artifacts.css
 │   ├── about.css
 │   └── garage.css
 ├── js/
