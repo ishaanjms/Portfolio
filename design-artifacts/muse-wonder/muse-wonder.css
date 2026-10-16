@@ -28,7 +28,7 @@
   z-index: 1;
   color: #fff;
   font-family: var(--muse-mono);
-  font-size: clamp(28px, 4.4vw, 64px);
+  font-size: clamp(16px, 4.4vw, 64px);
   font-weight: 400;
   line-height: 1;
   letter-spacing: -0.02em;
@@ -44,6 +44,7 @@
 
 @media (max-width: 640px) {
   .muse-stage { height: 440px; padding: 16px; border-radius: 12px; }
+  .muse-title { font-size: clamp(16px, 5.5vw, 32px); }
 }
 
 @media (prefers-reduced-motion: reduce) {

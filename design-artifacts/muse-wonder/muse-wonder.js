@@ -5,11 +5,12 @@
   const cv = host.querySelector('canvas'), ctx = cv.getContext('2d'), title = host.querySelector('.muse-title');
   if (!ctx) return;
   let rafId = null, inView = true, elapsed = 0;
-  const WORDS = ['MUSE', 'BUILD', 'CREATE', 'WONDER'];
+  const WORDS = ['PRODUCT', 'DESIGN', 'RESEARCH', 'IDEATE', 'CREATE', 'TEST', 'ITERATE'];
+  const REST_WORD = 'DESIGN';
   const SYMS = '@*^<>·:;#+%&=~1✺';
   const MONO = '"JetBrains Mono","SF Mono",ui-monospace,Menlo,Consolas,"Liberation Mono",monospace';
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const MAXL = 6, REST = 0.15;           // resting opacity of the dim letters
+  const MAXL = Math.max(...WORDS.map(word => word.length)), REST = 0.15;
   const rnd = s => s[(Math.random() * s.length) | 0];
   const sstep = (a, b, x) => { x = Math.min(1, Math.max(0, (x - a) / (b - a))); return x * x * (3 - 2 * x); };
 
@@ -22,7 +23,7 @@
     cv.width = W * dpr; cv.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     pitch = Math.max(88, Math.min(W / 9.6, 140));
-    rowP = pitch * 0.24; letterP = pitch * 0.125; fontPx = pitch * 0.15;
+    rowP = pitch * 0.24; letterP = pitch * 0.75 / MAXL; fontPx = pitch * 0.15;
     cols = Math.max(3, Math.floor((W - 60) / pitch));
     rows = Math.ceil(H / rowP) + 1;
     ox = (W - cols * pitch) / 2 + pitch / 2;
@@ -46,8 +47,8 @@
           y > tr.top - rowP * 0.6 && y - rowP < tr.bottom + rowP * 0.4) hole[r * cols + c] = 1;
     }
     cells = Array.from({ length: cols * rows }, () => ({
-      word: 'WONDER', old: null, shown: null, t0: 0, a: REST, e: 0, thr: 0.18 + Math.random() * 0.4,
-      hot: false, alt: 'WONDER', glitch: null, pending: undefined
+      word: REST_WORD, old: null, shown: null, t0: 0, a: REST, e: 0, thr: 0.18 + Math.random() * 0.4,
+      hot: false, alt: REST_WORD, glitch: null, pending: undefined
     }));
     heat = new Float32Array(cols * rows * MAXL);
   }
@@ -104,7 +105,7 @@
 
     if (!reduce && Math.random() < 0.15) {                // rare stray glitch in the resting state
       const c = cells[(Math.random() * cells.length) | 0];
-      if (c.shown) c.glitch = { i: (Math.random() * 6) | 0, ch: rnd(SYMS), until: now + 150 + Math.random() * 450 };
+      if (c.shown) c.glitch = { i: (Math.random() * c.word.length) | 0, ch: rnd(SYMS), until: now + 150 + Math.random() * 450 };
     }
 
     for (let r = 0; r < rows; r++) {
@@ -120,11 +121,11 @@
         }
         cell.e = target > cell.e ? cell.e + (target - cell.e) * Math.min(1, dt * 18) : Math.max(0, cell.e - dt * 1.5);
 
-        // hot cells swap WONDER for the other words
+        // hot cells swap DESIGN for words from the product design process
         if (!cell.hot && cell.e > cell.thr) { cell.hot = true; cell.alt = rnd(WORDS); }
         else if (cell.hot && cell.e < cell.thr - 0.08) cell.hot = false;
         else if (cell.hot && Math.random() < dt * 0.12) cell.alt = rnd(WORDS);
-        const desired = cell.hot ? cell.alt : 'WONDER';
+        const desired = cell.hot ? cell.alt : REST_WORD;
 
         const want = wants(k, c, r, t, cell.e);
         if (cell.shown === null) {                         // load: reveal from the top
