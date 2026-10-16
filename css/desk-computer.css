@@ -1,0 +1,152 @@
+/* Colors and geometry are scoped to the supplied SVG computer. */
+.desk-computer {
+  --ff: #e5e7e2;
+  --fs: #ccd3cd;
+  --ft: #f3f4ef;
+  --st: #8b9c94;
+  --st2: #a3b0a7;
+  --kf: #d9e0d7;
+  --ks: #bcc9bd;
+  --kt: #f4f6ee;
+  --kh: #b8dbce;
+  --glass: #233e39;
+  --phos: #d6eade;
+  --sink: #176b6a;
+  --glowc: #83c6ac;
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  align-self: center;
+}
+
+.desk-computer > svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  filter: drop-shadow(0 18px 18px rgba(32, 66, 52, 0.09));
+  border-radius: 16px;
+}
+
+.desk-computer > svg:focus,
+.desk-computer #mac:focus {
+  outline: none;
+}
+
+.desk-computer.keyboard-focus > svg:focus,
+.desk-computer.keyboard-focus #mac:focus {
+  outline: 2px solid #176b6a;
+  outline-offset: 5px;
+}
+
+.desk-computer .ff { fill: var(--ff); }
+.desk-computer .fs { fill: var(--fs); }
+.desk-computer .ft { fill: var(--ft); }
+.desk-computer .kf { fill: var(--kf); }
+.desk-computer .ks { fill: var(--ks); }
+.desk-computer .kt { fill: var(--kt); }
+.desk-computer polygon { stroke: var(--st); stroke-width: 1; stroke-linejoin: round; }
+.desk-computer .kf,
+.desk-computer .ks,
+.desk-computer .kt { stroke: var(--st2); }
+.desk-computer .st { fill: none; stroke: var(--st); stroke-width: 1; }
+.desk-computer #mac,
+.desk-computer .key { cursor: pointer; }
+.desk-computer .key { transition: transform 0.06s; }
+.desk-computer .key.down { transform: translateY(3px); }
+.desk-computer .key.down .kt { fill: var(--kh); }
+.desk-computer .tx {
+  font: 10px 'DM Mono', monospace;
+  fill: var(--sink);
+  white-space: pre;
+}
+
+.desk-computer #scr {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scaleY(0.01);
+  opacity: 0;
+  transition: transform 0.32s cubic-bezier(0.5, 0, 0.8, 0.4), opacity 0.04s 0.3s;
+}
+.desk-computer .open #scr {
+  transform: none;
+  opacity: 1;
+  transition: transform 0.55s cubic-bezier(0.2, 0.9, 0.2, 1), opacity 0.05s;
+}
+.desk-computer #ln { opacity: 1; transition: opacity 0.15s 0.3s; }
+.desk-computer .open #ln { opacity: 0; transition: opacity 0.12s; }
+.desk-computer #boot,
+.desk-computer #txt,
+.desk-computer #ui { opacity: 0; transition: opacity 0.2s; }
+.desk-computer .boot #boot,
+.desk-computer .on #txt,
+.desk-computer .ui #ui { opacity: 1; }
+.desk-computer .ui #txt { opacity: 0; }
+.desk-computer .cat-pixels { shape-rendering: crispEdges; }
+.desk-computer .cat-eyes-closed { opacity: 0; }
+.desk-computer .ui .cat-reveal {
+  animation: computer-cat-reveal 0.5s steps(3, end) both;
+}
+.desk-computer .ui .cat-wave {
+  animation: computer-cat-wave 1.6s steps(1, end) 0.4s infinite;
+}
+.desk-computer .ui .cat-eyes {
+  animation: computer-cat-blink 4s steps(1, end) 1s infinite;
+}
+.desk-computer .ui .cat-eyes-closed {
+  animation: computer-cat-blink-closed 4s steps(1, end) 1s infinite;
+}
+.desk-computer .ui .cat-tail {
+  animation: computer-cat-tail 2s steps(1, end) infinite;
+}
+.desk-computer .ui .cat-speech {
+  animation: computer-cat-hello 0.3s steps(2, end) 0.6s both;
+}
+.desk-computer #glow { opacity: 0; transition: opacity 0.8s; }
+.desk-computer .open #glow { opacity: 1; }
+.desk-computer #led { fill: var(--st2); transition: fill 0.3s; }
+.desk-computer .open #led { fill: #57a68b; }
+.desk-computer .cur { animation: computer-blink 1s steps(1) infinite; }
+.desk-computer.is-paused *,
+.desk-computer.is-paused .ui * { animation-play-state: paused; }
+
+@keyframes computer-cat-reveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes computer-cat-wave {
+  0%, 60%, 100% { transform: translate(0, 0); }
+  15%, 45% { transform: translate(4px, -4px); }
+  30% { transform: translate(0, -8px); }
+}
+@keyframes computer-cat-blink {
+  0%, 42%, 48%, 100% { opacity: 1; }
+  45% { opacity: 0; }
+}
+@keyframes computer-cat-blink-closed {
+  0%, 42%, 48%, 100% { opacity: 0; }
+  45% { opacity: 1; }
+}
+@keyframes computer-cat-tail {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@keyframes computer-cat-hello {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes computer-blink { 50% { opacity: 0; } }
+
+@media (max-width: 900px) {
+  .desk-computer {
+    max-width: 340px;
+    justify-self: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .desk-computer *,
+  .desk-computer .open #scr { animation: none !important; transition: none !important; }
+}

@@ -1,6 +1,10 @@
 /* --- Hero Section --- */
 .hero {
-  padding: 60px 32px 100px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(280px, 31vw, 440px);
+  align-items: center;
+  gap: 24px;
+  padding: 60px 32px 40px;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
@@ -99,7 +103,7 @@
 
 /* Homepage hero heading */
 .hero-headline {
-  font-size: clamp(48px, 7vw, 95px); /* Keeps it responsive */
+  font-size: clamp(48px, 7vw, 95px);
   color: #176B6A;
   font-weight: 300;
   margin-bottom: 24px; /* Reduced gap to pull the paragraph closer */
@@ -108,12 +112,12 @@
 
 /* New styles for your refined paragraph */
 .hero-description {
-  font-size: clamp(20px, 3vw, 32px); /* Roughly 40-50% the visual weight of the title */
+  font-size: clamp(20px, 3vw, 32px);
   font-weight: 10; /* Lighter font weight */
   color: #888888; /* Grey base color */
   line-height: 1.4;
   max-width: 800px;
-  margin-bottom: 40px; /* Space before the "Currently..." text */
+  margin-bottom: 40px;
   letter-spacing: -0.01em;
 }
 
@@ -305,8 +309,12 @@
 }
 
 /* --- Responsive --- */
+@media (min-width: 901px) {
+  .work-section { margin-top: 100px; }
+}
+
 @media (max-width: 900px) {
-  .hero        { padding: 40px 20px 80px; }
+  .hero        { grid-template-columns: 1fr; padding: 40px 20px 80px; }
   .hero-headline { font-size: 44px; }
   .work-section  { padding: 0 20px 48px; }
   .work-intro {
@@ -317,7 +325,7 @@
 }
 
 @media (max-width: 640px) {
-  .hero          { padding: 28px 16px 56px; }
+  .hero          { gap: 24px; padding: 28px 16px 56px; }
   .hero-headline { font-size: 30px; max-width: 100%; min-height: 0; }
   .hero-sub      { font-size: 15px; }
   .work-section  { padding: 0 16px 40px; }

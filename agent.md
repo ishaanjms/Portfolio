@@ -5,6 +5,7 @@ This portfolio is a static HTML/CSS/JS site. Keep edits small, visual, and consi
 ## Project Shape
 
 - Home page: `index.html`, `css/home.css`, `js/home.js`
+- Interactive homepage hero computer: `css/desk-computer.css`, `js/desk-computer.js`. Keep its SVG styles scoped to `.desk-computer`, typing scoped to illustration focus, and reduced-motion behavior intact.
 - Shared navigation, footer, cursor, page transitions: `css/shared.css`, `js/shared.js`
 - About page: `about/index.html`, `css/about.css`, `js/about.js`
 - Garage page: `garage/index.html`, `css/garage.css`, `js/garage.js`

@@ -9,6 +9,7 @@ For future editing support, see `agent.md`.
 ## Pages
 
 - **Home** — Intro, selected work, and portfolio navigation.
+- **Hero computer** — Interactive SVG desk computer beside the homepage intro, with power and typing interactions and a coding sequence that reveals a waving pixel-art cat saying hi; stacks below the intro on mobile.
 - **About** — Bio, skills marquee, expandable experiences, education, achievements, and certifications.
 - **Garage** — Curated project library grouped by Product Design, Scientific Tools, AI Systems, and Visual / Brand.
 - **Project pages** — Individual case studies and visual explorations live in their own folders.
@@ -40,12 +41,14 @@ For future editing support, see `agent.md`.
 │   ├── shared.css
 │   ├── animations.css
 │   ├── home.css
+│   ├── desk-computer.css
 │   ├── about.css
 │   └── garage.css
 ├── js/
 │   ├── constants.js
 │   ├── shared.js
 │   ├── home.js
+│   ├── desk-computer.js
 │   ├── about.js
 │   └── garage.js
 ├── assets/
