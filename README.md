@@ -14,6 +14,7 @@ For future editing support, see `agent.md`.
 - **Garage** — Curated project library grouped by Product Design, Scientific Tools, AI Systems, and Visual / Brand.
 - **Design Artifacts** — Collection of AI-generated animations and interactive experiments, linked from Garage's Visual / Brand section. Each artifact has a dedicated page under `design-artifacts/`.
 - **Koi Pond — Side A** — Interactive vinyl-record pond with swimming koi, a draggable tonearm, and ambient audio at `design-artifacts/koi-pond/`.
+- **Muse Wonder** — Pointer-reactive typography, word transformations, and character trails at `design-artifacts/muse-wonder/`.
 - **HTML downloads** — Each artifact page has a Download HTML link to a self-contained, offline-ready file. Refresh these files after editing an artifact with `python3 scripts/build-artifact-downloads.py`.
 - **Project pages** — Individual case studies and visual explorations live in their own folders.
 
@@ -44,10 +45,14 @@ For future editing support, see `agent.md`.
 │   ├── index.html
 │   ├── desk-computer/
 │   │   └── index.html
-│   └── koi-pond/
+│   ├── koi-pond/
+│   │   ├── index.html
+│   │   ├── koi-pond.css
+│   │   └── koi-pond.js
+│   └── muse-wonder/
 │       ├── index.html
-│       ├── koi-pond.css
-│       └── koi-pond.js
+│       ├── muse-wonder.css
+│       └── muse-wonder.js
 ├── css/
 │   ├── shared.css
 │   ├── animations.css

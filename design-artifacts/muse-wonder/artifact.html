@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<!-- Generated from the artifact page and its marked assets. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muse Wonder — Ishaan Jain</title>
+  <style>
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { color-scheme: light; }
+body {
+  min-height: 100vh;
+  background: #f7f5f0;
+  color: #1a1916;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.artifacts-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 32px 100px;
+}
+
+.artifacts-header { margin-bottom: 64px; }
+
+.artifacts-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 40px;
+  color: #777;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.artifacts-back:hover { color: #176b6a; }
+
+.artifacts-eyebrow,
+.artifact-tags,
+.artifact-number,
+.artifact-detail-caption > span {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  line-height: 1.6;
+  color: #888;
+}
+
+.artifacts-eyebrow { margin-bottom: 16px; color: #176b6a; }
+
+.artifacts-header h1 {
+  font-size: clamp(44px, 6vw, 80px);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  margin-bottom: 20px;
+}
+
+.artifacts-intro {
+  max-width: 640px;
+  color: #777;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.artifacts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px 32px;
+}
+
+.artifact-card { display: block; color: inherit; text-decoration: none; }
+
+.artifact-card-preview {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 1.35;
+  background: #f3f6f3;
+  margin-bottom: 22px;
+}
+
+.artifact-card-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.artifact-card:hover img { transform: scale(1.025); }
+
+.artifact-card-arrow {
+  position: absolute;
+  right: 20px;
+  bottom: 16px;
+  color: #176b6a;
+  font-size: 24px;
+}
+
+.artifact-card-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.artifact-card h2 { font-size: 24px; font-weight: 500; margin-bottom: 8px; }
+.artifact-card > p { color: #777; font-size: 15px; line-height: 1.5; }
+.artifact-tags { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 14px; }
+
+.artifact-card:focus-visible,
+.artifacts-back:focus-visible { outline: 2px solid #176b6a; outline-offset: 6px; border-radius: 4px; }
+
+.artifact-detail .artifacts-header { margin-bottom: 40px; }
+.artifact-detail .artifacts-header h1 { font-size: clamp(40px, 5vw, 64px); }
+
+.artifact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+
+.artifact-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border: 1px solid rgba(23, 107, 106, 0.28);
+  border-radius: 999px;
+  color: #176b6a;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.artifact-download svg { display: block; width: 18px; height: 18px; }
+.artifact-download:hover { background: #f0f4f0; border-color: #176b6a; }
+.artifact-download:focus-visible { outline: 2px solid #176b6a; outline-offset: 4px; }
+
+.artifact-stage {
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #f3f6f3;
+  padding: 28px;
+}
+
+.artifact-stage .desk-computer { width: 100%; max-width: 600px; }
+
+.artifact-detail-caption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.artifact-detail-caption p { color: #777; font-size: 13px; line-height: 1.6; }
+.artifact-detail-caption > span { flex-shrink: 0; }
+
+@media (max-width: 900px) {
+  .artifacts-page { padding: 40px 20px 80px; }
+  .artifacts-grid { gap: 40px 24px; }
+  .artifact-detail-caption { flex-direction: column; gap: 8px; }
+}
+
+@media (max-width: 640px) {
+  .artifacts-page { padding: 28px 16px 64px; }
+  .artifacts-back { margin-bottom: 32px; }
+  .artifacts-header { margin-bottom: 40px; }
+  .artifacts-intro { font-size: 17px; }
+  .artifacts-grid { grid-template-columns: 1fr; }
+  .artifact-stage { padding: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .artifact-download { transition: none; }
+  .artifact-card-preview img { transition: none; }
+  .artifact-card:hover img { transform: none; }
+}
+
+.muse-stage {
+  --muse-mono: 'JetBrains Mono', 'SF Mono', ui-monospace, Menlo, Consolas, 'Liberation Mono', monospace;
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 620px;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 16px;
+  background: #040405;
+  padding: 24px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+}
+
+.muse-stage canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.muse-title {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-family: var(--muse-mono);
+  font-size: clamp(28px, 4.4vw, 64px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: muse-title-in 1.2s 0.6s ease both;
+}
+
+.muse-stage:focus { outline: none; }
+.muse-stage:focus-visible { outline: 2px solid #176b6a; outline-offset: 5px; }
+
+@keyframes muse-title-in { from { opacity: 0; } to { opacity: 1; } }
+
+@media (max-width: 640px) {
+  .muse-stage { height: 440px; padding: 16px; border-radius: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .muse-title { animation: none; opacity: 1; }
+}
+
+
+.artifacts-page { max-width: 1064px; padding-top: 32px; padding-bottom: 32px; }
+.artifact-detail .artifacts-header { margin-bottom: 24px; }
+.artifact-detail .artifacts-header h1 { font-size: clamp(28px, 4vw, 40px); margin: 0; }
+
+  </style>
+</head>
+<body>
+  <main class="artifacts-page artifact-detail">
+    <header class="artifacts-header"><h1>Muse Wonder</h1></header>
+    <section class="muse-stage" tabindex="0" aria-label="Interactive Muse Wonder typography. Move your pointer or use the arrow keys to explore the field. Press Escape to let it settle.">
+      <canvas aria-hidden="true"></canvas>
+      <div class="muse-title">Muse Wonder</div>
+    </section>
+    <div class="artifact-detail-caption">
+      <p>Move your pointer or drag across the field. You can also focus it and use the arrow keys.</p>
+      <span>AI-assisted · Interactive typography</span>
+    </div>
+  </main>
+  <script>
+// Adapted from the supplied Muse Wonder artifact.
+(() => {
+  const host = document.querySelector('.muse-stage');
+  if (!host) return;
+  const cv = host.querySelector('canvas'), ctx = cv.getContext('2d'), title = host.querySelector('.muse-title');
+  if (!ctx) return;
+  let rafId = null, inView = true, elapsed = 0;
+  const WORDS = ['MUSE', 'BUILD', 'CREATE', 'WONDER'];
+  const SYMS = '@*^<>·:;#+%&=~1✺';
+  const MONO = '"JetBrains Mono","SF Mono",ui-monospace,Menlo,Consolas,"Liberation Mono",monospace';
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const MAXL = 6, REST = 0.15;           // resting opacity of the dim letters
+  const rnd = s => s[(Math.random() * s.length) | 0];
+  const sstep = (a, b, x) => { x = Math.min(1, Math.max(0, (x - a) / (b - a))); return x * x * (3 - 2 * x); };
+
+  let W, H, dpr, cols, rows, pitch, rowP, letterP, fontPx, ox, oy, cells, heat, R, Rinf, hole;
+  const ptr = { x: 0, y: 0, on: false };
+
+  function resize() {
+    dpr = Math.min(devicePixelRatio || 1, 2);
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = W * dpr; cv.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    pitch = Math.max(88, Math.min(W / 9.6, 140));
+    rowP = pitch * 0.24; letterP = pitch * 0.125; fontPx = pitch * 0.15;
+    cols = Math.max(3, Math.floor((W - 60) / pitch));
+    rows = Math.ceil(H / rowP) + 1;
+    ox = (W - cols * pitch) / 2 + pitch / 2;
+    oy = rowP * 0.9;
+    R = pitch * 0.62;                    // tight radius: block / braille / colon trail
+    Rinf = Math.max(170, W * 0.2);       // wide radius: brightness + word change
+
+    // cells that would collide with the title stay empty
+    const bounds = cv.getBoundingClientRect(), titleBounds = title.getBoundingClientRect();
+    const sx = W / bounds.width, sy = H / bounds.height;
+    const tr = {
+      left: (titleBounds.left - bounds.left) * sx,
+      right: (titleBounds.right - bounds.left) * sx,
+      top: (titleBounds.top - bounds.top) * sy,
+      bottom: (titleBounds.bottom - bounds.top) * sy
+    };
+    hole = new Uint8Array(cols * rows);
+    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+      const cx = ox + c * pitch, y = oy + r * rowP;
+      if (cx + pitch * 0.4 > tr.left - 10 && cx - pitch * 0.4 < tr.right + 10 &&
+          y > tr.top - rowP * 0.6 && y - rowP < tr.bottom + rowP * 0.4) hole[r * cols + c] = 1;
+    }
+    cells = Array.from({ length: cols * rows }, () => ({
+      word: 'WONDER', old: null, shown: null, t0: 0, a: REST, e: 0, thr: 0.18 + Math.random() * 0.4,
+      hot: false, alt: 'WONDER', glitch: null, pending: undefined
+    }));
+    heat = new Float32Array(cols * rows * MAXL);
+  }
+
+  // slow drifting field that decides which words are present (the gaps)
+  const presence = (c, r, t) => (Math.sin(c * 0.85 + t * 0.20 + r * 0.15) + Math.sin(r * 0.55 - t * 0.16 + c * 0.2) +
+                                 Math.sin(c * 0.5 + r * 0.45 + t * 0.12) + Math.sin(c * 1.7 - r * 1.3 + t * 0.07)) / 4;
+  function wants(k, c, r, t, e) {
+    if (hole[k]) return false;
+    const dx = (c - (cols - 1) / 2) / (cols * 0.27), dy = (r - rows * 0.5) / (rows * 0.12);
+    return presence(c, r, t) + e * 0.7 - Math.exp(-(dx * dx + dy * dy)) * 1.0 > -0.5;
+  }
+
+  function pointerPosition(e) {
+    const bounds = cv.getBoundingClientRect();
+    ptr.x = (e.clientX - bounds.left) * W / bounds.width;
+    ptr.y = (e.clientY - bounds.top) * H / bounds.height;
+    ptr.on = true;
+    requestFrame();
+  }
+  host.addEventListener('pointermove', pointerPosition);
+  host.addEventListener('pointerdown', pointerPosition);
+  host.addEventListener('pointerleave', () => { ptr.on = false; });
+  host.addEventListener('pointercancel', () => { ptr.on = false; });
+  host.addEventListener('pointerup', e => { if (e.pointerType === 'touch') ptr.on = false; });
+  window.addEventListener('blur', () => { ptr.on = false; });
+  host.addEventListener('focus', () => { ptr.x = W * 0.35; ptr.y = H * 0.4; ptr.on = true; requestFrame(); });
+  host.addEventListener('blur', () => { ptr.on = false; });
+  host.addEventListener('keydown', e => {
+    const directions = { ArrowLeft: [-40, 0], ArrowRight: [40, 0], ArrowUp: [0, -40], ArrowDown: [0, 40] };
+    if (e.key === 'Escape') { ptr.on = false; return; }
+    if (!directions[e.key]) return;
+    e.preventDefault();
+    const [dx, dy] = directions[e.key];
+    ptr.x = Math.max(0, Math.min(W, ptr.x + dx));
+    ptr.y = Math.max(0, Math.min(H, ptr.y + dy));
+    ptr.on = true;
+    requestFrame();
+  });
+
+  const T0 = performance.now(); let prev = T0;
+  function requestFrame() {
+    if (rafId === null && inView && !document.hidden) rafId = requestAnimationFrame(frame);
+  }
+  function frame(now) {
+    rafId = null;
+    if (!inView || document.hidden) return;
+    const dt = Math.min(0.05, (now - prev) / 1000); prev = now;
+    if (!reduce) elapsed += dt;
+    const t = reduce ? 0 : elapsed;
+    ctx.clearRect(0, 0, W, H);
+    ctx.font = `400 ${fontPx}px ${MONO}`;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+
+    if (!reduce && Math.random() < 0.15) {                // rare stray glitch in the resting state
+      const c = cells[(Math.random() * cells.length) | 0];
+      if (c.shown) c.glitch = { i: (Math.random() * 6) | 0, ch: rnd(SYMS), until: now + 150 + Math.random() * 450 };
+    }
+
+    for (let r = 0; r < rows; r++) {
+      const y = oy + r * rowP;
+      for (let c = 0; c < cols; c++) {
+        const k = r * cols + c, cell = cells[k], cx = ox + c * pitch;
+
+        // excitement: rises fast near the pointer, fades slowly afterwards
+        let target = 0;
+        if (ptr.on && !reduce) {
+          const d = Math.hypot(cx - ptr.x, y - fontPx * .35 - ptr.y);
+          target = Math.pow(sstep(0, 1, 1 - d / Rinf), 1.5);
+        }
+        cell.e = target > cell.e ? cell.e + (target - cell.e) * Math.min(1, dt * 18) : Math.max(0, cell.e - dt * 1.5);
+
+        // hot cells swap WONDER for the other words
+        if (!cell.hot && cell.e > cell.thr) { cell.hot = true; cell.alt = rnd(WORDS); }
+        else if (cell.hot && cell.e < cell.thr - 0.08) cell.hot = false;
+        else if (cell.hot && Math.random() < dt * 0.12) cell.alt = rnd(WORDS);
+        const desired = cell.hot ? cell.alt : 'WONDER';
+
+        const want = wants(k, c, r, t, cell.e);
+        if (cell.shown === null) {                         // load: reveal from the top
+          cell.shown = false; cell.pending = want;
+          cell.t0 = reduce ? -1e5 : now + r * 30 + Math.random() * 400;
+        }
+        if (cell.pending !== undefined && now >= cell.t0) {
+          cell.old = null; cell.shown = cell.pending; cell.pending = undefined; cell.word = desired;
+        } else if (cell.pending === undefined && now > cell.t0 + 1200 && want !== cell.shown) {
+          cell.old = cell.shown ? cell.word : null; cell.shown = want; cell.t0 = now; if (want) cell.word = desired;
+        } else if (cell.pending === undefined && cell.shown && desired !== cell.word && now > cell.t0 + 450) {
+          cell.old = cell.word; cell.word = desired; cell.t0 = now;
+        }
+
+        cell.a = REST + 0.72 * cell.e;                     // brighter the closer to the pointer
+
+        const e = now - cell.t0, len = cell.word.length;
+        for (let i = 0; i < MAXL; i++) {
+          const lx = cx + (i - (len - 1) / 2) * letterP, hi = k * MAXL + i;
+
+          // tight heat around the pointer: block -> braille -> colon -> letter
+          if (ptr.on && !reduce) {
+            const d = Math.hypot(lx - ptr.x, y - fontPx * .35 - ptr.y);
+            if (d < R) heat[hi] = Math.max(heat[hi], 1 - d / R);
+          }
+          const h = heat[hi]; heat[hi] = Math.max(0, h - dt * 1.4);
+
+          let ch = null, a = cell.a;
+          const kk = e - i * 55;
+          if (kk < 0) { if (cell.old) ch = cell.old[i] || null; }
+          else if (kk < 360 && !reduce) {                  // letters dissolve into colons/dots, then settle
+            const q = Math.random();
+            ch = q < 0.6 ? ':' : q < 0.72 ? '⠿' : q < 0.9 ? rnd(SYMS) : null; a = Math.max(a, 0.3);
+          } else if (cell.shown) ch = cell.word[i] || null;
+
+          if (cell.glitch && cell.glitch.i === i) {
+            if (now < cell.glitch.until) { ch = cell.glitch.ch; a = 0.35; } else cell.glitch = null;
+          }
+          if (!ch) continue;
+
+          if (h > 0.6) {
+            ctx.fillStyle = `rgba(236,236,240,${0.55 + h * 0.4})`;
+            ctx.fillRect(lx - letterP * 0.3, y - fontPx * 0.78, letterP * 0.6, fontPx * 0.88);
+            continue;
+          }
+          if (h > 0.3) { ch = ((now / 90 + hi) | 0) % 3 ? '⠿' : '⣿'; a = 0.7; }
+          else if (h > 0.08) { ch = ':'; a = 0.7; }
+
+          ctx.fillStyle = `rgba(255,255,255,${a})`;
+          ctx.fillText(ch, lx, y);
+        }
+      }
+    }
+    if (!reduce) requestFrame();
+  }
+
+  function syncActivity() {
+    if (!inView || document.hidden) {
+      if (rafId !== null) cancelAnimationFrame(rafId);
+      rafId = null;
+      ptr.on = false;
+    } else {
+      prev = performance.now();
+      requestFrame();
+    }
+  }
+  new ResizeObserver(() => { resize(); requestFrame(); }).observe(host);
+  new IntersectionObserver(entries => { inView = entries[0].isIntersecting; syncActivity(); }).observe(host);
+  document.addEventListener('visibilitychange', syncActivity);
+  window.addEventListener('pagehide', () => { inView = false; syncActivity(); });
+  window.addEventListener('pageshow', () => { inView = true; syncActivity(); });
+  resize();
+  requestFrame();
+})();
+
+  </script>
+</body>
+</html>

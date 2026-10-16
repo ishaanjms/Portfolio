@@ -11,6 +11,7 @@ This portfolio is a static HTML/CSS/JS site. Keep edits small, visual, and consi
 - Garage page: `garage/index.html`, `css/garage.css`, `js/garage.js`
 - Design Artifacts collection: `design-artifacts/index.html`, `css/design-artifacts.css`. Individual artifacts have their own folders under `design-artifacts/`; Desk Computer reuses the homepage computer CSS and JavaScript.
 - Koi Pond artifact: `design-artifacts/koi-pond/`. Keep canvas styles scoped, start audio only through interaction, and pause rendering/audio when the pond is out of view.
+- Muse Wonder artifact: `design-artifacts/muse-wonder/`. Measure the typography and pointer coordinates relative to its canvas, and pause animation off-screen. Retain keyboard exploration and reduced-motion behavior.
 - Artifact HTML downloads: mark required stylesheet/script tags with `data-artifact-export` and wrap the interactive markup in `artifact-export:start` / `artifact-export:end` HTML comments. Run `python3 scripts/build-artifact-downloads.py` after changes to regenerate each artifact's self-contained `artifact.html`.
 - Project pages are folder-based case studies, usually with their own CSS and assets.
 
