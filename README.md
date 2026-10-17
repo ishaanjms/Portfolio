@@ -9,7 +9,7 @@ For future editing support, see `agent.md`.
 ## Pages
 
 - **Home** — Intro, selected work, and portfolio navigation.
-- **Hero computer** — Interactive SVG desk computer beside the homepage intro, with power and typing interactions and a coding sequence that reveals a waving pixel-art cat saying hi; stacks below the intro on mobile.
+- **Desk Computer** — Interactive SVG computer in Design Artifacts, with power and typing interactions and a coding sequence that reveals a waving pixel-art cat saying hi.
 - **About** — Bio, skills marquee, expandable experiences, education, achievements, and certifications.
 - **Garage** — Curated project library grouped by Product Design, Scientific Tools, AI Systems, and Visual / Brand.
 - **Design Artifacts** — Collection of AI-generated animations and interactive experiments, linked from Garage's Visual / Brand section. Each artifact has a dedicated page under `design-artifacts/`.
