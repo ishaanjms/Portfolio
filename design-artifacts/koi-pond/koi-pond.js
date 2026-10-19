@@ -2,6 +2,7 @@
 (() => {
 const host = document.querySelector('.koi-stage');
 if (!host) return;
+const passivePreview=host.dataset.preview==='passive';
 const cv = host.querySelector('canvas');
 const ctx = cv.getContext('2d');
 if (!ctx) return;
@@ -15,7 +16,7 @@ const TAU=Math.PI*2,REST=Math.PI/2,MINA=Math.PI/2,MAXA=2.8,MAX=12,N=10;
 const rad=[.62,.82,.95,1,.95,.86,.74,.6,.46,.34];
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const angDiff=(a,b)=>{let d=a-b;while(d>Math.PI)d-=TAU;while(d<-Math.PI)d+=TAU;return d};
-let W,H,dpr,cx,cy,R,pr,P,L,sc,groove,theta=REST,dragging=false,returning=false,playing=false,spin=0,spinSpd=0,time=0;
+let W,H,dpr,cx,cy,R,pr,P,L,sc,groove,theta=passivePreview?2.35:REST,dragging=false,returning=false,playing=false,spin=0,spinSpd=0,time=0;
 const koi=[],ripples=[];
 const pals=[['#efe9dc','#c9472f','#efe9dc'],['#efe9dc','#efe9dc','#d2502f'],['#f3ede0','#c9472f','#e8a33a']];
 
@@ -24,7 +25,9 @@ function resize(){
   dpr=Math.min(devicePixelRatio||1,2);
   const b=cv.getBoundingClientRect();W=b.width;H=b.height;
   cv.width=W*dpr;cv.height=H*dpr;
-  R=Math.min(W/2.35,(H-150)/2.2);cx=W/2-R*.08;cy=H/2+28;pr=R*.3;sc=R/260;
+  const preview=host.hasAttribute('data-preview');
+  R=preview?Math.min(W/2.8,(H-64)/2.2):Math.min(W/2.35,(H-150)/2.2);
+  cx=W/2-R*.08;cy=H/2+(preview?-6:28);pr=R*.3;sc=R/260;
   P={x:cx+R*1.12,y:cy-R*.75};L=R*1.05;
   if(oldR){
     const ratio=R/oldR;
@@ -193,8 +196,10 @@ function drop(){
 }
 function setPlaying(p){
   if(p===playing)return;playing=p;
-  playButton.textContent=p?'Pause side A':'Play side A';
-  playButton.setAttribute('aria-pressed',String(p));
+  if(playButton){
+    playButton.textContent=p?'Pause side A':'Play side A';
+    playButton.setAttribute('aria-pressed',String(p));
+  }
   if(A)A.master.gain.setTargetAtTime(p?.9:0,A.c.currentTime,.35);
 }
 
@@ -202,6 +207,7 @@ function setPlaying(p){
 function distSeg(px,py,ax,ay,bx,by){const dx=bx-ax,dy=by-ay,t=clamp(((px-ax)*dx+(py-ay)*dy)/(dx*dx+dy*dy),0,1);return Math.hypot(px-ax-t*dx,py-ay-t*dy)}
 function pos(e){const b=cv.getBoundingClientRect();return{x:e.clientX-b.left,y:e.clientY-b.top}}
 function nearArm(p){const n=needle();return distSeg(p.x,p.y,P.x,P.y,n.x,n.y)<26||Math.hypot(p.x-n.x,p.y-n.y)<40}
+if(!passivePreview){
 cv.addEventListener('pointerdown',e=>{
   const p=pos(e);
   requestFrame();
@@ -215,6 +221,7 @@ cv.addEventListener('pointermove',e=>{
 });
 function release(){if(!dragging)return;dragging=false;cv.style.cursor='default';if(!onRecord())returning=true;requestFrame()}
 cv.addEventListener('pointerup',release);cv.addEventListener('pointercancel',release);
+}
 new ResizeObserver(resize).observe(host);
 
 // Pause rendering and audio while the artifact is out of view.
@@ -254,12 +261,12 @@ new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;syncActivity
 document.addEventListener('visibilitychange',syncActivity);
 window.addEventListener('pagehide',()=>{inView=false;syncActivity()});
 window.addEventListener('pageshow',()=>{inView=true;syncActivity()});
-playButton.addEventListener('click',()=>{
+playButton?.addEventListener('click',()=>{
   initAudio();dragging=false;returning=false;
   theta=playing?REST:2.35;
   setPlaying(onRecord());requestFrame();
 });
-addButton.addEventListener('click',()=>{
+addButton?.addEventListener('click',()=>{
   const a=Math.random()*TAU,r=pr*1.7+Math.random()*(R*.75-pr*1.7);
   addKoi(cx+Math.cos(a)*r,cy+Math.sin(a)*r);
 });

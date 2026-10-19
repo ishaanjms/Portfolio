@@ -10,7 +10,8 @@ This portfolio is a static HTML/CSS/JS site. Keep edits small, visual, and consi
 - About page: `about/index.html`, `css/about.css`, `js/about.js`
 - Garage page: `garage/index.html`, `css/garage.css`, `js/garage.js`
 - Design Artifacts collection: `design-artifacts/index.html`, `css/design-artifacts.css`. Individual artifacts have their own folders under `design-artifacts/`; Desk Computer uses the shared computer CSS and JavaScript.
-- Koi Pond artifact: `design-artifacts/koi-pond/`. Keep canvas styles scoped, start audio only through interaction, and pause rendering/audio when the pond is out of view.
+- Animated gallery previews: `css/artifact-previews.css` adapts the original SVG/canvas code. Each entire thumbnail is a navigation link; its visual contents are inert and marked `data-preview="passive"` to animate automatically without controls, pointer input, keyboard input, or audio. Full artifact pages remain interactive. Preserve off-screen pausing and reduced-motion behavior.
+- Fish Pond in a Record artifact: `design-artifacts/koi-pond/`. Keep canvas styles scoped, start audio only through interaction, and pause rendering/audio when the pond is out of view.
 - Design in Motion artifact: `design-artifacts/muse-wonder/`. Measure the typography and pointer coordinates relative to its canvas, and pause animation off-screen. Retain keyboard exploration and reduced-motion behavior.
 - Artifact HTML downloads: mark required stylesheet/script tags with `data-artifact-export` and wrap the interactive markup in `artifact-export:start` / `artifact-export:end` HTML comments. Run `python3 scripts/build-artifact-downloads.py` after changes to regenerate each artifact's self-contained `artifact.html`.
 - Project pages are folder-based case studies, usually with their own CSS and assets.

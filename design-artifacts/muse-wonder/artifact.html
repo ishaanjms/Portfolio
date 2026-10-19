@@ -250,6 +250,7 @@ body {
 (() => {
   const host = document.querySelector('.muse-stage');
   if (!host) return;
+  const passivePreview = host.dataset.preview === 'passive';
   const cv = host.querySelector('canvas'), ctx = cv.getContext('2d'), title = host.querySelector('.muse-title');
   if (!ctx) return;
   let rafId = null, inView = true, elapsed = 0;
@@ -317,6 +318,7 @@ body {
     ptr.on = true;
     requestFrame();
   }
+  if (!passivePreview) {
   host.addEventListener('pointermove', pointerPosition);
   host.addEventListener('pointerdown', pointerPosition);
   host.addEventListener('pointerleave', () => { ptr.on = false; });
@@ -336,6 +338,7 @@ body {
     ptr.on = true;
     requestFrame();
   });
+  }
 
   const T0 = performance.now(); let prev = T0;
   function requestFrame() {
@@ -347,6 +350,11 @@ body {
     const dt = Math.min(0.05, (now - prev) / 1000); prev = now;
     if (!reduce) elapsed += dt;
     const t = reduce ? 0 : elapsed;
+    if (passivePreview && !reduce) {
+      ptr.on = true;
+      ptr.x = W * (0.5 + 0.3 * Math.sin(t * 0.45));
+      ptr.y = H * (0.5 + 0.25 * Math.sin(t * 0.6 + 1));
+    }
     ctx.clearRect(0, 0, W, H);
     ctx.font = `400 ${fontPx}px ${MONO}`;
     ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';

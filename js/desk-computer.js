@@ -2,6 +2,7 @@
 (() => {
 const host = document.querySelector('.desk-computer');
 if (!host) return;
+const passivePreview = host.dataset.preview === 'passive';
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const A=.95,B=.3,C=.62,D=-.46,OX=200,OY=440,NS='http://www.w3.org/2000/svg',$=id=>host.querySelector('#'+id);
@@ -125,7 +126,7 @@ m+=`<g transform="matrix(${A*MONITOR_WIDTH} ${B*MONITOR_WIDTH} 0 1 ${OX+A*monito
 <g id="ln"><rect x="132" y="119" width="136" height="4" fill="#fff" opacity=".18"/><rect x="134" y="120.2" width="132" height="1.8" fill="#fff"/></g>
 <polygon points="134,52 196,52 134,116" style="fill:#fff;opacity:.04;stroke:none"/>
 ${vents}<rect x="196" y="246" width="64" height="8" rx="4" fill="none" stroke="var(--st)"/><circle id="led" cx="272" cy="262" r="2.4"/><circle cx="118" cy="270" r="1.5" fill="var(--st)"/></g>`;
-h+=`<g id="mac" role="button" tabindex="0" aria-label="Turn computer off" aria-pressed="true">${m}</g>`;
+h+=`<g id="mac"${passivePreview ? '' : ' role="button" tabindex="0" aria-label="Turn computer off" aria-pressed="true"'}>${m}</g>`;
 projectionWidth = 1;
 // keyboard
 h+=rbox(70,385,-140,-30,10,20,7,3);
@@ -157,7 +158,7 @@ screen.querySelectorAll('.key').forEach(key => { keyEls[key.dataset.k] = key; })
 let state = 'off';
 let lines = [];
 let timers = [];
-let demoRunning = false;
+let demoRequested = true;
 let visible = true;
 
 function after(callback, delay) {
@@ -208,18 +209,17 @@ function hit(character) {
 }
 
 function stopDemo() {
-  if (!demoRunning) return;
+  if (!demoRequested) return;
+  demoRequested = false;
   clearTimers();
-  demoRunning = false;
   screen.classList.remove('ui');
   lines = ['> '];
   render();
 }
 
 function demo() {
-  if (state !== 'on' || !visible || document.hidden || reduceMotion) return;
+  if (state !== 'on' || !demoRequested || !visible || document.hidden || reduceMotion) return;
   clearTimers();
-  demoRunning = true;
   let delay = 0;
   ['DRAW CAT', 'ADD WAVE', 'SAY HI', 'RUN'].forEach(command => {
     [...command].forEach(character => {
@@ -243,6 +243,7 @@ function demo() {
 
 function powerOn() {
   clearTimers();
+  demoRequested = true;
   state = 'booting';
   powerButton.setAttribute('aria-label', 'Turn computer off');
   powerButton.setAttribute('aria-pressed', 'true');
@@ -266,7 +267,7 @@ function powerOn() {
 function powerOff() {
   clearTimers();
   state = 'off';
-  demoRunning = false;
+  demoRequested = false;
   screen.classList.remove('open', 'boot', 'on', 'ui');
   powerButton.setAttribute('aria-label', 'Turn computer on');
   powerButton.setAttribute('aria-pressed', 'false');
@@ -275,6 +276,7 @@ function powerOff() {
 function togglePower() { state === 'off' ? powerOn() : powerOff(); }
 
 // SVG focus can appear after a pointer click; show outlines only for Tab navigation.
+if (!passivePreview) {
 host.addEventListener('pointerdown', () => host.classList.remove('keyboard-focus'), true);
 document.addEventListener('keydown', event => {
   if (event.key === 'Tab') host.classList.add('keyboard-focus');
@@ -306,12 +308,13 @@ $('kb').addEventListener('pointerdown', event => {
   screen.classList.remove('ui');
   hit(key.dataset.k);
 });
+}
 
-// Pause the looping demo while the hero is off-screen or the tab is hidden.
+// Pause the demo off-screen, including previews first revealed after loading.
 function updatePlayback() {
   const paused = !visible || document.hidden;
   host.classList.toggle('is-paused', paused);
-  if (state !== 'on' || !demoRunning) return;
+  if (state !== 'on' || !demoRequested || reduceMotion) return;
   clearTimers();
   if (!paused) {
     screen.classList.remove('ui');

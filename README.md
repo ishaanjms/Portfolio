@@ -12,8 +12,8 @@ For future editing support, see `agent.md`.
 - **Desk Computer** — Interactive SVG computer in Design Artifacts, with power and typing interactions and a coding sequence that reveals a waving pixel-art cat saying hi.
 - **About** — Bio, skills marquee, expandable experiences, education, achievements, and certifications.
 - **Garage** — Curated project library grouped by Product Design, Scientific Tools, AI Systems, and Visual / Brand.
-- **Design Artifacts** — Collection of AI-generated animations and interactive experiments, linked from Garage's Visual / Brand section. Each artifact has a dedicated page under `design-artifacts/`.
-- **Koi Pond — Side A** — Interactive vinyl-record pond with swimming koi, a draggable tonearm, and ambient audio at `design-artifacts/koi-pond/`.
+- **Design Artifacts** — Collection of AI-generated animations and interactive experiments, linked from Garage's Visual / Brand section. Gallery thumbnails run silent, automatic SVG/canvas animations; the entire thumbnail and its title open the interactive artifact under `design-artifacts/`. Preview sizing is scoped in `css/artifact-previews.css`.
+- **Fish Pond in a Record** — Interactive vinyl-record pond with swimming koi, a draggable tonearm, and ambient audio at `design-artifacts/koi-pond/`.
 - **Design in Motion** — Pointer-reactive product design typography, word transformations, and character trails at `design-artifacts/muse-wonder/`.
 - **HTML downloads** — Each artifact page has a Download HTML link to a self-contained, offline-ready file. Refresh these files after editing an artifact with `python3 scripts/build-artifact-downloads.py`.
 - **Project pages** — Individual case studies and visual explorations live in their own folders.

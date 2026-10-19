@@ -9,6 +9,10 @@
   <link rel="stylesheet" href="../css/shared.css">
   <link rel="stylesheet" href="../css/animations.css">
   <link rel="stylesheet" href="../css/design-artifacts.css?v=4">
+  <link rel="stylesheet" href="../css/desk-computer.css?v=4">
+  <link rel="stylesheet" href="koi-pond/koi-pond.css">
+  <link rel="stylesheet" href="muse-wonder/muse-wonder.css?v=2">
+  <link rel="stylesheet" href="../css/artifact-previews.css?v=3">
 </head>
 <body>
   <nav class="nav">
@@ -47,33 +51,38 @@
       <p class="artifacts-intro">A collection of AI-generated animations and interactive experiments.</p>
     </header>
     <section class="artifacts-grid" aria-label="Design artifacts">
-      <a class="artifact-card" href="desk-computer/">
-        <div class="artifact-card-preview">
-          <img src="../assets/thumbnails/design-artifacts-desk-computer.jpg" alt="Retro desk computer with a waving pixel-art cat on its screen" width="460" height="400">
+      <article class="artifact-card">
+        <a class="artifact-card-preview artifact-preview-computer" href="desk-computer/" aria-label="Open Desk Computer">
+          <figure class="desk-computer" data-preview="passive" inert aria-hidden="true">
+            <svg id="s" viewBox="-70 -35 1000 740"></svg>
+          </figure>
           <span class="artifact-card-arrow" aria-hidden="true">↗</span>
-        </div>
-        <div class="artifact-card-heading"><h2>Desk Computer</h2><span class="artifact-number">01</span></div>
+        </a>
+        <div class="artifact-card-heading"><h2><a href="desk-computer/">Desk Computer</a></h2><span class="artifact-number">01</span></div>
         <p>A retro computer that codes a little hello.</p>
-        <div class="artifact-tags"><span>Interactive</span><span>Animation</span><span>AI-assisted</span></div>
-      </a>
-      <a class="artifact-card" href="koi-pond/">
-        <div class="artifact-card-preview">
-          <img src="../assets/thumbnails/design-artifacts-koi-pond.jpg" alt="Koi swimming around a lily pad on a teal vinyl record with a movable needle" width="1136" height="620">
+      </article>
+      <article class="artifact-card">
+        <a class="artifact-card-preview artifact-preview-pond" href="koi-pond/" aria-label="Open Fish Pond in a Record">
+          <div class="koi-stage" data-preview="passive" inert aria-hidden="true">
+            <canvas></canvas>
+            <div class="koi-toast"></div>
+          </div>
           <span class="artifact-card-arrow" aria-hidden="true">↗</span>
-        </div>
-        <div class="artifact-card-heading"><h2>Koi Pond — Side A</h2><span class="artifact-number">02</span></div>
+        </a>
+        <div class="artifact-card-heading"><h2><a href="koi-pond/">Fish Pond in a Record</a></h2><span class="artifact-number">02</span></div>
         <p>A living record, with drifting koi and ambient sound.</p>
-        <div class="artifact-tags"><span>Interactive</span><span>Sound</span><span>AI-assisted</span></div>
-      </a>
-      <a class="artifact-card" href="muse-wonder/">
-        <div class="artifact-card-preview">
-          <img src="../assets/thumbnails/design-artifacts-muse-wonder.jpg?v=2" alt="Product Designer surrounded by an interactive field of product design words and scrambled characters" width="1136" height="620" loading="lazy">
+      </article>
+      <article class="artifact-card">
+        <a class="artifact-card-preview artifact-preview-type" href="muse-wonder/" aria-label="Open Design in Motion">
+          <section class="muse-stage" data-preview="passive" inert aria-hidden="true">
+            <canvas aria-hidden="true"></canvas>
+            <div class="muse-title">Product Designer</div>
+          </section>
           <span class="artifact-card-arrow" aria-hidden="true">↗</span>
-        </div>
-        <div class="artifact-card-heading"><h2>Design in Motion</h2><span class="artifact-number">03</span></div>
+        </a>
+        <div class="artifact-card-heading"><h2><a href="muse-wonder/">Design in Motion</a></h2><span class="artifact-number">03</span></div>
         <p>A living field of product design ideas, shaped by your curiosity.</p>
-        <div class="artifact-tags"><span>Typography</span><span>Interactive</span><span>AI-assisted</span></div>
-      </a>
+      </article>
     </section>
   </main>
 
@@ -102,5 +111,8 @@
 
   <script src="../js/constants.js"></script>
   <script src="../js/shared.js"></script>
+  <script src="../js/desk-computer.js?v=6"></script>
+  <script src="koi-pond/koi-pond.js?v=3"></script>
+  <script src="muse-wonder/muse-wonder.js?v=3"></script>
 </body>
 </html>

@@ -1,0 +1,60 @@
+/* Gallery previews animate automatically; each whole preview is a link. */
+.artifact-card-preview {
+  display: block;
+  text-decoration: none;
+}
+
+.artifact-card-preview > [inert] { pointer-events: none; }
+.artifact-card-preview:focus-visible { outline: 2px solid #176b6a; outline-offset: 4px; }
+.artifact-card-heading h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.artifact-card-heading h2 a:hover { color: #176b6a; }
+.artifact-card-heading h2 a:focus-visible { outline: 2px solid #176b6a; outline-offset: 5px; }
+
+.artifact-card-preview .artifact-card-arrow {
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  right: 10px;
+  bottom: 8px;
+  width: 44px;
+  height: 44px;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+
+.artifact-preview-computer {
+  background-color: #f6f8f5;
+  background-image:
+    linear-gradient(rgba(23, 107, 106, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 107, 106, 0.035) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.artifact-card-preview .desk-computer,
+.artifact-card-preview .desk-computer > svg {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  border-radius: 0;
+}
+
+.artifact-card-preview .koi-stage,
+.artifact-card-preview .muse-stage {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+
+.artifact-card-preview .muse-title { font-size: clamp(18px, 2.3vw, 30px); }
+
+.artifact-preview-type .artifact-card-arrow { color: #d6eade; }
+
+@media (max-width: 640px) {
+  .artifact-card-preview .muse-title { font-size: 5.2vw; }
+}
