@@ -15,6 +15,7 @@ For future editing support, see `agent.md`.
 - **Design Artifacts** — Collection of AI-generated animations and interactive experiments, linked from Garage's Visual / Brand section. Gallery thumbnails run silent, automatic SVG/canvas animations; the entire thumbnail and its title open the interactive artifact under `design-artifacts/`. Preview sizing is scoped in `css/artifact-previews.css`.
 - **Fish Pond in a Record** — Interactive vinyl-record pond with swimming koi, a draggable tonearm, and ambient audio at `design-artifacts/koi-pond/`.
 - **Design in Motion** — Pointer-reactive product design typography, word transformations, and character trails at `design-artifacts/muse-wonder/`.
+- **Ghost Avatar** — Expressive SVG ghost with ten states, five colour themes, cursor-following eyes, and an automatic gallery preview at `design-artifacts/agent-avatar/`.
 - **HTML downloads** — Each artifact page has a Download HTML link to a self-contained, offline-ready file. Refresh these files after editing an artifact with `python3 scripts/build-artifact-downloads.py`.
 - **Project pages** — Individual case studies and visual explorations live in their own folders.
 

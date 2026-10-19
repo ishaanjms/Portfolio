@@ -23,9 +23,15 @@
     W = cv.clientWidth; H = cv.clientHeight;
     cv.width = W * dpr; cv.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    pitch = Math.max(88, Math.min(W / 9.6, 140));
+    if (passivePreview) {
+      // Fit complete columns across the card instead of leaving wide side gutters.
+      cols = Math.max(3, Math.round(W / 88));
+      pitch = W / cols;
+    } else {
+      pitch = Math.max(88, Math.min(W / 9.6, 140));
+      cols = Math.max(3, Math.floor((W - 60) / pitch));
+    }
     rowP = pitch * 0.24; letterP = pitch * 0.75 / MAXL; fontPx = pitch * 0.15;
-    cols = Math.max(3, Math.floor((W - 60) / pitch));
     rows = Math.ceil(H / rowP) + 1;
     ox = (W - cols * pitch) / 2 + pitch / 2;
     oy = rowP * 0.9;
@@ -59,6 +65,7 @@
                                  Math.sin(c * 0.5 + r * 0.45 + t * 0.12) + Math.sin(c * 1.7 - r * 1.3 + t * 0.07)) / 4;
   function wants(k, c, r, t, e) {
     if (hole[k]) return false;
+    if (passivePreview && (c === 0 || c === cols - 1)) return true;
     const dx = (c - (cols - 1) / 2) / (cols * 0.27), dy = (r - rows * 0.5) / (rows * 0.12);
     return presence(c, r, t) + e * 0.7 - Math.exp(-(dx * dx + dy * dy)) * 1.0 > -0.5;
   }
