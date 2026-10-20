@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="../css/shared.css">
   <link rel="stylesheet" href="../css/animations.css">
   <link rel="stylesheet" href="../css/garage.css?v=cloud-hairline-1">
+  <link rel="stylesheet" href="../css/greene-thumbnail.css">
+  <link rel="stylesheet" href="../css/ut1utc-thumbnail.css">
+  <link rel="stylesheet" href="../css/artifacts-thumbnail.css">
+  <link rel="stylesheet" href="../css/graphic-archive-thumbnail.css?v=2">
 </head>
 <body>
 
@@ -155,10 +159,6 @@
                 <div class="cloud-cover-terrain" data-cloud-terrain>
                   <img class="cloud-cover-fallback" src="../assets/thumbnails/cloud-profiler-terrain.svg" alt="">
                 </div>
-                <div class="cloud-cover-caption">
-                  <span>Atomic cloud analysis</span>
-                  <span class="cloud-cover-axis">x · y · density</span>
-                </div>
               </div>
             </figure>
             <div class="project-copy">
@@ -173,8 +173,16 @@
           </a>
 
           <a href="../ut1utc/" class="project-card" data-category="scientific ai">
-            <figure class="project-media plot-media">
-              <img src="../ut1utc/figures/figure-12.png" alt="UT1-UTC leap-second trend analysis">
+            <figure class="project-media ut-cover" role="img" aria-label="UT1–UTC: a globe turning above a clock dial">
+              <div class="ut-cover-art" aria-hidden="true" inert>
+                <div class="ut-cover-heading">
+                  <span>UT1–UTC Prediction</span>
+                  <strong>Keeping time with Earth.</strong>
+                </div>
+                <div class="ut-cover-figure" data-ut1utc-figure data-hairline-figure="earth-time">
+                  <img class="ut-cover-fallback" src="../assets/thumbnails/ut1utc-earth-time.svg" alt="">
+                </div>
+              </div>
             </figure>
             <div class="project-copy">
               <h2>UT1-UTC Prediction</h2>
@@ -196,12 +204,20 @@
         </div>
         <div class="project-grid">
           <a href="../greene/" class="project-card" data-category="ai product">
-            <figure class="project-media">
-              <img src="../greene/image.png" alt="Greene's Counsel AI web app">
+            <figure class="project-media greene-cover" role="img" aria-label="Greene's Counsel: a question unfolding into thoughtful guidance">
+              <div class="greene-cover-art" aria-hidden="true" inert>
+                <div class="greene-cover-heading">
+                  <span>Greene's Counsel</span>
+                  <strong>Clarity through conversation.</strong>
+                </div>
+                <div class="greene-cover-conversation" data-hairline-figure="counsel" data-figure-theme="dark">
+                  <img class="greene-cover-fallback" src="../assets/thumbnails/greene-counsel-conversation.svg" alt="">
+                </div>
+              </div>
             </figure>
             <div class="project-copy">
               <h2>Greene's Counsel</h2>
-              <p>An AI reading companion for turning dense writing into usable guidance.</p>
+              <p>An AI chatbot for perspective, practical guidance, and clearer next steps.</p>
               <div class="project-tags">
                 <span>AI</span>
                 <span>Web App</span>
@@ -220,8 +236,16 @@
         </div>
         <div class="project-grid">
           <a href="../Graphics/" class="project-card project-card-wide" data-category="visual">
-            <figure class="project-media graphic-media">
-              <img src="../assets/thumbnails/graphic-design-archive.png" alt="Graphic Design Archive cover featuring a robot, laptop, and backpack" width="993" height="704" loading="lazy">
+            <figure class="project-media archive-cover" role="img" aria-label="Graphic Design Archive: a tray of design cards lifting and fanning open">
+              <div class="archive-cover-art" aria-hidden="true" inert>
+                <div class="archive-cover-heading">
+                  <span>Graphic Design Archive</span>
+                  <strong>Collected visual stories.</strong>
+                </div>
+                <div class="archive-cover-cards" data-hairline-figure="print-tray">
+                  <img class="archive-cover-fallback" src="../assets/thumbnails/graphic-archive-print-tray.svg" alt="">
+                </div>
+              </div>
             </figure>
             <div class="project-copy">
               <h2>Graphic Design Archive</h2>
@@ -235,8 +259,16 @@
           </a>
 
           <a href="../design-artifacts/" class="project-card" data-category="visual">
-            <figure class="project-media">
-              <img src="../assets/thumbnails/design-artifacts-desk-computer.jpg" alt="Artifacts — AI-generated animations and interactive experiments" loading="lazy">
+            <figure class="project-media artifacts-cover" role="img" aria-label="Artifacts: a floating pixel canvas cycling through animated patterns">
+              <div class="artifacts-cover-art" aria-hidden="true" inert>
+                <div class="artifacts-cover-heading">
+                  <span>Artifacts</span>
+                  <strong>Ideas in motion.</strong>
+                </div>
+                <div class="artifacts-cover-canvas" data-artifacts-phosphor>
+                  <img class="artifacts-cover-fallback" src="../assets/thumbnails/artifacts-phosphor.svg" alt="">
+                </div>
+              </div>
             </figure>
             <div class="project-copy">
               <h2>Artifacts</h2>
@@ -325,5 +357,11 @@
 <script src="../js/shared.js"></script>
 <script src="../js/garage.js"></script>
 <script type="module" src="../js/cloud-thumbnail.js"></script>
+<script type="module" src="../js/artifacts-thumbnail.js"></script>
+<script src="../js/vendor/hairline-create/kernel.js"></script>
+<script src="../js/hairline-thumbnails.js"></script>
+<script type="module" src="../assets/figures/ut1utc/earth-time.js"></script>
+<script type="module" src="../assets/figures/greene/counsel.js"></script>
+<script type="module" src="../assets/figures/graphic-archive/print-tray.js"></script>
 </body>
 </html>

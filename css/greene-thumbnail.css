@@ -1,0 +1,64 @@
+.greene-cover {
+  container-type: inline-size;
+  background: #24231f;
+  color: #e8e0cb;
+}
+
+.greene-cover-art {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(#b5a78625 0.7px, transparent 0.7px);
+  background-size: 18px 18px;
+}
+
+.greene-cover-heading {
+  position: absolute;
+  z-index: 1;
+  top: 7%;
+  left: 7%;
+  right: 7%;
+  display: grid;
+  gap: 7px;
+}
+
+.greene-cover-heading > span {
+  font-family: 'DM Mono', monospace;
+  font-size: clamp(8px, 2cqw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #b6aa90;
+}
+
+.greene-cover-heading > strong {
+  font-size: clamp(18px, 5.4cqw, 34px);
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.greene-cover-conversation {
+  position: absolute;
+  width: 98%;
+  left: 1%;
+  top: 2%;
+  aspect-ratio: 5 / 4;
+  --hairline-plate: #24231f;
+  --hairline-hi: #e8d8ad;
+  --hairline-edge: #b9ad90;
+  --hairline-mid: #9d927b;
+  --hairline-lo: #5c594e;
+  --hairline-stroke: 1;
+}
+
+.greene-cover-conversation[data-hairline] .greene-cover-fallback {
+  display: none;
+}
+
+.greene-cover-conversation .greene-cover-fallback {
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: none;
+  object-fit: contain;
+}

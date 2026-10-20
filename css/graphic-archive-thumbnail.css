@@ -1,0 +1,64 @@
+.project-media.archive-cover {
+  container-type: inline-size;
+  background: #f3e7dc;
+  color: #664331;
+}
+
+.archive-cover-art {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(#b78e7230 0.7px, transparent 0.7px);
+  background-size: 18px 18px;
+}
+
+.archive-cover-heading {
+  position: absolute;
+  z-index: 1;
+  top: 7%;
+  left: 7%;
+  right: 7%;
+  display: grid;
+  gap: 7px;
+}
+
+.archive-cover-heading > span {
+  font-family: 'DM Mono', monospace;
+  font-size: clamp(8px, 2cqw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #926e56;
+}
+
+.archive-cover-heading > strong {
+  font-size: clamp(18px, 5.4cqw, 34px);
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.archive-cover-cards {
+  position: absolute;
+  width: 76%;
+  left: 12%;
+  top: 9%;
+  aspect-ratio: 5 / 4;
+  --hairline-plate: #f3e7dc;
+  --hairline-hi: #a95336;
+  --hairline-edge: #a87f68;
+  --hairline-mid: #bea18b;
+  --hairline-lo: #dcc6b4;
+  --hairline-stroke: 0.9;
+}
+
+.archive-cover-cards[data-hairline] .archive-cover-fallback {
+  display: none;
+}
+
+.archive-cover-cards .archive-cover-fallback {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: none;
+}

@@ -236,8 +236,7 @@
   gap: 7px;
 }
 
-.cloud-cover-heading > span,
-.cloud-cover-caption {
+.cloud-cover-heading > span {
   font-family: 'DM Mono', monospace;
   font-size: clamp(8px, 2cqw, 12px);
 }
@@ -275,22 +274,6 @@
 
 .cloud-cover-terrain[data-hairline] .cloud-cover-fallback {
   display: none;
-}
-
-.cloud-cover-caption {
-  position: absolute;
-  left: 7%;
-  right: 7%;
-  bottom: 6%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  color: #527167;
-}
-
-.cloud-cover-axis {
-  color: #176e61;
 }
 
 .project-media.squares-media {

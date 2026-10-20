@@ -1,0 +1,61 @@
+.project-media.ut-cover {
+  container-type: inline-size;
+  background: #e9edf3;
+  color: #293b59;
+}
+
+.ut-cover-art {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(#7d8faa30 0.7px, transparent 0.7px);
+  background-size: 18px 18px;
+}
+
+.ut-cover-heading {
+  position: absolute;
+  z-index: 1;
+  top: 7%;
+  left: 7%;
+  right: 7%;
+  display: grid;
+  gap: 7px;
+}
+
+.ut-cover-heading > span {
+  font-family: 'DM Mono', monospace;
+  font-size: clamp(8px, 2cqw, 12px);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #596d8a;
+}
+
+.ut-cover-heading > strong {
+  font-size: clamp(18px, 5.4cqw, 34px);
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.ut-cover-figure {
+  position: absolute;
+  width: 88%;
+  left: 6%;
+  top: 10%;
+  aspect-ratio: 5 / 4;
+  --hairline-plate: #e9edf3;
+  --hairline-hi: #335c94;
+  --hairline-edge: #7588a4;
+  --hairline-mid: #96a5bd;
+  --hairline-lo: #b5c1d3;
+  --hairline-stroke: 0.9;
+}
+
+.ut-cover-figure[data-hairline] .ut-cover-fallback { display: none; }
+
+.ut-cover-figure .ut-cover-fallback {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: none;
+}

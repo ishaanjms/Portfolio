@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/shared.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/home.css?v=3">
+  <link rel="stylesheet" href="css/greene-thumbnail.css">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-33G0NKWWQX"></script>
@@ -114,8 +115,16 @@
       </a>
 
       <a href="greene/" rel="noopener noreferrer" class="proj">
-        <div class="proj-thumb-wrap">
-          <img src="greene/image.png" alt="Greene's Counsel AI web app" class="proj-img" loading="lazy">
+        <div class="proj-thumb-wrap greene-cover" role="img" aria-label="Greene's Counsel: a question unfolding into thoughtful guidance">
+          <div class="greene-cover-art" aria-hidden="true" inert>
+            <div class="greene-cover-heading">
+              <span>Greene's Counsel</span>
+              <strong>Clarity through conversation.</strong>
+            </div>
+            <div class="greene-cover-conversation" data-hairline-figure="counsel" data-figure-theme="dark">
+              <img class="greene-cover-fallback" src="assets/thumbnails/greene-counsel-conversation.svg" alt="">
+            </div>
+          </div>
           <div class="proj-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="10" y2="2"/><polyline points="4,2 10,2 10,8"/></svg></div>
         </div>
         <div class="proj-meta">
@@ -193,5 +202,8 @@
 <script src="js/constants.js"></script>
 <script src="js/shared.js"></script>
 <script src="js/home.js"></script>
+<script src="js/vendor/hairline-create/kernel.js"></script>
+<script src="js/hairline-thumbnails.js"></script>
+<script type="module" src="assets/figures/greene/counsel.js"></script>
 </body>
 </html>

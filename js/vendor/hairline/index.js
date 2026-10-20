@@ -443,7 +443,7 @@ function entry([x, y]) {
   const k = Math.min(dx ? (dx > 0 ? 200 : -200) / dx : Infinity, dy ? (dy > 0 ? 160 : -160) / dy : Infinity);
   return [200 + dx * k, 160 + dy * k];
 }
-function tour(stage, stops, onStop) {
+function tour(stage, stops, onStop, playbackRate = 1) {
   let i = 0;
   let wait = RESUME + STAGGER * (started++ % 4);
   let t = -1;
@@ -457,6 +457,7 @@ function tour(stage, stops, onStop) {
     handlers.get(stage)?.leave(GHOST);
   };
   const tick = (dt) => {
+    dt *= playbackRate;
     if (hand || keys2 || !stops.length) return false;
     if (reducedMotion()) {
       if (at2) leave();
@@ -711,7 +712,9 @@ function create(spec, el, options) {
     }
   };
   let value = parameter(spec.id, opts.intensity);
-  playing = opts.play === true ? tour(el, spec.tour ?? LAP) : null;
+  const tourRate = () => typeof opts.playbackRate === "number" && Number.isFinite(opts.playbackRate) ? clamp(opts.playbackRate, 0.25, 4) : 1;
+  let playbackRate = tourRate();
+  playing = opts.play === true ? tour(el, spec.tour ?? LAP, undefined, playbackRate) : null;
   let engine;
   try {
     engine = spec.engine({ stage: el, svg, read }, value);
@@ -748,9 +751,11 @@ function create(spec, el, options) {
         engine.set(v);
       }
       const play = opts.play === true;
-      if (play !== !!playing) {
+      const nextRate = tourRate();
+      if (play !== !!playing || nextRate !== playbackRate) {
+        playbackRate = nextRate;
         playing?.stop();
-        playing = play ? tour(el, spec.tour ?? LAP) : null;
+        playing = play ? tour(el, spec.tour ?? LAP, undefined, playbackRate) : null;
       }
       dress();
     },

@@ -6,6 +6,7 @@ document.querySelectorAll('[data-cloud-terrain]').forEach(element => {
     theme: 'light',
     intensity: 0.65,
     play: true,
+    playbackRate: 1.8,
     label: 'An isometric density field of rising columns'
   });
 });
