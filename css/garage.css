@@ -212,6 +212,87 @@
 
 .project-card:hover .project-media.graphic-media img { filter: none; }
 
+.project-media.cloud-cover {
+  container-type: inline-size;
+  background: #edf1e9;
+  color: #234c44;
+}
+
+.cloud-cover-art {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(#728e7f30 0.7px, transparent 0.7px);
+  background-size: 18px 18px;
+}
+
+.cloud-cover-heading {
+  position: absolute;
+  z-index: 1;
+  top: 7%;
+  left: 7%;
+  right: 7%;
+  display: grid;
+  gap: 7px;
+}
+
+.cloud-cover-heading > span,
+.cloud-cover-caption {
+  font-family: 'DM Mono', monospace;
+  font-size: clamp(8px, 2cqw, 12px);
+}
+
+.cloud-cover-heading > span {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #527167;
+}
+
+.cloud-cover-heading > strong {
+  font-size: clamp(18px, 5.4cqw, 34px);
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.cloud-cover-terrain {
+  position: absolute;
+  width: 88%;
+  left: 6%;
+  top: 3%;
+  aspect-ratio: 5 / 4;
+  --hairline-plate: #edf1e9;
+  --hairline-hi: #176e61;
+  --hairline-edge: #6a8d80;
+  --hairline-mid: #98afa0;
+  --hairline-lo: #c4d1bf;
+  --hairline-stroke: 0.85;
+}
+
+.cloud-cover-terrain[data-hairline] {
+  pointer-events: none;
+}
+
+.cloud-cover-terrain[data-hairline] .cloud-cover-fallback {
+  display: none;
+}
+
+.cloud-cover-caption {
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  bottom: 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #527167;
+}
+
+.cloud-cover-axis {
+  color: #176e61;
+}
+
 .project-media.squares-media {
   background: var(--site-bg);
 }

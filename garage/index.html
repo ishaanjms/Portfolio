@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="../assets/logo/logo.png">
   <link rel="stylesheet" href="../css/shared.css">
   <link rel="stylesheet" href="../css/animations.css">
-  <link rel="stylesheet" href="../css/garage.css?v=graphic-archive-1">
+  <link rel="stylesheet" href="../css/garage.css?v=cloud-hairline-1">
 </head>
 <body>
 
@@ -146,12 +146,24 @@
           </a>
 
           <a href="../cloud/" class="project-card" data-category="scientific product">
-            <figure class="project-media">
-              <img src="../assets/thumbnails/cloud.png" alt="Cloud Profiler application">
+            <figure class="project-media cloud-cover" role="img" aria-label="Cloud Profiler: an animated isometric density field">
+              <div class="cloud-cover-art" aria-hidden="true" inert>
+                <div class="cloud-cover-heading">
+                  <span>Cloud Profiler</span>
+                  <strong>Making density visible.</strong>
+                </div>
+                <div class="cloud-cover-terrain" data-cloud-terrain>
+                  <img class="cloud-cover-fallback" src="../assets/thumbnails/cloud-profiler-terrain.svg" alt="">
+                </div>
+                <div class="cloud-cover-caption">
+                  <span>Atomic cloud analysis</span>
+                  <span class="cloud-cover-axis">x · y · density</span>
+                </div>
+              </div>
             </figure>
             <div class="project-copy">
               <h2>Cloud Profiler</h2>
-              <p>Profiles cloud usage patterns for faster infrastructure decisions.</p>
+              <p>Turns atomic cloud images into measurable density profiles.</p>
               <div class="project-tags">
                 <span>Python</span>
                 <span>Data App</span>
@@ -312,5 +324,6 @@
 <script src="../js/constants.js"></script>
 <script src="../js/shared.js"></script>
 <script src="../js/garage.js"></script>
+<script type="module" src="../js/cloud-thumbnail.js"></script>
 </body>
 </html>
