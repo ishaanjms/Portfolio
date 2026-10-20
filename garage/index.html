@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="../assets/logo/logo.png">
   <link rel="stylesheet" href="../css/shared.css">
   <link rel="stylesheet" href="../css/animations.css">
-  <link rel="stylesheet" href="../css/garage.css?v=cloud-hairline-1">
+  <link rel="stylesheet" href="../css/garage.css?v=horizontal-1">
   <link rel="stylesheet" href="../css/greene-thumbnail.css">
   <link rel="stylesheet" href="../css/ut1utc-thumbnail.css">
   <link rel="stylesheet" href="../css/artifacts-thumbnail.css">
@@ -61,24 +61,23 @@
     <section class="garage-header" aria-labelledby="garage-title">
       <div>
         <h1 class="garage-title" id="garage-title">Experiments</h1>
-        <p class="garage-sub">A curated set of product design, scientific tools, AI systems, and visual explorations, each shaped around a different kind of complexity.</p>
+        <p class="garage-sub">A collection of things I've designed, built, and explored. Some to solve problems, others simply to follow curiosity.</p>
       </div>
 
       <div class="garage-filter" aria-label="Filter garage projects">
-        <span>Browse by</span>
-        <button class="filter-chip active" type="button" data-filter="all">All</button>
-        <button class="filter-chip" type="button" data-filter="product">Product Design</button>
-        <button class="filter-chip" type="button" data-filter="scientific">Scientific Tools</button>
-        <button class="filter-chip" type="button" data-filter="ai">AI Systems</button>
-        <button class="filter-chip" type="button" data-filter="visual">Visual / Brand</button>
+        <button class="filter-chip active" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-chip" type="button" data-filter="product" aria-pressed="false">Product Design</button>
+        <button class="filter-chip" type="button" data-filter="scientific" aria-pressed="false">Scientific Tools</button>
+        <button class="filter-chip" type="button" data-filter="ai" aria-pressed="false">AI Explorations</button>
+        <button class="filter-chip" type="button" data-filter="visual" aria-pressed="false">Visual / Brand</button>
       </div>
     </section>
 
     <div class="work-groups" aria-label="Garage projects">
       <section class="project-group" data-group="product">
         <div class="project-group-heading">
-          <p>Product Design</p>
-          <h2>Workflow products with clearer decision paths</h2>
+          <h2>Product Design</h2>
+          <p>Making complex experiences simpler, clearer, and more intuitive.</p>
         </div>
         <div class="project-grid">
           <a href="../Sprinklr/" class="project-card" data-category="product">
@@ -86,7 +85,7 @@
               <img src="../Sprinklr/Thumbnail.png" alt="Sprinklr CFM Device Switcher thumbnail">
             </figure>
             <div class="project-copy">
-              <h2>CFM Device Switcher</h2>
+              <h3>CFM Device Switcher</h3>
               <p>Responsive previewing and clearer mobile media alignment in CFM.</p>
               <div class="project-tags">
                 <span>UX</span>
@@ -101,7 +100,7 @@
               <img src="../assets/thumbnails/64squares.png" alt="64 Squares DocQnA AI Assistant">
             </figure>
             <div class="project-copy">
-              <h2>DocQnA AI Assistant</h2>
+              <h3>DocQnA AI Assistant</h3>
               <p>An AI assistant that turns interview transcripts into quantitative outputs.</p>
               <div class="project-tags">
                 <span>AI UX</span>
@@ -116,7 +115,7 @@
               <img src="../assets/thumbnails/adagrad-gamified.png" alt="Adagrad gamified learning experience">
             </figure>
             <div class="project-copy">
-              <h2>Adagrad Learning</h2>
+              <h3>Adagrad Learning</h3>
               <p>A gamified learning flow with clearer feedback and progress loops.</p>
               <div class="project-tags">
                 <span>UX</span>
@@ -130,8 +129,8 @@
 
       <section class="project-group" data-group="scientific">
         <div class="project-group-heading">
-          <p>Scientific Tools</p>
-          <h2>Research interfaces for measurement and analysis</h2>
+          <h2>Scientific Tools</h2>
+          <p>Research interfaces for measurement and analysis</p>
         </div>
         <div class="project-grid">
           <a href="../npl/index.html" class="project-card project-card-wide" data-category="scientific product">
@@ -139,7 +138,7 @@
               <img src="../assets/thumbnails/npl-atomic-clock.png" alt="NPL atomic clock dashboard">
             </figure>
             <div class="project-copy">
-              <h2>Atomic Clock Live Monitor</h2>
+              <h3>Atomic Clock Live Monitor</h3>
               <p>Real-time monitoring for CsF1 lab signals, designed for quick status checks.</p>
               <div class="project-tags">
                 <span>Research</span>
@@ -162,7 +161,7 @@
               </div>
             </figure>
             <div class="project-copy">
-              <h2>Cloud Profiler</h2>
+              <h3>Cloud Profiler</h3>
               <p>Turns atomic cloud images into measurable density profiles.</p>
               <div class="project-tags">
                 <span>Python</span>
@@ -185,7 +184,7 @@
               </div>
             </figure>
             <div class="project-copy">
-              <h2>UT1-UTC Prediction</h2>
+              <h3>UT1-UTC Prediction</h3>
               <p>Forecasts Earth-rotation drift using LSTM, TimeGPT, and SARIMA.</p>
               <div class="project-tags">
                 <span>Research</span>
@@ -199,8 +198,8 @@
 
       <section class="project-group" data-group="ai">
         <div class="project-group-heading">
-          <p>AI Systems</p>
-          <h2>Intelligence, guidance, and model-shaped products</h2>
+          <h2>AI Explorations</h2>
+          <p>Intelligence, guidance, and model-shaped products</p>
         </div>
         <div class="project-grid">
           <a href="../greene/" class="project-card" data-category="ai product">
@@ -216,7 +215,7 @@
               </div>
             </figure>
             <div class="project-copy">
-              <h2>Greene's Counsel</h2>
+              <h3>Greene's Counsel</h3>
               <p>An AI chatbot for perspective, practical guidance, and clearer next steps.</p>
               <div class="project-tags">
                 <span>AI</span>
@@ -226,13 +225,36 @@
             </div>
           </a>
 
+          <a href="../design-artifacts/" class="project-card" data-category="ai">
+            <figure class="project-media artifacts-cover" role="img" aria-label="Artifacts: a floating pixel canvas cycling through animated patterns">
+              <div class="artifacts-cover-art" aria-hidden="true" inert>
+                <div class="artifacts-cover-heading">
+                  <span>Artifacts</span>
+                  <strong>Ideas in motion.</strong>
+                </div>
+                <div class="artifacts-cover-canvas" data-artifacts-phosphor>
+                  <img class="artifacts-cover-fallback" src="../assets/thumbnails/artifacts-phosphor.svg" alt="">
+                </div>
+              </div>
+            </figure>
+            <div class="project-copy">
+              <h3>Artifacts</h3>
+              <p>AI-generated animations and interactive experiments.</p>
+              <div class="project-tags">
+                <span>AI</span>
+                <span>Motion</span>
+                <span>Creative Code</span>
+              </div>
+            </div>
+          </a>
+
         </div>
       </section>
 
       <section class="project-group" data-group="visual">
         <div class="project-group-heading">
-          <p>Visual / Brand</p>
-          <h2>Identity, campaign, and visual system explorations</h2>
+          <h2>Visual / Brand</h2>
+          <p>Identity, campaign, and visual system explorations</p>
         </div>
         <div class="project-grid">
           <a href="../Graphics/" class="project-card project-card-wide" data-category="visual">
@@ -248,7 +270,7 @@
               </div>
             </figure>
             <div class="project-copy">
-              <h2>Graphic Design Archive</h2>
+              <h3>Graphic Design Archive</h3>
               <p>Posters, logos, campaign pieces, and visual-system explorations.</p>
               <div class="project-tags">
                 <span>Posters</span>
@@ -258,35 +280,13 @@
             </div>
           </a>
 
-          <a href="../design-artifacts/" class="project-card" data-category="visual">
-            <figure class="project-media artifacts-cover" role="img" aria-label="Artifacts: a floating pixel canvas cycling through animated patterns">
-              <div class="artifacts-cover-art" aria-hidden="true" inert>
-                <div class="artifacts-cover-heading">
-                  <span>Artifacts</span>
-                  <strong>Ideas in motion.</strong>
-                </div>
-                <div class="artifacts-cover-canvas" data-artifacts-phosphor>
-                  <img class="artifacts-cover-fallback" src="../assets/thumbnails/artifacts-phosphor.svg" alt="">
-                </div>
-              </div>
-            </figure>
-            <div class="project-copy">
-              <h2>Artifacts</h2>
-              <p>AI-generated animations and interactive experiments.</p>
-              <div class="project-tags">
-                <span>AI</span>
-                <span>Motion</span>
-                <span>Creative Code</span>
-              </div>
-            </div>
-          </a>
 
           <a href="../lagrange/lagrange.html" class="project-card" data-category="visual">
             <figure class="project-media">
               <img src="../assets/thumbnails/Frame 1000001149.png" alt="Lagrange branding system">
             </figure>
             <div class="project-copy">
-              <h2>Lagrange</h2>
+              <h3>Lagrange</h3>
               <p>An identity system for an AI tool with a warmer product presence.</p>
               <div class="project-tags">
                 <span>Branding</span>
@@ -301,7 +301,7 @@
               <img src="../assets/thumbnails/iisc-internship.png" alt="IISc project visuals and UI">
             </figure>
             <div class="project-copy">
-              <h2>Visuals and UI</h2>
+              <h3>Visuals and UI</h3>
               <p>Visual systems and UI improvements for an academic product experience.</p>
               <div class="project-tags">
                 <span>Visual Design</span>
@@ -316,7 +316,7 @@
               <img src="../assets/thumbnails/boatt.png" alt="boAt brand campaign">
             </figure>
             <div class="project-copy">
-              <h2>boAt Brand Campaign</h2>
+              <h3>boAt Brand Campaign</h3>
               <p>A brand campaign direction with sharper product mood and energy.</p>
               <div class="project-tags">
                 <span>Branding</span>
@@ -355,7 +355,7 @@
 
 <script src="../js/constants.js"></script>
 <script src="../js/shared.js"></script>
-<script src="../js/garage.js"></script>
+<script src="../js/garage.js?v=horizontal-1"></script>
 <script type="module" src="../js/cloud-thumbnail.js"></script>
 <script type="module" src="../js/artifacts-thumbnail.js"></script>
 <script src="../js/vendor/hairline-create/kernel.js"></script>
