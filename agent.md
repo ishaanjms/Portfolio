@@ -9,7 +9,7 @@ This portfolio is a static HTML/CSS/JS site. Keep edits small, visual, and consi
 - Shared navigation, footer, cursor, page transitions: `css/shared.css`, `js/shared.js`
 - About page: `about/index.html`, `css/about.css`, `js/about.js`
 - Garage page: `garage/index.html`, `css/garage.css`, `js/garage.js`
-- Design Artifacts collection: `design-artifacts/index.html`, `css/design-artifacts.css`. Individual artifacts have their own folders under `design-artifacts/`; Desk Computer uses the shared computer CSS and JavaScript.
+- Artifacts collection: `design-artifacts/index.html`, `css/design-artifacts.css`. Individual artifacts have their own folders under `design-artifacts/`; Desk Computer uses the shared computer CSS and JavaScript.
 - Animated gallery previews: `css/artifact-previews.css` adapts the original SVG/canvas code. Each entire thumbnail is a navigation link; its visual contents are inert and marked `data-preview="passive"` to animate automatically without controls, pointer input, keyboard input, or audio. Full artifact pages remain interactive. Preserve off-screen pausing and reduced-motion behavior.
 - Fish Pond in a Record artifact: `design-artifacts/koi-pond/`. Keep canvas styles scoped, start audio only through interaction, and pause rendering/audio when the pond is out of view.
 - Design in Motion artifact: `design-artifacts/muse-wonder/`. Measure the typography and pointer coordinates relative to its canvas, and pause animation off-screen. Retain keyboard exploration and reduced-motion behavior.

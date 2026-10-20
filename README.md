@@ -9,10 +9,10 @@ For future editing support, see `agent.md`.
 ## Pages
 
 - **Home** — Intro, selected work, and portfolio navigation.
-- **Desk Computer** — Interactive SVG computer in Design Artifacts, with power and typing interactions and a coding sequence that reveals a waving pixel-art cat saying hi.
+- **Desk Computer** — Interactive SVG computer in Artifacts, with power and typing interactions and a coding sequence that reveals a waving pixel-art cat saying hi.
 - **About** — Bio, skills marquee, expandable experiences, education, achievements, and certifications.
 - **Garage** — Curated project library grouped by Product Design, Scientific Tools, AI Systems, and Visual / Brand.
-- **Design Artifacts** — Collection of AI-generated animations and interactive experiments, linked from Garage's Visual / Brand section. Gallery thumbnails run silent, automatic SVG/canvas animations; the entire thumbnail and its title open the interactive artifact under `design-artifacts/`. Preview sizing is scoped in `css/artifact-previews.css`.
+- **Artifacts** — Collection of AI-generated animations and interactive experiments, linked from Garage's Visual / Brand section. Gallery thumbnails run silent, automatic SVG/canvas animations; the entire thumbnail and its title open the interactive artifact under `design-artifacts/`. Preview sizing is scoped in `css/artifact-previews.css`.
 - **Fish Pond in a Record** — Interactive vinyl-record pond with swimming koi, a draggable tonearm, and ambient audio at `design-artifacts/koi-pond/`.
 - **Design in Motion** — Pointer-reactive product design typography, word transformations, and character trails at `design-artifacts/muse-wonder/`.
 - **Ghost Avatar** — Expressive SVG ghost with ten states, five colour themes, cursor-following eyes, and an automatic gallery preview at `design-artifacts/agent-avatar/`.
