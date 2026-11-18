@@ -6,7 +6,7 @@
   <title>Ishaan Jain — DocQnA AI Assistant</title>
   <link rel="icon" type="image/png" href="../assets/logo/logo.png">
   <link rel="stylesheet" href="../css/shared.css">
-  <link rel="stylesheet" href="docqna.css">
+  <link rel="stylesheet" href="docqna.css?v=access-gate-1">
 </head>
 <body class="locked-case">
 
@@ -46,30 +46,20 @@
       </div>
     </section>
 
-    <section class="dq-unlock-card" aria-labelledby="unlock-title">
-      <div>
-        <p class="dq-eyebrow">Access Required</p>
-        <h2 id="unlock-title">Demo access required</h2>
-        <p>Enter the password to view the assistant demo.</p>
-      </div>
-      <form class="dq-password-form">
-        <label for="case-password">Password</label>
-        <div class="password-row">
-          <input id="case-password" type="password" autocomplete="current-password" placeholder="Enter password">
-          <button type="submit">Unlock</button>
-        </div>
-        <p class="password-hint">For review access, contact me directly.</p>
-        <p class="password-error" role="alert"></p>
-      </form>
-    </section>
-
-    <section class="dq-locked-preview" aria-hidden="true">
-      <div class="blur-card"></div>
-      <div class="blur-card wide"></div>
-      <div class="blur-card"></div>
-      <div class="lock-overlay">
-        <strong>Demo locked</strong>
-        <span>Enter password above to continue.</span>
+    <section class="dq-access-gate" aria-labelledby="unlock-title">
+      <div class="dq-access-content">
+        <svg class="dq-lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v3"/></svg>
+        <h2 id="unlock-title">Watch the demo</h2>
+        <p class="dq-access-description">Enter your password to view this private walkthrough.</p>
+        <form class="dq-password-form">
+          <label for="case-password">Password</label>
+          <div class="password-row">
+            <input id="case-password" type="password" autocomplete="current-password" placeholder="Enter password" aria-describedby="password-error" required>
+            <button type="submit">Unlock</button>
+          </div>
+          <p class="password-error" id="password-error" role="alert"></p>
+          <p class="password-hint">Need access? <a href="mailto:ishaanuxd@gmail.com">Get in touch</a></p>
+        </form>
       </div>
     </section>
 
@@ -107,6 +97,6 @@
 
   <script src="../js/constants.js"></script>
   <script src="../js/shared.js"></script>
-  <script src="docqna.js"></script>
+  <script src="docqna.js?v=access-gate-1"></script>
 </body>
 </html>

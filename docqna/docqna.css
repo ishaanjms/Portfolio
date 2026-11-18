@@ -183,18 +183,44 @@ body {
   font-size: 12px;
 }
 
-.dq-unlock-card {
+.dq-access-gate {
   display: grid;
-  grid-template-columns: 1fr minmax(320px, 0.75fr);
-  gap: 40px;
-  align-items: center;
-  border: 1px solid rgba(26, 25, 22, 0.08);
-  border-radius: 28px;
-  padding: 34px;
-  background: rgba(255, 255, 255, 0.48);
+  place-items: center;
+  min-height: 380px;
+  padding: 44px 24px;
+  border-radius: 24px;
+  background: radial-gradient(ellipse at 50% 0, #34352f, transparent 75%), #1a1916;
+  color: #f7f5f0;
 }
 
-.dq-unlock-card h2,
+.dq-access-content {
+  width: min(100%, 380px);
+  text-align: center;
+}
+
+.dq-lock-icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin: 0 auto 18px;
+  color: #b9bcb1;
+}
+
+.dq-access-content h2 {
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.dq-access-description {
+  margin: 12px auto 24px;
+  max-width: 320px;
+  color: #b9b8b0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 .dq-section-heading h2,
 .dq-overview h2,
 .dq-outcomes h2 {
@@ -205,7 +231,6 @@ body {
   letter-spacing: 0;
 }
 
-.dq-unlock-card p,
 .dq-overview p {
   margin-top: 18px;
   color: rgba(26, 25, 22, 0.6);
@@ -214,11 +239,14 @@ body {
 }
 
 .dq-password-form label {
-  display: block;
-  color: rgba(26, 25, 22, 0.52);
-  font-family: 'DM Mono', monospace;
-  font-size: 12px;
-  margin-bottom: 10px;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .password-row {
@@ -230,6 +258,11 @@ body {
   background: var(--site-bg);
 }
 
+.password-row:focus-within {
+  outline: 2px solid #b6c9ba;
+  outline-offset: 4px;
+}
+
 .password-row input {
   min-width: 0;
   flex: 1;
@@ -237,6 +270,7 @@ body {
   background: transparent;
   padding: 0 12px;
   font: inherit;
+  color: #1a1916;
   outline: none;
 }
 
@@ -251,16 +285,29 @@ body {
   cursor: pointer;
 }
 
-.password-hint,
-.password-error {
-  margin-top: 10px !important;
-  font-size: 13px !important;
+.password-hint {
+  margin-top: 16px;
+  color: #b9b8b0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.password-hint a {
+  color: #f7f5f0;
+  text-underline-offset: 3px;
 }
 
 .password-error {
-  color: #b9432f !important;
-  min-height: 20px;
+  margin-top: 12px;
+  color: #f3b8ab;
+  font-size: 13px;
+  line-height: 1.5;
 }
+
+.password-error:empty { display: none; }
+
+body.case-unlocked .dq-access-gate { display: none; }
+body.case-unlocked .dq-protected-content { padding-top: 0; }
 
 .dq-public-glimpse,
 .dq-protected-content {
@@ -319,53 +366,6 @@ body {
   color: rgba(26, 25, 22, 0.58);
   font-size: 15px;
   line-height: 1.6;
-}
-
-.dq-locked-preview {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1.4fr 1fr;
-  gap: 16px;
-  margin-top: 48px;
-  padding: 18px;
-  border-radius: 28px;
-  background: #1a1916;
-  overflow: hidden;
-}
-
-.blur-card {
-  min-height: 260px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, rgba(247, 245, 240, 0.12), rgba(247, 245, 240, 0.04));
-  filter: blur(2px);
-}
-
-.blur-card.wide {
-  min-height: 320px;
-}
-
-.lock-overlay {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  align-content: center;
-  gap: 10px;
-  background: rgba(26, 25, 22, 0.62);
-  color: #f7f5f0;
-  text-align: center;
-}
-
-.lock-overlay strong {
-  font-size: 28px;
-}
-
-.lock-overlay span {
-  color: rgba(247, 245, 240, 0.62);
-}
-
-body.case-unlocked .dq-locked-preview {
-  display: none;
 }
 
 .dq-overview,
@@ -585,7 +585,6 @@ body.case-unlocked .dq-locked-preview {
 
 @media (max-width: 980px) {
   .dq-hero,
-  .dq-unlock-card,
   .dq-overview,
   .dq-outcomes {
     grid-template-columns: 1fr;
@@ -598,8 +597,7 @@ body.case-unlocked .dq-locked-preview {
   .glimpse-grid,
   .dq-problem-grid,
   .workflow-board,
-  .dq-interface,
-  .dq-locked-preview {
+  .dq-interface {
     grid-template-columns: 1fr;
   }
 
@@ -647,15 +645,18 @@ body.case-unlocked .dq-locked-preview {
     justify-self: center;
   }
 
-  .dq-unlock-card,
   .dq-interface,
   .workflow-board {
     padding: 16px;
     border-radius: 22px;
   }
 
-  .password-row {
+  .dq-access-gate {
+    min-height: 350px;
+    padding: 36px 20px;
     border-radius: 20px;
-    flex-direction: column;
   }
+
+  .dq-access-content h2 { font-size: 26px; }
+  .password-row button { padding: 12px 16px; }
 }

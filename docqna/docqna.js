@@ -10,6 +10,7 @@
     document.body.classList.add('case-unlocked');
     protectedContent.hidden = false;
     error.textContent = '';
+    input.removeAttribute('aria-invalid');
     protectedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
@@ -23,6 +24,12 @@
     }
 
     error.textContent = 'Incorrect password. Please check the access code and try again.';
+    input.setAttribute('aria-invalid', 'true');
     input.select();
+  });
+
+  input.addEventListener('input', () => {
+    error.textContent = '';
+    input.removeAttribute('aria-invalid');
   });
 })();
