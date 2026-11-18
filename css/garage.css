@@ -7,32 +7,25 @@
 }
 
 .garage-header {
-  margin-bottom: 36px;
-}
-
-.garage-kicker {
-  font-family: 'DM Mono', monospace;
-  font-size: 13px;
-  color: rgba(26, 25, 22, 0.46);
-  margin-bottom: 18px;
+  margin-bottom: 48px;
 }
 
 .garage-title {
   max-width: 860px;
-  color: rgba(26, 25, 22, 0.74);
-  font-size: clamp(42px, 5.4vw, 68px);
-  font-weight: 100;
-  line-height: 0.96;
-  letter-spacing: 0;
-  margin-bottom: 22px;
+  color: #1d1d1f;
+  font-size: clamp(36px, 4vw, 48px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  margin-bottom: 14px;
 }
 
 .garage-sub {
-  max-width: 800px;
-  color: rgba(26, 25, 22, 0.58);
-  font-size: clamp(18px, 2vw, 24px);
-  font-weight: 100;
-  line-height: 1.32;
+  max-width: 640px;
+  color: #727277;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .garage-filter {
@@ -40,7 +33,7 @@
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
-  margin-top: 30px;
+  margin-top: 28px;
   color: rgba(26, 25, 22, 0.48);
   font-size: 14px;
   font-weight: 600;
@@ -56,7 +49,7 @@
   padding: 7px 16px;
   font: inherit;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   cursor: pointer;
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
@@ -74,7 +67,7 @@
 
 .work-groups {
   display: grid;
-  gap: 92px;
+  gap: 64px;
 }
 
 .project-group {
@@ -87,26 +80,16 @@
 }
 
 .project-group-heading {
-  display: grid;
-  gap: 8px;
-  padding-bottom: 14px;
+  padding-bottom: 16px;
   border-bottom: 1px solid rgba(26, 25, 22, 0.08);
 }
 
 .project-group-heading h2 {
-  color: rgba(26, 25, 22, 0.84);
-  font-size: clamp(24px, 2.2vw, 28px);
-  font-weight: 450;
-  line-height: 1.12;
-  letter-spacing: -0.025em;
-}
-
-.project-group-heading p {
-  max-width: 900px;
-  color: rgba(26, 25, 22, 0.54);
-  font-size: clamp(15px, 1.25vw, 16px);
-  font-weight: 350;
+  color: #1d1d1f;
+  font-size: 22px;
+  font-weight: 400;
   line-height: 1.4;
+  letter-spacing: -0.02em;
 }
 
 .project-grid {
@@ -121,38 +104,90 @@
   color: inherit;
   text-decoration: none;
   min-width: 0;
-  transition: opacity 0.22s ease, transform 0.26s ease;
+  align-content: start;
 }
 
-.project-card:hover {
-  transform: translateY(-3px);
+.project-card:focus-visible {
+  outline: 2px solid #176e6c;
+  outline-offset: 6px;
 }
 
 .project-media {
   position: relative;
   overflow: hidden;
   aspect-ratio: 1.42;
-  border-radius: 8px;
-  background: rgba(26, 25, 22, 0.055);
-  box-shadow: inset 0 0 0 1px rgba(26, 25, 22, 0.07);
+  border-radius: 4px;
+  background: #f4f4f6;
+  transform: perspective(900px) rotateX(0deg) rotateY(0deg);
+  transition: transform 350ms ease;
+}
+
+.project-view {
+  position: absolute;
+  z-index: 3;
+  right: 14px;
+  bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 13px;
+  border-radius: 3px;
+  background: #ffffff;
+  color: #1d1d1f;
+  font-size: 12px;
+  font-weight: 450;
+  line-height: 1.2;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 180ms ease, transform 250ms ease;
+  pointer-events: none;
+}
+
+.project-view svg {
+  width: 11px;
+  height: 11px;
+}
+
+.project-card:focus-visible .project-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover .project-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .project-media > img,
+  .project-media > [class$="-cover-art"] {
+    transition: transform 350ms ease;
+  }
+
+  .project-media.is-exploring {
+    transform: perspective(900px) rotateX(var(--preview-rx, 0deg)) rotateY(var(--preview-ry, 0deg));
+    transition-duration: 160ms;
+  }
+
+  .project-media.is-exploring > img,
+  .project-media.is-exploring > [class$="-cover-art"] {
+    transform: translate(var(--preview-x, 0px), var(--preview-y, 0px)) scale(1.045);
+    transition-duration: 160ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-media,
+  .project-view {
+    transform: none;
+    transition: none;
+  }
 }
 
 .project-card-wide .project-media {
   aspect-ratio: 1.42;
-}
-
-.project-media::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent 52%, rgba(26, 25, 22, 0.09));
-  opacity: 0;
-  transition: opacity 0.28s ease;
-  pointer-events: none;
-}
-
-.project-card:hover .project-media::after {
-  opacity: 0.45;
 }
 
 .project-media img {
@@ -160,8 +195,6 @@
   height: 100%;
   display: block;
   object-fit: cover;
-  filter: saturate(0.84) contrast(0.95);
-  transition: filter 0.28s ease, opacity 0.28s ease;
 }
 
 .project-media.plot-media {
@@ -297,62 +330,28 @@
   opacity: 1;
 }
 
-.project-card:hover .project-media img {
-  filter: saturate(0.98) contrast(1);
-}
-
-.project-card:hover .project-media.logo-media img {
-  filter: none;
-}
-
 .project-copy {
   max-width: 560px;
+  display: grid;
+  gap: 5px;
   padding: 0;
 }
 
 .project-copy h3 {
-  color: rgba(26, 25, 22, 0.74);
-  font-size: clamp(20px, 1.85vw, 25px);
-  font-weight: 650;
-  line-height: 1.08;
-  letter-spacing: 0;
-  margin-bottom: 8px;
+  color: #364152;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  margin: 0;
 }
 
-.project-copy p {
-  color: rgba(26, 25, 22, 0.5);
-  font-size: 14px;
-  line-height: 1.42;
-  max-width: 520px;
-}
-
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 14px;
-  margin-top: 15px;
-}
-
-.project-tags span {
-  display: inline-flex;
-  align-items: center;
-  min-height: auto;
-  border: 0;
-  border-radius: 0;
-  padding: 0;
-  color: rgba(26, 25, 22, 0.42);
+.project-meta {
+  color: #858b94;
   font-family: 'DM Mono', monospace;
   font-size: 11px;
-  line-height: 1.2;
-}
-
-.project-tags span:not(:last-child)::after {
-  content: '';
-  width: 3px;
-  height: 3px;
-  margin-left: 14px;
-  border-radius: 50%;
-  background: rgba(26, 25, 22, 0.26);
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 @media (max-width: 900px) {
@@ -368,22 +367,11 @@
     white-space: normal;
   }
 
-  .work-groups {
-    gap: 86px;
-  }
-
   .project-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 50px 28px;
   }
 
-  .project-copy h3 {
-    font-size: 27px;
-  }
-
-  .project-copy p {
-    font-size: 15px;
-  }
 }
 
 @media (max-width: 640px) {
@@ -396,12 +384,12 @@
   }
 
   .garage-title {
-    font-size: clamp(46px, 15vw, 64px);
-    margin-bottom: 18px;
+    font-size: 36px;
+    margin-bottom: 12px;
   }
 
   .garage-sub {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .garage-filter {
@@ -409,7 +397,7 @@
   }
 
   .work-groups {
-    gap: 72px;
+    gap: 52px;
   }
 
   .project-group {
@@ -417,16 +405,11 @@
   }
 
   .project-group-heading {
-    gap: 8px;
     padding-bottom: 14px;
   }
 
   .project-group-heading h2 {
-    font-size: 26px;
-  }
-
-  .garage-filter span {
-    flex-basis: 100%;
+    font-size: 20px;
   }
 
   .filter-chip {
@@ -444,11 +427,4 @@
     aspect-ratio: 1.5;
   }
 
-  .project-copy h3 {
-    font-size: 28px;
-  }
-
-  .project-tags span {
-    font-size: 10px;
-  }
 }
