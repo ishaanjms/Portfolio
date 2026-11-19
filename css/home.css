@@ -19,6 +19,7 @@
 
 .hero-grid-pattern {
   --grid-size: 34px;
+  --grid-accent-rgb: 12, 140, 233;
   position: absolute;
   top: -82px;
   bottom: -72px;
@@ -30,8 +31,8 @@
   transform-origin: center;
   opacity: 0.88;
   background-image:
-    linear-gradient(rgba(23, 107, 106, 0.16) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(23, 107, 106, 0.16) 1px, transparent 1px);
+    linear-gradient(rgba(var(--grid-accent-rgb), 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--grid-accent-rgb), 0.18) 1px, transparent 1px);
   background-size: var(--grid-size) var(--grid-size);
   -webkit-mask-image:
     radial-gradient(620px circle at 38% 42%, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.84) 54%, transparent 82%),
@@ -49,7 +50,7 @@
   inset: 0;
   background:
     radial-gradient(520px circle at 34% 42%, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.34) 56%, transparent 74%),
-    radial-gradient(680px circle at 88% 36%, rgba(23, 107, 106, 0.08), transparent 68%);
+    radial-gradient(680px circle at 88% 36%, rgba(var(--grid-accent-rgb), 0.06), transparent 68%);
 }
 
 .hero-grid-pattern::after {
@@ -67,8 +68,8 @@
   top: calc(var(--y) * var(--grid-size));
   width: calc(var(--grid-size) - 1px);
   height: calc(var(--grid-size) - 1px);
-  background: rgba(23, 107, 106, 0.11);
-  box-shadow: inset 0 0 0 1px rgba(23, 107, 106, 0.08);
+  background: rgba(var(--grid-accent-rgb), 0.11);
+  box-shadow: inset 0 0 0 1px rgba(var(--grid-accent-rgb), 0.08);
 }
 
 /* Parallax watermark — scrolls up faster than page content
@@ -279,7 +280,78 @@
   transition: transform 0.3s ease;
 }
 
-.proj:hover .proj-img { transform: scale(1.015); }
+.proj-arrow {
+  position: absolute;
+  z-index: 2;
+  right: 16px;
+  bottom: 16px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(26, 25, 22, 0.12);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #858b94;
+  opacity: 0.55;
+  transform: rotate(90deg);
+  pointer-events: none;
+  transition: transform 350ms ease, opacity 250ms ease, background 250ms ease, color 250ms ease, border-color 250ms ease;
+}
+
+.proj-arrow svg {
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+
+.greene-cover .proj-arrow {
+  border-color: rgba(232, 224, 203, 0.28);
+  background: rgba(255, 255, 255, 0.12);
+  color: #e8e0cb;
+}
+
+/* SVG paths are replaced while animating. Keep pointer input on the stable
+   conversation wrapper so a redraw cannot discard a pending link click. */
+.proj-thumb-wrap .greene-cover-conversation > * {
+  pointer-events: none;
+}
+
+.proj:focus-visible .proj-arrow {
+  transform: rotate(0deg);
+  opacity: 1;
+  border-color: rgba(26, 25, 22, 0.12);
+  background: #ffffff;
+  color: #1d1d1f;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .proj:hover .proj-arrow {
+    transform: rotate(0deg);
+    opacity: 1;
+    border-color: rgba(26, 25, 22, 0.12);
+    background: #ffffff;
+    color: #1d1d1f;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .proj:hover .proj-img,
+  .proj:focus-visible .proj-img {
+    transform: scale(1.04);
+  }
+
+  .proj-thumb-wrap .greene-cover-conversation {
+    pointer-events: auto;
+    transition: transform 350ms ease;
+  }
+
+  .proj:hover .greene-cover-conversation,
+  .proj:focus-visible .greene-cover-conversation {
+    transform: translateY(-4px) scale(1.025);
+  }
+}
+
 .proj:focus-visible { outline: 2px solid #176b6a; outline-offset: 6px; }
 
 .proj-meta {
@@ -309,8 +381,18 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .proj-img { transition: none; }
-  .proj:hover .proj-img { transform: none; }
+  .proj-img,
+  .proj-thumb-wrap .greene-cover-conversation {
+    transition: none;
+    transform: none;
+  }
+  .proj-arrow {
+    transition: none;
+  }
+  .proj:hover .proj-arrow,
+  .proj:focus-visible .proj-arrow {
+    transform: rotate(0deg);
+  }
 }
 
 /* --- Responsive --- */

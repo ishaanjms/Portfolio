@@ -118,70 +118,95 @@
   aspect-ratio: 1.42;
   border-radius: 4px;
   background: #f4f4f6;
-  transform: perspective(900px) rotateX(0deg) rotateY(0deg);
-  transition: transform 350ms ease;
 }
 
-.project-view {
+.project-arrow {
   position: absolute;
   z-index: 3;
-  right: 14px;
-  bottom: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 9px 13px;
-  border-radius: 3px;
-  background: #ffffff;
-  color: #1d1d1f;
-  font-size: 12px;
-  font-weight: 450;
-  line-height: 1.2;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 180ms ease, transform 250ms ease;
+  right: 16px;
+  bottom: 16px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(26, 25, 22, 0.12);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #858b94;
+  opacity: 0.55;
+  transform: rotate(90deg);
+  pointer-events: none;
+  transition: transform 350ms ease, opacity 250ms ease, background 250ms ease, color 250ms ease, border-color 250ms ease;
+}
+
+.project-arrow svg {
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+
+.greene-cover .project-arrow {
+  border-color: rgba(232, 224, 203, 0.28);
+  background: rgba(255, 255, 255, 0.12);
+  color: #e8e0cb;
+}
+
+/* Keep click targets stable while the conversation redraws its SVG paths. */
+.project-media .greene-cover-conversation > * {
   pointer-events: none;
 }
 
-.project-view svg {
-  width: 11px;
-  height: 11px;
-}
-
-.project-card:focus-visible .project-view {
+.project-card:focus-visible .project-arrow {
   opacity: 1;
-  transform: translateY(0);
+  transform: rotate(0deg);
+  border-color: rgba(26, 25, 22, 0.12);
+  background: #ffffff;
+  color: #1d1d1f;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .project-card:hover .project-view {
+  .project-card:hover .project-arrow {
     opacity: 1;
-    transform: translateY(0);
+    transform: rotate(0deg);
+    border-color: rgba(26, 25, 22, 0.12);
+    background: #ffffff;
+    color: #1d1d1f;
   }
 }
 
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   .project-media > img,
-  .project-media > [class$="-cover-art"] {
+  .project-media > [class$="-cover-art"]:not(.greene-cover-art),
+  .project-media .greene-cover-conversation {
     transition: transform 350ms ease;
   }
 
-  .project-media.is-exploring {
-    transform: perspective(900px) rotateX(var(--preview-rx, 0deg)) rotateY(var(--preview-ry, 0deg));
-    transition-duration: 160ms;
+  .project-card:hover .project-media > img,
+  .project-card:focus-visible .project-media > img {
+    transform: scale(1.04);
   }
 
-  .project-media.is-exploring > img,
-  .project-media.is-exploring > [class$="-cover-art"] {
-    transform: translate(var(--preview-x, 0px), var(--preview-y, 0px)) scale(1.045);
-    transition-duration: 160ms;
+  .project-media .greene-cover-conversation {
+    pointer-events: auto;
+  }
+
+  .project-card:hover .project-media > [class$="-cover-art"]:not(.greene-cover-art),
+  .project-card:focus-visible .project-media > [class$="-cover-art"]:not(.greene-cover-art),
+  .project-card:hover .greene-cover-conversation,
+  .project-card:focus-visible .greene-cover-conversation {
+    transform: translateY(-4px) scale(1.025);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .project-media,
-  .project-view {
+  .project-media > img,
+  .project-media > [class$="-cover-art"],
+  .project-media .greene-cover-conversation {
     transform: none;
+    transition: none;
+  }
+
+  .project-arrow {
     transition: none;
   }
 }
