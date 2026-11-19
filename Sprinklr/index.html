@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ishaan Jain — Sprinklr Device Switcher</title>
+  <meta name="description" content="Bringing device preview into Sprinklr’s Survey Builder: a product design case study in responsive authoring and media alignment.">
   <link rel="icon" type="image/png" href="../assets/logo/logo.png">
   <link rel="stylesheet" href="../css/shared.css?v=white-overlays-1">
-  <link rel="stylesheet" href="./sprinklr.css">
+  <link rel="stylesheet" href="./sprinklr.css?v=balanced-overview-1">
 </head>
 <body>
 
@@ -39,363 +40,118 @@
   </nav>
 
   <main class="spr-page">
-    <section class="spr-hero">
-      <div class="spr-hero-copy">
-        <div class="spr-brand-lockup">
-          <img src="../assets/Ex-logos/sprinklr.svg" alt="Sprinklr">
+    <nav class="spr-index" aria-label="Case study sections">
+      <a href="#overview" aria-current="location">Overview</a>
+      <a href="#problem">Problem</a>
+      <a href="#decision">Decision</a>
+      <a href="#solution">Solution</a>
+      <a href="#outcome">Outcome</a>
+    </nav>
+
+    <div class="spr-content">
+    <header class="spr-overview" id="overview" aria-labelledby="spr-title">
+      <div class="spr-brand">
+        <img src="../assets/Ex-logos/sprinklr.svg" alt="Sprinklr" width="104" height="32">
+        <span>Customer Feedback Management</span>
+      </div>
+      <div class="spr-overview-details">
+        <div class="spr-intro">
+          <h1 id="spr-title">Preview every device without leaving the builder.</h1>
+          <p class="spr-subtitle">Device switching and responsive alignment for Sprinklr CFM.</p>
+          <p class="spr-summary">The CFM device switcher brings desktop, tablet, mobile, and custom previews into Survey Builder, helping creators check responsive layouts without leaving the authoring workflow.</p>
         </div>
-        <div class="spr-hero-tags" aria-label="Project tags">
-          <span>Internship</span>
-          <span>Product Design</span>
-          <span>Survey Builder</span>
-          <span>B2B SaaS</span>
-        </div>
-        <h1>Device Switcher</h1>
-        <p>I was asked to make a small alignment adjustment. I pushed the work toward the larger problem: helping survey creators understand how their layouts would behave across devices while they were still building.</p>
+        <dl class="spr-facts">
+          <div><dt>Role</dt><dd>Product Design Intern</dd></div>
+          <div><dt>Product</dt><dd>CFM · Survey Builder</dd></div>
+          <div><dt>Duration</dt><dd>1 week</dd></div>
+          <div><dt>Tools used</dt><dd>Figma · Jira</dd></div>
+          <div class="spr-fact-mentor"><dt>Mentor</dt><dd>Tanmay Singh<span class="spr-fact-detail">Design Manager — CFM, Sprinklr</span></dd></div>
+        </dl>
       </div>
+    </header>
 
-      <div class="spr-demo-card" aria-label="Implemented solution demo">
-        <img src="../Sprinklr/Demo.gif" alt="Animated demo of the implemented mobile alignment setting in Sprinklr">
-      </div>
-    </section>
 
-    <section class="spr-overview">
-      <div>
-        <h2>Situation: survey layouts were being designed blind</h2>
-        <p>During my Sprinklr internship, I worked on Customer Feedback Management, a product area for creating, distributing, and analyzing surveys. The Survey Builder made desktop authoring straightforward, but creators had no direct control over how a survey might look on mobile, tablet, or custom device sizes. To validate a layout, they had to leave the builder, open preview, switch devices, inspect the result, return to the builder, and repeat.</p>
-      </div>
-      <div class="spr-meta-grid">
-        <article>
-          <span>Role</span>
-          <strong>Product Design Intern</strong>
-        </article>
-        <article>
-          <span>Product Area</span>
-          <strong>Sprinklr - Customer Feedback Management, Survey Builder</strong>
-        </article>
-        <article>
-          <span>Tools</span>
-          <div class="tool-icon-grid" aria-label="Tools used">
-            <div class="tool-icon"><img src="../assets/icons/figma-icon.svg" alt=""><em>Figma</em></div>
-            <div class="tool-icon"><img src="../assets/icons/Jira.svg" alt=""><em>Jira</em></div>
-          </div>
-        </article>
-        <article>
-          <span>Problem Type</span>
-          <strong>Responsive preview, builder visibility, media layout control, authoring friction</strong>
-        </article>
-        <article>
-          <span>Output</span>
-          <strong>Shipped device switcher direction with device-specific alignment behavior</strong>
-        </article>
-      </div>
-    </section>
 
-    <section class="spr-contribution">
+    <figure class="spr-demo" aria-label="Recording of the implemented device switcher">
+      <img src="./Thumbnail.png" width="1380" height="818" alt="CFM Device Switcher project preview" data-spr-demo data-animation="./Demo.gif?v=start-trim-1" data-poster="./Thumbnail.png" fetchpriority="high">
+      <figcaption>
+        <span>Implemented device preview · Product recording</span>
+      </figcaption>
+    </figure>
+
+    <section class="spr-section" id="problem" aria-labelledby="problem-title">
       <div class="spr-section-heading">
-        <p>My Contribution</p>
-        <h2>I owned the reframing from a small control to a device-aware builder experience</h2>
+        <h2 id="problem-title">The preview lived away from the decision.</h2>
+        <p>Survey creators could configure a layout in the builder, but checking another device meant moving to a separate preview. The original request was a mobile alignment control; adding it alone would leave that checking loop intact.</p>
       </div>
-      <div class="contribution-grid">
-        <article>
-          <span>01</span>
-          <h3>Mapped the friction</h3>
-          <p>I broke down the existing preview loop and showed why creators still lacked confidence even if a new alignment field was added.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h3>Explored least-to-best solutions</h3>
-          <p>I created multiple solution directions so the team could compare a small settings change against a broader in-builder preview model.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h3>Defined the shipped behavior</h3>
-          <p>I shaped the device switcher interaction, alignment states, custom viewport behavior, and constraints needed to keep survey configuration safe.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="spr-split">
-      <aside>
-        <p>Task</p>
-        <h2>What I needed to achieve</h2>
-      </aside>
-      <div class="spr-content">
-        <p class="spr-lead">The product ask was small: add an alignment option so survey media could be adjusted for mobile. My responsibility was to design that control, but I also needed to make sure the solution actually helped creators make better layout decisions.</p>
-        <div class="spr-problem-grid">
-          <article>
-            <span>Assigned Ask</span>
-            <h3>Add a mobile alignment setting</h3>
-            <p>The expected solution was a small configuration control in the right panel, without changing how creators previewed device layouts.</p>
-          </article>
-          <article>
-            <span>Underlying Issue</span>
-            <h3>The control alone would not remove friction</h3>
-            <p>Even with a new setting, creators would still need to leave the builder to understand whether the selected alignment worked.</p>
-          </article>
-          <article>
-            <span>Design Goal</span>
-            <h3>Make layout behavior visible while authoring</h3>
-            <p>I reframed the task around preview confidence: creators should be able to switch devices and judge layout decisions in context.</p>
-          </article>
+      <div class="spr-workflows">
+        <div class="spr-workflow">
+          <h3>Existing workflow</h3>
+          <ol aria-label="Existing workflow steps">
+            <li>Build survey</li><li>Open preview</li><li>Switch device</li><li>Return to edit</li>
+          </ol>
+          <p>Each adjustment sends the creator back through the same loop.</p>
+        </div>
+        <div class="spr-workflow spr-workflow-proposed">
+          <h3>Design direction</h3>
+          <ol aria-label="Proposed workflow steps">
+            <li>Build survey</li><li>Switch canvas view</li><li>Check layout in place</li>
+          </ol>
+          <p>Bring device context to the point where the layout is being configured.</p>
         </div>
       </div>
     </section>
 
-    <section class="spr-timeline">
+    <section class="spr-section" id="decision" aria-labelledby="decision-title">
       <div class="spr-section-heading">
-        <p>Action · Process Arc</p>
-        <h2>From a narrow request to a shipped product direction</h2>
+        <h2 id="decision-title">Make the layout visible, then make it adjustable.</h2>
+        <p>I compared a small settings change with an in-builder preview model. The key tradeoff was how much of the creator’s checking loop each option could remove.</p>
       </div>
-      <div class="timeline-rail" aria-label="Project timeline">
-        <article>
-          <span>01</span>
-          <h3>Ask received</h3>
-          <p>Add a mobile alignment adjustment to the existing survey builder controls.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h3>Flow audited</h3>
-          <p>I mapped the back-and-forth between builder settings and separate preview screens.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h3>Options framed</h3>
-          <p>I compared a least-change setting, a device toggle, and a responsive authoring model.</p>
-        </article>
-        <article>
-          <span>04</span>
-          <h3>Prototype shaped</h3>
-          <p>I connected device switching with alignment controls and custom viewport behavior.</p>
-        </article>
-        <article>
-          <span>05</span>
-          <h3>Best shipped</h3>
-          <p>The strongest version moved forward as the shipped direction.</p>
-        </article>
+      <div class="spr-comparison">
+        <table>
+          <caption class="spr-sr-only">Comparison of the three solution directions</caption>
+          <thead><tr><th scope="col">Direction</th><th scope="col">What it offers</th><th scope="col">Tradeoff</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Add mobile alignment</th><td>A control in the existing settings panel.</td><td>Smallest change; layout checks still happen elsewhere.</td></tr>
+            <tr><th scope="row">Add a device toggle</th><td>Device selection inside the builder.</td><td>Brings access closer, but needs responsive canvas behavior to be useful.</td></tr>
+            <tr class="spr-chosen"><th scope="row">Responsive authoring <span>Chosen direction</span></th><td>A device switcher, resizing canvas, and device-specific layout controls.</td><td>Broader scope, with viewport limits and survey configuration safety to define.</td></tr>
+          </tbody>
+        </table>
       </div>
+      <p class="spr-contribution"><strong>My contribution:</strong> I mapped the preview loop, compared the alternatives, and defined the switcher interaction, alignment states, and custom viewport constraints.</p>
     </section>
 
-    <section class="spr-journey">
+    <section class="spr-section" id="solution" aria-labelledby="solution-title">
       <div class="spr-section-heading">
-        <p>Action · Journey Audit</p>
-        <h2>I mapped the preview loop that made every device decision slower</h2>
+        <h2 id="solution-title">One place to check every device.</h2>
       </div>
-      <div class="journey-rail" aria-label="Current user journey">
-        <article>
-          <span>1</span>
-          <h3>Leave builder</h3>
-          <p>I identified that the creator had to stop authoring before they could check the layout.</p>
-        </article>
-        <article>
-          <span>2</span>
-          <h3>Go to preview</h3>
-          <p>The device experience lived on a separate surface, away from the configuration controls.</p>
-        </article>
-        <article>
-          <span>3</span>
-          <h3>Switch device</h3>
-          <p>The creator then had to change the preview mode to see mobile, tablet, or custom behavior.</p>
-        </article>
-        <article>
-          <span>4</span>
-          <h3>Map it back</h3>
-          <p>Any issue had to be mentally translated back into a setting in the builder.</p>
-        </article>
-        <article>
-          <span>5</span>
-          <h3>Return and iterate</h3>
-          <p>I used this loop to show why an isolated alignment field would still feel incomplete.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="spr-insights">
-      <div class="spr-section-heading insights-heading">
-        <p>Action · Design Insights</p>
-        <h2>Three principles guided the solution</h2>
-      </div>
-      <div class="insight-grid">
-        <article>
-          <span>01 · Visibility</span>
-          <h3>Creators needed layout confidence, not just another setting</h3>
-          <p>The main gap was not only control. It was the inability to see whether a layout decision worked across device sizes while authoring.</p>
-        </article>
-        <article>
-          <span>02 · Context</span>
-          <h3>Preview belonged closer to the decision point</h3>
-          <p>If users had to leave the builder to validate every device state, the alignment feature would still create a slow trial-and-error workflow.</p>
-        </article>
-        <article>
-          <span>03 · Safety</span>
-          <h3>Device switching could not mutate the survey</h3>
-          <p>The switcher needed to behave like a preview lens: useful for authoring, but safe for question logic, saved configuration, and respondent experience.</p>
-        </article>
-      </div>
-      <div class="insight-quote">
-        <p>The shift was from “where should this media align?” to “how can creators confidently design for every device without leaving the builder?”</p>
-      </div>
-    </section>
-
-    <section class="spr-pivot">
-      <div class="spr-section-heading">
-        <p>Action · Reframing</p>
-        <h2>I turned the ask from a field into an authoring mode</h2>
-      </div>
-      <div class="pivot-grid">
-        <article>
-          <span>Least Change</span>
-          <h3>Add mobile alignment controls in the right panel</h3>
-          <p>I started with the smallest version of the request: rename the current control to Web Alignment and add Mobile Alignment below it with top, between title and answer, and bottom placement options.</p>
-        </article>
-        <article class="pivot-card-strong">
-          <span>Stronger Direction</span>
-          <h3>Add a device switcher in the builder top menu</h3>
-          <p>I proposed a device switcher so creators could move between Web, Mobile, Tablet, and Custom views in the builder, making the alignment decision visible immediately.</p>
-        </article>
-        <article>
-          <span>Best Direction</span>
-          <h3>Make responsive preview part of authoring</h3>
-          <p>I framed the best version as a scalable preview model: the canvas should resize by device without mutating survey configuration or respondent-facing logic.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="spr-simulator">
-      <div class="spr-section-heading">
-        <p>Action · Interaction Model</p>
-        <h2>I prototyped how device switching and alignment would work together</h2>
-      </div>
-      <div class="simulator-shell">
-        <div class="simulator-panel">
-          <span>Builder top menu</span>
-          <h3>Device preview switcher</h3>
-          <p>I designed the switcher as a builder-level control: changing the device should resize the survey canvas and reveal the relevant alignment options without sending creators to a separate preview flow.</p>
-          <div class="device-controls" aria-label="Device preview controls">
-            <button type="button" class="active" data-device="web">Web</button>
-            <button type="button" data-device="tablet">Tablet</button>
-            <button type="button" data-device="mobile">Mobile</button>
-            <button type="button" data-device="custom">Custom</button>
-          </div>
-          <div class="custom-fields" aria-label="Custom viewport fields">
-            <label>Width <input type="text" value="390 px" readonly></label>
-            <label>Height <input type="text" value="844 px" readonly></label>
-          </div>
-          <span class="panel-sublabel">Web alignment</span>
-          <div class="alignment-controls" aria-label="Device alignment controls">
-            <button type="button" class="active" data-align="left-centered">Left Centered</button>
-            <button type="button" data-align="right-centered">Right Centered</button>
-            <button type="button" data-align="left-filled">Left Filled</button>
-            <button type="button" data-align="right-filled">Right Filled</button>
-            <button type="button" data-align="between">Between Title And Answer</button>
-          </div>
+      <div class="spr-solution-details">
+        <div>
+          <h3>Switch in context.</h3>
+          <p>Desktop, Tablet, Mobile, and Custom live in the builder toolbar. Switching views resizes the canvas, so creators can check wrapping and spacing where they configure the survey.</p>
         </div>
-        <div class="survey-preview" data-align="left-centered" data-device="web">
-          <div class="survey-card">
-            <div class="survey-body">
-              <div class="survey-media" aria-label="Question media preview">
-                <div class="media-door"></div>
-                <div class="media-person"></div>
-                <div class="media-box box-small">prime</div>
-                <div class="media-box box-large">prime</div>
-              </div>
-              <div class="survey-content">
-                <h3>How should this product delivery experience be shown to respondents?</h3>
-                <div class="survey-options" aria-label="Multiple choice answer options">
-                  <div><span></span>Very clear</div>
-                  <div><span></span>Somewhat clear</div>
-                  <div><span></span>Needs improvement</div>
-                </div>
-              </div>
-            </div>
-            <div class="survey-footer" aria-hidden="true">
-              <div>
-                <span></span><strong>0</strong>
-                <span></span><strong>2</strong>
-              </div>
-              <div>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-          </div>
+        <div>
+          <h3>Protect the survey configuration.</h3>
+          <p>Changing the preview must leave question logic and saved configuration intact. Device-specific alignment needs to persist through save, clone, and duplicate workflows.</p>
+        </div>
+        <div>
+          <h3>Make the editing boundary clear.</h3>
+          <p>Inline editing stays in Web view. A notice explains this boundary and offers a direct Switch action, so creators know how to continue editing.</p>
         </div>
       </div>
     </section>
 
-    <section class="spr-split">
-      <aside>
-        <p>Action</p>
-        <h2>How I compared the options</h2>
-      </aside>
-      <div class="spr-content">
-        <p class="spr-lead">I presented multiple paths from least to best, so the team could compare implementation effort against the amount of friction removed for creators.</p>
-        <div class="solution-tabs" aria-label="Solution option selector">
-          <button type="button" class="active" data-option="required">Least</button>
-          <button type="button" data-option="preferred">Better</button>
-          <button type="button" data-option="best">Best</button>
-        </div>
-        <article class="solution-card">
-          <span>Least change</span>
-          <h3>Add mobile alignment in the right bar</h3>
-          <p>This solved the requested control gap, but it did not solve the bigger visibility problem because creators still had to preview elsewhere.</p>
-        </article>
+    <section class="spr-section spr-outcome" id="outcome" aria-labelledby="outcome-title">
+      <div class="spr-section-heading">
+        <h2 id="outcome-title">Device preview became part of authoring.</h2>
+        <p>The implemented switcher brought device checking into the builder. The recording shows creators moving between desktop and mobile layouts while staying in the same workspace.</p>
+      </div>
+      <div class="spr-outcome-notes">
+        <div><h3>What changed</h3><p>The work expanded from an isolated alignment setting into a device-aware authoring direction, with viewport behavior and configuration safety defined together.</p></div>
+        <div><h3>What I learned</h3><p>A small feature request can reveal a wider workflow problem. Comparing the alternatives helped me connect the original ask to a solution that still respected product constraints.</p></div>
       </div>
     </section>
-
-    <section class="spr-acceptance">
-      <div class="spr-section-heading acceptance-heading">
-        <p>Action · Product Constraints</p>
-        <h2>I defined what the shipped experience had to protect</h2>
-      </div>
-      <div class="acceptance-grid">
-        <article>
-          <span>Visible Control</span>
-          <p>The device toggle needed to be visible in the builder top menu across live, draft, template, and AI+ Builder surveys.</p>
-        </article>
-        <article>
-          <span>Viewport Accuracy</span>
-          <p>Web, Mobile, Tablet, and Custom modes needed to resize the canvas correctly and re-render survey components responsively.</p>
-        </article>
-        <article>
-          <span>Custom View</span>
-          <p>Custom width and height inputs needed validation limits for advanced device and kiosk-style preview scenarios.</p>
-        </article>
-        <article>
-          <span>No Data Mutation</span>
-          <p>Switching views could not change survey configuration, question logic, or saved respondent-facing behavior.</p>
-        </article>
-        <article>
-          <span>Configuration Parity</span>
-          <p>Web Alignment and Mobile Alignment needed to persist through save, clone, duplicate, sandbox, and porting workflows.</p>
-        </article>
-        <article>
-          <span>Permission Model</span>
-          <p>The new controls needed to follow the same permissions already applied to the existing alignment switcher.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="spr-outcome">
-      <div>
-        <span>Result</span>
-        <h2>The strongest version was shipped</h2>
-      </div>
-      <div class="outcome-grid">
-        <article>
-          <h3>Moved beyond the original ask</h3>
-          <p>The work evolved from a small alignment setting into a shipped device-switching experience that made layout behavior visible inside the builder.</p>
-        </article>
-        <article>
-          <h3>Reduced authoring friction qualitatively</h3>
-          <p>Creators no longer had to rely only on a separate preview flow to reason about web, mobile, tablet, and custom survey layouts while making changes.</p>
-        </article>
-        <article>
-          <h3>What I learned</h3>
-          <p>I learned to treat a small feature request as a signal. The useful design move was not just adding a setting, but finding the workflow friction behind it and proposing a solution that still fit product constraints.</p>
-        </article>
-      </div>
-    </section>
+    </div>
   </main>
 
   <div class="footer-section" id="contact">
@@ -423,6 +179,6 @@
 
   <script src="../js/constants.js"></script>
   <script src="../js/shared.js"></script>
-  <script src="./sprinklr.js"></script>
+  <script src="./sprinklr.js?v=automatic-recording-1"></script>
 </body>
 </html>
