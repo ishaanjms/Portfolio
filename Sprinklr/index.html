@@ -7,7 +7,7 @@
   <meta name="description" content="Bringing device preview into Sprinklr’s Survey Builder: a product design case study in responsive authoring and media alignment.">
   <link rel="icon" type="image/png" href="../assets/logo/logo.png">
   <link rel="stylesheet" href="../css/shared.css?v=white-overlays-1">
-  <link rel="stylesheet" href="./sprinklr.css?v=balanced-overview-1">
+  <link rel="stylesheet" href="./sprinklr.css?v=reference-hero-spacing-1">
 </head>
 <body>
 
@@ -52,32 +52,65 @@
     <header class="spr-overview" id="overview" aria-labelledby="spr-title">
       <div class="spr-brand">
         <img src="../assets/Ex-logos/sprinklr.svg" alt="Sprinklr" width="104" height="32">
-        <span>Customer Feedback Management</span>
+        <span>CFM · Survey Builder</span>
       </div>
       <div class="spr-overview-details">
         <div class="spr-intro">
           <h1 id="spr-title">Preview every device without leaving the builder.</h1>
-          <p class="spr-subtitle">Device switching and responsive alignment for Sprinklr CFM.</p>
-          <p class="spr-summary">The CFM device switcher brings desktop, tablet, mobile, and custom previews into Survey Builder, helping creators check responsive layouts without leaving the authoring workflow.</p>
+          <p class="spr-summary">What began as a mobile alignment request became an in&#8209;builder device preview.</p>
         </div>
         <dl class="spr-facts">
           <div><dt>Role</dt><dd>Product Design Intern</dd></div>
-          <div><dt>Product</dt><dd>CFM · Survey Builder</dd></div>
           <div><dt>Duration</dt><dd>1 week</dd></div>
           <div><dt>Tools used</dt><dd>Figma · Jira</dd></div>
-          <div class="spr-fact-mentor"><dt>Mentor</dt><dd>Tanmay Singh<span class="spr-fact-detail">Design Manager — CFM, Sprinklr</span></dd></div>
+          <div class="spr-fact-mentor"><dt>Mentor</dt><dd><a class="spr-mentor-link" href="https://in.linkedin.com/in/tanmaysingh26" target="_blank" rel="noopener noreferrer" aria-label="Tanmay Singh on LinkedIn (opens in a new tab)">Tanmay Singh</a><span class="spr-fact-detail">Design Manager — CFM</span></dd></div>
         </dl>
       </div>
     </header>
 
-
-
-    <figure class="spr-demo" aria-label="Recording of the implemented device switcher">
-      <img src="./Thumbnail.png" width="1380" height="818" alt="CFM Device Switcher project preview" data-spr-demo data-animation="./Demo.gif?v=start-trim-1" data-poster="./Thumbnail.png" fetchpriority="high">
-      <figcaption>
-        <span>Implemented device preview · Product recording</span>
-      </figcaption>
-    </figure>
+    <section class="spr-section spr-team" id="team" data-nav-section="overview" aria-labelledby="team-title">
+      <div class="spr-section-heading spr-team-heading">
+        <h2 id="team-title">How I collaborated on this ticket.</h2>
+        <p>I worked directly with the Lead Designer on design and the Product Manager on product decisions. The Senior Product Manager and Lead Engineers were secondary collaborators.</p>
+      </div>
+      <figure class="spr-team-map" aria-label="Collaboration chart: the Product Design Intern worked directly with the Lead Designer and Product Manager. The Senior Product Manager and Lead Engineers were secondary collaborators.">
+        <div class="spr-team-person spr-team-person-self">
+          <div class="spr-team-symbol" aria-hidden="true">
+            <svg class="spr-team-person-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+              <circle cx="16" cy="10" r="4.5"/>
+              <path d="M7 27v-3a9 9 0 0 1 18 0v3"/>
+            </svg>
+          </div>
+          <p class="spr-team-label">Me</p>
+        </div>
+        <div class="spr-team-connection spr-team-connection-primary" aria-hidden="true"></div>
+        <div class="spr-team-partners">
+          <div class="spr-team-person spr-team-person-primary">
+            <p class="spr-team-badge">Closest collaboration</p>
+            <div class="spr-team-symbol" aria-hidden="true"><span>LD</span></div>
+            <h3>Lead Designer</h3>
+          </div>
+          <div class="spr-team-person spr-team-person-primary">
+            <p class="spr-team-badge spr-team-badge-quiet">Direct collaboration</p>
+            <div class="spr-team-symbol" aria-hidden="true"><span>PM</span></div>
+            <h3>Product Manager</h3>
+          </div>
+        </div>
+        <div class="spr-team-connection spr-team-connection-secondary" aria-hidden="true"></div>
+        <div class="spr-team-secondary">
+          <div class="spr-team-person">
+            <div class="spr-team-symbol" aria-hidden="true"><span>PM</span></div>
+            <p class="spr-team-label">Secondary</p>
+            <h3>Senior Product Manager</h3>
+          </div>
+          <div class="spr-team-person">
+            <div class="spr-team-symbol" aria-hidden="true"><span>ENG</span></div>
+            <p class="spr-team-label">Secondary</p>
+            <h3>Lead Engineers</h3>
+          </div>
+        </div>
+      </figure>
+    </section>
 
     <section class="spr-section" id="problem" aria-labelledby="problem-title">
       <div class="spr-section-heading">
@@ -125,6 +158,12 @@
       <div class="spr-section-heading">
         <h2 id="solution-title">One place to check every device.</h2>
       </div>
+      <figure class="spr-demo" aria-label="Recording of the implemented device switcher">
+        <img src="./Thumbnail.png" width="1380" height="818" alt="CFM Device Switcher project preview" data-spr-demo data-animation="./Demo.gif?v=start-trim-1" data-poster="./Thumbnail.png" loading="lazy" decoding="async">
+        <figcaption>
+          <span>Implemented device preview · Product recording</span>
+        </figcaption>
+      </figure>
       <div class="spr-solution-details">
         <div>
           <h3>Switch in context.</h3>
@@ -179,6 +218,6 @@
 
   <script src="../js/constants.js"></script>
   <script src="../js/shared.js"></script>
-  <script src="./sprinklr.js?v=automatic-recording-1"></script>
+  <script src="./sprinklr.js?v=solution-demo-1"></script>
 </body>
 </html>
