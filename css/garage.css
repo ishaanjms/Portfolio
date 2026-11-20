@@ -330,11 +330,15 @@
 }
 
 .project-media.squares-media {
-  background: var(--site-bg);
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 24% 8%, #fbfcff 0%, transparent 66%),
+    radial-gradient(ellipse at 100% 100%, #ded9f1 0%, transparent 72%),
+    linear-gradient(125deg, #e3edf9, #efedf8);
 }
 
 .project-media.squares-media img {
-  filter: none;
+  mix-blend-mode: multiply;
 }
 
 .project-media.locked-media::after {

@@ -7,6 +7,6 @@ function hairline(spec) {
     const svg = HL.mk('svg', { viewBox: '0 0 400 320', 'aria-hidden': 'true' }, stage);
     const read = { textContent: 'rest' };
     spec.mount({ stage, svg, read }, spec.range[1]);
-    HL.tour(stage, spec.tour);
+    if (!stage.hasAttribute('data-hairline-loop')) HL.tour(stage, spec.tour);
   });
 }

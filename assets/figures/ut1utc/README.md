@@ -7,8 +7,9 @@ a quantitative simulation of Earth's rotation or leap-second timing.
 - `earth-time.js` is the custom figure, using Hairline's unchanged kernel.
 - `hairline-earth-time.html` is its self-contained interactive preview; add
   `?play=1` to start the tour.
-- The portfolio mounts the same figure as a passive, fully clickable cover.
-- The tour visits behind, ahead, aligned, then the rest pose.
+- The portfolio cover rotates continuously in view, with one revolution every
+  12 seconds. It stays still when reduced motion is enabled.
+- The standalone preview tour visits behind, ahead, aligned, then the rest pose.
 - Intensity sets the angular reach to 12, 28, or 42 degrees.
 
 The source passes Hairline's static validator. Browser review covered the

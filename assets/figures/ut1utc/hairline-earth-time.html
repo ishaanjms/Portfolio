@@ -878,7 +878,7 @@ var HL = (() => {
 <script type="module" id="hl-figure">
 const {
   Cam, fit, proj, facing, circ, prism, rrect, ringAt, poly, open,
-  mk, solid, put, spring, stepS, pointer, register, disposer, clamp, rad,
+  mk, solid, put, spring, stepS, pointer, register, reducedMotion, disposer, clamp, rad,
 } = HL;
 
 // A globe on a timing dial: a single longitude drifts from a fixed reference.
@@ -889,8 +889,7 @@ function mount({ stage, svg, read }, value) {
   fit(C, [[-75, -75, 0], [75, 75, 5], [-75, 75, 0], [75, -75, 0], [0, 0, 120]], 200, 166);
   const P = proj(C), front = facing(C);
   const g = mk('g', {}, svg), R = 47, Z = 66, tilt = rad(23.5);
-  let reach = value, lastAngle = NaN, over = null;
-  const angle = spring(rad(18));
+  let lastAngle = NaN;
   const circle = (r) => circ(r, 96);
   put(solid(g), prism(P, front, circle(75), circle(73), 0, 5));
   mk('path', { d: poly(ringAt(P, circle(64), 5.1)), class: 'nf lo' }, g);
@@ -950,6 +949,23 @@ function mount({ stage, svg, read }, value) {
   const cap = solid(g);
   put(cap, prism(P, front, circle(2.4).map(q => ({ ...q, u: q.u + north[0], v: q.v + north[1] })),
     circle(1.8).map(q => ({ ...q, u: q.u + north[0], v: q.v + north[1] })), north[2], north[2] + 3));
+  bag.add(() => svg.replaceChildren());
+  const restAngle = rad(18);
+  if (stage.hasAttribute('data-hairline-loop')) {
+    const speed = rad(30);
+    let phase = 0;
+    const rotation = register(stage, dt => {
+      const still = reducedMotion();
+      if (!still) phase = (phase + dt * speed) % (2 * Math.PI);
+      draw(restAngle + (still ? 0 : phase));
+      return !still;
+    });
+    bag.add(rotation.unregister);
+    return { destroy: bag.dispose };
+  }
+
+  let reach = value, over = null;
+  const angle = spring(restAngle);
   const B = register(stage, (dt) => {
     const moving = stepS(angle, dt);
     draw(angle.x);
@@ -957,7 +973,7 @@ function mount({ stage, svg, read }, value) {
   });
   bag.add(B.unregister);
   function target() {
-    angle.t = over ? rad(clamp((over[0] - 200) / 95, -1, 1) * reach) : rad(18);
+    angle.t = over ? rad(clamp((over[0] - 200) / 95, -1, 1) * reach) : restAngle;
     read.textContent = over ? (Math.abs(angle.t) < rad(2) ? 'aligned' : angle.t > 0 ? 'ahead' : 'behind') : 'rest';
     B.wake();
   }
@@ -965,7 +981,6 @@ function mount({ stage, svg, read }, value) {
     move: p => { over = p; target(); },
     leave: () => { over = null; target(); },
   }));
-  bag.add(() => svg.replaceChildren());
   read.textContent = 'rest';
   return { set(v) { reach = v; target(); }, destroy: bag.dispose };
 }
