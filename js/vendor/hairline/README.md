@@ -10,6 +10,5 @@ option scales the native tour clock (default 1, clamped to 0.25–4); Cloud Prof
 uses 1.8 for more noticeable motion, with shorter travel, dwell and start delays.
 Other figures retain their default pacing. Motion preferences and visibility
 handling still run through Hairline's original loop.
-Cloud Profiler uses Terrain; the Artifacts collection uses Phosphor's native
-pattern loop. Both retain off-screen pausing and reduced-motion support.
+Cloud Profiler uses Terrain for its density field.
 The custom figures use the separate hairline-create kernel.

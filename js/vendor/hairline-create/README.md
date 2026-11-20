@@ -10,3 +10,5 @@ conversation is in `assets/figures/greene/counsel.js`; the graphic archive's
 print tray is in `assets/figures/graphic-archive/print-tray.js`. The shared integration in
 `js/hairline-thumbnails.js` mounts each figure and plays its declared tour;
 Hairline controls springs, reduced motion, and off-screen pausing.
+The Artifacts thumbnail uses the same kernel to project and animate a vinyl
+record player through `js/artifacts-thumbnail.js`.
